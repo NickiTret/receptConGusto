@@ -1,0 +1,22 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/header";
+@import "./components/dropdown";
+@import "./components/aside";
+@import "./components/footer";
+@import "./components/first-screen";
+@import "./components/hits";
+@import "./components/category";
+@import "./components/recept-day";
+@import "./components/recept";
+@import "./components/simple";
+@import "./components/scroll";
+@import "./components/banner";
+@import "./components/news";
+
+

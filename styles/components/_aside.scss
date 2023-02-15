@@ -1,0 +1,36 @@
+.aside {
+    padding-top: 0;
+    padding-bottom: 0;
+    & > aside {
+        box-sizing: border-box;
+        flex: 0 0 auto;
+        background-color: $clr_white;
+        border-radius: 14px 0 14px 0;
+        border: 2px solid $clr_grey2;
+        padding: 14px;
+        width: 500px;
+        & > h3 {
+            @include font_lead($font-family, $clr_text);
+        }
+    
+        & > ul {
+            list-style-type: none;
+            & > li {
+                padding-top: 14px;
+                & > a {
+                    & > h4 {
+                        @include font_lead($font-family, $clr_text);
+                        margin-bottom: 7px;
+                    }
+                    & > p {
+                        @include font_small($font-family, $clr_grey);
+                        margin: 0 0 14px 0;
+                    }
+                }
+                &:not(:last-child) {
+                    border-bottom: 1px solid $clr_grey2;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@import "./color";
+
+  $font-family: "Source Sans Pro", sans-serif;
+  $content-width: 1600px;
+  $container-offset: 15px;
+  $container-width: calc($content-width + $container-offset * 2);
+
+  $light-color: #fff;
+

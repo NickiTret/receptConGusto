@@ -1,0 +1,33 @@
+.footer {
+    background: $clr_main;
+    padding: 20px 0;
+    & > .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        & > .left-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            @include font_p1($font-family, $clr_white);
+        }
+        & > nav {
+            & > ul {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                & > li {
+                    & > a {
+                        @include font_lead($font-family, $clr_bg);
+                        transition: color 0.3 ease-in-out;
+                        &:hover {
+                            color: $clr_main2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

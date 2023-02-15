@@ -1,0 +1,45 @@
+.simple {
+    & > .container {
+        & > h2 {
+            @include font_h2($font-family, $clr_text);
+            margin-bottom: 28px;
+        }
+
+        .scroll {
+            max-height: 350px;
+            & ul {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 24px;
+                // max-height: 300px;
+                padding-bottom: 24px;
+                & li {
+                    flex: 0 0 25%;
+                    & > a {
+                        & > img {
+                            width: 100%;
+                            margin-bottom: 7px;
+                            border-radius: 14px 0 0 0;
+                        }
+                        & > p {
+                            @include font_min_lead($font-family, $clr_main2);
+                            margin-bottom: 7px;
+                            & > span {
+                               @include font_small($font-family, $clr_grey);
+                            }
+                        }
+    
+                        & > .text {
+                            @include font_p1($font-family, $clr_text);
+                            text-decoration: none;
+                            text-transform: none;
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}

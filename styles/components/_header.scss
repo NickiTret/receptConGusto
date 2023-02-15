@@ -1,0 +1,53 @@
+.header
+{
+  @include shadow();
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: $clr_bg2;
+
+  border: 1px solid $clr_bg;
+
+  z-index: 100;
+  
+  & > .container
+  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+
+    & > a.logo
+    {
+      @include font_h2($font-family, $clr_main);
+    }
+    
+    & > nav
+    {
+      & > ul
+      {
+        @include font_lead($font-family, $clr_text);
+
+        display: flex;
+        align-items: center;
+        gap: 14px;
+
+        & > li
+        {
+          & > a
+          {
+            @include transition(color);
+
+            &:hover
+            {
+              color: $clr_main;
+            }
+          }
+        }
+      }
+    }
+  }
+}

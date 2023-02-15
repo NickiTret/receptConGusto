@@ -1,0 +1,90 @@
+.hits {
+    & > .container {
+        & > h2 {
+            @include font_h1($font-family, $clr_main);
+            margin-bottom: 28px;
+        }
+
+        & > ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+
+            & > li {
+
+                box-sizing: border-box;
+                flex: 0 0 calc(33% - 14px);
+                background-color: $clr_grey3;
+                border-radius: 14px 0 14px 0;
+                border: 2px solid $clr_grey2;
+                transition: all 0.2s ease-in;
+
+                &:hover {
+                    border: 2px solid $clr_grey;
+                    border-radius: 0 14px;
+                    & > a {
+                        
+                        & img {
+                            border-radius: 0 14px;
+                        }
+                    }
+                }
+                &:active {
+                    transform: scale(0.95);
+                }
+                & > a {
+                    box-sizing: border-box;
+                    display: block;
+                    padding: 14px;
+                    
+                    & > div.top {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        & > .like img {
+                            width: 28px;
+                            
+                        }
+                        & > .category {
+                            @include font_small($font-family, $clr_main);
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            &::before {
+                                position: relative;
+                                content: '';
+                                width: 5px;
+                                height: 5px;
+                                display: block;
+                                border-radius: 50%;
+                                border: 1px solid $clr_main;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+
+                    & img {
+                        border-radius: 14px 0 14px 0;
+                        margin-bottom: 14px;
+                        object-fit: cover;
+                        transition: border-radius 0.2s ease-in-out;
+                    }
+
+                    & h3 {
+                        @include font_lead($font-family, $clr_main);
+                        margin-bottom: 7px;
+                        font-weight: bold;
+                    }
+
+                    & p {
+                        position: relative;
+                        @include font_p1($font-family, $clr_text);
+                    }
+                }
+
+            }
+        }
+    }
+}

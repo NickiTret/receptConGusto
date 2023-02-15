@@ -1,0 +1,60 @@
+.menu {
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+    &__item {
+        position: relative;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+        
+    }
+
+    .menu__btn {
+        border: none;
+        padding: 5px 10px;
+        color: #fff;
+        background-color: #333;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+
+        &--active {
+            background-color: crimson;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+.dropdown {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 200px;
+	background-color: #333;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    &--active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__link {
+        display: block;
+        width: 100%;
+        padding: 10px 10px;
+        color: #fff;
+    }
+}
+
+
+

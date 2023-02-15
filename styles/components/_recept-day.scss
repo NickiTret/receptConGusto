@@ -1,0 +1,44 @@
+.recept-day {
+
+    // background-color: $clr_white;
+
+    & > .container {
+        & > h2 {
+            @include font_h2($font-family, $clr_text);
+            margin-bottom: 28px;
+        }
+
+        & > .content {
+
+            display: flex;
+            align-items: flex-end;
+            gap: 24px;
+
+            & img {
+                max-width: 570px;
+                border-radius: 0 14px 0 14px;
+            }
+
+            & > .content-text {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                
+                 & > h3 {
+                    @include font_h1($font-family, $clr_main);
+                    margin-bottom: 14px;
+                 }
+                 & > p {
+                    @include font_p1($font-family, $clr_text);
+                    margin-bottom: 14px;
+                 }
+                 & > a {
+                    @include main_btn($font-family, $clr_white);
+                    display: inline-block;
+                    align-self: flex-end;
+                 }
+            }
+        }
+    }
+}
