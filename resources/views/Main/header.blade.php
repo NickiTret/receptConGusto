@@ -11,6 +11,10 @@
           @endforeach
         </ul>
       </nav>
+      <form class="search" method="GET" action="{{ route('search') }}">
+        <input required name="s" type="text" placeholder="Поиск по рецептам" class="search-input @error('s') is-invalid @enderror " />
+        <button type="submit">Поиск</button>
+      </form>
       <div class="log-box">
         @if ( !empty(Auth::user()))
           <a href="{{route('logout')}}/">Вы вошли как: {{ Auth::user()->name }}</a>    

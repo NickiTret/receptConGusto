@@ -24,6 +24,49 @@
     {
       @include font_h2($font-family, $clr_main);
     }
+
+    & > .search
+    {
+        background-color: #fff;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        filter: drop-shadow(0px 0px 5px #6a6a6a75);
+        margin-left: auto;
+        margin-right: 50px;
+      & > input {
+        color: #777;
+        background: transparent;
+        border: none;
+        font-size: calc(50px / 2.5);
+        width: 0;
+        height: 50px;
+        transition: 0.75s width;
+        transform-origin: right center;
+        text-indent: 20px;
+        outline: none;
+        .is-invalid {
+          outline: 1px solid red;
+        }
+      }
+      & > button {
+        cursor: pointer;
+        color: #3880ff;
+        width: 80px;
+        height: 50px;
+        border: none;
+        font-size: calc(50px / 3);
+        background-color: transparent;
+        border-radius: 50%;
+      }
+      &::placeholder {
+        color: #555555c7;
+        text-transform: lowercase;
+      }
+      & > .expand {
+        width: calc(50px * 7);
+      }
+    }
     
     & > nav
     {

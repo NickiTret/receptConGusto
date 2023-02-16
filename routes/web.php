@@ -10,17 +10,12 @@ use App\Http\Controllers\Admin\HeaderController;
 use App\Http\Controllers\Admin\NewController;
 use App\Http\Controllers\Admin\FastController;
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\FeaturesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Index\IndexController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('home');
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
-
-// Route::get('/{slug}', [IndexController::class, 'page'])->name('{slug}');
-
 
 Route::get('/article/{id}', [IndexController::class, 'show'])->name('single');
 
@@ -29,6 +24,8 @@ Route::get('/fast/{id}', [IndexController::class, 'fast'])->name('fast');
 Route::get('/category', [IndexController::class, 'category'])->name('category');
 
 Route::get('/category/{id}', [IndexController::class, 'category_item'])->name('category_item');
+
+Route::get('/search', [IndexController::class, 'search'])->name('search');
 
 
 Route::middleware(['admin'])->prefix('admin')->group(function () {
@@ -41,6 +38,7 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::resource('/news', NewController::class);
     Route::resource('/fasts', FastController::class);
     Route::resource('/banners', BannerController::class);
+    Route::resource('/features', FeaturesController::class);
 });
 
 

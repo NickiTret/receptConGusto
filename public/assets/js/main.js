@@ -13,6 +13,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_simple_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/simple.js */ "./script/components/simple.js");
 /* harmony import */ var _components_dropdown_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/dropdown.js */ "./script/components/dropdown.js");
 /* harmony import */ var _components_dropdown_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_dropdown_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_fuetures_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/fuetures.js */ "./script/components/fuetures.js");
+/* harmony import */ var _components_fuetures_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_fuetures_js__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -208,6 +211,30 @@ console.log('components');
 
 /***/ }),
 
+/***/ "./script/components/fuetures.js":
+/*!***************************************!*\
+  !*** ./script/components/fuetures.js ***!
+  \***************************************/
+/***/ (() => {
+
+var revealElements = document.querySelectorAll("[data-reveal]");
+if (revealElements) {
+  var scrollReveal = function scrollReveal() {
+    for (var i = 0; i < revealElements.length; i++) {
+      var isElementsOnScreen = revealElements[i].getBoundingClientRect().top < window.innerHeight;
+      if (isElementsOnScreen) {
+        revealElements[i].classList.add("revealed");
+      } else {
+        revealElements[i].classList.remove("revealed");
+      }
+    }
+  };
+  window.addEventListener("scroll", scrollReveal);
+  window.addEventListener("load", scrollReveal);
+}
+
+/***/ }),
+
 /***/ "./script/components/simple.js":
 /*!*************************************!*\
   !*** ./script/components/simple.js ***!
@@ -228,6 +255,25 @@ __webpack_require__.r(__webpack_exports__);
 //         new SimpleBar(el);
 //     })
 // };
+
+var search = document.querySelector(".search");
+if (search) {
+  var searchInput = document.querySelector(".search input");
+  search.addEventListener("mouseenter", function (event) {
+    if (!searchInput.classList.contains("expand")) {
+      searchInput.classList.add("expand");
+      searchInput.value = "";
+      searchInput.focus();
+    }
+  });
+  searchInput.addEventListener("blur", function (event) {
+    console.log(event.target);
+    if (searchInput.classList.contains("expand")) {
+      searchInput.classList.remove("expand");
+    }
+  });
+}
+;
 
 /***/ }),
 

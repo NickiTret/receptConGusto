@@ -87,6 +87,29 @@
                     </li>
                     <li class="nav-item has-treeview">
                         <a href="{{ route('admin.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-tags"></i>
+                            <p>
+                                 Фичи главный экран
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('features.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Список записей</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('features.create') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Новая запись</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="{{ route('admin.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-archive"></i>
                             <p>
                                 Категории

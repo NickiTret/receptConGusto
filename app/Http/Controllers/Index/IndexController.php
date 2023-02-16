@@ -68,4 +68,16 @@ class IndexController extends Controller
         return view('category-item', compact( 'headers', 'posts'));
     }
 
+    public function search(Request $request) {
+        $request->validate([
+            's' => 'required',
+        ]);
+        $currentURL = url()->full();
+        $s = $request->s;
+        $headers = Header::all();
+        $posts = Post::where('title', 'LIKE', "%{$s}%")->with('category')->paginate(20);
+
+        return view('search', compact('posts', 's', 'headers', 'currentURL'));
+    }
+
 }

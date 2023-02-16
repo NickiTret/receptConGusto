@@ -7,18 +7,9 @@
     @include('Main.header', ['headers' => $headers])
     <div class="site-container">
         <main>
-            @if (!empty($heros))
-                @include('Component.first__screen', ['heros' => $heros])
-            @endif
 
-            @include('Component.features')
-
-            @if (!empty($fasts))
-                @include('Component.simple', ['fasts' => $fasts])
-            @endif
-
-            @if (!empty($random))
-                @include('Component.recept__day', ['random' => $random])
+            @if (!empty($banner))
+                @include('Component.banner', ['data' => $banner])
             @endif
 
             @if (!empty($posts))
