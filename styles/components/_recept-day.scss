@@ -12,10 +12,10 @@
 
             display: flex;
             align-items: flex-end;
-            gap: 24px;
-
+            gap: calc($gutter_abs * 1);
+            // width: calc( $column_abs * 3 + $gutter_abs * 2 );
             & img {
-                max-width: 570px;
+                width: calc( $column_abs * 5 + $gutter_abs * 4 );
                 border-radius: 0 14px 0 14px;
             }
 
@@ -30,7 +30,7 @@
                     margin-bottom: 14px;
                  }
                  & > p {
-                    @include font_p1($font-family, $clr_text);
+                    @include font_lead($font-family, $clr_grey);
                     margin-bottom: 14px;
                  }
                  & > a {

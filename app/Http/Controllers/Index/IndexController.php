@@ -11,6 +11,7 @@ use App\Models\Tag;
 use App\Models\Category;
 use App\Models\Hero;
 use App\Models\Fast;
+use App\Models\Feat;
 use App\Models\Banner;
 
 class IndexController extends Controller
@@ -24,9 +25,10 @@ class IndexController extends Controller
         $headers = Header::all();
         $random = Post::all()->random();
         $posts = Post::all();
+        $features = Feat::all();
         $categories = Category::pluck('title', 'id')->all();
         $tags = Tag::pluck('title', 'id')->all();
-        return view('welcome', compact( 'headers', 'categories', 'tags', 'random', 'posts',  'heros', 'fasts', 'currentURL'));
+        return view('welcome', compact( 'headers', 'categories', 'tags', 'random', 'posts',  'heros', 'fasts', 'currentURL', 'features'));
     }
 
     public function show($id)
@@ -65,7 +67,7 @@ class IndexController extends Controller
         $headers = Header::all();
         $category_item = Category::find($id);
         $posts = Post::where('category_id', $id)->get();
-        return view('category-item', compact( 'headers', 'posts'));
+        return view('category-item', compact( 'headers', 'posts', 'category_item'));
     }
 
     public function search(Request $request) {

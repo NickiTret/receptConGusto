@@ -1,15 +1,16 @@
 .header
 {
   @include shadow();
+  @include grid();
 
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
 
-  background-color: $clr_bg2;
+  background-color: $clr_main;
 
-  border: 1px solid $clr_bg;
+  border: 1px solid $clr_main2;
 
   z-index: 100;
   
@@ -22,7 +23,8 @@
 
     & > a.logo
     {
-      @include font_h2($font-family, $clr_main);
+      @include font_h2($font-family, $clr_white);
+      margin-right: 52px;
     }
 
     & > .search
@@ -72,7 +74,7 @@
     {
       & > ul
       {
-        @include font_lead($font-family, $clr_text);
+        @include font_lead($font-family, $clr_white);
 
         display: flex;
         align-items: center;
@@ -86,11 +88,14 @@
 
             &:hover
             {
-              color: $clr_main;
+              color: $clr_main2;
             }
           }
         }
       }
+    }
+    & > .log-box {
+      color: $clr_white;
     }
   }
 }

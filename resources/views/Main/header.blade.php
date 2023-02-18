@@ -2,7 +2,7 @@
 <header class="header">
     <div class="container">
       <a href="/" class="logo">Con Gusto</a>
-      <nav style="display: none;">
+      <nav>
         <ul class="reset-list">
           @foreach ($headers as $header_item)
           <li>

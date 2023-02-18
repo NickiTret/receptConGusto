@@ -34,6 +34,7 @@ class FeaturesController extends Controller
         $data = $request->all();
 
         $data['image'] = Feat::uploadImage($request);
+        $feat = Feat::create($data);
 
         return redirect()->route('features.index')->with('success', 'Фича добавлена');
     }

@@ -10,7 +10,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form" method="post" action="{{ route('features.update', ['feat' => $feat->id]) }}"
+            <form role="form" method="post" action="{{ route('features.update', ['feature' => $feat->id]) }}"
                 enctype="multipart/form-data">
                 @csrf
                 @method('PUT')

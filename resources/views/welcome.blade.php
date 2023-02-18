@@ -11,7 +11,9 @@
                 @include('Component.first__screen', ['heros' => $heros])
             @endif
 
-            @include('Component.features')
+            @if (!empty($features))
+                @include('Component.features', ['data' => $features])
+            @endif
 
             @if (!empty($fasts))
                 @include('Component.simple', ['fasts' => $fasts])
@@ -22,6 +24,11 @@
             @endif
 
             @if (!empty($posts))
+            <section>
+                <div class="container">
+                    <h2> Лучшие рецепты </h2>
+                </div>
+            </section>
                 @include('Component.hits', ['posts' => $posts, 'url' => $currentURL])
             @endif
         </main>

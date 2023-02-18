@@ -15,6 +15,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_dropdown_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_dropdown_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_fuetures_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/fuetures.js */ "./script/components/fuetures.js");
 /* harmony import */ var _components_fuetures_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_fuetures_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_grid_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/grid.js */ "./script/components/grid.js");
+
 
 
 
@@ -232,6 +234,124 @@ if (revealElements) {
   window.addEventListener("scroll", scrollReveal);
   window.addEventListener("load", scrollReveal);
 }
+
+/***/ }),
+
+/***/ "./script/components/grid.js":
+/*!***********************************!*\
+  !*** ./script/components/grid.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _resources_grid_grid_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../resources/grid/grid.json */ "./resources/grid/grid.json");
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+
+var createNode = function createNode(template) {
+  var wrapper = document.createElement('div');
+  wrapper.innerHTML = template;
+  return wrapper.firstElementChild;
+};
+var Keycode = {
+  ENTER: 13,
+  ESC: 27,
+  ARROW_TOP: 38,
+  ARROW_BOTTOM: 40,
+  ARROW_LEFT: 37,
+  ARROW_RIGHT: 39
+};
+var GRID_HELP_BLOCK_ATTRIBUTE = 'data-grid-help-block';
+var GRID_HELP_BLOCK_CLASS = 'grid-help-block';
+var GRID_HELP_BLOCK_TEMPLATE = "<div class=\"".concat(GRID_HELP_BLOCK_CLASS, "\"></div>");
+var createGridHelpBlock = function createGridHelpBlock(gridObject) {
+  if (!gridObject) {
+    return;
+  }
+  var breakpoints = Object.values(gridObject).sort(function (a, b) {
+    if (a.full_width && b.full_width) {
+      if (a.full_width > b.full_width) {
+        return 1;
+      }
+      return -1;
+    }
+    return 0;
+  });
+  var gridHelpBlock = document.querySelector("body > div.".concat(GRID_HELP_BLOCK_CLASS));
+  if (!gridHelpBlock) {
+    gridHelpBlock = createNode(GRID_HELP_BLOCK_TEMPLATE);
+  }
+  var styles = '';
+  var maxColumnCount = 0;
+  var _iterator = _createForOfIteratorHelper(breakpoints),
+    _step;
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var breakpoint = _step.value;
+      var fullWidth = breakpoint['full_width'],
+        columnCount = breakpoint['column_count'];
+      if (!fullWidth || !columnCount) {
+        console.error('Неверная структура grid.json');
+        return;
+      }
+      if (columnCount > maxColumnCount) {
+        maxColumnCount = columnCount;
+      }
+      styles += "\n\t\t\t@media screen and ( min-width: ".concat(fullWidth, "px )\n\t\t\t{\n\t\t\t\thtml > body > div.").concat(GRID_HELP_BLOCK_CLASS, " > div.column:nth-of-type( n )\n\t\t\t\t{\n\t\t\t\t\tdisplay: block;\n\t\t\t\t}\n\n\t\t\t\thtml > body > div.").concat(GRID_HELP_BLOCK_CLASS, " > div.column:nth-of-type( n + ").concat(columnCount + 1, ")\n\t\t\t\t{\n\t\t\t\t\tdisplay: none;\n\t\t\t\t}\n\t\t\t}\n\t\t");
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+  var styleNode = createNode("<style>".concat(styles, "</style>"));
+  gridHelpBlock.appendChild(styleNode);
+  for (var i = 0; i < maxColumnCount; i++) {
+    gridHelpBlock.appendChild(createNode('<div class="column"></div>'));
+  }
+  document.body.appendChild(gridHelpBlock);
+};
+function runOnKeys(func) {
+  for (var _len = arguments.length, codes = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    codes[_key - 1] = arguments[_key];
+  }
+  var pressed = new Set();
+  document.addEventListener('keydown', function (event) {
+    pressed.add(event.code);
+    for (var _i = 0, _codes = codes; _i < _codes.length; _i++) {
+      var code = _codes[_i];
+      if (!pressed.has(code)) {
+        return;
+      }
+    }
+    pressed.clear();
+    var helpBlock = document.querySelector('div.grid-help-block');
+    if (helpBlock) {
+      helpBlock.remove();
+    } else {
+      func();
+    }
+  });
+  document.addEventListener('keyup', function (event) {
+    pressed["delete"](event.code);
+  });
+}
+var initGridHelpBlock = function initGridHelpBlock() {
+  if (_resources_grid_grid_json__WEBPACK_IMPORTED_MODULE_0__) {
+    window.createGridHelpBlock = function () {
+      createGridHelpBlock(_resources_grid_grid_json__WEBPACK_IMPORTED_MODULE_0__);
+    };
+    if (document.body.getAttribute(GRID_HELP_BLOCK_ATTRIBUTE)) {
+      createGridHelpBlock(_resources_grid_grid_json__WEBPACK_IMPORTED_MODULE_0__);
+    }
+    runOnKeys(function () {
+      return createGridHelpBlock(_resources_grid_grid_json__WEBPACK_IMPORTED_MODULE_0__);
+    }, "Digit4", "ShiftLeft", "ControlLeft");
+  }
+};
+initGridHelpBlock();
 
 /***/ }),
 
@@ -18250,6 +18370,17 @@ const modules = [_modules_virtual_virtual_js__WEBPACK_IMPORTED_MODULE_1__["defau
 _core_core_js__WEBPACK_IMPORTED_MODULE_0__["default"].use(modules);
 
 
+/***/ }),
+
+/***/ "./resources/grid/grid.json":
+/*!**********************************!*\
+  !*** ./resources/grid/grid.json ***!
+  \**********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"w_1920":{"full_width":1920,"content_width":1768,"column_count":12,"column":96,"gutter":56,"margin":76},"w_1440":{"full_width":1440,"content_width":1344,"column_count":12,"column":68,"gutter":48,"margin":48},"w_1280":{"full_width":1280,"content_width":1164,"column_count":12,"column":64,"gutter":36,"margin":58},"w_1024":{"full_width":1024,"content_width":980,"column_count":12,"column":56,"gutter":28,"margin":22},"w_768":{"full_width":768,"content_width":716,"column_count":6,"column":96,"gutter":28,"margin":26},"w_320":{"full_width":320,"content_width":288,"column_count":4,"column":60,"gutter":16,"margin":16}}');
+
 /***/ })
 
 /******/ 	});
@@ -18436,6 +18567,8 @@ _core_core_js__WEBPACK_IMPORTED_MODULE_0__["default"].use(modules);
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/_vendor.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/dropdown.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/ex.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/fuetures.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/grid.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/simple.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/slider_hero.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/functions/burger.js")))

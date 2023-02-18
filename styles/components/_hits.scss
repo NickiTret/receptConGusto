@@ -10,19 +10,21 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 24px;
+            gap: calc($gutter_abs * 1);
 
             & > li {
                 position: relative;
+                overflow: hidden;
                 box-sizing: border-box;
-                flex: 0 0 calc(33% - 14px);
+                flex: 0 0 auto;
+                width: calc( $column_abs * 3 + $gutter_abs * 2 );
                 background-color: $clr_grey3;
                 border-radius: 14px 0 14px 0;
-                border: 2px solid $clr_grey2;
+                border: 2px solid $clr_grey3;
                 transition: all 0.2s ease-in;
 
                 &:hover {
-                    border: 2px solid $clr_grey;
+                    border: 2px solid $clr_grey2;
                     border-radius: 0 14px;
                     & > a {
                         
@@ -93,7 +95,7 @@
                     }
 
                     & p {
-                        @include font_p1($font-family, $clr_text);
+                        @include font_small($font-family, $clr_grey);
                         max-height: 200px;
                         overflow: auto;
 

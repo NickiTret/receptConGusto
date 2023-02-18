@@ -1,6 +1,7 @@
 .aside {
     padding-top: 0;
     padding-bottom: 0;
+    
     & > aside {
         box-sizing: border-box;
         flex: 0 0 auto;
@@ -8,7 +9,7 @@
         border-radius: 14px 0 14px 0;
         border: 2px solid $clr_grey2;
         padding: 14px;
-        width: 500px;
+        width: calc( $column_abs * 4 + $gutter_abs * 3 );
         & > h3 {
             @include font_lead($font-family, $clr_text);
         }

@@ -1,11 +1,13 @@
-.section {
+.features {
+    @include grid();
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: calc( $column_abs * 6 + $gutter_abs * 6 ) calc( $column_abs * 6 + $gutter_abs * 5 );
     align-items: center;
+    padding-top: 50px;
 }
 
 .image-box {
-    height: 800px;
+    height: 450px;
     overflow: hidden;
 }
 
@@ -30,8 +32,8 @@ h2 {
     
 }
 
-.text {
-    @include font_lead($font-family, $clr_text);
+.text > p{
+    @include font_lead($font-family, $clr_grey);
     opacity: 0.6;
 }
 
@@ -100,7 +102,7 @@ h2 {
         font-size: 2em;
     }
 
-    .text {
+    .text p{
         font-size: 0.8em;
     }
 }

@@ -40,10 +40,10 @@
                             <td>{{  $feat->content }}</td>
                             <td>{{  $feat->created_at }}</td>
                             <td>
-                                <a href="{{  route('features.edit', ['feat' => $feat->id]) }}" class="btn btn-info btn-sm float-left mb-1">
+                                <a href="{{  route('features.edit', ['feature' => $feat->id]) }}" class="btn btn-info btn-sm float-left mb-1">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
-                                <form action="{{  route('features.destroy', ['feat' => $feat->id]) }}" method="post" class="float-left" >
+                                <form action="{{  route('features.destroy', ['feature' => $feat->id]) }}" method="post" class="float-left" >
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm(Подтвердить удаление)">

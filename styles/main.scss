@@ -1,8 +1,10 @@
 // базовые подключения
 @import "vars";
+@import "grid";
 @import "mixins";
 @import "fonts";
 @import "settings";
+
 
 // подключения компонентов страницы
 @import "./components/header";
@@ -19,5 +21,6 @@
 @import "./components/banner";
 @import "./components/news";
 @import "./components/features";
+@import "./components/grid_block";
 
 

@@ -1,10 +1,9 @@
 .recept {
     & > .container {
-
         &.full-content {
             display: flex;
             align-items: flex-start;
-            gap: 24px;
+            gap: calc($gutter_abs * 1);
 
             & ul {
                 list-style-type: none;
@@ -90,6 +89,10 @@
             width: 100%;
             margin: 0 auto;
             text-align: center;
+        }
+
+        & > .content {
+            width: calc( $column_abs * 8 + $gutter_abs * 7 );
         }
 
         & > .content > p {

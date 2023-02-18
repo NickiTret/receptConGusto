@@ -15,14 +15,6 @@ class Feat extends Model
     protected $table = 'features';
     protected $fillable = ['title', 'content', 'image'];
 
-    // public function sluggable(): array
-    // {
-    //     return [
-    //         'slug' => [
-    //             'source' => 'title'
-    //         ]
-    //     ];
-    // }
 
     public static function uploadImage(Request $request, $image = null)
     {

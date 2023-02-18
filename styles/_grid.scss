@@ -39,11 +39,15 @@ $header_side_offset_px_maxW_1280: 44px;
 $header_side_offset_px_maxW_1024: 44px;
 $header_side_offset_px_maxW_768: 18px;
 
+$column_count: 12;
+$gutter_count: calc( $column_count - 1 );
 $column: 88;
 $gutter: 40;
 $column_abs: calc( $column * 1px );
 $gutter_abs: calc( $gutter * 1px );
 $margin: 52;
+$width_content: calc( ( $column * $column_count ) + ( $gutter * $gutter_count ) );
+$width_content_px: calc( $width_content * 1px );
 $margin_px: calc( $margin * 1px );
 $width: calc( ( $column_abs * 12 ) + ( $gutter_abs * ( 12 - 1 ) ) );
 
@@ -86,5 +90,20 @@ $gutter_abs_maxW_768: calc( $gutter_maxW_768 / ( $column_maxW_768 * 4 + $gutter_
 $margin_maxW_768: 18;
 $margin_px_maxW_768: calc( $margin_maxW_768 * 1px );
 $width_maxW_768: calc( 100% - $margin_px_maxW_768 * 2 );
+
+// $maxW_1920: screen and ( max-width: 1920px );
+// $maxW_1440: screen and ( max-width: 1440px );
+// $maxW_1280: screen and ( max-width: 1280px );
+// $maxW_1024: screen and ( max-width: 1024px );
+// $maxW_768: screen and ( max-width: 768px );
+// $maxW_480: screen and ( max-width: 480px );
+// $maxW_320: screen and ( max-width: 320px );
+
+// $minW_1921: screen and ( min-width: $global.media.minW_1920 );
+// $minW_1440: screen and ( min-width: $global.media.minW_1440 );
+// $minW_1280: screen and ( min-width: $global.media.minW_1280 );
+// $minW_1024: screen and ( min-width: $global.media.minW_1024 );
+// $minW_768: screen and ( min-width: $global.media.minW_768 );
+// $minW_320: screen and ( min-width: $global.media.minW_320 );
 
 

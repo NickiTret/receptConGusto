@@ -1,46 +1,29 @@
-<section class="section">
+<section class="features">
+  @foreach ($data as $item)
   <div class="image-box" data-reveal="left">
-    <img src="https://img.freepik.com/premium-photo/turkish-baklava-dessert_127657-21789.jpg?w=2000" alt="" class="img">
+    <img src="{{$item->image}}" alt="{{$item->title}}" class="{{$item->title}}">
   </div>
   <div class="content-box">
     <h2 class="title" data-reveal="left">
-      Baklava
+      {{$item->title}}
     </h2>
-    <p class="text" data-reveal="left">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Id laborum iste doloremque ab facere unde alias sit commodi accusamus? Eius ut molestiae nemo perspiciatis, pariatur numquam accusamus voluptatem libero sint.
-    </p>
+    <div class="text" data-reveal="left">
+      {!! $item->content !!}
+    </div>
   </div>
-  <div class="content-box">
+  @endforeach
+
+  {{-- <div class="content-box">
     <h2 class="title" data-reveal="left">
       Turkish coffee
     </h2>
-    <p class="text" data-reveal="left">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Id laborum iste doloremque ab facere unde alias sit commodi accusamus? Eius ut molestiae nemo perspiciatis, pariatur numquam accusamus voluptatem libero sint.
-    </p>
+    <div class="text" data-reveal="left">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id laborum iste doloremque ab facere unde alias sit commodi accusamus? Eius ut molestiae nemo perspiciatis, pariatur numquam accusamus voluptatem libero sint.
+      </p>
+    </div>
   </div>
   <div class="image-box" data-reveal="left">
-    <img src="https://wallpapercave.com/wp/wp4318209.jpg" alt="" class="img">
-  </div>
-  <div class="image-box" data-reveal="left">
-    <img src="https://i5.walmartimages.com/asr/521f0e9a-eca8-4c26-8913-f992628465d3.aeb4f3035a5ffa976394f0bb9f6afefa.jpeg" alt="" class="img">
-  </div>
-  <div class="content-box">
-    <h2 class="title" data-reveal="left">
-      Tea
-    </h2>
-    <p class="text" data-reveal="left">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Id laborum iste doloremque ab facere unde alias sit commodi accusamus? Eius ut molestiae nemo perspiciatis, pariatur numquam accusamus voluptatem libero sint.
-    </p>
-  </div>
-  <div class="content-box">
-    <h2 class="title" data-reveal="left">
-      Lokum
-    </h2>
-    <p class="text" data-reveal="left">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Id laborum iste doloremque ab facere unde alias sit commodi accusamus? Eius ut molestiae nemo perspiciatis, pariatur numquam accusamus voluptatem libero sint.
-    </p>
-  </div>
-  <div class="image-box" data-reveal="left">
-    <img src="https://i.pinimg.com/originals/7a/62/1f/7a621fabe6f0b95a4aedea6fb7347888.jpg" alt="" class="img">
-  </div>
+    <img src="https://podacha-blud.com/uploads/posts/2022-12/1670994933_28-podacha-blud-com-p-vidi-ponchikov-foto-28.jpg" alt="" class="img">
+  </div> --}}
 </section>

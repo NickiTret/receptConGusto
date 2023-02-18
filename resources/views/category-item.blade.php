@@ -9,9 +9,11 @@
         <main>
             @if (!empty($banner))
                 @include('Component.banner', ['data' => $banner])
+            @else
+                @include('Component.banner', ['category' => $category_item])
             @endif
             @if (!empty($posts))
-                @include('Component.hits', ['posts' => $posts, 'url' => $uri])
+                @include('Component.hits', ['posts' => $posts])
             @endif
         </main>
         @include('Main.footer')
