@@ -16,6 +16,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_fuetures_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/fuetures.js */ "./script/components/fuetures.js");
 /* harmony import */ var _components_fuetures_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_fuetures_js__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_grid_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/grid.js */ "./script/components/grid.js");
+/* harmony import */ var _components_aside_image_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/aside_image.js */ "./script/components/aside_image.js");
+/* harmony import */ var _components_aside_image_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_aside_image_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_header_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/header.js */ "./script/components/header.js");
+
+
 
 
 
@@ -153,6 +158,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendor/focus-visible.js */ "./script/vendor/focus-visible.js");
 /* harmony import */ var _vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0__);
 
+
+/***/ }),
+
+/***/ "./script/components/aside_image.js":
+/*!******************************************!*\
+  !*** ./script/components/aside_image.js ***!
+  \******************************************/
+/***/ (() => {
+
+var aside = document.querySelector('.aside');
+if (aside) {
+  var asideList = Array.from(aside.querySelectorAll('a'));
+  asideList.forEach(function (el) {
+    el.addEventListener('mousemove', function (evt) {
+      evt.target.querySelector('.disabled').classList.add('active');
+      var topMouse = evt.offsetY;
+      var leftMouse = evt.offsetX;
+      evt.target.querySelector('.disabled').style.top = "".concat(topMouse, "px");
+      evt.target.querySelector('.disabled').style.left = "".concat(leftMouse, "px");
+    });
+    el.addEventListener('mouseleave', function (evt) {
+      evt.target.querySelector('.disabled').classList.remove('active');
+    });
+  });
+}
 
 /***/ }),
 
@@ -355,6 +385,19 @@ initGridHelpBlock();
 
 /***/ }),
 
+/***/ "./script/components/header.js":
+/*!*************************************!*\
+  !*** ./script/components/header.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/burger */ "./script/functions/burger.js");
+
+
+/***/ }),
+
 /***/ "./script/components/simple.js":
 /*!*************************************!*\
   !*** ./script/components/simple.js ***!
@@ -364,18 +407,17 @@ initGridHelpBlock();
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var simplebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! simplebar */ "./node_modules/simplebar/dist/index.mjs");
-// import SimpleScrollbar from 'simplebar';
 
 
+// import 'simplebar';
 
-// const scrollElements = Array.from(document.querySelectorAll('.scroll'));
-
-// if (scrollElements) {
-//     scrollElements.forEach((el) => {
-//         new SimpleBar(el);
-//     })
-// };
-
+var scrollElements = Array.from(document.querySelectorAll('.scroll'));
+if (scrollElements) {
+  scrollElements.forEach(function (el) {
+    new simplebar__WEBPACK_IMPORTED_MODULE_0__["default"](el, {});
+  });
+}
+;
 var search = document.querySelector(".search");
 if (search) {
   var searchInput = document.querySelector(".search input");
@@ -18565,10 +18607,12 @@ module.exports = JSON.parse('{"w_1920":{"full_width":1920,"content_width":1768,"
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/_functions.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/_vars.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/_vendor.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/aside_image.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/dropdown.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/ex.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/fuetures.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/grid.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/header.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/simple.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/slider_hero.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/functions/burger.js")))

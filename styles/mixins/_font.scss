@@ -5,6 +5,24 @@
     font-size: 57px;
     line-height: 120%;
     color: $color;
+
+    @media(max-width: 1600px) {
+        font-size: 57px;
+    }
+    @media(max-width: 1440px) {
+        font-size: 46px;
+    }
+    @media(max-width: 1280px) {
+        font-size: 46px;
+    }
+
+    @media(max-width: 1024px) {
+        font-size: 38px;
+    }
+
+    @media(max-width: 768px) {
+        font-size: 38px;
+    }
 }
 
 @mixin font_h2($font-family, $color) {
@@ -14,6 +32,26 @@
     font-size: 36px;
     line-height: 110%;
     color: $color;
+
+    @media(max-width: 1600px) {
+        font-size: 36px;
+    }
+    @media(max-width: 1440px) {
+        font-size: 32px;
+    }
+    @media(max-width: 1280px) {
+        font-size: 32px;
+    }
+
+    @media(max-width: 1024px) {
+        font-size: 28px;
+    }
+
+    @media(max-width: 768px) {
+        font-size: 28px;
+    }
+
+
 }
 
 @mixin font_lead($font-family, $color) {
@@ -23,6 +61,25 @@
     font-size: 24px;
     line-height: 139%;
     color: $color;
+
+    @media(max-width: 1600px) {
+        font-size: 24px;
+    }
+    @media(max-width: 1440px) {
+        font-size: 22px;
+    }
+    @media(max-width: 1280px) {
+        font-size: 22px;
+    }
+
+    @media(max-width: 1024px) {
+        font-size: 20px;
+    }
+
+    @media(max-width: 768px) {
+        font-size: 18px;
+    }
+
     
 }
 
@@ -33,6 +90,15 @@
     font-size: 18px;
     line-height: 145%;
     color: $color;
+
+    @media(max-width: 1600px) {
+        font-size: 18px;
+    }
+
+
+    @media(max-width: 768px) {
+        font-size: 16px;
+    }
 }
 
 @mixin font_small($font-family, $color) {
@@ -42,6 +108,10 @@
     font-size: 16px;
     line-height: 145%;
     color: $color;
+
+    @media(max-width: 768px) {
+        font-size: 14px;
+    }
 }
 
 @mixin font_button($font-family, $color) {

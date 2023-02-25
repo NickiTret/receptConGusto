@@ -4,25 +4,15 @@
         <a href="/" class="">
           Con Gusto
         </a>
-        <p>© Copyright 2022 | Woodbar By Graphicraz.</p>
+        <p>© Copyright 2023 | NICKWEB</p>
       </div>
       <nav>
         <ul>
+          @foreach ($headers as $header_item)
           <li>
-            <a href="#">Home</a>
+            <a href=" {{  $header_item->link }}">{{ $header_item->title }}</a>
           </li>
-          <li>
-            <a href="#">Category</a>
-          </li>
-          <li>
-            <a href="#">Shop</a>
-          </li>
-          <li>
-            <a href="#">Blog</a>
-          </li>
-          <li>
-            <a href="#">Page</a>
-          </li>                       
+          @endforeach                      
         </ul>
       </div>
     </div>

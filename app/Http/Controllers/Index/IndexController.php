@@ -33,14 +33,16 @@ class IndexController extends Controller
 
     public function show($id)
     {
+        
         $headers = Header::all();
         $fasts = Fast::all();
         $post = Post::where('id', $id)->firstOrFail();
+        $posts = Post::where('category_id', $post->category_id)->limit(5)->get();
         $post->views += 1;
         $post->update();
         $categories = Category::pluck('title', 'id')->all();
         $tags = Tag::pluck('title', 'id')->all();
-        return view('single', compact( 'headers','post', 'tags', 'categories', 'fasts'));
+        return view('single', compact( 'headers','post', 'tags', 'categories', 'fasts', 'posts'));
     }
 
     public function fast($id)

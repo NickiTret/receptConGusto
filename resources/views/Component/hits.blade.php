@@ -19,7 +19,7 @@
                         </span> --}}
                     </div>
                     <h3>{{$post->title}}</h3>
-                    <p>{!! $post->description !!}</p>
+                    <div class="scroll">{!! $post->description !!}</div>
                 </a>
             </li>
             @endforeach

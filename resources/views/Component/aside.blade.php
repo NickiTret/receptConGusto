@@ -1,30 +1,16 @@
 <section class="aside">
     <aside>
         <ul>
+            @foreach ($posts as $post)
             <li>
-                <a href="#">
-                    <h4>Мясо</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, vero. Velit adipisci omnis, vitae ullam iusto autem ab, quo inventore eaque consequuntur beatae illum eius voluptatibus molestiae doloremque. Fugit, alias!</p>
+                <a href="{{  route('single',  $post->id) }}">
+                    <h4>{{$post->title}}</h3>
+                    <div class="disabled">
+                        <img src="/{{$post->thumbnail}}" alt="{{$post->title}}">
+                    </div>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <h4>Мясо</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, vero. Velit adipisci omnis, vitae ullam iusto autem ab, quo inventore eaque consequuntur beatae illum eius voluptatibus molestiae doloremque. Fugit, alias!</p>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <h4>Мясо</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, vero. Velit adipisci omnis, vitae ullam iusto autem ab, quo inventore eaque consequuntur beatae illum eius voluptatibus molestiae doloremque. Fugit, alias!</p>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <h4>Мясо</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, vero. Velit adipisci omnis, vitae ullam iusto autem ab, quo inventore eaque consequuntur beatae illum eius voluptatibus molestiae doloremque. Fugit, alias!</p>
-                </a>
-            </li>
+            @endforeach
         </ul>
     </aside>
 </section>

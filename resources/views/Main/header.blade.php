@@ -2,7 +2,10 @@
 <header class="header">
     <div class="container">
       <a href="/" class="logo">Con Gusto</a>
-      <nav>
+      <button type="button" class="burger" aria-label="Открыть меню" aria-expended='false' data-burger>
+        <span class="burger__line"></span>
+      </button>
+      <nav title="Главное меню" data-menu>
         <ul class="reset-list">
           @foreach ($headers as $header_item)
           <li>
@@ -19,7 +22,7 @@
         @if ( !empty(Auth::user()))
           <a href="{{route('logout')}}/">Вы вошли как: {{ Auth::user()->name }}</a>    
         @else
-          <a href="{{route('logout')}}/">Войти / Зарегистрироваться</a>
+          <a href="{{route('logout')}}/">Войти</a>
         @endif        
           <a href="#"></a>
       </div>

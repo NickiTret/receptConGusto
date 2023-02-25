@@ -14,7 +14,10 @@
                         <div class="content">
                             {!! $post->content !!}
                         </div>
-                        @include('Component.aside', ['post' => $post])
+                        @if(!empty($posts))
+                        @include('Component.aside', ['posts' => $posts])
+                        @endif
+                      
                     </div>
                     <div class="container">
                         <div @if (!empty($post->thumbnail)) style="background-image: url(../{{ $post->thumbnail }});"
@@ -53,7 +56,7 @@
                 </section>
             @endif
         </main>
-        @include('Main.footer')
+        @include('Main.footer', ['headers' => $headers])
     </div>
 </body>
 

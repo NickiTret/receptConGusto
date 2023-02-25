@@ -18,7 +18,7 @@
                 align-items: flex-start;
                 justify-content: center;
 
-                &>picture>img {
+                & > picture > img {
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -26,6 +26,9 @@
                     bottom: 0;
                     width: 100%;
                     z-index: -1;
+
+                    object-fit: cover;
+                    height: 100vh;
                 }
 
                 & > div.text {
@@ -33,6 +36,22 @@
                     width: calc( $column_abs * 7 + $gutter_abs * 6 );
                     margin-left: calc( $column_abs * 7 + $gutter_abs * 6 );
                     padding: 0;
+
+                    @media(max-width: 1600px) {
+                        width: calc( $column_abs_maxW_1600 * 7 + $gutter_abs_maxW_1600 * 6 );
+                        margin-left: calc( $column_abs_maxW_1600 * 5 + $gutter_abs_maxW_1600 * 4 );
+                    }
+
+                    @media(max-width: 768px) {
+                        width: calc( $column_abs_maxW_768 * 3 + $gutter_abs_maxW_768 * 4 );
+                        margin-left: calc( $column_abs_maxW_768 * 1 + $gutter_abs_maxW_768 * 0 );
+                    }
+
+                    @media(max-width: 480px) {
+                        width: calc( $column_abs_maxW_768 * 3 + $gutter_abs_maxW_768 * 3 );
+                        margin-left: calc( $column_abs_maxW_768 * 0 + $gutter_abs_maxW_768 * 0 );
+                        margin: 0 auto;
+                    }
 
 
                     &>h1 {

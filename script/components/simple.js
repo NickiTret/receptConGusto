@@ -1,17 +1,19 @@
 
-// import SimpleScrollbar from 'simplebar';
+import SimpleScrollbar from 'simplebar';
 
-import 'simplebar';
+// import 'simplebar';
 
 
 
-// const scrollElements = Array.from(document.querySelectorAll('.scroll'));
+const scrollElements = Array.from(document.querySelectorAll('.scroll'));
 
-// if (scrollElements) {
-//     scrollElements.forEach((el) => {
-//         new SimpleBar(el);
-//     })
-// };
+if (scrollElements) {
+    scrollElements.forEach((el) => {
+        new SimpleScrollbar(el, {
+          
+        });
+    })
+};
 
 let search = document.querySelector(".search");
 

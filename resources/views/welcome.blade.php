@@ -32,7 +32,7 @@
                 @include('Component.hits', ['posts' => $posts, 'url' => $currentURL])
             @endif
         </main>
-        @include('Main.footer')
+        @include('Main.footer', ['headers' => $headers])
     </div>
 </body>
 

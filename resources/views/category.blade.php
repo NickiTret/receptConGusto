@@ -7,11 +7,20 @@
     @include('Main.header', ['headers' => $headers])
     <div class="site-container">
         <main>
-            @include('Component.banner', ['data' => $banner])
-            @include('Component.categories', ['data' => $categories])
-            @include('Component.simple', ['fasts' => $fasts])
+            @if ($banner)
+                @include('Component.banner', ['data' => $banner])
+            @endif
+
+            @if ($categories)
+                @include('Component.categories', ['data' => $categories])
+            @endif
+
+            @if ($fasts)
+                @include('Component.simple', ['fasts' => $fasts])
+            @endif
+
         </main>
-        @include('Main.footer')
+        @include('Main.footer', ['headers' => $headers])
     </div>
 </body>
 
