@@ -25,7 +25,6 @@ class FastController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'description' => 'required',
             'content' => 'required',
             'image' => 'nullable|image',
             
@@ -51,7 +50,6 @@ class FastController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'description' => 'required',
             'content' => 'required',
             'image' => 'image',
         ]);

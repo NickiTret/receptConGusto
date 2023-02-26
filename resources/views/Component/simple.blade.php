@@ -1,6 +1,8 @@
 <section class="simple">
     <div class="container">
+        @if (!empty($fasts))
         <h2>Быстро</h2>
+        @endif
         <div class="scroll" data-simplebar>
             <ul>
                 @foreach ($fasts as $item)
@@ -12,7 +14,6 @@
                     </a>
                 </li>
                 @endforeach
-
             </ul>
         </div>
     </div>

@@ -19,6 +19,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_aside_image_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/aside_image.js */ "./script/components/aside_image.js");
 /* harmony import */ var _components_aside_image_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_aside_image_js__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _components_header_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/header.js */ "./script/components/header.js");
+/* harmony import */ var _components_share_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/share.js */ "./script/components/share.js");
+/* harmony import */ var _components_share_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_components_share_js__WEBPACK_IMPORTED_MODULE_7__);
+
 
 
 
@@ -395,6 +398,23 @@ initGridHelpBlock();
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/burger */ "./script/functions/burger.js");
 
+
+/***/ }),
+
+/***/ "./script/components/share.js":
+/*!************************************!*\
+  !*** ./script/components/share.js ***!
+  \************************************/
+/***/ (() => {
+
+function actionToggle() {
+  var action = document.querySelector('.share');
+  action.classList.toggle('active');
+}
+var share = document.querySelector('.share');
+if (share) {
+  share.addEventListener('click', actionToggle);
+}
 
 /***/ }),
 

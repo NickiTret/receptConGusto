@@ -5,7 +5,7 @@
 @include('Main.head')
 
 <body class="page__body">
-    @include('Main.header', ['headers' => $headers])
+    {{-- @include('Main.header', ['headers' => $headers]) --}}
     <div class="site-container">
         <main>
             <div class="flex justify-center max-w-5xl min-h-screen pb-16 mx-auto">
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </main>
-        @include('Main.footer')
+        {{-- @include('Main.footer') --}}
     </div>
 </body>
 

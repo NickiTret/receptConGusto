@@ -28,7 +28,7 @@ class IndexController extends Controller
         $features = Feat::all();
         $categories = Category::pluck('title', 'id')->all();
         $tags = Tag::pluck('title', 'id')->all();
-        return view('welcome', compact( 'headers', 'categories', 'tags', 'random', 'posts',  'heros', 'fasts', 'currentURL', 'features'));
+        return view('welcome', compact( 'headers', 'categories', 'tags', 'random' , 'posts',  'heros', 'fasts', 'currentURL', 'features'));
     }
 
     public function show($id)
@@ -68,6 +68,7 @@ class IndexController extends Controller
         // $banner = Banner::where('page', 'Категории')->firstOrFail();
         $headers = Header::all();
         $category_item = Category::find($id);
+        $category_item->descr = "В этом разделе вы найдете блюда из “{$category_item->title}”";
         $posts = Post::where('category_id', $id)->get();
         return view('category-item', compact( 'headers', 'posts', 'category_item'));
     }

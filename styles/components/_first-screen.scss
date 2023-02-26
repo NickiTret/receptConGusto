@@ -4,7 +4,7 @@
     padding-bottom: 0;
     padding-top: 0;
     max-width: calc(100% + 36px);
-    height: 100vh;
+    height: calc(100vh - 66px);
     margin: 0 -18px;
 
     .swiper {
@@ -33,13 +33,18 @@
 
                 & > div.text {
                     @include grid();
-                    width: calc( $column_abs * 7 + $gutter_abs * 6 );
-                    margin-left: calc( $column_abs * 7 + $gutter_abs * 6 );
+                    width: calc( $column_abs * 6 + $gutter_abs * 5 );
+                    margin-left: calc( $column_abs * 8 + $gutter_abs * 7 );
                     padding: 0;
 
                     @media(max-width: 1600px) {
                         width: calc( $column_abs_maxW_1600 * 7 + $gutter_abs_maxW_1600 * 6 );
                         margin-left: calc( $column_abs_maxW_1600 * 5 + $gutter_abs_maxW_1600 * 4 );
+                    }
+
+                    @media(max-width: 1440px) {
+                        width: calc( $column_abs_maxW_1440 * 7 + $gutter_abs_maxW_1440 * 6 );
+                        margin-left: calc( $column_abs_maxW_1440 * 5 + $gutter_abs_maxW_1440 * 4 );
                     }
 
                     @media(max-width: 768px) {

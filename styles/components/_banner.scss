@@ -6,11 +6,44 @@
         align-items: flex-start;
         justify-content: space-between;
 
+        @media(max-width: 768px) {
+           flex-direction: column;
+        }
+
         & > .image {
             flex: 0 0 auto;
             width: calc( $column_abs * 7 + $gutter_abs * 6 );
             border-radius: 0 14px;
             overflow: hidden;
+            
+            @media(max-width: 1600px) {
+                width: calc( $column_abs_maxW_1600 * 7 + $gutter_abs_maxW_1600 * 6 );
+                
+            }
+
+            @media(max-width: 1440px) {
+                width: calc( $column_abs_maxW_1440 * 7 + $gutter_abs_maxW_1440 * 6 );
+     
+            }
+
+            @media(max-width: 1280px) {
+                width: calc( $column_abs_maxW_1280 * 7 + $gutter_abs_maxW_1280 * 6 );
+     
+            }
+
+            @media(max-width: 1024px) {
+                width: calc( $column_abs_maxW_1024 * 6 + $gutter_abs_maxW_1024 * 5 );
+     
+            }
+
+            @media(max-width: 768px) {
+                width: calc( $column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3 );
+                
+            }
+
+            @media(max-width: 480px) {
+                width: calc( $column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3 );
+            }
         }
         & > .text {
             flex: 0 0 auto;
@@ -25,6 +58,41 @@
             border-radius: 14px 0;
             z-index: 1;
             padding: 24px;
+
+            @media(max-width: 1600px) {
+                width: calc( $column_abs_maxW_1600 * 6 + $gutter_abs_maxW_1600 * 6 );
+                margin-left: calc($column_abs_maxW_1600 * -1);
+                
+            }
+
+            @media(max-width: 1440px) {
+                width: calc( $column_abs_maxW_1440 * 6 + $gutter_abs_maxW_1440 * 6 );
+                margin-left: calc($column_abs_maxW_1440 * -1);
+     
+            }
+
+            @media(max-width: 1280px) {
+                width: calc( $column_abs_maxW_1280 * 6 + $gutter_abs_maxW_1280 * 6 );
+                margin-left: calc($column_abs_maxW_1280 * -1);
+     
+            }
+
+            @media(max-width: 1024px) {
+                width: calc( $column_abs_maxW_1024 * 6 + $gutter_abs_maxW_1024 * 5 );
+                margin-left: calc($column_abs_maxW_1024 * -5);
+     
+            }
+
+            @media(max-width: 768px) {
+                width: calc( $column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3 );
+                margin-left: calc($column_abs_maxW_1024 * 0);
+                margin-top: -50px;
+                
+            }
+
+            @media(max-width: 480px) {
+                width: calc( $column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3 );
+            }
 
             & > h3 {
                 @include font_lead($font-family, $clr_main2);

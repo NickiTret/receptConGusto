@@ -5,3 +5,4 @@ import './components/fuetures.js';
 import './components/grid.js';
 import './components/aside_image.js';
 import './components/header.js';
+import './components/share.js';

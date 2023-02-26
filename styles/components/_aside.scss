@@ -3,6 +3,10 @@
     padding-bottom: 0;
     margin-bottom: 30px;
 
+    @media (max-width: 1024px) {
+        display: none;
+    }
+
     &>aside {
         box-sizing: border-box;
         flex: 0 0 auto;

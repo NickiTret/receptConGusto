@@ -4,7 +4,7 @@
         @if (!empty($banner))
         <div class="image">
             <picture>
-                <img src="{{$data->image}}" alt="{{$data->title}}">
+                <img src="/{{$data->image}}" alt="{{$data->title}}">
             </picture>
            </div>
            <div class="text">
@@ -21,6 +21,7 @@
            </div>
            <div class="text">
             <h2>{{$category_item->title}}</h2>
+            <p>{!! $category_item->descr !!}</p>
            </div>
         @endif
 

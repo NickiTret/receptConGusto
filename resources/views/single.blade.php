@@ -55,6 +55,16 @@
                     </div>
                 </section>
             @endif
+            <div class="share">
+                <span>+</span>
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/yash.khare.982?ref=bookmarks"><i class=" fa fa-facebook "></i>Вконтакте</a></li>
+                    <li><a href="https://www.instagram.com/yashkhare_211/"><i class="fa fa-instagram "></i>Telegramm</a></li>
+        
+                    <li><a href="https://github.com/YashKhare143"><i class="fa fa-github "></i>WatSup</a></li>
+                </ul>
+            </div>
         </main>
         @include('Main.footer', ['headers' => $headers])
     </div>

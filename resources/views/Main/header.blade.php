@@ -16,7 +16,9 @@
       </nav>
       <form class="search" method="GET" action="{{ route('search') }}">
         <input required name="s" type="text" placeholder="Поиск по рецептам" class="search-input @error('s') is-invalid @enderror " />
-        <button type="submit">Поиск</button>
+        <button type="submit">
+          <img src="/content/icons/search.svg" alt="icon-search">
+        </button>
       </form>
       <div class="log-box">
         @if ( !empty(Auth::user()))

@@ -16,12 +16,37 @@
             & > ul {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-                grid-template-columns: repeat(3, 1fr);
+                // grid-template-columns: repeat(3, 1fr);
                 gap: calc($gutter_abs * 1);
 
-                & > li {
-                    width: calc( $column_abs * 3 + $gutter_abs * 2 );
+                @media (max-width: 1600px) {
+                    gap: calc($gutter_abs_maxW_1600 * 1);
+                }
+  
+                  @media (max-width: 1440px) {
+                    gap: calc($gutter_abs_maxW_1440 * 1);
+                  }
+  
+                  @media (max-width: 1280px) {
+                    gap: calc($gutter_abs_maxW_1280 * 1);
+                }
 
+                @media (max-width: 1024px) {
+                    gap: calc($gutter_abs_maxW_1024 * 1);
+                    grid-template-columns: repeat(3, 1fr);
+                }
+  
+                  @media (max-width: 768px) {
+                    gap: calc($gutter_abs_maxW_768 * 1);
+                    grid-template-columns: repeat(1, 1fr);
+                  }
+  
+                  @media (max-width: 480px) {
+                    gap: calc($gutter_abs_maxW_768 * 1);
+                  }
+
+                & > li {
+    
                     & > a {
                         display: flex;
                         flex-direction: column;
@@ -35,6 +60,7 @@
                             border-radius: 14px 0 14px 0;
                             filter: blur(0.5px);
                             transition: all 0.2s ease-in-out;
+                            flex: 0 0 auto;
                         }
                         & > p {
                             @include font_lead($font-family, $clr_main);

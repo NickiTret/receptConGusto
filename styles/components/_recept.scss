@@ -19,6 +19,8 @@
             border: none;
             padding: 14px 0;
 
+            flex-wrap: wrap;
+
             & > li {
                 @include font_small($font-family, $clr_text);
                 display: flex;
