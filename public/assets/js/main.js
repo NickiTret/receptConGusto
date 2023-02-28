@@ -18633,6 +18633,7 @@ module.exports = JSON.parse('{"w_1920":{"full_width":1920,"content_width":1768,"
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/fuetures.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/grid.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/header.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/share.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/simple.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/slider_hero.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/functions/burger.js")))

@@ -68,7 +68,7 @@ class IndexController extends Controller
         // $banner = Banner::where('page', 'Категории')->firstOrFail();
         $headers = Header::all();
         $category_item = Category::find($id);
-        $category_item->descr = "В этом разделе вы найдете блюда из “{$category_item->title}”";
+        $category_item->descr = "В этом разделе вы найдете блюда из категории “{$category_item->title}”";
         $posts = Post::where('category_id', $id)->get();
         return view('category-item', compact( 'headers', 'posts', 'category_item'));
     }
