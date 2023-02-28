@@ -7,7 +7,9 @@
                     @foreach ($data as $item)
                         <li>
                             <a href="{{ route('category_item', $item->id) }}">
-                                <img src="/{{ $item->image }}" alt="{{ $item->title }}">
+                                <div>
+                                    <img src="/{{ $item->image }}" alt="{{ $item->title }}">
+                                </div>
                                 <p>{{ $item->title }}</p>
                             </a>
                         </li>

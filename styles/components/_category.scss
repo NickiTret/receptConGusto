@@ -55,25 +55,29 @@
                         overflow: hidden;
                         flex: 0 0 auto;
                         
-
-                        & > img {
-                            border-radius: 14px 0 14px 0;
-                            filter: blur(0.5px);
-                            transition: all 0.2s ease-in-out;
-                            flex: 0 0 auto;
-                            object-fit: contain;
-                            width: 100%;
-                            height: 150px;
+                        & > div {
+                            & > img {
+                                border-radius: 14px 0 14px 0;
+                                filter: blur(0.5px);
+                                transition: all 0.2s ease-in-out;
+                                flex: 0 0 auto;
+                                object-fit: cover;
+                                height: 250px;
+                            }
                         }
+                        
                         & > p {
                             @include font_lead($font-family, $clr_main);
                             margin: 14px 0;
                         }
                         &:hover {
-                            & > img {
-                                border-radius: 0 14px;
-                                filter: blur(0px);
+                            & > div {
+                                & > img {
+                                    border-radius: 0 14px;
+                                    filter: blur(0px);
+                                }
                             }
+                            
                         }
                     }
                 }
