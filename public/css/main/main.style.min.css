@@ -1396,6 +1396,11 @@ section {
   overflow: hidden;
   flex: 0 0 auto;
 }
+.category > .container > .content > ul > li > a > div {
+  max-height: 229px;
+  overflow: hidden;
+  border-radius: 14px 0 14px 0;
+}
 .category > .container > .content > ul > li > a > div > img {
   border-radius: 14px 0 14px 0;
   filter: blur(0.5px);
