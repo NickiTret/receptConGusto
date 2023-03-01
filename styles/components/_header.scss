@@ -135,7 +135,7 @@
             &>li {
               margin-bottom: 28px;
               &>a {
-                @include main_btn($font-family, $clr_main2);
+                @include main_btn($font-family, $clr_white);
               }
             }
           }
