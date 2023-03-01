@@ -1442,13 +1442,13 @@ section {
 }
 @media (max-width: 768px) {
   .category > .container > .content > ul {
-    gap: 7.0422535211%;
+    gap: 14px;
     grid-template-columns: repeat(1, 1fr);
   }
 }
 @media (max-width: 480px) {
   .category > .container > .content > ul {
-    gap: 7.0422535211%;
+    gap: 14px;
   }
 }
 .category > .container > .content > ul > li > a {
