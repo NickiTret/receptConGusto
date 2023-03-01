@@ -5,7 +5,7 @@
     <meta name="theme-color" content="#111111">
     <title>Con gusto</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <link href="{{ asset('css/main/main.style.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main/main.style.min.css') }}?01" rel="stylesheet">
     <noscript>
       <style>
         /**
