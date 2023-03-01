@@ -55,6 +55,12 @@ ul {
   padding-top: 67px;
 }
 
+@media (max-width: 768px) {
+  .site-container {
+    padding-top: 59px;
+  }
+}
+
 .is-hidden {
   display: none !important; /* stylelint-disable-line declaration-no-important */
 }

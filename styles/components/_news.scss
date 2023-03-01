@@ -49,6 +49,10 @@
                     position: relative;
                     z-index: 2;
                     width: 70%;
+
+                    @media(max-width: 768px) {
+                        width: 100%;
+                    }
                 }
 
                 &>h2 {
@@ -59,6 +63,10 @@
                     position: relative;
                     z-index: 2;
                     width: 70%;
+
+                    @media(max-width: 768px) {
+                        width: 100%;
+                    }
                 }
 
                 & > ul {
@@ -66,6 +74,7 @@
                     position: relative;
                     display: flex;
                     align-items: center;
+                    flex-wrap: wrap;
                     gap: 24px;
 
                     & > li {

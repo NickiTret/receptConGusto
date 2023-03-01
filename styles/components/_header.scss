@@ -89,6 +89,8 @@
       gap: 24px;
       transition: transform 0.3s ease-in-out;
 
+      overflow: auto;
+
       @media(max-width: 768px) {
         position: absolute;
         transform: translateY(-200%);
@@ -124,12 +126,16 @@
 
           transform: translateY(0%);
 
-          & ul> {
+          & > ul {
             @include font_lead($font-family, $clr_main);
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
 
             &>li {
+              margin-bottom: 28px;
               &>a {
-                color: $clr_main2;
+                @include main_btn($font-family, $clr_main2);
               }
             }
           }
