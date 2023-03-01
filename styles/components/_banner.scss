@@ -44,6 +44,12 @@
             @media(max-width: 480px) {
                 width: calc( $column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3 );
             }
+
+            & img {
+                width: 100%;
+                -o-object-fit: cover;
+                object-fit: cover;
+            }
         }
         & > .text {
             flex: 0 0 auto;

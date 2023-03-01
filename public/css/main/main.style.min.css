@@ -2051,6 +2051,11 @@ section {
     width: 100%;
   }
 }
+.banner > .container > .image img {
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
 .banner > .container > .text {
   flex: 0 0 auto;
   background-color: #E4E6F1;
