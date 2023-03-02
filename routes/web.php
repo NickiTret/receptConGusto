@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\NewController;
 use App\Http\Controllers\Admin\FastController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\FeaturesController;
+use App\Http\Controllers\Admin\HatController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Index\IndexController;
 
@@ -27,6 +28,8 @@ Route::get('/category/{id}', [IndexController::class, 'category_item'])->name('c
 
 Route::get('/search', [IndexController::class, 'search'])->name('search');
 
+Route::get('/about', [IndexController::class, 'about'])->name('about');
+
 
 Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/', [MainController::class, 'index'])->name('admin.index');
@@ -39,6 +42,7 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::resource('/fasts', FastController::class);
     Route::resource('/banners', BannerController::class);
     Route::resource('/features', FeaturesController::class);
+    Route::resource('/hat', HatController::class);
 });
 
 

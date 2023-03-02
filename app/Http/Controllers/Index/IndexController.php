@@ -85,4 +85,11 @@ class IndexController extends Controller
         return view('search', compact('posts', 's', 'headers', 'currentURL'));
     }
 
+    public function about() {
+        $headers = Header::all();
+
+
+        return view('about', compact('headers'));
+    }
+
 }

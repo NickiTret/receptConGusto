@@ -251,6 +251,29 @@
                         </ul>
                     </li>
                     <li class="nav-item has-treeview">
+                        <a href="{{ route('hat.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Заголовки
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('hat.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Список заголовков</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('hat.create') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Создание заголовок</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
                         <a href="{{ route('admin.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
