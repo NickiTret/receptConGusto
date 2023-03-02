@@ -47,6 +47,7 @@
                                     </ul>
                                 </li>
                             @endif
+                            {{ dd($tags); }}
                         </ul>
                     </div>
                 </section>

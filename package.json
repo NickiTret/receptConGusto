@@ -21,6 +21,7 @@
         "svg-sprite-loader": "^6.0.11"
     },
     "dependencies": {
+        "gsap": "^3.11.4",
         "inputmask": "^5.0.7",
         "just-validate": "^4.1.0",
         "resize-observer-polyfill": "^1.5.1",

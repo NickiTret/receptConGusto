@@ -1,0 +1,57 @@
+.error-page {
+    background: $clr_main;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: "Exo 2", sans-serif;
+
+    & .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+        padding: 1rem 3rem;
+        position: relative;
+
+        & > div {
+          margin-top: 50px;
+          & > a {
+            @include main_btn($font-family, $clr_text);
+            z-index: 99;
+          }
+        }
+      }
+      
+      & .circle {
+        height: 300px;
+        width: 300px;
+        border-radius: 100%;
+        background: white;
+        position: absolute;
+      }
+      
+      & h1 {
+        color: $clr_main;
+        font-size: 100px;
+        z-index: 99;
+        margin: 0;
+      }
+      & h2 {
+        color: $clr_main;
+        font-size: 60px;
+        z-index: 99;
+        margin: 0;
+        text-align: center;
+      }
+}
+
+
+
+
