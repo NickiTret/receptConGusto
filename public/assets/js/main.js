@@ -24794,6 +24794,7 @@ module.exports = JSON.parse('{"w_1920":{"full_width":1920,"content_width":1768,"
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/_functions.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/_vars.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/_vendor.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/404.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/aside_image.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/dropdown.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/ex.js")))
