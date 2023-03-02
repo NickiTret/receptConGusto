@@ -1,0 +1,80 @@
+.hat {
+    @include grid();
+    display: flex;
+    align-items: center;
+    gap: calc($gutter_abs * 1); 
+
+    @media (max-width: 1600px) {
+        gap: calc($gutter_abs_maxW_1600 * 1); 
+    }
+
+    @media (max-width: 1440px) {
+        gap: calc($gutter_abs_maxW_1440 * 1); 
+    }
+
+    @media (max-width: 1280px) {
+        gap: calc($gutter_abs_maxW_1280 * 1); 
+    }
+
+    @media (max-width: 1024px) {
+        gap: calc($gutter_abs_maxW_1024 * 1); 
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    @media (max-width: 768px) {
+        gap: calc($gutter_abs_maxW_768 * 1); 
+    }
+    & > .image {
+        width: calc( $column_abs * 3 + $gutter_abs * 2 );
+        height: calc( $column_abs * 3 + $gutter_abs * 2 );
+        overflow: hidden;
+        border: 2px solid $clr_grey2;
+        border-radius: 0 14px 0 14px;
+        flex: 0 0 auto;
+
+        @media (max-width: 1600px) {
+            width: calc( $column_abs_maxW_1600 * 3 + $gutter_abs_maxW_1600 * 2 );
+            height: calc( $column_abs_maxW_1600 * 3 + $gutter_abs_maxW_1600 * 2 ); 
+        }
+    
+        @media (max-width: 1440px) {
+            width: calc( $column_abs_maxW_1440 * 3 + $gutter_abs_maxW_1440 * 2 );
+            height: calc( $column_abs_maxW_1440 * 3 + $gutter_abs_maxW_1440 * 2 );
+        }
+    
+        @media (max-width: 1280px) {
+            width: calc( $column_abs_maxW_1280 * 3 + $gutter_abs_maxW_1280 * 2 );
+            height: calc( $column_abs_maxW_1280 * 3 + $gutter_abs_maxW_1280 * 2 );
+        }
+    
+        @media (max-width: 1024px) {
+            width: calc( $column_abs_maxW_1024 * 4 + $gutter_abs_maxW_1024 * 3 );
+            height: calc( $column_abs_maxW_1024 * 4 + $gutter_abs_maxW_1024 * 3 );
+        }
+    
+        @media (max-width: 768px) {
+            width: calc( $column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3 );
+            height: calc( $column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3 );
+        }
+
+        & img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    & > .content {
+        width: 100%;
+        flex: 0 0 auto;
+        & > h1 {
+            @include font_h1($font-family, $clr_text);
+            margin-bottom: 12px;
+        }
+
+        & > h3 {
+            @include font_lead($font-family, $clr_text);
+            text-transform: uppercase;
+        }
+    }
+}

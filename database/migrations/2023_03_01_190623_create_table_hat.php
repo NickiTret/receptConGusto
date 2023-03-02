@@ -15,7 +15,7 @@ class CreateTableHat extends Migration
     {
         Schema::create('table_hat', function (Blueprint $table) {
             $table->id();
-            $table->string('page-name');
+            $table->string('page_name');
             $table->string('title');
             $table->string('content')->nullable();
             $table->string('image')->nullable();

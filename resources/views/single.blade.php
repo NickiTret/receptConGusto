@@ -30,17 +30,14 @@
                             @if (!empty($post->views))
                                 <li>Просмотров: <span>{{ $post->views }}</span> </li>
                             @endif
-
-
                             <li>Создание: <span>{{ $post->created_at->format('d F, Y год. Время: H:i') }}</span> </li>
-                            @if (!empty($categories))
+                            @if (!empty($post->category_id))
                                 <li>Категория: <span>
-                                        @foreach ($categories as $item)
-                                            {{ $item }}
-                                        @endforeach
+                                       
+                                            {{ $category->title }}
+                                      
                                     </span> </li>
                             @endif
-
                             @if (!empty($tags))
                                 <li>Теги:
                                     <ul>
@@ -50,7 +47,6 @@
                                     </ul>
                                 </li>
                             @endif
-
                         </ul>
                     </div>
                 </section>
@@ -58,11 +54,8 @@
             <div class="share">
                 <span>+</span>
                 <ul>
-                    <li>
-                        <a href="https://www.facebook.com/yash.khare.982?ref=bookmarks"><i class=" fa fa-facebook "></i>Вконтакте</a></li>
-                    <li><a href="https://www.instagram.com/yashkhare_211/"><i class="fa fa-instagram "></i>Telegramm</a></li>
-        
-                    <li><a href="https://github.com/YashKhare143"><i class="fa fa-github "></i>WatSup</a></li>
+                    <li><a href="https://vkontakte.ru/share.php?url={{ url()->current() }}"><i class=" fa fa-facebook "></i>Вконтакте</a></li>
+                    <li><a href="https://telegram.me/share/url?url={{ url()->current() }}"><i class="fa fa-instagram "></i>Telegramm</a></li>
                 </ul>
             </div>
         </main>

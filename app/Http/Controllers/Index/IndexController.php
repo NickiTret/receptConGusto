@@ -13,6 +13,7 @@ use App\Models\Hero;
 use App\Models\Fast;
 use App\Models\Feat;
 use App\Models\Banner;
+use App\Models\Hat;
 
 class IndexController extends Controller
 {
@@ -41,8 +42,9 @@ class IndexController extends Controller
         $post->views += 1;
         $post->update();
         $categories = Category::pluck('title', 'id')->all();
+        $category = Category::where('id', $post->category_id)->first();
         $tags = Tag::pluck('title', 'id')->all();
-        return view('single', compact( 'headers','post', 'tags', 'categories', 'fasts', 'posts'));
+        return view('single', compact( 'headers','post', 'tags', 'categories', 'category', 'fasts', 'posts'));
     }
 
     public function fast($id)
@@ -87,9 +89,10 @@ class IndexController extends Controller
 
     public function about() {
         $headers = Header::all();
+        $hat = Hat::where('page_name', 'О сайте')->first();
 
 
-        return view('about', compact('headers'));
+        return view('about', compact('headers', 'hat'));
     }
 
 }

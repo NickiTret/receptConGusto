@@ -1373,6 +1373,188 @@ section {
   opacity: 1;
 }
 
+.hat {
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: calc((100% - 1496px) / 2);
+  padding-left: calc((100% - 1496px) / 2);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+@media (max-width: 1600px) {
+  .hat {
+    padding-right: 116px;
+    padding-left: 116px;
+  }
+}
+@media (max-width: 1440px) {
+  .hat {
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+}
+@media (max-width: 1280px) {
+  .hat {
+    padding-right: 44px;
+    padding-left: 44px;
+  }
+}
+@media (max-width: 1024px) {
+  .hat {
+    padding-right: 44px;
+    padding-left: 44px;
+  }
+}
+@media (max-width: 768px) {
+  .hat {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+}
+@media (max-width: 1600px) {
+  .hat {
+    gap: 3.3112582781%;
+  }
+}
+@media (max-width: 1440px) {
+  .hat {
+    gap: 2.8571428571%;
+  }
+}
+@media (max-width: 1280px) {
+  .hat {
+    gap: 2.5641025641%;
+  }
+}
+@media (max-width: 1024px) {
+  .hat {
+    gap: 3.5294117647%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 768px) {
+  .hat {
+    gap: 7.0422535211%;
+  }
+}
+.hat > .image {
+  width: 344px;
+  height: 344px;
+  overflow: hidden;
+  border: 2px solid #b8b9c4;
+  border-radius: 0 14px 0 14px;
+  flex: 0 0 auto;
+}
+@media (max-width: 1600px) {
+  .hat > .image {
+    width: 22.5165562914%;
+    height: 22.5165562914%;
+  }
+}
+@media (max-width: 1440px) {
+  .hat > .image {
+    width: 22.8571428571%;
+    height: 22.8571428571%;
+  }
+}
+@media (max-width: 1280px) {
+  .hat > .image {
+    width: 23.0769230769%;
+    height: 23.0769230769%;
+  }
+}
+@media (max-width: 1024px) {
+  .hat > .image {
+    width: 48.2352941176%;
+    height: 48.2352941176%;
+  }
+}
+@media (max-width: 768px) {
+  .hat > .image {
+    width: 100%;
+    height: 100%;
+  }
+}
+.hat > .image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hat > .content {
+  width: 100%;
+  flex: 0 0 auto;
+}
+.hat > .content > h1 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 57px;
+  line-height: 120%;
+  color: #1F3347;
+  margin-bottom: 12px;
+}
+@media (max-width: 1600px) {
+  .hat > .content > h1 {
+    font-size: 57px;
+  }
+}
+@media (max-width: 1440px) {
+  .hat > .content > h1 {
+    font-size: 46px;
+  }
+}
+@media (max-width: 1280px) {
+  .hat > .content > h1 {
+    font-size: 46px;
+  }
+}
+@media (max-width: 1024px) {
+  .hat > .content > h1 {
+    font-size: 38px;
+  }
+}
+@media (max-width: 768px) {
+  .hat > .content > h1 {
+    font-size: 38px;
+  }
+}
+.hat > .content > h3 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 139%;
+  color: #1F3347;
+  text-transform: uppercase;
+}
+@media (max-width: 1600px) {
+  .hat > .content > h3 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1440px) {
+  .hat > .content > h3 {
+    font-size: 22px;
+  }
+}
+@media (max-width: 1280px) {
+  .hat > .content > h3 {
+    font-size: 22px;
+  }
+}
+@media (max-width: 1024px) {
+  .hat > .content > h3 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .hat > .content > h3 {
+    font-size: 18px;
+  }
+}
+
 .category > .container h2 {
   font-family: "Source Sans Pro", sans-serif;
   font-style: normal;

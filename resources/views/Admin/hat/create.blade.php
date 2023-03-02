@@ -23,7 +23,7 @@
                         <label for="page_name">Страница заголовка</label>
                         <select name="page_name" id="page_name" class="form-control">
                             @foreach ($pages as $k => $v)
-                                <option value="{{ $k }}">{{ $v }}</option>
+                                <option value="{{ $v->title }}">{{ $v->title }}</option>
                             @endforeach
 
                         </select>

@@ -7,7 +7,6 @@
     @include('Main.header', ['headers' => $headers])
     <div class="site-container">
         <main>
-
             @if (!empty($banner))
                 @include('Component.banner', ['data' => $banner])
             @endif
