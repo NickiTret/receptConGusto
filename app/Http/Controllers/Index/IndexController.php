@@ -65,6 +65,17 @@ class IndexController extends Controller
         return view('category', compact( 'headers', 'categories', 'banner', 'fasts'));
     }
 
+    public function tag($id)
+    {
+        $hat = Hat::where('page_name', 'Тег')->first();
+        $fasts = Fast::all();
+        $tag = Tag::where('id', $id)->firstOrFail();
+        $posts = $tag->posts()->orderBy('id', 'desc')->paginate(50);
+        $banner = Banner::where('page', 'Тег')->first();
+        $headers = Header::all();
+        return view('tags', compact( 'headers','tag','hat', 'posts', 'banner', 'fasts'));
+    }
+
     public function category_item($id)
     {
         // $banner = Banner::where('page', 'Категории')->firstOrFail();

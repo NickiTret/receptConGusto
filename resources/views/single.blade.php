@@ -38,11 +38,11 @@
                                       
                                     </span> </li>
                             @endif
-                            @if (!empty($tags))
+                            @if ($post->tags->count())
                                 <li>Теги:
                                     <ul>
-                                        @foreach ($tags as $tag)
-                                            <li>{{ $tag }}</li>
+                                        @foreach ($post->tags as $tag)
+                                            <li> <a href="{{ route('tags.single', ['id' => $tag->id]) }}">{{ $tag->title }}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>

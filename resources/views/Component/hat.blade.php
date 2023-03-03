@@ -1,13 +1,23 @@
-@if (!empty($hat))
+@if (!empty($data))
 <section class="hat">
+    @if (!empty($data->image))
     <div class="image">
         <picture>
-            <img src="/{{$hat->image}}" alt="logo">
+            <img src="/{{$data->image}}" alt="logo">
         </picture>
     </div>
+    @endif
+
     <div class="content">
-        <h1>{{$hat->title}}</h1>
-        <h3>{!! $hat->content !!}</h3>
+        @if (!empty($data->title))
+        <h1>{{$data->title}}</h1>
+        @else
+        <h1>Поиск по параметрам</h1>
+        @endif
+        
+        @if (!empty($data->content))
+        <h3>{!! $data->content !!}</h3>
+        @endif
     </div>
 </section>
 @endif
