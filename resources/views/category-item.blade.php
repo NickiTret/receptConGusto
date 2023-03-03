@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
 
-@include('Main.head')
+@include('Main.head', ['data' => $category_item])
 
 <body class="page__body">
     @include('Main.header', ['headers' => $headers])
