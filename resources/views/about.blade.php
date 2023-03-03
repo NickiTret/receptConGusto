@@ -7,7 +7,7 @@
     @include('Main.header', ['headers' => $headers])
     <div class="site-container">
         <main>
-            @include('Component.hat', ['hat' => $hat])    
+            @include('Component.hat', ['data' => $hat])    
         </main>
         @include('Main.footer', ['headers' => $headers])
     </div>
