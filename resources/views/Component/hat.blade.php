@@ -3,7 +3,7 @@
     @if (!empty($data->image))
     <div class="image">
         <picture>
-            <img src="/{{$data->image}}" alt="logo">
+            <img src="/{{$data->image}}" alt="{{$data->title}}">
         </picture>
     </div>
     @endif

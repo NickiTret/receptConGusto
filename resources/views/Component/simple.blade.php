@@ -8,7 +8,7 @@
                 @foreach ($fasts as $item)
                 <li>
                     <a href="{{  route('fast',  $item->id) }}">
-                        <img src="{{ $item->image }}" alt="{{ $item->title }}">
+                        <img src="/{{ $item->image }}" alt="{{ $item->title }}">
                         <p>Всего &mdash; <span>за 5 минут</span></p>
                         <p class="text">{{ $item->title }}</p>
                     </a>
