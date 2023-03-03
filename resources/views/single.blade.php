@@ -38,7 +38,7 @@
                                       
                                     </span> </li>
                             @endif
-                            @if ($post->tags->count())
+                            @if (!empty($post->tags))
                                 <li>Теги:
                                     <ul>
                                         @foreach ($post->tags as $tag)
