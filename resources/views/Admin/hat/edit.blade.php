@@ -23,11 +23,12 @@
 
 
                     <div class="form-group">
-                        <label for="page_name">Страница</label>
-                        <select class="form-control @error('page_name') is-invalid @enderror" id="page_name" name="page_name">
-                            @foreach($pages as $k => $v)
-                                <option value="{{ $k->title }}" @if($k == $hat->page_name) selected @endif>{{ $v->title }}</option>
+                        <label for="page_name">Страница заголовка</label>
+                        <select name="page_name" id="page_name" class="form-control">
+                            @foreach ($pages as $k => $v)
+                                <option value="{{ $v->title }}">{{ $v->title }}</option>
                             @endforeach
+
                         </select>
                     </div>
 
