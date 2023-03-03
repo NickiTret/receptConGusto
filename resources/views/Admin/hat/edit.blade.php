@@ -34,7 +34,7 @@
 
                     <div class="form-group">
                         <label for="content">Контент</label>
-                        <textarea name="content" class="form-control @error('content') is-invalid @enderror" id="content" rows="7">{{ $hat->content }}</textarea>
+                        <input name="content" class="form-control @error('content') is-invalid @enderror" id="content" />{{ $hat->content }}
                     </div>
 
                     <div class="form-group">
