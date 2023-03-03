@@ -67,12 +67,12 @@ class FastController extends Controller
 
 
 
-        $fats = Fast::find($id);
+        $fast = Fast::find($id);
         $data = $request->all();
 
-        $data['image'] = Fast::uploadImage($request, $fats->image);
+        $data['image'] = Fast::uploadImage($request, $fast->image);
 
-        $fats->update($data);
+        $fast->update($data);
 
         return redirect()->route('fasts.index')->with('success', 'Изменения сохранены');
     }

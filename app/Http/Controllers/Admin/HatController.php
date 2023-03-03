@@ -64,16 +64,16 @@ class HatController extends Controller
 
         $data['image'] = Hat::uploadImage($request, $hat->image);
 
-        $feat->update($data);
+        $hat->update($data);
 
         return redirect()->route('hat.index')->with('success', 'Заголовок сохранен');
     }
 
     public function destroy($id)
     {
-       $feat = Feat::find($id);
-       Storage::delete($feat->image);
-       $feat->delete();
+       $hat = Hat::find($id);
+       Storage::delete($hat->image);
+       $hat->delete();
        return redirect()->route('hat.index')->with('success', 'Заголовок удален');
     }
 }
