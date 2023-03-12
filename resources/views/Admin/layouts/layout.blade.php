@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="{{ asset('assets/admin/css/admin.css') }}" rel="stylesheet">
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    {{-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> --}}
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -347,11 +347,15 @@
 <!-- jQuery -->
 <script src="{{ asset('assets/js/admin.js') }}"></script>
 
-
 <script>
      //Initialize Select2 Elements
      $('.select2').select2()
-
+     if ($('.redactor')) {
+        $('.redactor').summernote()
+     }
+     if ($('.redactor2')) {
+        $('.redactor2').summernote()
+     }
     $('.nav-sidebar').each(function (){
         let location = window.location.protocol + '//' + window.location.host + window.location.pathname;
 

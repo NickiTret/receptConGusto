@@ -35,7 +35,7 @@
 
                     <div class="form-group">
                         <label for="content">Цитата</label>
-                        <textarea name="content" id="content" class="form-control @error('content') is-invalid @enderror" rows="5" placeholder="Описание"></textarea>
+                        <textarea name="content" id="content" class="redactor form-control @error('content') is-invalid @enderror" rows="5" placeholder="Описание"></textarea>
                     </div>
 
                     <div class="form-group">
@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer">   
+                <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Сохранить</button>
                 </div>
             </form>

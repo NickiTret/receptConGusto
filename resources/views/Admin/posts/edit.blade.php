@@ -23,12 +23,12 @@
 
                     <div class="form-group">
                         <label for="description">Цитата</label>
-                        <textarea name="description" class="form-control @error('description') is-invalid @enderror" id="description" rows="3">{{ $post->description }}</textarea>
+                        <textarea name="description" class="redactor form-control @error('description') is-invalid @enderror" id="description" rows="3">{{ $post->description }}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="content">Контент</label>
-                        <textarea name="content" class="form-control @error('content') is-invalid @enderror" id="content" rows="7">{{ $post->content }}</textarea>
+                        <textarea name="content" class="redactor2 form-control @error('content') is-invalid @enderror" id="content" rows="7">{{ $post->content }}</textarea>
                     </div>
 
                     <div class="form-group">

@@ -23,12 +23,12 @@
 
                     <div class="form-group">
                         <label for="description">Описание</label>
-                        <textarea name="description" class="form-control @error('description') is-invalid @enderror" id="description" rows="3">{{ $hero->description }}</textarea>
+                        <textarea name="description" class="redactor form-control @error('description') is-invalid @enderror" id="description" rows="3">{{ $hero->description }}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="link">Ссылка</label>
-                        <input name="link" class="form-control @error('link') is-invalid @enderror" id="link" rows="7" value="{{ $hero->content }}">  
+                        <input name="link" class="form-control @error('link') is-invalid @enderror" id="link" rows="7" value="{{ $hero->content }}">
                     </div>
 
 

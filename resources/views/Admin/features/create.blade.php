@@ -21,7 +21,7 @@
 
                     <div class="form-group">
                         <label for="content">Контент</label>
-                        <textarea name="content" id="content" class="form-control @error('content') is-invalid @enderror" rows="10" placeholder="Контент"></textarea>
+                        <textarea name="content" id="content" class="redactor form-control @error('content') is-invalid @enderror" rows="10" placeholder="Контент"></textarea>
                     </div>
 
                     <div class="form-group">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer">   
+                <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Сохранить</button>
                 </div>
             </form>

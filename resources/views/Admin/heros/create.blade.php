@@ -20,7 +20,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Описание записи</label>
-                        <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" rows="5" placeholder="Описание"></textarea>
+                        <textarea name="description" id="description" class="redactor form-control @error('description') is-invalid @enderror" rows="5" placeholder="Описание"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="link">Ссылка</label>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer">   
+                <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Сохранить</button>
                 </div>
             </form>

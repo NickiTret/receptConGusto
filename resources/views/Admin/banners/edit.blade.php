@@ -39,7 +39,7 @@
 
                     <div class="form-group">
                         <label for="content">Цитата</label>
-                        <textarea name="content" class="form-control @error('content') is-invalid @enderror" id="content"
+                        <textarea name="content" class="redactor form-control @error('content') is-invalid @enderror" id="content"
                             rows="3">{{ $banner->content }}</textarea>
                     </div>
 

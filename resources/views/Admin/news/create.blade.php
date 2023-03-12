@@ -29,12 +29,12 @@
 
                     <div class="form-group">
                         <label for="description">Цитата</label>
-                        <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" rows="5" placeholder="Описание"></textarea>
+                        <textarea name="description" id="description" class="redactor form-control @error('description') is-invalid @enderror" rows="5" placeholder="Описание"></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="content">Контент</label>
-                        <textarea name="content" id="content" class="form-control @error('content') is-invalid @enderror" rows="10" placeholder="Контент"></textarea>
+                        <textarea name="content" id="content" class="redactor2 form-control @error('content') is-invalid @enderror" rows="10" placeholder="Контент"></textarea>
                     </div>
 
                     <div class="form-group">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer">   
+                <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Сохранить</button>
                 </div>
             </form>
