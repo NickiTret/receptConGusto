@@ -119,12 +119,12 @@
       &.menu--active {
         @media(max-width: 768px) {
           flex-direction: column;
-          background-color: $clr_bg;
+          background-color: rgba($color: $clr_bg, $alpha: 0.7);
           top: -1px;
           left: -1px;
           padding: 24px;
-
           transform: translateY(0%);
+          width: 85%;
 
           & > ul {
             @include font_lead($font-family, $clr_main);

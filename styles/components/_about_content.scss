@@ -1,0 +1,48 @@
+.about_content {
+    @include grid();
+
+    & > h2 {
+        @include font_h2($font-family, $clr_text);
+        white-space: nowrap;
+        flex: 0 0 auto;
+        margin-bottom: 16px;
+    }
+
+    & > .container {
+        width: calc( $column_abs * 6 + $gutter_abs * 5 );
+        padding: 0;
+        @media (max-width: 1600px) {
+            width: calc( $column_abs_maxW_1600 * 6 + $gutter_abs_maxW_1600 * 5 );
+        }
+
+        @media (max-width: 1440px) {
+            width: calc( $column_abs_maxW_1440 * 6 + $gutter_abs_maxW_1440 * 5 );
+        }
+
+        @media (max-width: 1280px) {
+            width: calc( $column_abs_maxW_1280 * 6 + $gutter_abs_maxW_1280 * 5 );
+        }
+
+        @media (max-width: 1024px) {
+            width: calc( $column_abs_maxW_1024 * 6 + $gutter_abs_maxW_1024 * 5 );
+        }
+
+        @media (max-width: 768px) {
+            width: calc( $column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3 );
+        }
+        & > p {
+            @include font_p1($font-family, $clr_text);
+            margin-bottom: 12px;
+
+
+        & > a {
+            color: $clr_main;
+            &:hover {
+                color: $clr_yellow;
+            }
+        }
+        }
+    }
+
+
+}
