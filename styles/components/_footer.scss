@@ -6,18 +6,40 @@
         align-items: center;
         justify-content: space-between;
         gap: 20px;
+
+        @media(max-width: 768px) {
+            flex-wrap: wrap;
+        }
         & > .left-box {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
             @include font_p1($font-family, $clr_white);
+
+            & a {
+                transition: all 0.2s ease-in;
+                color: $clr_yellow;
+
+                &:hover {
+                    color: $clr_white;
+                    text-decoration: underline;
+                }
+            }
+            @media(max-width: 768px) {
+                order: 2;
+            }
         }
         & > nav {
+            @media(max-width: 768px) {
+                order: 1;
+            }
             & > ul {
                 display: flex;
                 align-items: center;
                 gap: 14px;
+
+
                 & > li {
                     & > a {
                         @include font_lead($font-family, $clr_bg);

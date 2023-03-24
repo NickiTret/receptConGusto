@@ -4,7 +4,8 @@
         <a href="/" class="">
           Con Gusto
         </a>
-        <p>© Copyright 2023 | NICKWEB</p>
+        <p>© Copyright 2023 | <a href="http://infonickweb.ru/" target="_blank">NICKWEB</a>
+        </p>
       </div>
       <nav>
         <ul>
@@ -12,11 +13,10 @@
           <li>
             <a href=" {{  $header_item->link }}">{{ $header_item->title }}</a>
           </li>
-          @endforeach                      
+          @endforeach
         </ul>
       </div>
     </div>
   </footer>
 
   <script type="module" src="{{ asset('assets/js/main.js') }}"></script>
-  

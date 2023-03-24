@@ -375,7 +375,7 @@ section {
 }
 @media (max-width: 768px) {
   .header > .container > nav > ul {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .header > .container > nav > ul > li > a {
@@ -427,7 +427,7 @@ section {
 }
 @media (max-width: 768px) and (max-width: 768px) {
   .header > .container > nav.menu--active > ul {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 @media (max-width: 768px) {
@@ -612,7 +612,7 @@ section {
 }
 @media (max-width: 768px) {
   .aside > aside > h3 {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .aside > aside > ul {
@@ -655,7 +655,7 @@ section {
 }
 @media (max-width: 768px) {
   .aside > aside > ul > li a > h4 {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .aside > aside > ul > li a > .disabled {
@@ -687,6 +687,11 @@ section {
   justify-content: space-between;
   gap: 20px;
 }
+@media (max-width: 768px) {
+  .footer > .container {
+    flex-wrap: wrap;
+  }
+}
 .footer > .container > .left-box {
   display: flex;
   flex-direction: column;
@@ -707,6 +712,24 @@ section {
 @media (max-width: 768px) {
   .footer > .container > .left-box {
     font-size: 16px;
+  }
+}
+.footer > .container > .left-box a {
+  transition: all 0.2s ease-in;
+  color: #FFC814;
+}
+.footer > .container > .left-box a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .footer > .container > .left-box {
+    order: 2;
+  }
+}
+@media (max-width: 768px) {
+  .footer > .container > nav {
+    order: 1;
   }
 }
 .footer > .container > nav > ul {
@@ -745,7 +768,7 @@ section {
 }
 @media (max-width: 768px) {
   .footer > .container > nav > ul > li > a {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .footer > .container > nav > ul > li > a:hover {
@@ -912,7 +935,7 @@ section {
 }
 @media (max-width: 768px) {
   .first-screen .swiper > ul li > div.text > div {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .first-screen .swiper > ul li > div.text > a {
@@ -1111,7 +1134,7 @@ section {
 }
 @media (max-width: 768px) {
   .hits > .container > ul > li > a h3 {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .hits > .container > ul > li > a > div.scroll {
@@ -1551,7 +1574,7 @@ section {
 }
 @media (max-width: 768px) {
   .hat > .content > h3 {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 
@@ -1686,7 +1709,7 @@ section {
 }
 @media (max-width: 768px) {
   .category > .container > .content > ul > li > a > p {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .category > .container > .content > ul > li > a:hover > div > img {
@@ -1825,7 +1848,7 @@ section {
 }
 @media (max-width: 768px) {
   .recept-day > .container > .content > .content-text > p {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .recept-day > .container > .content > .content-text > a {
@@ -2043,7 +2066,7 @@ section {
 }
 @media (max-width: 768px) {
   .recept > .container > .content > ul {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .recept > .container > .content > ol {
@@ -2082,7 +2105,7 @@ section {
 }
 @media (max-width: 768px) {
   .recept > .container > .content > ol {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .recept > .container > .content > a, .recept > .container > .content > p a {
@@ -2389,7 +2412,7 @@ section {
 }
 @media (max-width: 768px) {
   .banner > .container > .text > h3 {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .banner > .container > .text > h2 {
@@ -2575,7 +2598,7 @@ section {
 }
 @media (max-width: 768px) {
   .news > .container > .content-box > .content-header > h2 {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 @media (max-width: 768px) {
@@ -2769,7 +2792,7 @@ h2 {
 }
 @media (max-width: 768px) {
   .text > p {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 
