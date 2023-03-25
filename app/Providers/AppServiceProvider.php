@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Header;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+         view()->composer(['Main.footer','Main.header'], function($view) {
+            $view->with('headers', Header::all());
+         });
     }
 }

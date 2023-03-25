@@ -17,7 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 0;
+    padding: 7px 0;
 
     @media(max-width: 768px) {
       justify-content: flex-start;
@@ -26,6 +26,7 @@
     &>a.logo {
       @include font_h2($font-family, $clr_white);
       margin-right: 52px;
+      white-space: nowrap;
 
       @media(max-width: 768px) {
         order: 1;
@@ -39,13 +40,13 @@
       align-items: center;
       filter: drop-shadow(0px 0px 5px #6a6a6a75);
       margin-left: auto;
-      margin-right: 50px;
+      margin-right: 12px;
 
       &>input {
         color: #777;
         background: transparent;
         border: none;
-        font-size: calc(50px / 2.5);
+        font-size: calc(30px / 2.5);
         width: 0;
         height: 50px;
         transition: 0.75s width;
@@ -65,12 +66,16 @@
       &>button {
         cursor: pointer;
         color: #3880ff;
-        width: 80px;
+        width: 45px;
         height: 50px;
         border: none;
         font-size: calc(50px / 3);
         background-color: transparent;
         border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       &::placeholder {
@@ -99,7 +104,7 @@
       }
 
       &>ul {
-        @include font_lead($font-family, $clr_white);
+        @include font_p1($font-family, $clr_white);
 
         display: flex;
         align-items: center;
@@ -144,7 +149,70 @@
     }
 
     &>.log-box {
-      color: $clr_white;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: $clr_white;
+
+        & > .login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            & > svg {
+                width: 20px;
+                height: 20px;
+                flex:  0 0 auto;
+                & path {
+                    fill: $clr_white;
+                }
+            }
+        }
+
+        & > button {
+            position: relative;
+            & > .counter {
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                background-color: $clr_bg2;
+                font-size: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                top: -6px;
+                right: -4px;
+            }
+        }
+
+      & > button svg
+      {
+        width: 18px;
+        height: 18px;
+        & > path {
+            fill: $clr_white;
+        }
+      }
+
+      & > a {
+        height: 18px;
+
+        &:hover {
+            & > svg > path {
+                fill: $clr_white;
+            }
+        }
+      }
+
+      & > a svg
+      {
+        width: 18px;
+        height: 18px;
+        & > path {
+            fill: $clr_white;
+        }
+      }
 
       @media(max-width: 768px) {
         order: 2;

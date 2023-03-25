@@ -4,7 +4,7 @@
 @include('Main.head')
 
 <body class="page__body">
-    @include('Main.header', ['headers' => $headers])
+    @include('Main.header')
     <div class="site-container">
         <main>
             @if ($banner)
@@ -20,7 +20,7 @@
             @endif
 
         </main>
-        @include('Main.footer', ['headers' => $headers])
+        @include('Main.footer')
     </div>
 </body>
 

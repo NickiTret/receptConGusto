@@ -4,7 +4,7 @@
 @include('Main.head', ['data' => $tag])
 
 <body class="page__body">
-    @include('Main.header', ['headers' => $headers])
+    @include('Main.header')
     <div class="site-container">
         <main>
             @if (!empty($hat))
@@ -22,7 +22,7 @@
             @include('Component.simple', ['fasts' => $fasts])
         @endif
         </main>
-        @include('Main.footer', ['headers' => $headers])
+        @include('Main.footer')
     </div>
 </body>
 

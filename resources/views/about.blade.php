@@ -4,7 +4,7 @@
 @include('Main.head', ['data' => $hat])
 
 <body class="page__body">
-    @include('Main.header', ['headers' => $headers])
+    @include('Main.header')
     <div class="site-container">
         <main>
             @include('Component.hat', ['data' => $hat])
@@ -31,7 +31,7 @@
                 </div>
             </section>
         </main>
-        @include('Main.footer', ['headers' => $headers])
+        @include('Main.footer')
     </div>
 </body>
 

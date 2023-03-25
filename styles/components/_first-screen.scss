@@ -63,7 +63,7 @@
                         @include font_h1($font-family, $clr_main);
                         margin-bottom: 32px;
                     }
-    
+
                     &>div {
                         @include font_lead($font-family, $clr_text);
                         @include font_italic();

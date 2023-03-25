@@ -8,7 +8,7 @@
                     </picture>
                     <div class="text">
                         <h1>{{ $item->title }}</h1>
-                        <div>{!! $item->description !!}</div>
+                        {{-- <div>{!! $item->description !!}</div> --}}
                     </div>
                     {{-- <a class="btn" href="{{$item->link}}">Перейти</a> --}}
                 </li>

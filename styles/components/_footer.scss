@@ -12,7 +12,8 @@
         }
         & > .left-box {
             display: flex;
-            flex-direction: column;
+            // flex-direction: column;
+            gap: 12px;
             align-items: flex-start;
             justify-content: flex-start;
             @include font_p1($font-family, $clr_white);
@@ -42,7 +43,7 @@
 
                 & > li {
                     & > a {
-                        @include font_lead($font-family, $clr_bg);
+                        @include font_small($font-family, $clr_bg);
                         transition: color 0.3 ease-in-out;
                         &:hover {
                             color: $clr_main2;

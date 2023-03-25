@@ -4,7 +4,7 @@
 @include('Main.head')
 
 <body class="page__body">
-    @include('Main.header', ['headers' => $headers])
+    @include('Main.header')
     <div class="site-container">
         <main>
             @if (!empty($heros))
@@ -32,7 +32,7 @@
                 @include('Component.hits', ['posts' => $posts, 'url' => $currentURL])
             @endif
         </main>
-        @include('Main.footer', ['headers' => $headers])
+        @include('Main.footer')
     </div>
 </body>
 
