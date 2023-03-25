@@ -1,10 +1,7 @@
 <footer class="footer">
     <div class="container">
       <div class="left-box">
-        <a href="/" class="">
-          Con Gusto
-        </a>
-        <p>© Copyright 2023 | Разработка сайта - <a href="http://infonickweb.ru/" target="_blank">NICKWEB</a>
+        <p>Разработка сайта - <a href="http://infonickweb.ru/" target="_blank">NICKWEB</a>
         </p>
       </div>
       <nav>
