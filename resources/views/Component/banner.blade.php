@@ -11,7 +11,7 @@
             <h3>{{$data->subtitle}}</h3>
             <h2>{{$data->title}}</h2>
             <p>{!! $data->content !!}</p>
-                <a href="{{$data->btn_link}}">{{$data->btn_name}}</a>
+                {{-- <a href="{{$data->btn_link}}">{{$data->btn_name}}</a> --}}
            </div>
         @else
         <div class="image">
