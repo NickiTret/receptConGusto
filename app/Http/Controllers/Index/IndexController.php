@@ -23,9 +23,8 @@ class IndexController extends Controller
         $currentURL = url()->full();
         $fasts = Fast::all();
         $heros = Hero::all();
-        // $headers = Header::all();
         $random = Post::all()->random();
-        $posts = Post::all();
+        $posts = Post::inRandomOrder()->limit(4)->get();
         $features = Feat::all();
         $categories = Category::pluck('title', 'id')->all();
         $tags = Tag::pluck('title', 'id')->all();
@@ -35,7 +34,6 @@ class IndexController extends Controller
     public function show($id)
     {
 
-        // $headers = Header::all();
         $fasts = Fast::all();
         $post = Post::where('id', $id)->firstOrFail();
         $posts = Post::where('category_id', $post->category_id)->limit(5)->get();
@@ -49,7 +47,6 @@ class IndexController extends Controller
 
     public function fast($id)
     {
-        // $headers = Header::all();
 
         $post = fast::where('id', $id)->first();
 
@@ -60,8 +57,7 @@ class IndexController extends Controller
     {
         $fasts = Fast::all();
         $banner = Banner::where('page', 'Категории')->firstOrFail();
-        // $headers = Header::all();
-        $categories = Category::all();
+        $categories = Category::orderBy('title')->get();
         return view('category', compact(  'categories', 'banner', 'fasts'));
     }
 
@@ -72,14 +68,12 @@ class IndexController extends Controller
         $tag = Tag::where('id', $id)->firstOrFail();
         $posts = $tag->posts()->orderBy('id', 'desc')->paginate(50);
         $banner = Banner::where('page', 'Тег')->first();
-        // $headers = Header::all();
         return view('tags', compact( 'tag','hat', 'posts', 'banner', 'fasts'));
     }
 
     public function category_item($id)
     {
         // $banner = Banner::where('page', 'Категории')->firstOrFail();
-        // $headers = Header::all();
         $category_item = Category::find($id);
         $category_item->descr = "В этом разделе вы найдете блюда из категории “{$category_item->title}”";
         $posts = Post::where('category_id', $id)->get();
@@ -92,14 +86,12 @@ class IndexController extends Controller
         ]);
         $currentURL = url()->full();
         $s = $request->s;
-        // $headers = Header::all();
         $posts = Post::where('title', 'LIKE', "%{$s}%")->with('category')->paginate(20);
 
         return view('search', compact('posts', 's',  'currentURL'));
     }
 
     public function about() {
-        // $headers = Header::all();
         $hat = Hat::where('page_name', 'О сайте')->first();
 
 

@@ -14,7 +14,7 @@
         & > .content-set {
             list-style-type: none;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             flex-wrap: wrap;
             gap: 7px;
             border: none;
@@ -25,7 +25,7 @@
             & > li {
                 @include font_small($font-family, $clr_text);
                 display: flex;
-
+                align-items: center;
                 & > ul {
                     border: none;
                     padding: 0;

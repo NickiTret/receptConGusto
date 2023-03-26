@@ -30,7 +30,7 @@
                             @if (!empty($post->views))
                                 <li>Просмотров: <span>{{ $post->views }}</span> </li>
                             @endif
-                            <li>Создание: <span>{{ $post->created_at->format('d F, Y год. Время: H:i') }}</span> </li>
+                            <li>Создание: <span>{{ $post->created_at->format('d.m.Y') }}</span> </li>
                             @if (!empty($post->category_id))
                                 <li>Категория: <span>
 

@@ -5,14 +5,16 @@
             <ul>
                 @if (!empty($data))
                     @foreach ($data as $item)
-                        <li>
-                            <a href="{{ route('category_item', $item->id) }}">
-                                <div>
-                                    <img src="/{{ $item->image }}" alt="{{ $item->title }}">
-                                </div>
-                                <p>{{ $item->title }}</p>
-                            </a>
-                        </li>
+                        @if ($item->posts->count() > 0)
+                            <li>
+                                <a href="{{ route('category_item', $item->id) }}">
+                                    <div>
+                                        <img src="/{{ $item->image }}" alt="{{ $item->title }}">
+                                    </div>
+                                    <p>{{ $item->title }}</p>
+                                </a>
+                            </li>
+                        @endif
                     @endforeach
                 @endif
             </ul>

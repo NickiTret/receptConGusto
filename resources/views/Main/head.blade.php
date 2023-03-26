@@ -1,4 +1,4 @@
-<head>
+<head lang="ru">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -7,6 +7,8 @@
     </title>
     @if (!empty($data->description))
     <meta name="description" content="{{ $data->description }}">
+    @elseif (!empty($data->title))
+    <meta name="description" content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно {{ $data->title }}">
     @endif
     <link href="node_modules/ilyabirman-likely/release/likely.css" rel="stylesheet">
     <!-- End of body -->

@@ -16,7 +16,7 @@
                     {!! $data->description !!}
                 </h2>
                 <ul>
-                    <li>Дата публикации: <span>{{ $data->created_at->format('d F, Y год. Время: H:i') }}</span></li>
+                    <li>Дата публикации: <span>{{ $data->created_at->format('d.m.Y') }}</span></li>
                     @if (!empty($data->views))
                     <li>Просмотрели: <span>{{ $data->views }}</span></li>
                     @endif
