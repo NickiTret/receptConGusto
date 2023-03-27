@@ -1,10 +1,10 @@
-<header class="header">
+<header data-aos="fade-down" data-aos-duration="1000" class="header">
     <div class="container">
         <a href="/" class="logo">Con Gusto</a>
         <button type="button" class="burger" aria-label="Открыть меню" aria-expended='false' data-burger>
             <span class="burger__line"></span>
         </button>
-        <nav title="Главное меню" data-menu>
+        <nav data-aos="slide-up" data-aos-duration="1200" title="Главное меню" data-menu>
             <ul class="reset-list">
                 @foreach ($headers as $header_item)
                     <li>

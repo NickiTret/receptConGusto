@@ -1,8 +1,8 @@
-<section class="recept-day">
-    <div class="container">
+<section  class="recept-day">
+    <div data-aos="fade-up" class="container">
         <h2>Случайный рецепт</h2>
         <div class="content">
-            <div class="image">
+            <div class="image" >
                 <picture>
                     <img src="{{ $random->thumbnail }}" alt="{{ $random->title }}">
                 </picture>
@@ -12,7 +12,9 @@
                     <p>
                         {!! $random->description !!}
                     </p>
-                    <a href="{{  route('single',  $random->id) }}">Перейти</a>
+                    <a href="{{  route('single',  $random->id) }}">
+                        Перейти
+                    </a>
             </div>
         </div>
     </div>

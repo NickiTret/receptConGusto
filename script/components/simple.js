@@ -3,6 +3,7 @@ import likely from "ilyabirman-likely";
 
 // import 'simplebar';
 
+
 const scrollElements = Array.from(document.querySelectorAll(".scroll"));
 
 if (scrollElements) {
@@ -32,3 +33,5 @@ if (search) {
 }
 
 likely.initiate();
+
+

@@ -7,7 +7,7 @@
         @if (!empty($posts))
         <ul>
             @foreach ($posts as $post)
-            <li>
+            <li data-aos="flip-left" data-aos-duration="300" data-aos-delay="{{ $post->id * 50 }}">
                 <a href="{{  route('single',  $post->id) }}">
                     <img src="/{{$post->thumbnail}}" alt="{{$post->title}}">
                     <div class="top">

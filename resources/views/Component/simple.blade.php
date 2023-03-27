@@ -1,5 +1,5 @@
 <section class="simple">
-    <div class="container">
+    <div data-aos="slide-right" data-aos-duration="1500" class="container">
         @if (!empty($fasts))
         <h2>Быстро</h2>
         @endif
