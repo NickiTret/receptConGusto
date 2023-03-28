@@ -4,7 +4,7 @@
         <button type="button" class="burger" aria-label="Открыть меню" aria-expended='false' data-burger>
             <span class="burger__line"></span>
         </button>
-        <nav data-aos="slide-up" data-aos-duration="1200" title="Главное меню" data-menu>
+        <nav title="Главное меню" data-menu>
             <ul class="reset-list">
                 @foreach ($headers as $header_item)
                     <li>
