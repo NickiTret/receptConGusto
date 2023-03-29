@@ -3,6 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#111111">
+    <meta name="yandex-verification" content="3519ed7046470147" />
     <title>Con gusto @if (!empty($data))
             - {{ $data->title }}
         @endif
