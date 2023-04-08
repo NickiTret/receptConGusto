@@ -66,4 +66,15 @@
             @endif
         </div>
     </div>
+    <div class="container">
+        <ul class="list-reset category-list">
+            @foreach ($categories_menu as $item)
+                @if ($item->posts->count())
+                    <li class="category-list__item">
+                        <a href="{{ route('category_item', $item->id) }}">{{ $item->title }}</a>
+                    </li>
+                @endif
+            @endforeach
+         </ul>
+    </div>
 </header>

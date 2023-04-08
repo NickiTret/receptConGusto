@@ -22,7 +22,7 @@ class IndexController extends Controller
     {
         $currentURL = url()->full();
         $fasts = Fast::all();
-        $heros = Hero::all();
+        $heros = Hero::latest()->get();
         $random = Post::all()->random();
         $posts = Post::inRandomOrder()->limit(4)->get();
         $features = Feat::all();

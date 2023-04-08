@@ -148,6 +148,41 @@
       }
     }
 
+    @media(max-width:665px) {
+
+      &:last-child {
+        display: none;
+      }
+    }
+
+    & > ul.category-list {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 24px;
+      width: 100%;
+
+      @media(max-width:665px) {
+        display: none;
+      }
+
+      & > li {
+        padding-right: 24px;
+
+        &:not(:last-child) {
+          border-right: 1px solid $clr_main2;
+        }
+
+        & > a {
+          @include font_lead($font-family, $clr_white);
+
+          &:hover {
+            color: $clr_yellow;
+          }
+        }
+      }
+    }
+
     &>.log-box {
         display: flex;
         align-items: center;
