@@ -54,7 +54,7 @@
                         <label for="thumbnail">Изображение</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" value="{{ $post->thumbnail }}" name="thumbnail" id="thumbnail"
+                                <input type="file" value="{{ $post->getImage() }}" name="thumbnail" id="thumbnail"
                                        class="custom-file-input">
                                 <label class="custom-file-label" for="thumbnail">Choose file</label>
                             </div>
