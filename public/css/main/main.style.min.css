@@ -899,7 +899,7 @@ section {
   font-weight: 600;
   font-size: 57px;
   line-height: 120%;
-  color: #1B75BB;
+  color: #1F3347;
   margin-bottom: 32px;
 }
 @media (max-width: 1600px) {
@@ -933,8 +933,9 @@ section {
   font-weight: 500;
   font-size: 24px;
   line-height: 139%;
-  color: #1F3347;
+  color: #1B75BB;
   font-style: italic;
+  margin-bottom: 20px;
 }
 @media (max-width: 1600px) {
   .first-screen .swiper > ul li > div.text > div {
@@ -977,6 +978,37 @@ section {
   background-color: #ffffff;
   color: #1B75BB;
   border: 1px solid #1B75BB;
+}
+@media (max-width: 480px) {
+  .first-screen .swiper > ul li > div.text > a {
+    display: block;
+    margin-left: auto;
+    text-align: center;
+  }
+}
+.first-screen .swiper > ul li > div.text.text__left {
+  margin-left: 216px;
+}
+@media (max-width: 1600px) {
+  .first-screen .swiper > ul li > div.text.text__left {
+    margin-left: 13.9072847682%;
+  }
+}
+@media (max-width: 1440px) {
+  .first-screen .swiper > ul li > div.text.text__left {
+    margin-left: 14.2857142857%;
+  }
+}
+@media (max-width: 768px) {
+  .first-screen .swiper > ul li > div.text.text__left {
+    margin-left: 19.7183098592%;
+  }
+}
+@media (max-width: 480px) {
+  .first-screen .swiper > ul li > div.text.text__left {
+    margin-left: 0%;
+    margin: 0 auto;
+  }
 }
 
 .hits > .container > h2 {

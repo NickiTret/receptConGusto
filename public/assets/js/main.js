@@ -52,15 +52,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions/mobile-check */ "./script/functions/mobile-check.js");
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_0__);
 // Данный файл - лишь собрание подключений готовых компонентов.
 // Рекомендуется создавать отдельный файл в папке components и подключать все там
 
 // Определение операционной системы на мобильных
-
-console.log((0,_functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__.mobileCheck)());
 
 // Определение ширины экрана
 // import { isMobile, isTablet, isDesktop } from './functions/check-viewport';
@@ -115,7 +112,7 @@ console.log((0,_functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__.mobileCheck)
 
 // Подключение анимаций по скроллу
 
-aos__WEBPACK_IMPORTED_MODULE_1___default().init();
+aos__WEBPACK_IMPORTED_MODULE_0___default().init();
 
 // Подключение параллакса блоков при скролле
 // import Rellax from 'rellax';
@@ -285,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function () {
   \*********************************/
 /***/ (() => {
 
-console.log('components');
+
 
 /***/ }),
 
@@ -517,29 +514,27 @@ __webpack_require__.r(__webpack_exports__);
 // import Swiper bundle with all modules installed
 
 
-// import styles bundle
-
-var sliderHero = document.querySelector('.slider-hero');
+var sliderHero = document.querySelector(".slider-hero");
 if (sliderHero) {
-  var sliderItem = sliderHero.querySelectorAll('.slide');
+  var sliderItem = sliderHero.querySelectorAll(".swiper-slide");
   if (sliderItem.length > 1) {
-    // init Swiper:
     var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](sliderHero, {
-      // Optional parameters
-      direction: 'horizontal',
+      effect: "coverflow",
+      coverflowEffect: {
+        rotate: 180,
+        slideShadows: false
+      },
+      direction: "horizontal",
       loop: true,
-      // If we need pagination
+      autoplay: {
+        delay: 15000
+      },
       pagination: {
-        el: '.swiper-pagination'
+        el: ".swiper-pagination"
       },
-      // Navigation arrows
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      // And if we need scrollbar
-      scrollbar: {
-        el: '.swiper-scrollbar'
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
       }
     });
   }

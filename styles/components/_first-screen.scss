@@ -60,19 +60,48 @@
 
 
                     &>h1 {
-                        @include font_h1($font-family, $clr_main);
+                        @include font_h1($font-family, $clr_text);
                         margin-bottom: 32px;
                     }
 
                     &>div {
-                        @include font_lead($font-family, $clr_text);
+                        @include font_lead($font-family, $clr_main);
                         @include font_italic();
+                        margin-bottom: 20px;
 
                     }
 
                     &>a {
                         @include main_btn($font-family, $clr_white);
                         display: inline-block;
+
+
+                        @media (max-width: 480px) {
+                            display: block;
+                            margin-left: auto;
+                            text-align: center;
+                        }
+                    }
+
+
+                    &.text__left {
+                        margin-left: calc( $column_abs * 2 + $gutter_abs * 1 );
+                        @media(max-width: 1600px) {
+                            margin-left: calc( $column_abs_maxW_1600 * 2 + $gutter_abs_maxW_1600 * 1 );
+                        }
+
+                        @media(max-width: 1440px) {
+                            margin-left: calc( $column_abs_maxW_1440 * 2 + $gutter_abs_maxW_1440 * 1 );
+                        }
+
+                        @media(max-width: 768px) {
+                            margin-left: calc( $column_abs_maxW_768 * 1 + $gutter_abs_maxW_768 * 0 );
+                        }
+
+                        @media(max-width: 480px) {
+                            margin-left: calc( $column_abs_maxW_768 * 0 + $gutter_abs_maxW_768 * 0 );
+                            margin: 0 auto;
+                        }
                     }
                 }
             }
