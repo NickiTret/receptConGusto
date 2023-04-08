@@ -13,7 +13,11 @@
     @elseif (!empty($data->title))
         <meta name="description"
             content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно {{ $data->title }}">
+    @elseif (!empty($heros) || !empty($categories))
+        <meta name="description"
+            content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно">
     @endif
+    <link rel="icon" href="{{ asset('assets/favicon.svg') }}">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="{{ asset('css/main/main.style.min.css') }}?01" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
