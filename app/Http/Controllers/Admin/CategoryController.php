@@ -29,11 +29,12 @@ class CategoryController extends Controller
 
         $request->validate([
             'title' => 'required',
+            'description' => 'nullable',
             'image' => 'nullable|image',
-            
+
 
         ]);
-        
+
         $data = $request->all();
 
         $data['image'] = Category::uploadImage($request);
@@ -57,8 +58,9 @@ class CategoryController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'description' => 'nullable',
             'image' => 'nullable|image',
-            
+
         ]);
 
 

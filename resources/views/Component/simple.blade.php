@@ -6,6 +6,7 @@
         <div class="scroll" data-simplebar>
             <ul>
                 @foreach ($fasts as $item)
+
                 <li>
                     <a href="{{  route('fast',  $item->id) }}">
                         <img src="/{{ $item->image }}" alt="{{ $item->title }}">

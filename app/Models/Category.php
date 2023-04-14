@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-    
+
 use Illuminate\Support\Facades\Storage;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,7 +12,7 @@ class Category extends Model
 {
     use Sluggable;
 
-    protected $fillable = ['title', 'image',];
+    protected $fillable = ['title', 'description', 'image'];
 
     public function posts() {
         return $this->hasMany(Post::class);
@@ -45,7 +45,7 @@ class Category extends Model
 
     public function getImage()
     {
-        if(!$this->image) 
+        if(!$this->image)
         {
             return asset("assets/admin/img/no-image.jpeg");
         }

@@ -8,7 +8,7 @@
     <div class="site-container">
         <main>
             @if (!empty($heros))
-                @include('Component.first__screen', ['heros' => $heros])
+                @include('Component.first__screen', ['heros' => $heros, 'fasts' => $fasts, 'pasha' => $pasha, 'allPosts' => $allPosts])
             @endif
 
             @if (!empty($features))

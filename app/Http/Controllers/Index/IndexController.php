@@ -25,10 +25,12 @@ class IndexController extends Controller
         $heros = Hero::latest()->get();
         $random = Post::all()->random();
         $posts = Post::inRandomOrder()->limit(4)->get();
+        $allPosts = Post::all();
         $features = Feat::all();
         $categories = Category::pluck('title', 'id')->all();
         $tags = Tag::pluck('title', 'id')->all();
-        return view('welcome', compact(  'categories', 'tags', 'random' , 'posts',  'heros', 'fasts', 'currentURL', 'features'));
+        $pasha = Post::where('category_id', 9)->get();
+        return view('welcome', compact(  'categories', 'tags', 'random' , 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'features', 'pasha'));
     }
 
     public function show($id)
@@ -93,8 +95,6 @@ class IndexController extends Controller
 
     public function about() {
         $hat = Hat::where('page_name', 'О сайте')->first();
-
-
         return view('about', compact( 'hat'));
     }
 

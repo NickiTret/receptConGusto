@@ -9,11 +9,11 @@ if (sliderHero) {
 
     if (sliderItem.length > 1) {
         const swiper = new Swiper(sliderHero, {
-            effect: "coverflow",
-            coverflowEffect: {
-                rotate: 180,
-                slideShadows: false,
-            },
+            // effect: "coverflow",
+            // coverflowEffect: {
+            //     rotate: 180,
+            //     slideShadows: false,
+            // },
             direction: "horizontal",
             loop: true,
             autoplay: {

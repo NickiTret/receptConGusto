@@ -519,11 +519,11 @@ if (sliderHero) {
   var sliderItem = sliderHero.querySelectorAll(".swiper-slide");
   if (sliderItem.length > 1) {
     var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](sliderHero, {
-      effect: "coverflow",
-      coverflowEffect: {
-        rotate: 180,
-        slideShadows: false
-      },
+      // effect: "coverflow",
+      // coverflowEffect: {
+      //     rotate: 180,
+      //     slideShadows: false,
+      // },
       direction: "horizontal",
       loop: true,
       autoplay: {

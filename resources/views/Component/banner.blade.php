@@ -21,9 +21,12 @@
            </div>
            <div class="text">
             <h2>{{$category_item->title}}</h2>
+            @if(!empty($category_item->description)) {
+                <p>{!! $category_item->description !!}</p>
+            }
+            @endif
             <p>{!! $category_item->descr !!}</p>
            </div>
         @endif
-
     </div>
   </section>

@@ -32,6 +32,10 @@
                         <input type="text" name="title" class="form-control @error('title' ) is-invalid @enderror" id="title" value="{{ $category->title }}" >
                     </div>
                     <div class="form-group">
+                        <label for="description">Описание</label>
+                        <input type="text" name="description" class="form-control @error('description' ) is-invalid @enderror" id="description" value="{{ $category->description }}" >
+                    </div>
+                    <div class="form-group">
                         <label for="image">Изображение</label>
                         <div class="input-group">
                             <div class="custom-file">
