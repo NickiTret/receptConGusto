@@ -5,14 +5,14 @@
     <meta name="theme-color" content="#111111">
     <meta name="yandex-verification" content="3519ed7046470147" />
     <title>Con gusto @if (!empty($data))
-            - {{ $data->title }}
+            - {!! $data->title !!}
         @endif
     </title>
     @if (!empty($data->description))
-        <meta name="description" content="{{ $data->description }}">
+        <meta name="description" content="{!! $data->description !!}">
     @elseif (!empty($data->title))
         <meta name="description"
-            content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно {{ $data->title }}">
+            content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно {!! $data->title !!}">
     @elseif (!empty($heros) || !empty($categories))
         <meta name="description"
             content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно">
