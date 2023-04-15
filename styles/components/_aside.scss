@@ -1,4 +1,6 @@
 .aside {
+    position: sticky;
+    top: 0;
     padding-top: 0;
     padding-bottom: 0;
     margin-bottom: 30px;
@@ -8,8 +10,7 @@
     }
 
     &>aside {
-        position: sticky;
-        top: 0;
+
         box-sizing: border-box;
         flex: 0 0 auto;
         background-color: $clr_white;
