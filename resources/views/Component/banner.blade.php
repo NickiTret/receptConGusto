@@ -10,7 +10,7 @@
            <div class="text">
             <h3>{{$data->subtitle}}</h3>
             <h2>{{$data->title}}</h2>
-            <p>{!! $data->content !!}</p>
+            <p>{{ strip_tags($data->content) }}</p>
                 {{-- <a href="{{$data->btn_link}}">{{$data->btn_name}}</a> --}}
            </div>
         @else
@@ -25,7 +25,7 @@
                 <p>{{ strip_tags( $category_item->description) }}</p>
             }
             @endif
-            <p>{!! $category_item->descr !!}</p>
+            <p>{{ strip_tags($category_item->descr) }}</p>
            </div>
         @endif
     </div>
