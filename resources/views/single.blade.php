@@ -53,6 +53,14 @@
                     </div>
                 </section>
             @endif
+            @if (!empty($posts))
+            <section>
+                <div class="container">
+                    <h2> Другие рецепты </h2>
+                </div>
+            </section>
+                @include('Component.hits', ['posts' => $posts, 'url' => $currentURL])
+            @endif
             <div class="share">
                 <span>
                     <svg data-name="Livello 1" id="Livello_1" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">

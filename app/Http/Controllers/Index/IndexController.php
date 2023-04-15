@@ -24,7 +24,7 @@ class IndexController extends Controller
         $fasts = Fast::all();
         $heros = Hero::latest()->get();
         $random = Post::all()->random();
-        $posts = Post::inRandomOrder()->limit(4)->get();
+        $posts = Post::orderBy('views', 'desc')->limit(4)->get();
         $allPosts = Post::all();
         $features = Feat::all();
         $categories = Category::pluck('title', 'id')->all();
@@ -36,6 +36,7 @@ class IndexController extends Controller
     public function show($id)
     {
 
+        $currentURL = url()->full();
         $fasts = Fast::all();
         $post = Post::where('id', $id)->firstOrFail();
         $posts = Post::where('category_id', $post->category_id)->limit(5)->get();
@@ -44,7 +45,7 @@ class IndexController extends Controller
         $categories = Category::pluck('title', 'id')->all();
         $category = Category::where('id', $post->category_id)->first();
         $tags = Tag::pluck('title', 'id')->all();
-        return view('single', compact( 'post', 'tags', 'categories', 'category', 'fasts', 'posts'));
+        return view('single', compact( 'post', 'tags', 'categories', 'category', 'fasts', 'posts', 'currentURL'));
     }
 
     public function fast($id)
