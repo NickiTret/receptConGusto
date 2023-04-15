@@ -2740,6 +2740,7 @@ section {
 .banner > .container > .image {
   flex: 0 0 auto;
   width: 856px;
+  max-height: 450px;
   border-radius: 0 14px;
   overflow: hidden;
 }
