@@ -21,9 +21,8 @@
            </div>
            <div class="text">
             <h2>{{$category_item->title}}</h2>
-            @if(!empty($category_item->description)) {
+            @if(!empty($category_item->description))
                 <p>{{ strip_tags( $category_item->description) }}</p>
-            }
             @endif
             <p>{{ strip_tags($category_item->descr) }}</p>
            </div>
