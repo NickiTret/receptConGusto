@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
     {
          view()->composer(['Main.footer','Main.header'], function($view) {
             $view->with('headers', Header::all());
-            $view->with('categories_menu', Category::orderBy('title')->get());
+            $view->with('categories_menu', Category::orderBy('title')->where('title', '!=', 'Пасха')->get());
          });
     }
 }
