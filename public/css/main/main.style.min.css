@@ -3473,6 +3473,7 @@ h2 {
   border-radius: 50%;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  z-index: 2;
 }
 
 .share > span {
