@@ -19,8 +19,7 @@
         height: 100%;
 
         & > ul {
-            width: calc($column_abs * 12 + $gutter_abs * 11);
-
+            width: 100%;
 
             @media (max-width: 1280px) {
                 width: 100%;
@@ -44,6 +43,8 @@
 
                     object-fit: cover;
                     height: 100vh;
+
+                    transform: rotate(180deg);
 
                     @media (max-width: 768px) {
                         min-height: calc(100vh);

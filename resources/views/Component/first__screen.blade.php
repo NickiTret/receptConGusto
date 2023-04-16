@@ -9,8 +9,9 @@
                     <div class="text text__left">
                         <h1>{{ $item->title }}</h1>
                         <div>{!! $item->description !!}</div>
+                        <div>Последние рецепты</div>
                         <ul class="text-list">
-                            @foreach ($pasha as $item)
+                            @foreach ($lastPost as $item)
                             <li class="text-list__item">
                                 <a href="{{  route('single',  $item->id) }}">
                                     <img src="/{{ $item->thumbnail }}" alt="{{ $item->title }}">

@@ -29,8 +29,8 @@ class IndexController extends Controller
         $features = Feat::all();
         $categories = Category::pluck('title', 'id')->all();
         $tags = Tag::pluck('title', 'id')->all();
-        $pasha = Post::where('category_id', 9)->get();
-        return view('welcome', compact(  'categories', 'tags', 'random' , 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'features', 'pasha'));
+        $lastPost = Post::orderBy('created_at', 'desc')->limit(4)->get();
+        return view('welcome', compact(  'categories', 'tags', 'random' , 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'features', 'lastPost'));
     }
 
     public function show($id)
