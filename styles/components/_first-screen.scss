@@ -8,7 +8,7 @@
     margin: 0 -18px;
 
 
-    @media (max-width: 1280px) {
+    @media (max-width: 1600px) {
         min-height: calc(100vh);
         height: auto;
     }
@@ -60,6 +60,11 @@
                     height: 100vh;
 
                     transform: rotate(180deg);
+
+                    @media (max-width: 1600px) {
+                        width: auto;
+                        height: 100%;
+                    }
 
                     @media (max-width: 768px) {
                         min-height: calc(100vh);

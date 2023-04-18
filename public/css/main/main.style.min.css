@@ -882,7 +882,7 @@ section {
   height: calc(100vh - 66px);
   margin: 0 -18px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1600px) {
   .first-screen {
     min-height: 100vh;
     height: auto;
@@ -934,6 +934,12 @@ section {
      object-fit: cover;
   height: 100vh;
   transform: rotate(180deg);
+}
+@media (max-width: 1600px) {
+  .first-screen .swiper > ul li > picture > img {
+    width: auto;
+    height: 100%;
+  }
 }
 @media (max-width: 768px) {
   .first-screen .swiper > ul li > picture > img {
