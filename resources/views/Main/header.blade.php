@@ -8,7 +8,7 @@
             <ul class="reset-list">
                 @foreach ($headers as $header_item)
                     <li>
-                        <a href=" {{ $header_item->link }}">{{ $header_item->title }}</a>
+                        <a href="{{ $header_item->link }}">{{ $header_item->title }}</a>
                     </li>
                 @endforeach
             </ul>

@@ -1,4 +1,3 @@
-{{ dd($category_item); }}
 <section class="category">
     <div class="container">
         <h2>Категории</h2>
