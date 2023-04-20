@@ -9,7 +9,12 @@
             @foreach ($posts as $post)
             <li data-aos="flip-left" data-aos-duration="300" data-aos-delay="{{ $post->id * 50 }}">
                 <a href="{{  route('single',  $post->slug) }}">
+                    @if (!empty($post->thumbnail))
                     <img src="/{{$post->thumbnail}}" alt="{{$post->title}}">
+                    @else
+                    <img src="/{{$post->image}}" alt="{{$post->title}}">
+                    @endif
+
                     <div class="top">
                             @if (!empty($post->category->title))
                             <span class="category">
