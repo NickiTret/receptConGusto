@@ -71,7 +71,7 @@
             @foreach ($categories_menu as $item)
                 @if ($item->posts->count())
                     <li class="category-list__item">
-                        <a href="{{ route('category_item', $item->id) }}">{{ $item->title }}</a>
+                        <a href="{{ route('category_item', $item->slug) }}">{{ $item->title }}</a>
                     </li>
                 @endif
             @endforeach

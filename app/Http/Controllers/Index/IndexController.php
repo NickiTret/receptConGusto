@@ -33,12 +33,11 @@ class IndexController extends Controller
         return view('welcome', compact(  'categories', 'tags', 'random' , 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'features', 'lastPost'));
     }
 
-    public function show($id)
+    public function show($slug)
     {
-
         $currentURL = url()->full();
         $fasts = Fast::all();
-        $post = Post::where('id', $id)->firstOrFail();
+        $post = Post::where('slug', $slug)->firstOrFail();
         $posts = Post::where('category_id', $post->category_id)->limit(5)->get();
         $post->views += 1;
         $post->update();
@@ -48,10 +47,10 @@ class IndexController extends Controller
         return view('single', compact( 'post', 'tags', 'categories', 'category', 'fasts', 'posts', 'currentURL'));
     }
 
-    public function fast($id)
+    public function fast($slug)
     {
 
-        $post = fast::where('id', $id)->first();
+        $post = fast::where('slug', $slug)->first();
 
         return view('single', compact( 'post'));
     }
@@ -74,12 +73,12 @@ class IndexController extends Controller
         return view('tags', compact( 'tag','hat', 'posts', 'banner', 'fasts'));
     }
 
-    public function category_item($id)
+    public function category_item($slug)
     {
         // $banner = Banner::where('page', 'Категории')->firstOrFail();
-        $category_item = Category::find($id);
+        $category_item = Category::where('slug', $slug)->firstOrfail();
         $category_item->descr = "В этом разделе вы найдете блюда из категории “{$category_item->title}”";
-        $posts = Post::where('category_id', $id)->get();
+        $posts = Post::where('category_id', $category_item->id)->get();
         return view('category-item', compact(  'posts', 'category_item'));
     }
 
@@ -89,7 +88,10 @@ class IndexController extends Controller
         ]);
         $currentURL = url()->full();
         $s = $request->s;
-        $posts = Post::where('title', 'LIKE', "%{$s}%")->with('category')->paginate(20);
+        $postsAll = Post::where('title', 'LIKE', "%{$s}%")->with('category')->paginate(20);
+        $fastsAll = Fast::where('title', 'LIKE', "%{$s}%")->paginate(20);
+
+        $posts = $postsAll->merge($fastsAll);
 
         return view('search', compact('posts', 's',  'currentURL'));
     }

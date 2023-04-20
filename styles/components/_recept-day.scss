@@ -21,7 +21,7 @@
 
             & > .image {
                 flex: 0 0 auto;
-                width: calc( $column_abs * 5 + $gutter_abs * 4 );
+                width: calc( $column_abs * 6 + $gutter_abs * 6 );
                 border-radius: 0 14px 0 14px;
 
                 @media (max-width: 1440px) {

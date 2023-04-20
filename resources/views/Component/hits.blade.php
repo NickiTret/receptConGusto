@@ -8,16 +8,14 @@
         <ul>
             @foreach ($posts as $post)
             <li data-aos="flip-left" data-aos-duration="300" data-aos-delay="{{ $post->id * 50 }}">
-                <a href="{{  route('single',  $post->id) }}">
+                <a href="{{  route('single',  $post->slug) }}">
                     <img src="/{{$post->thumbnail}}" alt="{{$post->title}}">
                     <div class="top">
-                        <span class="category">{{$post->category->title}}</span>
-                        {{-- <span class="like">
-                            <picture>
-                                <img src="/content/like.png" alt="like">
-                            </picture>
-                        </span> --}}
-                    </div>
+                            @if (!empty($post->category->title))
+                            <span class="category">
+                                  {{$post->category->title}}
+                                </span>
+                            @endif
                     <h3>{{$post->title}}</h3>
                     <div class="scroll">{!! $post->description !!}</div>
                 </a>

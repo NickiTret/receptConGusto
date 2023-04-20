@@ -1,3 +1,4 @@
+{{ dd($category_item); }}
 <section class="category">
     <div class="container">
         <h2>Категории</h2>
@@ -7,7 +8,7 @@
                     @foreach ($data as $item)
                         @if ($item->posts->count() > 0)
                             <li>
-                                <a href="{{ route('category_item', $item->id) }}">
+                                <a href="{{ route('category_item', $item->slug) }}">
                                     <div>
                                         <img src="/{{ $item->image }}" alt="{{ $item->title }}">
                                     </div>

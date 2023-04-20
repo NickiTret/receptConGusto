@@ -3,7 +3,7 @@
         <ul>
             @foreach ($posts as $post)
             <li>
-                <a href="{{  route('single',  $post->id) }}">
+                <a href="{{  route('single',  $post->slug) }}">
                     <h4>{{$post->title}}</h3>
                     <div class="disabled">
                         <img src="/{{$post->thumbnail}}" alt="{{$post->title}}">

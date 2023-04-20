@@ -18,15 +18,15 @@ use App\Http\Controllers\Index\IndexController;
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
 
-Route::get('/article/{id}', [IndexController::class, 'show'])->name('single');
+Route::get('/recept/{slug}', [IndexController::class, 'show'])->name('single');
 
-Route::get('/fast/{id}', [IndexController::class, 'fast'])->name('fast');
+Route::get('/fast/{slug}', [IndexController::class, 'fast'])->name('fast');
 
 Route::get('/category', [IndexController::class, 'category'])->name('category');
 
 Route::get('/tag/{id}', [IndexController::class, 'tag'])->name('tags.single');
 
-Route::get('/category/{id}', [IndexController::class, 'category_item'])->name('category_item');
+Route::get('/category/{slug}', [IndexController::class, 'category_item'])->name('category_item');
 
 Route::get('/search', [IndexController::class, 'search'])->name('search');
 

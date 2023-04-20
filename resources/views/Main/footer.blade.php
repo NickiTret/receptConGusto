@@ -44,3 +44,12 @@
     <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt="" /></div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VXQC75FB6B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VXQC75FB6B');
+</script>

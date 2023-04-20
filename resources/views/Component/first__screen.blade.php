@@ -13,7 +13,7 @@
                         <ul class="text-list">
                             @foreach ($lastPost as $item)
                             <li class="text-list__item">
-                                <a href="{{  route('single',  $item->id) }}">
+                                <a href="{{  route('single',  $item->slug) }}">
                                     <img src="/{{ $item->thumbnail }}" alt="{{ $item->title }}">
                                    <h3>{{  $item->title }}</h3>
                                    <p>{!!  $item->description !!}</p>

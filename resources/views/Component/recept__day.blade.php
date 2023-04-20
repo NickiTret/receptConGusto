@@ -12,7 +12,7 @@
                     <p>
                         {!! $random->description !!}
                     </p>
-                    <a href="{{  route('single',  $random->id) }}">
+                    <a href="{{  route('single',  $random->slug) }}">
                         Перейти
                     </a>
             </div>
