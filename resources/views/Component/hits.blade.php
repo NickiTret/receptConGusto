@@ -14,8 +14,9 @@
                             @if (!empty($post->category->title))
                             <span class="category">
                                   {{$post->category->title}}
-                                </span>
+                            </span>
                             @endif
+                    </div>
                     <h3>{{$post->title}}</h3>
                     <div class="scroll">{!! $post->description !!}</div>
                 </a>
