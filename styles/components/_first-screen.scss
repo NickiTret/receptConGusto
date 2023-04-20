@@ -81,15 +81,15 @@
                     z-index: 2;
                     @media (max-width: 1600px) {
                         margin-left: calc(
-                            $column_abs_maxW_1600 * 4 + $gutter_abs_maxW_1600 *
-                                2
+                            $column_abs_maxW_1600 * 2 + $gutter_abs_maxW_1600 *
+                                3
                         );
                     }
 
                     @media (max-width: 1440px) {
                         margin-left: calc(
-                            $column_abs_maxW_1440 * 4 + $gutter_abs_maxW_1440 *
-                                2
+                            $column_abs_maxW_1440 * 3 + $gutter_abs_maxW_1440 *
+                                3
                         );
                     }
 
