@@ -37,4 +37,9 @@
             }
         </style>
     </noscript>
+    <script type="text/javascript">
+     mailru_ad_client = "ad-1256561";
+     mailru_ad_slot = 1256561;
+</script>
+<script type="text/javascript" src="https://rs.mail.ru/static/ads-min.js"></script>
 </head>
