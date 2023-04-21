@@ -44,12 +44,12 @@ class Post extends Model
             return $request->file('thumbnail')->store("images/{$folder}");
         }
 
-        return null;
+        return $image;
     }
 
     public function getImage()
     {
-        if(!$this->thumbnail) 
+        if(!$this->thumbnail)
         {
             return asset("assets/admin/img/no-image.jpeg");
         }
