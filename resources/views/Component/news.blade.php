@@ -6,6 +6,7 @@
                     @if (!empty($data->thumbnail))
                         <img src="/{{ $data->thumbnail }}" alt="photo">
                     @else
+                        {{-- <source srcset="{{ $data->alt_img }}" type="image/webp"> --}}
                         <img src="/{{ $data->image }}" alt="photo">
                     @endif
                 </picture>

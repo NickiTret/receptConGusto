@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Index;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+
+
 use App\Models\Post;
 use App\Models\Header;
 use App\Models\Tag;
@@ -119,6 +121,7 @@ class IndexController extends Controller
         $post = News::where('slug', $slug)->firstOrFail();
         $posts = Post::orderBy('views', 'desc')->limit(4)->get();
         $post->views += 1;
+
         $post->update();
 
         return view('single', compact( 'post', 'fasts', 'posts', 'currentURL'));

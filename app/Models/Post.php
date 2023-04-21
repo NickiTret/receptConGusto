@@ -8,17 +8,23 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use illuminate\Http\Request;
 
+
+
+
+
 class Post extends Model
 {
     use Sluggable;
 
     protected $fillable = ['title', 'content', 'description', 'category_id', 'thumbnail'];
 
-    public function tags() {
+    public function tags()
+    {
         return $this->belongsToMany(Tag::class)->withTimestamps();
     }
 
-    public function category() {
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
 
@@ -35,10 +41,10 @@ class Post extends Model
     {
         if ($request->hasFile('thumbnail')) {
 
-            if ($image)
-            {
+            if ($image) {
                 Storage::delete($image);
             }
+
             $folder = date('Y-m-d');
 
             return $request->file('thumbnail')->store("images/{$folder}");
@@ -47,10 +53,10 @@ class Post extends Model
         return $image;
     }
 
+
     public function getImage()
     {
-        if(!$this->thumbnail)
-        {
+        if (!$this->thumbnail) {
             return asset("assets/admin/img/no-image.jpeg");
         }
 

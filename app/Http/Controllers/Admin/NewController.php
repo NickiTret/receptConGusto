@@ -29,7 +29,8 @@ class NewController extends Controller
             'content' => 'required',
             'restorant' => 'required',
             'image' => 'image',
-            
+            'alt_img' => 'nullable|image',
+
         ]);
 
         $data = $request->all();
@@ -44,7 +45,7 @@ class NewController extends Controller
     public function edit($id)
     {
         $new = News::find($id);
-        
+
         return view('Admin.news.edit', compact('new'));
     }
 
@@ -56,12 +57,14 @@ class NewController extends Controller
             'content' => 'required',
             'restorant' => 'required',
             'image' => 'image',
+            'alt_img' => 'image',
         ]);
 
         $new = News::find($id);
         $data = $request->all();
 
         $data['image'] = News::uploadImage($request, $new->image);
+        // $new->image = News::imageWebp($request, $new->alt_img);
 
         $new->update($data);
 
