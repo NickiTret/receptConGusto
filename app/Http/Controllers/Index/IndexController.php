@@ -50,10 +50,10 @@ class IndexController extends Controller
 
     public function fast($slug)
     {
-
-        $post = fast::where('slug', $slug)->first();
-
-        return view('single', compact( 'post'));
+        $currentURL = url()->full();
+        $post = Fast::where('slug', $slug)->first();
+        $posts = Fast::all();
+        return view('single', compact( 'post', 'posts', 'currentURL'));
     }
 
     public function category()
@@ -117,8 +117,10 @@ class IndexController extends Controller
         $currentURL = url()->full();
         $fasts = Fast::all();
         $post = News::where('slug', $slug)->firstOrFail();
-        $posts = News::orderBy('views', 'desc')->get();
+        $posts = Post::orderBy('views', 'desc')->limit(4)->get();
         $post->views += 1;
+        $post->update();
+
         return view('single', compact( 'post', 'fasts', 'posts', 'currentURL'));
     }
 }

@@ -14,19 +14,19 @@
                             </div>
                     </a>
                 </li>
-                <li>
-                    <!-- Yandex.RTB R-A-2349463-3 -->
-                    <div id="yandex_rtb_R-A-2349463-3"></div>
-                    <script>
-                        window.yaContextCb.push(() => {
-                            Ya.Context.AdvManager.render({
-                                "blockId": "R-A-2349463-3",
-                                "renderTo": "yandex_rtb_R-A-2349463-3"
-                            })
-                        })
-                    </script>
-                </li>
             @endforeach
+            <li>
+                <!-- Yandex.RTB R-A-2349463-3 -->
+                <div id="yandex_rtb_R-A-2349463-3"></div>
+                <script>
+                    window.yaContextCb.push(() => {
+                        Ya.Context.AdvManager.render({
+                            "blockId": "R-A-2349463-3",
+                            "renderTo": "yandex_rtb_R-A-2349463-3"
+                        })
+                    })
+                </script>
+            </li>
         </ul>
     </aside>
 </section>
