@@ -20,7 +20,6 @@
                                         @else
                                             <img src="/{{ $post->image }}" alt="{{ $post->title }}">
                                         @endif
-
                                         <div class="top">
                                             @if ($post->restorant)
                                                 <span class="category">
