@@ -1,4 +1,7 @@
-<!-- Yandex.RTB R-A-2349463-1 -->
+
+<section class="transform">
+    <div class="container">
+    <!-- Yandex.RTB R-A-2349463-1 -->
 <div id="yandex_rtb_R-A-2349463-1"></div>
 <script>window.yaContextCb.push(()=>{
 	Ya.Context.AdvManager.render({
@@ -14,7 +17,10 @@
 		"type": "floorAd"
 	})
 })
+
 </script>
+</div>
+</section>
 <footer class="footer">
     <div class="container">
         <div class="left-box">
