@@ -23,14 +23,15 @@
                                         <div class="top">
                                             @if ($post->restorant)
                                                 <span class="category">
-                                                     Посещение ресторана
+                                                    Посещение ресторана
                                                 </span>
                                             @endif
                                         </div>
                                         <h3>{{ $post->title }}</h3>
                                         <div class="scroll">{!! $post->description !!}</div>
                                         <ul class="post-description">
-                                            <li>Дата написания: <span>{{ $post->created_at->format('d.m.Y') }}</span> </li>
+                                            <li>Дата написания: <span>{{ $post->created_at->format('d.m.Y') }}</span>
+                                            </li>
                                             <li>Просмотры: <span>{{ $post->views }}</span> </li>
                                         </ul>
                                     </a>

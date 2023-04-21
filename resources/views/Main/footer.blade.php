@@ -41,7 +41,7 @@
 
 <script type="module" src="{{ asset('assets/js/main.js') }}"></script>
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
+<script>
     (function(m, e, t, r, i, k, a) {
         m[i] = m[i] || function() {
             (m[i].a = m[i].a || []).push(arguments)

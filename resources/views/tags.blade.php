@@ -19,8 +19,8 @@
                 @include('Component.hits', ['posts' => $posts])
             @endif
             @if (!empty($fasts))
-            @include('Component.simple', ['fasts' => $fasts])
-        @endif
+                @include('Component.simple', ['fasts' => $fasts])
+            @endif
         </main>
         @include('Main.footer')
     </div>

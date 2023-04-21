@@ -54,11 +54,11 @@
                 </section>
             @endif
             @if (!empty($posts))
-            <section>
-                <div class="container">
-                    <h2> Может быть интересно: </h2>
-                </div>
-            </section>
+                <section>
+                    <div class="container">
+                        <h2> Может быть интересно: </h2>
+                    </div>
+                </section>
                 @include('Component.hits', ['posts' => $posts, 'url' => $currentURL])
             @endif
             <div class="share">
