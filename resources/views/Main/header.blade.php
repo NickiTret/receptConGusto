@@ -1,12 +1,4 @@
-<!-- Yandex.RTB R-A-2349463-1 -->
-<div id="yandex_rtb_R-A-2349463-1"></div>
-<script>window.yaContextCb.push(()=>{
-	Ya.Context.AdvManager.render({
-		"blockId": "R-A-2349463-1",
-		"renderTo": "yandex_rtb_R-A-2349463-1"
-	})
-})
-</script>
+
 <header data-aos="fade-down" data-aos-duration="1000" class="header">
     <div class="container">
         <a href="/" class="logo">Con Gusto</a>
