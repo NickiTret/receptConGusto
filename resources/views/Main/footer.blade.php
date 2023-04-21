@@ -64,7 +64,7 @@
     });
 </script>
 <noscript>
-    <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt="" /></div>
+    <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt="" ></div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
 <!-- Google tag (gtag.js) -->
@@ -73,6 +73,40 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-VXQC75FB6B');
 </script>
+
+
+    <!-- Top.Mail.Ru counter -->
+    <script>
+        var _tmr = window._tmr || (window._tmr = []);
+        _tmr.push({
+            id: "3328776",
+            type: "pageView",
+            start: (new Date()).getTime()
+        });
+        (function(d, w, id) {
+            if (d.getElementById(id)) return;
+            var ts = d.createElement("script");
+            ts.type = "text/javascript";
+            ts.async = true;
+            ts.id = id;
+            ts.src = "https://top-fwz1.mail.ru/js/code.js";
+            var f = function() {
+                var s = d.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(ts, s);
+            };
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else {
+                f();
+            }
+        })(document, window, "tmr-code");
+    </script>
+    <noscript>
+        <div>
+            <img src="https://top-fwz1.mail.ru/counter?id=3328776;js=na" style="position:absolute;left:-9999px;"
+                alt="Top.Mail.Ru" >
+        </div>
+    </noscript>
+    <!-- /Top.Mail.Ru counter -->
