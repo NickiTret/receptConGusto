@@ -13,7 +13,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::with('category', 'tags')->paginate(20);
+        $posts = Post::with('category', 'tags')->paginate(120);
         return view('Admin.posts.index', compact('posts'));
     }
 
@@ -62,7 +62,7 @@ class PostController extends Controller
             'thumbnail' => 'nullable|image',
         ]);
 
-    
+
         $post = Post::find($id);
         $data = $request->all();
 
