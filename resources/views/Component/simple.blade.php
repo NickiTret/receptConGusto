@@ -1,7 +1,7 @@
 <section class="simple">
     <div data-aos="slide-right" data-aos-duration="1500" class="container">
         @if (!empty($fasts))
-        <h2>Быстро</h2>
+        <h2>Быстрые рецепты</h2>
         @endif
         <div class="scroll" data-simplebar>
             <ul>

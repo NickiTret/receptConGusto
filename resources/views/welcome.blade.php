@@ -23,7 +23,7 @@
             @if (!empty($posts))
                 <section>
                     <div class="container">
-                        <h2> Лучшие рецепты </h2>
+                        <h2> Популярные рецепты </h2>
                     </div>
                 </section>
                 @include('Component.hits', ['posts' => $posts, 'url' => $currentURL])

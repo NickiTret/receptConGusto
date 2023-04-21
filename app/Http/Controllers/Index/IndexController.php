@@ -14,6 +14,7 @@ use App\Models\Fast;
 use App\Models\Feat;
 use App\Models\Banner;
 use App\Models\Hat;
+use App\Models\News;
 
 class IndexController extends Controller
 {
@@ -101,4 +102,23 @@ class IndexController extends Controller
         return view('about', compact( 'hat'));
     }
 
+    public function news()
+    {
+        $currentURL = url()->full();
+        $fasts = Fast::all();
+        $posts = News::orderBy('views', 'desc')->get();
+        $categories = Category::pluck('title', 'id')->all();
+        $tags = Tag::pluck('title', 'id')->all();
+        return view('news', compact(  'categories', 'tags', 'posts', 'fasts', 'currentURL'));
+    }
+
+    public function new($slug)
+    {
+        $currentURL = url()->full();
+        $fasts = Fast::all();
+        $post = News::where('slug', $slug)->firstOrFail();
+        $posts = News::orderBy('views', 'desc')->get();
+        $post->views += 1;
+        return view('single', compact( 'post', 'fasts', 'posts', 'currentURL'));
+    }
 }

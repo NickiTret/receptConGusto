@@ -56,7 +56,7 @@
             @if (!empty($posts))
             <section>
                 <div class="container">
-                    <h2> Другие рецепты </h2>
+                    <h2> Может быть интересно: </h2>
                 </div>
             </section>
                 @include('Component.hits', ['posts' => $posts, 'url' => $currentURL])

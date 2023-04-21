@@ -1561,6 +1561,13 @@ section {
     font-size: 14px;
   }
 }
+.hits > .container .post-description {
+  margin-top: 10px;
+}
+.hits > .container .post-description > li {
+  margin-top: 7px;
+  color: #1F3347;
+}
 
 [data-simplebar] {
   position: relative;

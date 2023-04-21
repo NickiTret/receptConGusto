@@ -116,6 +116,15 @@
                 }
             }
         }
+
+        & .post-description {
+            margin-top: 10px;
+
+            & > li {
+                margin-top: 7px;
+                color: $clr_text;
+            }
+        }
     }
 }
 

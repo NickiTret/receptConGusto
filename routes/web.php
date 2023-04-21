@@ -32,6 +32,9 @@ Route::get('/search', [IndexController::class, 'search'])->name('search');
 
 Route::get('/about', [IndexController::class, 'about'])->name('about');
 
+Route::get('/news', [IndexController::class, 'news'])->name('news');
+
+Route::get('/news/{slug}', [IndexController::class, 'new'])->name('new');
 
 Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/', [MainController::class, 'index'])->name('admin.index');
