@@ -6,7 +6,11 @@
                     <a href="{{ route('single', $post->slug) }}">
                         <h4>{{ $post->title }}</h3>
                             <div class="disabled">
-                                <img src="/{{ $post->thumbnail }}" alt="{{ $post->title }}">
+                                @if (!empty($post->thumbnail))
+                                    <img src="/{{ $post->thumbnail }}" alt="{{ $post->title }}">
+                                @else
+                                    <img src="/{{ $post->image }}" alt="{{ $post->title }}">
+                                @endif
                             </div>
                     </a>
                 </li>
