@@ -56,4 +56,7 @@
      mailru_ad_slot = 1256561;
 </script>
 <script type="text/javascript" src="https://rs.mail.ru/static/ads-min.js"></script>
+<!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
