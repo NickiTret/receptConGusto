@@ -64,7 +64,6 @@ class NewController extends Controller
         $data = $request->all();
 
         $data['image'] = News::uploadImage($request, $new->image);
-        // $new->image = News::imageWebp($request, $new->alt_img);
 
         $new->update($data);
 

@@ -43,26 +43,6 @@ class News extends Model
         return null;
     }
 
-    // public static function imageWebp(Request $request, $alt_img = null)
-    // {
-    //     if ($request->hasFile('image')) {
-
-    //         if ($alt_img)
-    //         {
-    //             Storage::delete($alt_img);
-    //         }
-
-    //         $webp = Image::make($request->file('image'))->encode('webp', 100);
-
-    //         $folder = date('Y-m-d');
-
-    //         return $webp->store("images/{$folder}");
-    //     }
-
-    //     return $alt_img;
-
-    // }
-
     public function getImage()
     {
         if(!$this->image)

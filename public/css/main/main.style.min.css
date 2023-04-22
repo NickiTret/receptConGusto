@@ -791,6 +791,25 @@ section {
   transform: translateX(0%);
   opacity: 1;
 }
+.aside > aside > ul > li a > p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 145%;
+  color: #1F3347;
+  text-align: center;
+}
+@media (max-width: 1600px) {
+  .aside > aside > ul > li a > p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .aside > aside > ul > li a > p {
+    font-size: 16px;
+  }
+}
 .aside > aside > ul > li:not(:last-child) {
   border-bottom: 1px solid #b8b9c4;
 }
@@ -3643,6 +3662,8 @@ h2 {
   width: 100%;
   padding-right: calc((100% - 1496px) / 2);
   padding-left: calc((100% - 1496px) / 2);
+  display: flex;
+  justify-content: space-between;
 }
 @media (max-width: 1600px) {
   .about_content {
@@ -3710,36 +3731,36 @@ h2 {
     font-size: 28px;
   }
 }
-.about_content > .container {
+.about_content .container {
   width: 728px;
   padding: 0;
 }
 @media (max-width: 1600px) {
-  .about_content > .container {
+  .about_content .container {
     width: 48.3443708609%;
   }
 }
 @media (max-width: 1440px) {
-  .about_content > .container {
+  .about_content .container {
     width: 48.5714285714%;
   }
 }
 @media (max-width: 1280px) {
-  .about_content > .container {
+  .about_content .container {
     width: 48.7179487179%;
   }
 }
 @media (max-width: 1024px) {
-  .about_content > .container {
+  .about_content .container {
     width: 74.1176470588%;
   }
 }
 @media (max-width: 768px) {
-  .about_content > .container {
+  .about_content .container {
     width: 100%;
   }
 }
-.about_content > .container > p {
+.about_content .container > p {
   font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -3749,18 +3770,18 @@ h2 {
   margin-bottom: 12px;
 }
 @media (max-width: 1600px) {
-  .about_content > .container > p {
+  .about_content .container > p {
     font-size: 18px;
   }
 }
 @media (max-width: 768px) {
-  .about_content > .container > p {
+  .about_content .container > p {
     font-size: 16px;
   }
 }
-.about_content > .container > p > a {
+.about_content .container > p > a {
   color: #1B75BB;
 }
-.about_content > .container > p > a:hover {
+.about_content .container > p > a:hover {
   color: #FFC814;
 }

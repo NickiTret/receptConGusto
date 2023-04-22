@@ -1,5 +1,7 @@
 .about_content {
     @include grid();
+    display: flex;
+    justify-content: space-between;
 
     & > h2 {
         @include font_h2($font-family, $clr_text);
@@ -8,7 +10,7 @@
         margin-bottom: 16px;
     }
 
-    & > .container {
+    & .container {
         width: calc( $column_abs * 6 + $gutter_abs * 5 );
         padding: 0;
         @media (max-width: 1600px) {
