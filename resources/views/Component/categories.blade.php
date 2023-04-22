@@ -12,6 +12,10 @@
                                         <img src="/{{ $item->image }}" alt="{{ $item->title }}">
                                     </div>
                                     <p>{{ $item->title }}</p>
+                                    @if (!empty($item->description))
+                                    <p class="category-description"><small>{{ $item->description }}</small></p>
+                                    @endif
+
                                 </a>
                             </li>
                         @endif
