@@ -5,7 +5,7 @@
 
 <body class="page__body">
     @include('Main.header')
-    <div class="site-container">
+    <div class="site-container" style="overflow: hidden">
         <main>
             @if (!empty($heros))
                 @include('Component.first__screen', [
