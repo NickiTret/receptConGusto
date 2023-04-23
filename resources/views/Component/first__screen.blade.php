@@ -35,7 +35,7 @@
                 <h4>Рецептов на&nbsp;сайте</h4>
             </li>
         </ul>
-        <h3>Рецепты по&nbsp;тегам:</h3>
+{{--        <h3>Рецепты по&nbsp;тегам:</h3>--}}
         <ul class="first-screen__aside-tags">
             @foreach ($maps as $tag)
                 <li>

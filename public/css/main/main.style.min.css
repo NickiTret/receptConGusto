@@ -955,7 +955,6 @@ section {
 }
 @media (max-width: 1600px) {
   .first-screen .swiper > ul li > picture > img {
-    width: auto;
     height: 100%;
   }
 }
