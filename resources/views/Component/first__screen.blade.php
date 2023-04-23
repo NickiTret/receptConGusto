@@ -8,8 +8,7 @@
                     </picture>
                     <div class="text text__left">
                         <h1>{{ $item->title }}</h1>
-                        <div>{!! $item->description !!}</div>
-                        <div>Последние рецепты</div>
+                        <h2>{!! $item->description !!}</h2>
                         <ul class="text-list">
                             @foreach ($lastPost as $item)
                             <li class="text-list__item">
@@ -28,13 +27,21 @@
         <div class="swiper-pagination"></div>
     </div>
     <aside class="first-screen__aside">
-        <h3>Проверенные и классические рецепты</h3>
+        <h3>Проверенные и&nbsp;классические рецепты</h3>
         <h4>Новые рецепты каждую неделю</h4>
         <ul class="first-screen__aside-list">
             <li>
                 <p>{{ $allPosts->count() + $fasts->count() }}</p>
-                <h4>Рецептов на сайте</h4>
+                <h4>Рецептов на&nbsp;сайте</h4>
             </li>
+        </ul>
+        <h3>Рецепты по&nbsp;тегам:</h3>
+        <ul class="first-screen__aside-tags">
+            @foreach ($maps as $tag)
+                <li>
+                    <a href="{{ route('tags.single', ['id' => $tag->id]) }}">{{ $tag->title }}</a>
+                </li>
+            @endforeach
         </ul>
     </aside>
 </section>

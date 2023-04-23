@@ -10,6 +10,7 @@
             @if (!empty($heros))
                 @include('Component.first__screen', [
                     'heros' => $heros,
+                    'maps' => $maps,
                     'fasts' => $fasts,
                     'lastPost' => $lastPost,
                     'allPosts' => $allPosts,

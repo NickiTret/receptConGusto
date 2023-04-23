@@ -32,8 +32,9 @@ class IndexController extends Controller
         $features = Feat::all();
         $categories = Category::pluck('title', 'id')->all();
         $tags = Tag::pluck('title', 'id')->all();
+        $maps = Tag::orderBy('created_at', 'desc')->get();
         $lastPost = Post::orderBy('created_at', 'desc')->limit(4)->get();
-        return view('welcome', compact(  'categories', 'tags', 'random' , 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'features', 'lastPost'));
+        return view('welcome', compact(  'categories', 'tags', 'maps' , 'random' , 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'features', 'lastPost'));
     }
 
     public function show($slug)
