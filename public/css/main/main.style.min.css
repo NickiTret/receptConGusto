@@ -63,7 +63,6 @@ ul {
 }
 
 .site-container {
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -681,7 +680,7 @@ section {
 
 .aside {
   position: sticky;
-  top: 0;
+  top: 135px;
   padding-top: 0;
   padding-bottom: 0;
   margin-bottom: 30px;
