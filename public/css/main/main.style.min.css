@@ -1145,7 +1145,7 @@ section {
 @media (max-width: 480px) {
   .first-screen .swiper > ul li > div.text ul.text-list > li {
     flex: 0 0 100%;
-    height: 150px;
+    height: 200px;
   }
 }
 .first-screen .swiper > ul li > div.text ul.text-list > li > a {
