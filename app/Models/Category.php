@@ -40,7 +40,7 @@ class Category extends Model
             return $request->file('image')->store("images/{$folder}");
         }
 
-        return null;
+        return $image;
     }
 
     public function getImage()

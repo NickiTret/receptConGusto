@@ -11,7 +11,7 @@ use illuminate\Http\Request;
 class Feat extends Model
 {
     // use Sluggable;
-    
+
     protected $table = 'features';
     protected $fillable = ['title', 'content', 'image'];
 
@@ -29,12 +29,12 @@ class Feat extends Model
             return $request->file('image')->store("images/{$folder}");
         }
 
-        return null;
+        return $image;
     }
 
     public function getImage()
     {
-        if(!$this->image) 
+        if(!$this->image)
         {
             return asset("assets/admin/img/no-image.jpeg");
         }

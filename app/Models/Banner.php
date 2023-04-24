@@ -10,7 +10,7 @@ use illuminate\Http\Request;
 
 class Banner extends Model
 {
-    
+
     protected $table = 'banners';
     protected $fillable = ['title', 'subtitle', 'description', 'content',  'image', 'page', 'btn_name', 'btn_link'];
 
@@ -34,12 +34,12 @@ class Banner extends Model
             return $request->file('image')->store("images/{$folder}");
         }
 
-        return null;
+        return $image;
     }
 
     public function getImage()
     {
-        if(!$this->image) 
+        if(!$this->image)
         {
             return asset("assets/admin/img/no-image.jpeg");
         }

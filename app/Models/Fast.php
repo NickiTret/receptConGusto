@@ -11,7 +11,7 @@ use illuminate\Http\Request;
 class Fast extends Model
 {
     use Sluggable;
-    
+
     protected $table = 'fasts';
     protected $fillable = ['title', 'slug', 'description', 'content', 'image'];
 
@@ -37,12 +37,12 @@ class Fast extends Model
             return $request->file('image')->store("images/{$folder}");
         }
 
-        return null;
+        return $image;
     }
 
     public function getImage()
     {
-        if(!$this->image) 
+        if(!$this->image)
         {
             return asset("assets/admin/img/no-image.jpeg");
         }

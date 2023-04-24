@@ -31,12 +31,12 @@ class Hero extends Model
             return $request->file('image')->store("images/{$folder}");
         }
 
-        return null;
+        return $image;
     }
 
     public function getImage()
     {
-        if(!$this->image) 
+        if(!$this->image)
         {
             return asset("assets/admin/img/no-image.jpeg");
         }
