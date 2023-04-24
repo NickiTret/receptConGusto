@@ -67,7 +67,8 @@ class NewController extends Controller
 
         $new->update($data);
 
-        $new->update($request->all());
+//        $new->update($request->all());
+
 
         return redirect()->route('news.index')->with('success', 'Изменения сохранены');
     }
