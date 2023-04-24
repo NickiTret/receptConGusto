@@ -57,7 +57,7 @@ class NewController extends Controller
             'content' => 'required',
             'restorant' => 'required',
             'image' => 'image',
-            'alt_img' => 'image',
+            'alt_img' => 'nullable|image',
         ]);
 
         $new = News::find($id);
