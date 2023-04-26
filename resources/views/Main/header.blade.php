@@ -1,4 +1,3 @@
-
 <header data-aos="fade-down" data-aos-duration="1000" class="header">
     <div class="container">
         <a href="/" class="logo">
@@ -16,13 +15,13 @@
                 @endforeach
             </ul>
         </nav>
-        <form class="search" method="GET" action="{{ route('search') }}">
-            <input required name="s" type="text" placeholder="Поиск по рецептам"
-                class="search-input @error('s') is-invalid @enderror " />
-            <button type="submit">
-                <img src="/content/icons/search.svg" alt="icon-search">
-            </button>
-        </form>
+            <form class="search" method="GET" action="{{ route('search') }}">
+                <input required name="search_input" type="text" placeholder="Поиск по рецептам"
+                       class="search-input" @if(isset($_GET['search_input'])) value="{{$_GET['search_input']}}" @endif/>
+                <button type="submit">
+                    <img src="/content/icons/search.svg" alt="icon-search">
+                </button>
+            </form>
         <div class="log-box">
             {{-- <button class="btn-reset favourite" type="button">
                 <svg data-name="Livello 1" id="Livello_1" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">

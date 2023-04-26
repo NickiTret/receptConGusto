@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Filters\QueryFilter;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Storage;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -48,6 +50,10 @@ class Fast extends Model
         }
 
         return asset($this->image);
+    }
+
+    public function scopeFilter(Builder $builder, QueryFilter $filter) {
+        return $filter->apply($builder);
     }
 
 }

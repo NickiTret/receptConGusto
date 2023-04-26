@@ -7,3 +7,4 @@ import './components/aside_image.js';
 import './components/header.js';
 import './components/share.js';
 import './components/404.js';
+import './components/choices.js';

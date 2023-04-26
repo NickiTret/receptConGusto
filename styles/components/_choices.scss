@@ -1,0 +1,27 @@
+.choices {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0 14px;
+    width: 300px
+    
+}
+
+.choices__inner{
+    border-radius: 0 14px;
+    border-color: $clr_main;
+    background-color: #fff;
+    color: $clr_text;
+}
+
+.choices[data-type*=select-one]:after {
+    border-color: $clr_main transparent transparent;
+}
+
+.choices[data-type*=select-one].is-open:after {
+    border-color: transparent transparent $clr_main ;
+}
+
+.choices__list--single {
+    padding: 4px 16px 4px 4px;
+}
+

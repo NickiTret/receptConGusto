@@ -17,6 +17,12 @@ const mix = require('laravel-mix');
 //     }
 // };
 
+mix.webpackConfig({
+    stats: {
+        children: true,
+    },
+});
+
 mix.sass('styles/main.scss', 'public/css/main/main.style.min.css');
 
 mix.styles([

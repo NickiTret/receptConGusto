@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Index;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-
+use App\Filters\ReceptFilter;
 
 use App\Models\Post;
 use App\Models\Header;
@@ -81,23 +80,35 @@ class IndexController extends Controller
     {
         // $banner = Banner::where('page', 'Категории')->firstOrFail();
         $category_item = Category::where('slug', $slug)->firstOrfail();
-        $category_item->descr = "В этом разделе вы найдете блюда из категории “{$category_item->title}”";
         $posts = Post::where('category_id', $category_item->id)->get();
         return view('category-item', compact(  'posts', 'category_item'));
     }
 
-    public function search(Request $request) {
-        $request->validate([
-            's' => 'required',
-        ]);
+//    public function search(Request $request) {
+//        $request->validate([
+//            's' => 'required',
+//        ]);
+//        $currentURL = url()->full();
+//        $s = $request->s;
+//        $postsAll = Post::where('title', 'LIKE', "%{$s}%")->with('category')->paginate(20);
+//        $fastsAll = Fast::where('title', 'LIKE', "%{$s}%")->paginate(20);
+//
+//        $posts = $postsAll->merge($fastsAll);
+//
+//        return view('search', compact('posts', 's',  'currentURL'));
+//    }
+
+    public function search(ReceptFilter $filter) {
+
         $currentURL = url()->full();
-        $s = $request->s;
-        $postsAll = Post::where('title', 'LIKE', "%{$s}%")->with('category')->paginate(20);
-        $fastsAll = Fast::where('title', 'LIKE', "%{$s}%")->paginate(20);
+        $category = Category::all();
+        $postsAll = Post::filter($filter)->paginate(100);
 
-        $posts = $postsAll->merge($fastsAll);
+        $fasts = Fast::filter($filter)->paginate(20);
 
-        return view('search', compact('posts', 's',  'currentURL'));
+        $posts = $postsAll->merge($fasts);
+
+        return view('search', compact('posts', 'category' ,  'currentURL'));
     }
 
     public function about() {

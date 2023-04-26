@@ -24,7 +24,6 @@
             @if(!empty($category_item->description))
                 <p>{{ strip_tags( $category_item->description) }}</p>
             @endif
-            <p>{{ strip_tags($category_item->descr) }}</p>
            </div>
         @endif
     </div>

@@ -273,3 +273,33 @@
 
 
 }
+
+
+.search__nav {
+    & form {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-top: 14px;
+
+        @media (max-width: 797px) {
+          flex-wrap: wrap;
+        }
+
+        & > input {
+            border: 1px solid $clr_main;
+            padding: 13px 30px;
+            outline: none;
+            border-radius:0 14px;
+            width: 100%;
+        }
+        & > button {
+            @include main_btn($font-family, $clr_white);
+            cursor: pointer;
+
+            @media (max-width: 655px) {
+              width: 100%;
+            }
+        }
+    }
+}
