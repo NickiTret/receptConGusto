@@ -11,15 +11,6 @@
 	})
 })
 </script>
-<!-- Yandex.RTB R-A-2349463-2 -->
-<script>window.yaContextCb.push(()=>{
-	Ya.Context.AdvManager.render({
-		"blockId": "R-A-2349463-2",
-		"type": "floorAd"
-	})
-})
-
-</script>
 </div>
 </section>
 <footer class="footer">
