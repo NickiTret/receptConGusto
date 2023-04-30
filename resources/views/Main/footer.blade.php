@@ -1,6 +1,7 @@
 
 <section class="transform">
     <div class="container">
+        <div id="marketWidget"></div>
     <!-- Yandex.RTB R-A-2349463-1 -->
 <div id="yandex_rtb_R-A-2349463-1"></div>
 <script>window.yaContextCb.push(()=>{

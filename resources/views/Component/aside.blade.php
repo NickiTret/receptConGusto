@@ -16,6 +16,9 @@
                 </li>
             @endforeach
             <li>
+                <div id="marketWidget"></div>
+            </li>
+            <li>
                 <!-- Yandex.RTB R-A-2349463-3 -->
                 <div id="yandex_rtb_R-A-2349463-3"></div>
                 <script>

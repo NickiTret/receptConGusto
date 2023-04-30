@@ -54,6 +54,9 @@
                                 </a>
                             </li>
                             <li>
+                                <div id="marketWidget"></div>
+                            </li>
+                            <li>
                                 <div id="yandex_rtb_R-A-2349463-3"></div>
                                 <script>
                                     window.yaContextCb.push(() => {

@@ -21,6 +21,29 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="{{ asset('css/main/main.style.min.css') }}?07" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Yandex.Market Widget -->
+<script async src="https://aflt.market.yandex.ru/widget/script/api" type="text/javascript"></script>
+<script type="text/javascript">
+    (function (w) {
+        function start() {
+            w.removeEventListener("YaMarketAffiliateLoad", start);
+            w.YaMarketAffiliate.createWidget({type:"offers",
+	containerId:"marketWidget",
+	params:{clid:2844598,
+		vid:"Vakuum",
+		searchInStock:true,
+		searchLocalOffersFirst:true,
+		metrikaCounterId:92999372,
+		searchModelIds:[455745966 ],
+		themeId:2 } });
+        }
+        w.YaMarketAffiliate
+            ? start()
+            : w.addEventListener("YaMarketAffiliateLoad", start);
+    })(window);
+</script>
+<!-- End Yandex.Market Widget -->
+
     <noscript>
         <style>
             .simplebar-content-wrapper {
