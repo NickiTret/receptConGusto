@@ -25,6 +25,9 @@
                         <a href=" {{ $header_item->link }}">{{ $header_item->title }}</a>
                     </li>
                 @endforeach
+                <li>
+                    <a href="https://t.me/econgusto" target="_blank">Telegram канал</a>
+                </li>
             </ul>
     </div>
     </div>
