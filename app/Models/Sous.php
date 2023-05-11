@@ -1,0 +1,52 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Support\Facades\Storage;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use illuminate\Http\Request;
+
+//картинки
+use Intervention\Image\Facades\Image;
+
+class Sous extends Model
+{
+    // use Sluggable;
+
+    protected $table = 'sous';
+    protected $fillable = ['title', 'description', 'content', 'image', 'sub_category_id', 'link', 'marinade'];
+
+    public function sub_category()
+    {
+        return $this->belongsTo(Subcat::class);
+    }
+
+    public static function uploadImage(Request $request, $image = null)
+    {
+        if ($request->hasFile('image')) {
+
+            if ($image)
+            {
+                Storage::delete($image);
+            }
+            $folder = date('Y-m-d');
+
+            return $request->file('image')->store("images/{$folder}");
+        }
+
+        return $image;
+    }
+
+    public function getImage()
+    {
+        if(!$this->image)
+        {
+            return asset("assets/admin/img/no-image.jpeg");
+        }
+
+        return asset($this->image);
+    }
+
+}

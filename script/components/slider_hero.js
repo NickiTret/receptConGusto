@@ -29,3 +29,39 @@ if (sliderHero) {
         });
     }
 }
+
+const sliders = Array.from(document.querySelectorAll(".swiper-special"));
+
+if (sliders) {
+    let thumbnail = document.querySelector("[data-json]");
+    if (thumbnail) {
+        const thumbnails = JSON.parse(thumbnail.getAttribute("data-json"));
+        sliders.forEach((slider) => {
+            new Swiper(slider, {
+                spaceBetween: 0,
+                autoHeight: true,
+                // navigation: {
+                //     nextEl: ".swiper-button-next",
+                //     prevEl: ".swiper-button-prev",
+                // },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        let image = Array.from(thumbnails).find(
+                            (el, idx) => typeof el === "object" && idx === index
+                        );
+                        //   return '<span class="' + className + '">' + (index + 1) + "</span>";
+                        return (
+                            '<span class="' +
+                            className +
+                            '">' +
+                            `<img src="./${image.image}" alt="Картинка соуса">` +
+                            "</span>"
+                        );
+                    },
+                },
+            });
+        });
+    }
+}

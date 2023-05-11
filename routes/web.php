@@ -12,6 +12,8 @@ use App\Http\Controllers\Admin\FastController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\FeaturesController;
 use App\Http\Controllers\Admin\HatController;
+use App\Http\Controllers\Admin\SousController;
+use App\Http\Controllers\Admin\SubcatController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Index\IndexController;
 
@@ -36,6 +38,10 @@ Route::get('/news', [IndexController::class, 'news'])->name('news');
 
 Route::get('/news/{slug}', [IndexController::class, 'new'])->name('new');
 
+Route::get('/routine', [IndexController::class, 'routine'])->name('routine');
+
+
+
 Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/', [MainController::class, 'index'])->name('admin.index');
     Route::resource('/categories', CategoryController::class);
@@ -48,6 +54,8 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::resource('/banners', BannerController::class);
     Route::resource('/features', FeaturesController::class);
     Route::resource('/hat', HatController::class);
+    Route::resource('/souses', SousController::class);
+    Route::resource('/subcats', SubcatController::class);
 });
 
 

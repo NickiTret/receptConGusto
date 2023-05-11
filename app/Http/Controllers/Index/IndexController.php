@@ -16,6 +16,8 @@ use App\Models\Feat;
 use App\Models\Banner;
 use App\Models\Hat;
 use App\Models\News;
+use App\Models\Sous;
+use App\Models\Subcat;
 
 class IndexController extends Controller
 {
@@ -137,5 +139,14 @@ class IndexController extends Controller
         $post->update();
 
         return view('single', compact( 'post', 'fasts', 'posts', 'currentURL'));
+    }
+
+    public function routine()
+    {
+        $currentURL = url()->full();
+        $slider = Sous::all()->toJson();
+        $groups = Subcat::all();
+
+        return view('routine', compact('currentURL', 'groups', 'slider'));
     }
 }

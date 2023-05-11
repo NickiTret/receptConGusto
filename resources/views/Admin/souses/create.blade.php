@@ -1,0 +1,77 @@
+@extends('Admin.layouts.layout')
+
+@section('content')
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Создание</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form role="form" method="post" action="{{ route('souses.store') }}" enctype="multipart/form-data">
+                @csrf
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="title">Название поста</label>
+                        <input type="text" name="title" class="form-control @error('title') is-invalid @enderror"
+                            id="title" placeholder="Название">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="marinade">Маринад?</label>
+                        <select name="marinade" id="marinade" class="form-control">
+                            <option value="0">Нет</option>
+                            <option value="1">Да</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Описание</label>
+                        <textarea name="description" id="description" class="redactor form-control @error('description') is-invalid @enderror" rows="5" placeholder="Описание"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content">Контент</label>
+                        <textarea name="content" id="content" class="redactor2 form-control @error('content') is-invalid @enderror" rows="10" placeholder="Контент"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image">Изображение</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" name="image" id="image"
+                                       class="custom-file-input">
+                                <label class="custom-file-label" for="image">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="link">Link</label>
+                        <input type="text" name="link" class="form-control @error('link') is-invalid @enderror"
+                            id="link" placeholder="Название">
+                    </div>
+                    <div class="form-group">
+                        <label for="sub_category_id">Подкатегория</label>
+                        <select name="sub_category_id" id="sub_category_id" class="form-control">
+                            @foreach ($sub_categories as $k => $v)
+                                <option value="{{ $v->id }}">{{ $v->title }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+    <!-- /.content -->
+
+
+    <!-- /.content-wrapper -->
+@endsection
