@@ -349,9 +349,10 @@ document.addEventListener('DOMContentLoaded', function () {
   \***************************************/
 /***/ (() => {
 
-$(document).ready(function () {
-  // $.fancybox.open($('.fancybox-me'));
-});
+
+// $(document).ready(function() {
+//     // $.fancybox.open($('.fancybox-me'));
+// });
 
 /***/ }),
 
