@@ -4153,7 +4153,7 @@ h2 {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
+  right: 16px;
   bottom: 0;
   background-color: #F7F7F7;
   opacity: 0.5;
