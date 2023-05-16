@@ -4136,6 +4136,11 @@ h2 {
   width: 472px;
   height: 100%;
 }
+@media (max-width: 1024px) {
+  .slider-container .swiper-slide__description {
+    width: 100%;
+  }
+}
 .slider-container .swiper-slide__description:before {
   position: absolute;
   top: 0;

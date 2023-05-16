@@ -169,6 +169,10 @@
             width: calc($column_abs * 4 + $gutter_abs * 3);
             height: 100%;
 
+            @media (max-width: 1024px) {
+                width: 100%;
+            }
+
 
             &:before {
                 position: absolute;
