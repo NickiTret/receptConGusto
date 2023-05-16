@@ -38,7 +38,7 @@ Route::get('/news', [IndexController::class, 'news'])->name('news');
 
 Route::get('/news/{slug}', [IndexController::class, 'new'])->name('new');
 
-Route::get('/routine', [IndexController::class, 'routine'])->name('routine');
+Route::get('/marinade', [IndexController::class, 'marinade'])->name('marinade');
 
 
 

@@ -141,12 +141,12 @@ class IndexController extends Controller
         return view('single', compact( 'post', 'fasts', 'posts', 'currentURL'));
     }
 
-    public function routine()
+    public function marinade()
     {
         $currentURL = url()->full();
         $slider = Sous::all()->toJson();
         $groups = Subcat::all();
 
-        return view('routine', compact('currentURL', 'groups', 'slider'));
+        return view('marinade', compact('currentURL', 'groups', 'slider'));
     }
 }
