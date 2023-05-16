@@ -24,6 +24,9 @@
                                                 <h3>{{ $item_slide->title }}</h3>
                                                 <div>
                                                     {!! $item_slide->description !!}
+                                                    <div>
+                                                    {{ $item_slide->content }}
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>
