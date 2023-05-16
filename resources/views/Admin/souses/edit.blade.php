@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="marinade">Ресторан?</label>
+                        <label for="marinade">Маринад?</label>
                         <select name="marinade" id="marinade" class="form-control">
                             <option value="0">Нет</option>
                             <option value="1">Да</option>
@@ -52,7 +52,7 @@
                     </div>
 
                 </div>
-                
+
                 <!-- /.card-body -->
                 <div class="form-group">
                     <label for="link">Название</label>
