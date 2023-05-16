@@ -25,7 +25,7 @@
                                                 <div>
                                                     {!! $item_slide->description !!}
                                                     <div>
-                                                    {{ $item_slide->content }}
+                                                    {!! $item_slide->content !!}
                                                 </div>
                                                 </div>
                                             </div>
