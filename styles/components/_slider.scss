@@ -53,6 +53,12 @@
             width: calc($column_abs * 9 + $gutter_abs * 8);
             & img {
                 width: 100%;
+
+                @media (max-width: 1024px) {
+                    // width: calc($column_abs_maxW_1024 * 6 + $gutter_abs_maxW_1024 * 5);
+                    height: 100%;
+                    width: auto;
+                }
             }
 
             @media (max-width: 1600px) {

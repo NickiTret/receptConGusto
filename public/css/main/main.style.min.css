@@ -4011,6 +4011,12 @@ h2 {
 .slider-container .tabs__content img {
   width: 100%;
 }
+@media (max-width: 1024px) {
+  .slider-container .tabs__content img {
+    height: 100%;
+    width: auto;
+  }
+}
 @media (max-width: 1600px) {
   .slider-container .tabs__content {
     width: 74.1721854305%;
