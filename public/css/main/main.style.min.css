@@ -4015,6 +4015,7 @@ h2 {
   .slider-container .tabs__content img {
     height: 100%;
     width: auto;
+    max-width: none;
   }
 }
 @media (max-width: 1600px) {
@@ -4145,6 +4146,7 @@ h2 {
 @media (max-width: 1024px) {
   .slider-container .swiper-slide__description {
     width: 100%;
+    overflow-y: auto;
   }
 }
 .slider-container .swiper-slide__description:before {

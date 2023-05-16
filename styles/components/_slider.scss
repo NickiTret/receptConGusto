@@ -58,6 +58,7 @@
                     // width: calc($column_abs_maxW_1024 * 6 + $gutter_abs_maxW_1024 * 5);
                     height: 100%;
                     width: auto;
+                    max-width: none;
                 }
             }
 
@@ -177,6 +178,7 @@
 
             @media (max-width: 1024px) {
                 width: 100%;
+                overflow-y: auto;
             }
 
 
