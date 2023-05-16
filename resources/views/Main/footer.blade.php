@@ -1,16 +1,16 @@
-
 <section class="transform">
     <div class="container">
-    <!-- Yandex.RTB R-A-2349463-1 -->
-<div id="yandex_rtb_R-A-2349463-1"></div>
-<script>window.yaContextCb.push(()=>{
-	Ya.Context.AdvManager.render({
-		"blockId": "R-A-2349463-1",
-		"renderTo": "yandex_rtb_R-A-2349463-1"
-	})
-})
-</script>
-</div>
+        <!-- Yandex.RTB R-A-2349463-3 -->
+        <div id="yandex_rtb_R-A-2349463-3"></div>
+        <script>
+            window.yaContextCb.push(() => {
+                Ya.Context.AdvManager.render({
+                    "blockId": "R-A-2349463-3",
+                    "renderTo": "yandex_rtb_R-A-2349463-3"
+                })
+            })
+        </script>
+    </div>
 </section>
 <footer class="footer">
     <div class="container">
@@ -21,9 +21,9 @@
         <nav>
             <ul>
                 @foreach ($headers as $header_item)
-                    <li>
-                        <a href=" {{ $header_item->link }}">{{ $header_item->title }}</a>
-                    </li>
+                <li>
+                    <a href=" {{ $header_item->link }}">{{ $header_item->title }}</a>
+                </li>
                 @endforeach
                 <li>
                     <a href="https://t.me/econgusto" target="_blank">Telegram канал</a>
@@ -58,14 +58,17 @@
     });
 </script>
 <noscript>
-    <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt="" ></div>
+    <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt=""></div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VXQC75FB6B"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-VXQC75FB6B');
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-VXQC75FB6B');
 </script>

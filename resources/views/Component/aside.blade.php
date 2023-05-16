@@ -2,21 +2,29 @@
     <aside>
         <ul>
             @foreach ($posts as $post)
-                <li>
-                    <a href="{{ route('single', $post->slug) }}">
-                        <h4>{{ $post->title }}</h3>
-                            <div class="disabled">
-                                @if (!empty($post->thumbnail))
-                                    <img src="/{{ $post->thumbnail }}" alt="{{ $post->title }}">
-                                @else
-                                    <img src="/{{ $post->image }}" alt="{{ $post->title }}">
-                                @endif
-                            </div>
-                    </a>
-                </li>
+            <li>
+                <a href="{{ route('single', $post->slug) }}">
+                    <h4>{{ $post->title }}</h3>
+                        <div class="disabled">
+                            @if (!empty($post->thumbnail))
+                            <img src="/{{ $post->thumbnail }}" alt="{{ $post->title }}">
+                            @else
+                            <img src="/{{ $post->image }}" alt="{{ $post->title }}">
+                            @endif
+                        </div>
+                </a>
+            </li>
             @endforeach
             <li>
-                <div id="marketWidget"></div>
+                <!-- Yandex.RTB R-A-2349463-2 -->
+                <script>
+                    window.yaContextCb.push(() => {
+                        Ya.Context.AdvManager.render({
+                            "blockId": "R-A-2349463-2",
+                            "type": "floorAd"
+                        })
+                    })
+                </script>
             </li>
         </ul>
     </aside>

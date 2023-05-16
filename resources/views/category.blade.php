@@ -8,30 +8,29 @@
     <div class="site-container">
         <main>
             @if ($banner)
-                @include('Component.banner', ['data' => $banner])
+            @include('Component.banner', ['data' => $banner])
             @endif
 
             @if ($categories)
-                @include('Component.categories', ['data' => $categories])
+            @include('Component.categories', ['data' => $categories])
             @endif
 
             <section class="links">
                 <div class="container">
-                <!-- Yandex Native Ads C-A-2349463-4 -->
-                <div id="yandex_rtb_C-A-2349463-4"></div>
-                <script>
-                    window.yaContextCb.push(() => {
-                        Ya.Context.AdvManager.renderWidget({
-                            renderTo: 'yandex_rtb_C-A-2349463-4',
-                            blockId: 'C-A-2349463-4'
+                    <!-- Yandex.RTB R-A-2349463-2 -->
+                    <script>
+                        window.yaContextCb.push(() => {
+                            Ya.Context.AdvManager.render({
+                                "blockId": "R-A-2349463-2",
+                                "type": "floorAd"
+                            })
                         })
-                    })
-                </script>
+                    </script>
                 </div>
             </section>
 
             @if ($fasts)
-                @include('Component.simple', ['fasts' => $fasts])
+            @include('Component.simple', ['fasts' => $fasts])
             @endif
 
         </main>
