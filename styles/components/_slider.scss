@@ -177,7 +177,7 @@
             height: 100%;
 
             @media (max-width: 1024px) {
-                width: 100%;
+                width: calc(100% - 16px);
                 overflow-y: auto;
             }
 
@@ -186,7 +186,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                right: 16px;
+                right: 0;
                 bottom: 0;
                 background-color: $clr_bg2;
                 opacity: 0.5;

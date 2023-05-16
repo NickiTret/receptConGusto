@@ -4145,7 +4145,7 @@ h2 {
 }
 @media (max-width: 1024px) {
   .slider-container .swiper-slide__description {
-    width: 100%;
+    width: calc(100% - 16px);
     overflow-y: auto;
   }
 }
@@ -4153,7 +4153,7 @@ h2 {
   position: absolute;
   top: 0;
   left: 0;
-  right: 16px;
+  right: 0;
   bottom: 0;
   background-color: #F7F7F7;
   opacity: 0.5;
