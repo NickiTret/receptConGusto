@@ -9,7 +9,7 @@
         <main>
             <section class="marinade">
                 <div class="container">
-                    <h1>Маринады по группам</h1>
+                    <h1>Коллекция маринадов</h1>
                 </div>
             </section>
             @include('Component.slider')

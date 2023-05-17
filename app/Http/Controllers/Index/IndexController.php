@@ -122,7 +122,7 @@ class IndexController extends Controller
     {
         $currentURL = url()->full();
         $fasts = Fast::all();
-        $posts = News::orderBy('views', 'desc')->get();
+        $posts = News::where('restorant', 0)->orderBy('views', 'desc')->get();
         $categories = Category::pluck('title', 'id')->all();
         $tags = Tag::pluck('title', 'id')->all();
         return view('news', compact(  'categories', 'tags', 'posts', 'fasts', 'currentURL'));
@@ -144,7 +144,7 @@ class IndexController extends Controller
     public function marinade()
     {
         $currentURL = url()->full();
-        $slider = Sous::all()->toJson();
+        $slider = Sous::where('marinade', 1)->get()->toJson();
         $groups = Subcat::all();
 
         return view('marinade', compact('currentURL', 'groups', 'slider'));

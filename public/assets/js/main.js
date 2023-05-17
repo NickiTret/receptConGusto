@@ -612,31 +612,30 @@ if (sliderHero) {
 }
 var sliders = Array.from(document.querySelectorAll(".swiper-special"));
 if (sliders) {
-  var thumbnail = document.querySelector("[data-json]");
-  if (thumbnail) {
+  sliders.forEach(function (slider) {
+    var thumbnail = slider.querySelector(".swiper-wrapper");
     var thumbnails = JSON.parse(thumbnail.getAttribute("data-json"));
-    sliders.forEach(function (slider) {
-      new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
-        spaceBetween: 0,
-        autoHeight: true,
-        // navigation: {
-        //     nextEl: ".swiper-button-next",
-        //     prevEl: ".swiper-button-prev",
-        // },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-          renderBullet: function renderBullet(index, className) {
-            var image = Array.from(thumbnails).find(function (el, idx) {
-              return _typeof(el) === "object" && idx === index;
-            });
-            //   return '<span class="' + className + '">' + (index + 1) + "</span>";
-            return '<span class="' + className + '">' + "<img src=\"./".concat(image.image, "\" alt=\"\u041A\u0430\u0440\u0442\u0438\u043D\u043A\u0430 \u0441\u043E\u0443\u0441\u0430\">") + "</span>";
-          }
+    new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
+      spaceBetween: 0,
+      autoHeight: true,
+      // navigation: {
+      //     nextEl: ".swiper-button-next",
+      //     prevEl: ".swiper-button-prev",
+      // },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function renderBullet(index, className) {
+          var image = Array.from(thumbnails).find(function (el, idx) {
+            return _typeof(el) === "object" && idx === index;
+          });
+          console.log(thumbnails);
+          //   return '<span class="' + className + '">' + (index + 1) + "</span>";
+          return '<span class="' + className + '">' + "<img src=\"https://e-con-gusto.ru/".concat(image.image, "\" alt=\"\u041A\u0430\u0440\u0442\u0438\u043D\u043A\u0430 \u0441\u043E\u0443\u0441\u0430\">") + "</span>";
         }
-      });
+      }
     });
-  }
+  });
 }
 
 /***/ }),
