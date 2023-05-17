@@ -114,9 +114,13 @@
                     }
 
                     & > h2 {
-                        @include font_h2($font-family, $clr_text);
+                        @include font_h2($font-family, $clr_white);
                         @include font_italic();
                         margin-bottom: 20px;
+
+                        & a {
+                            color: $clr_yellow;
+                        }
                     }
 
                     & > a {

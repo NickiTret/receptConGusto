@@ -1132,7 +1132,7 @@ section {
   font-weight: 600;
   font-size: 36px;
   line-height: 110%;
-  color: #1F3347;
+  color: #ffffff;
   font-style: italic;
   margin-bottom: 20px;
 }
@@ -1160,6 +1160,9 @@ section {
   .first-screen .swiper > ul li > div.text > h2 {
     font-size: 28px;
   }
+}
+.first-screen .swiper > ul li > div.text > h2 a {
+  color: #FFC814;
 }
 .first-screen .swiper > ul li > div.text > a {
   padding: 15px 30px;
