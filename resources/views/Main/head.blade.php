@@ -16,7 +16,7 @@
     <meta name="description" content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно {{ strip_tags($data->title) }}">
     @elseif (!empty($heros) || !empty($categories))
     <meta name="description" content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно">
-    @elseif (!empty($banner))
+    @elseif (!empty($banner) || empty($data))
     <meta name="description" content="{{ strip_tags($banner->description) }}">
     @endif
     <link rel="icon" href="{{ asset('css/favicon.ico') }}">
