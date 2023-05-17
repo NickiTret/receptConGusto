@@ -1015,6 +1015,8 @@ section {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100vh;
+}
+.first-screen .swiper > ul li > picture > img:nth-child(2n) {
   transform: rotate(180deg);
 }
 @media (max-width: 1600px) {

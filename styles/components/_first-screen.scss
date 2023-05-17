@@ -59,7 +59,11 @@
                     object-fit: cover;
                     height: 100vh;
 
-                    transform: rotate(180deg);
+                    &:nth-child(2n) {
+                        transform: rotate(180deg);
+                    }
+
+
 
                     @media (max-width: 1600px) {
                         //width: auto;
