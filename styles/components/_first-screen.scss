@@ -110,7 +110,7 @@
                     }
 
                     & > h1 {
-                        @include font_h1($font-family, $clr_main);
+                        @include font_h1($font-family, $clr_white);
                         margin-bottom: 8px;
                     }
 
