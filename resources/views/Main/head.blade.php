@@ -6,6 +6,8 @@
     <meta name="yandex-verification" content="3519ed7046470147" />
     <title>Con gusto @if (!empty($data))
         - {{ strip_tags($data->title) }}
+        @elseif (!empty($banner) && empty($data))
+        - {{ strip_tags($banner->title) }}
         @endif
     </title>
     @if (!empty($data->description))
@@ -14,6 +16,8 @@
     <meta name="description" content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно {{ strip_tags($data->title) }}">
     @elseif (!empty($heros) || !empty($categories))
     <meta name="description" content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно">
+    @elseif (!empty($banner))
+    <meta name="description" content="{{ strip_tags($banner->description) }}">
     @endif
     <link rel="icon" href="{{ asset('css/favicon.ico') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />

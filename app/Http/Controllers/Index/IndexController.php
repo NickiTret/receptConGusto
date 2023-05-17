@@ -146,7 +146,7 @@ class IndexController extends Controller
         $currentURL = url()->full();
         $slider = Sous::where('marinade', 1)->get()->toJson();
         $groups = Subcat::all();
-
-        return view('marinade', compact('currentURL', 'groups', 'slider'));
+        $banner = Banner::where('page', 'Коллекция маринадов')->firstOrFail();
+        return view('marinade', compact('currentURL', 'groups', 'slider', 'banner'));
     }
 }

@@ -7,6 +7,9 @@
     @include('Main.header')
     <div class="site-container" style="overflow: hidden">
         <main>
+            @if ($banner)
+            @include('Component.banner', ['data' => $banner])
+            @endif
             <section class="marinade">
                 <div class="container">
                     <h1>Коллекция маринадов</h1>
