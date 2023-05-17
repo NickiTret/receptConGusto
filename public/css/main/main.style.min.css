@@ -933,6 +933,7 @@ section {
 .footer > .container > nav > ul {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 14px;
 }
 .footer > .container > nav > ul > li > a {
@@ -943,6 +944,7 @@ section {
   line-height: 145%;
   color: #E4E6F1;
   transition: color 0.3 ease-in-out;
+  white-space: nowrap;
 }
 @media (max-width: 768px) {
   .footer > .container > nav > ul > li > a {

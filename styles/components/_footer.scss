@@ -38,6 +38,7 @@
             & > ul {
                 display: flex;
                 align-items: center;
+                flex-wrap: wrap;
                 gap: 14px;
 
 
@@ -45,6 +46,7 @@
                     & > a {
                         @include font_small($font-family, $clr_bg);
                         transition: color 0.3 ease-in-out;
+                        white-space: nowrap;
                         &:hover {
                             color: $clr_main2;
                         }
