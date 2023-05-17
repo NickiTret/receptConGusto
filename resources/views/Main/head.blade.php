@@ -6,8 +6,6 @@
     <meta name="yandex-verification" content="3519ed7046470147" />
     <title>Con gusto @if (!empty($data))
         - {{ strip_tags($data->title) }}
-        @elseif (!empty($banner) && empty($data))
-        - {{ strip_tags($banner->title) }}
         @endif
     </title>
     @if (!empty($data->description))
