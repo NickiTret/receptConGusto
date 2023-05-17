@@ -2992,6 +2992,7 @@ section {
   .banner > .container > .text {
     width: 74.1176470588%;
     margin-left: -47.0588235294%;
+    text-align: center;
   }
 }
 @media (max-width: 768px) {

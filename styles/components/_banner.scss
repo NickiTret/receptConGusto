@@ -87,6 +87,7 @@
             @media(max-width: 1024px) {
                 width: calc( $column_abs_maxW_1024 * 6 + $gutter_abs_maxW_1024 * 5 );
                 margin-left: calc($column_abs_maxW_1024 * -5);
+                text-align: center;
 
             }
 
