@@ -16,12 +16,13 @@
             </li>
             @endforeach
             <li>
-                <!-- Yandex.RTB R-A-2349463-2 -->
+                <!-- Yandex.RTB R-A-2349463-5 -->
+                <div id="yandex_rtb_R-A-2349463-5"></div>
                 <script>
                     window.yaContextCb.push(() => {
                         Ya.Context.AdvManager.render({
-                            "blockId": "R-A-2349463-2",
-                            "type": "floorAd"
+                            "blockId": "R-A-2349463-5",
+                            "renderTo": "yandex_rtb_R-A-2349463-5"
                         })
                     })
                 </script>
