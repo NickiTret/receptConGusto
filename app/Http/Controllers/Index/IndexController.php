@@ -110,6 +110,7 @@ class IndexController extends Controller
 
         $posts = $postsAll->merge($fasts);
 
+
         return view('search', compact('posts', 'category' ,  'currentURL'));
     }
 
