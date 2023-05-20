@@ -1520,6 +1520,16 @@ section {
   flex-wrap: wrap;
   gap: 40px;
 }
+@media (max-width: 1440px) {
+  .hits > .container > ul {
+    gap: 2.8571428571%;
+  }
+}
+@media (max-width: 1280px) {
+  .hits > .container > ul {
+    gap: 2.5641025641%;
+  }
+}
 .hits > .container > ul > li {
   position: relative;
   overflow: hidden;

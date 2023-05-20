@@ -12,6 +12,14 @@
             flex-wrap: wrap;
             gap: calc($gutter_abs * 1);
 
+            @media (max-width: 1440px) {
+                gap: calc($gutter_abs_maxW_1440 * 1);
+            }
+
+            @media (max-width: 1280px) {
+                gap: calc($gutter_abs_maxW_1280 * 1);
+            }
+
             & > li {
                 position: relative;
                 overflow: hidden;
