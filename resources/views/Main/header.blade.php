@@ -1,5 +1,5 @@
 <header data-aos="fade-down" data-aos-duration="1000" class="header">
-    <div class="container">
+    <div class="container-header">
         <a href="/" class="logo">
             <img width="200" src="{{ asset('assets/base/logo.png') }}" alt="logo">
         </a>
@@ -68,7 +68,7 @@
             @endif
         </div>
     </div>
-    <div class="container">
+    <div class="container-header">
         <ul class="list-reset category-list">
             @foreach ($categories_menu as $item)
                 @if ($item->posts->count())

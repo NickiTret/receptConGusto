@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Cache;
 
 class PostController extends Controller
 {
@@ -27,6 +27,7 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+        Cache::flush();
         $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -55,6 +56,7 @@ class PostController extends Controller
 
     public function update(Request $request, $id)
     {
+        Cache::flush();
         $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -81,6 +83,7 @@ class PostController extends Controller
 
     public function destroy($id)
     {
+        Cache::flush();
        $post = Post::find($id);
        $post->tags()->sync([]);
        Storage::delete($post->thumbnail);

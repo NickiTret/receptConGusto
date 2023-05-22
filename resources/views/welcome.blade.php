@@ -30,9 +30,9 @@
                 @include('Component.hits', ['posts' => $posts, 'url' => $currentURL])
             @endif
 
-            @if (!empty($features))
+            {{-- @if (!empty($features))
                 @include('Component.features', ['data' => $features])
-            @endif
+            @endif --}}
 
             @if (!empty($random))
                 @include('Component.recept__day', ['random' => $random])

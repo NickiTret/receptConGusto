@@ -18,30 +18,90 @@ use App\Models\Hat;
 use App\Models\News;
 use App\Models\Sous;
 use App\Models\Subcat;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Cookie;
 
 class IndexController extends Controller
 {
 
     public function index()
     {
+        if(Cache::has(('fasts'))) {
+            $fasts = Cache::get('fasts');
+        } else {
+            $fasts = Fast::all();
+            Cache::put('fasts', $fasts, 604800 );
+        }
+
+        if(Cache::has(('heros'))) {
+            $heros = Cache::get('heros');
+        } else {
+            $heros = Hero::latest()->get();
+            Cache::put('heros', $heros, 604800 );
+        }
+
+        if(Cache::has(('random'))) {
+            $random = Cache::get('random');
+        } else {
+            $random = Post::all()->random();
+            Cache::put('random', $random, 604800 );
+        }
+
+        if(Cache::has(('posts'))) {
+            $posts = Cache::get('posts');
+        } else {
+            $posts = Post::orderBy('views', 'desc')->limit(4)->get();
+            Cache::put('posts', $posts, 604800 );
+        }
+
+        if(Cache::has(('allPosts'))) {
+            $allPosts = Cache::get('allPosts');
+        } else {
+            $allPosts = Post::all();
+            Cache::put('allPosts', $allPosts, 604800 );
+        }
+
+        // if(Cache::has(('features'))) {
+        //     $features = Cache::get('features');
+        // } else {
+        //     $features = Feat::all();
+        //     Cache::put('features', $features, 604800 );
+        // }
+
+        if(Cache::has(('categories'))) {
+            $categories = Cache::get('categories');
+        } else {
+            $categories = Category::pluck('title', 'id')->all();
+            Cache::put('categories', $categories, 604800 );
+        }
+
+        if(Cache::has(('tags'))) {
+            $tags = Cache::get('tags');
+        } else {
+            $tags = Tag::pluck('title', 'id')->all();
+            Cache::put('tags', $tags, 604800 );
+        }
+
+
         $currentURL = url()->full();
-        $fasts = Fast::all();
-        $heros = Hero::latest()->get();
-        $random = Post::all()->random();
-        $posts = Post::orderBy('views', 'desc')->limit(4)->get();
-        $allPosts = Post::all();
-        $features = Feat::all();
-        $categories = Category::pluck('title', 'id')->all();
-        $tags = Tag::pluck('title', 'id')->all();
         $maps = Tag::orderBy('created_at', 'desc')->get();
         $lastPost = Post::orderBy('created_at', 'desc')->limit(4)->get();
-        return view('welcome', compact(  'categories', 'tags', 'maps' , 'random' , 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'features', 'lastPost'));
+
+        return view('welcome', compact(  'categories', 'tags', 'maps' , 'random' , 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'lastPost'));
     }
 
     public function show($slug)
     {
+
+        if(Cache::has(('fasts'))) {
+            $fasts = Cache::get('fasts');
+        } else {
+            $fasts = Fast::all();
+            Cache::put('fasts', $fasts, 604800 );
+        }
+
         $currentURL = url()->full();
-        $fasts = Fast::all();
+
         $post = Post::where('slug', $slug)->firstOrFail();
         $posts = Post::where('category_id', $post->category_id)->limit(5)->get();
         $post->views += 1;
@@ -54,9 +114,17 @@ class IndexController extends Controller
 
     public function fast($slug)
     {
+
+        if(Cache::has(('posts'))) {
+            $posts = Cache::get('posts');
+        } else {
+            $posts = Fast::all();
+            Cache::put('posts', $posts, 604800 );
+        }
+
+
         $currentURL = url()->full();
         $post = Fast::where('slug', $slug)->first();
-        $posts = Fast::all();
         return view('single', compact( 'post', 'posts', 'currentURL'));
     }
 
@@ -105,11 +173,8 @@ class IndexController extends Controller
         $currentURL = url()->full();
         $category = Category::all();
         $postsAll = Post::filter($filter)->paginate(100);
-
         $fasts = Fast::filter($filter)->paginate(20);
-
         $posts = $postsAll->merge($fasts);
-
 
         return view('search', compact('posts', 'category' ,  'currentURL'));
     }
@@ -121,6 +186,7 @@ class IndexController extends Controller
 
     public function news()
     {
+
         $currentURL = url()->full();
         $fasts = Fast::all();
         $posts = News::where('restorant', 0)->orderBy('views', 'desc')->get();

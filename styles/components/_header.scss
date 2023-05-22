@@ -14,7 +14,27 @@
 
     z-index: 100;
 
-    & > .container {
+    @media (max-width: 1600px) {
+        padding-right: 56px;
+        padding-left: 56px;
+    }
+
+    @media (max-width: 1280px) {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+
+    @media (max-width: 1024px) {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+
+    @media (max-width: 768px) {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    & > .container-header {
         display: flex;
         align-items: center;
         justify-content: space-between;

@@ -96,6 +96,15 @@
                                 margin-right: 5px;
                             }
                         }
+
+                        & > .views {
+                            padding-left: 30px;
+                            background-image: url(/assets/base/view.png);
+                            background-position: left center;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            color: $clr_main;
+                        }
                     }
 
                     & img {

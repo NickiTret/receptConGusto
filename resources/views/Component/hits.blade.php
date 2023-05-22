@@ -14,11 +14,16 @@
                     @else
                     <img src="/{{$post->image}}" alt="{{$post->title}}">
                     @endif
-
                     <div class="top">
                             @if (!empty($post->category->title))
                             <span class="category">
                                   {{$post->category->title}}
+                            </span>
+                            @endif
+
+                            @if (!empty($post->views))
+                            <span class="views">
+                                 {{$post->views}}
                             </span>
                             @endif
                     </div>
