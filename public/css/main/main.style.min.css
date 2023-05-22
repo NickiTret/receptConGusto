@@ -1048,6 +1048,11 @@ section {
     width: auto;
   }
 }
+@media (max-width: 480px) {
+  .first-screen .swiper > ul li > picture > img {
+    height: 100%;
+  }
+}
 .first-screen .swiper > ul li > div.text {
   box-sizing: border-box;
   width: 100%;

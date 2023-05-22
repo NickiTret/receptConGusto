@@ -77,6 +77,11 @@
                         // height: 100%;
                         width: auto;
                     }
+
+                    @media (max-width: 480px) {
+                        height: 100%;
+
+                    }
                 }
 
                 & > div.text {
