@@ -720,6 +720,10 @@ section {
   }
 }
 
+input.search-input.focus-visible.expand {
+  background-color: #ffffff !important;
+}
+
 .menu {
   display: inline-flex;
   flex-wrap: wrap;
