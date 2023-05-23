@@ -4079,18 +4079,12 @@ h2 {
   flex: 0 0 auto;
   width: 1112px;
 }
-@media (max-width: 1024px) {
-  .slider-container .tabs__content {
-    height: 80vh;
-    overflow: auto;
-  }
-}
 .slider-container .tabs__content img {
   width: 100%;
 }
 @media (max-width: 1024px) {
   .slider-container .tabs__content img {
-    height: 100%;
+    max-height: 80vh;
     width: auto;
     max-width: none;
     -o-object-fit: cover;
@@ -4231,6 +4225,7 @@ h2 {
 @media (max-width: 1024px) {
   .slider-container .swiper-slide__description {
     width: calc(100% - 16px);
+    height: 100%;
     overflow-y: auto;
   }
 }

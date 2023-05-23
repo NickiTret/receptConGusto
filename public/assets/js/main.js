@@ -620,7 +620,7 @@ if (sliders) {
       // allowSlideNext: false,
       // allowSlidePrev: false,
       allowTouchMove: false,
-      autoHeight: false,
+      autoHeight: true,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev"
