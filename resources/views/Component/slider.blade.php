@@ -1,7 +1,7 @@
 <section class="slider">
     <div class="slider-container container">
         <div class="tabs" data-tabs="tab">
-            <ul class="tabs__nav">
+            <ul class="tabs__nav" >
                 @foreach ($groups as $item)
                     @if (count($item->sous))
                         <li class="tabs__nav-item"><button class="tabs__nav-btn  btn-main"
