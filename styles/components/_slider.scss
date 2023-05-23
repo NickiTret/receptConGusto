@@ -50,6 +50,13 @@
         .tabs__content {
             flex: 0 0 auto;
             width: calc($column_abs * 9 + $gutter_abs * 8);
+
+            @media (max-width: 1024px) {
+                height: 80vh;
+                overflow: auto;
+            }
+
+
             & img {
                 width: 100%;
 
@@ -58,6 +65,7 @@
                     height: 100%;
                     width: auto;
                     max-width: none;
+                    object-fit: cover;
                 }
             }
 
@@ -249,3 +257,14 @@
         }
     }
 }
+
+
+.swiper-button-next, .swiper-button-prev {
+    color: $clr_main !important;
+}
+
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 20px !important;
+}
+

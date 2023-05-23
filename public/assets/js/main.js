@@ -617,11 +617,14 @@ if (sliders) {
     var thumbnails = JSON.parse(thumbnail.getAttribute("data-json"));
     new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
       spaceBetween: 0,
-      autoHeight: true,
-      // navigation: {
-      //     nextEl: ".swiper-button-next",
-      //     prevEl: ".swiper-button-prev",
-      // },
+      // allowSlideNext: false,
+      // allowSlidePrev: false,
+      allowTouchMove: false,
+      autoHeight: false,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,

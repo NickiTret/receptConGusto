@@ -4075,6 +4075,12 @@ h2 {
   flex: 0 0 auto;
   width: 1112px;
 }
+@media (max-width: 1024px) {
+  .slider-container .tabs__content {
+    height: 80vh;
+    overflow: auto;
+  }
+}
 .slider-container .tabs__content img {
   width: 100%;
 }
@@ -4083,6 +4089,8 @@ h2 {
     height: 100%;
     width: auto;
     max-width: none;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 @media (max-width: 1600px) {
@@ -4376,4 +4384,12 @@ h2 {
 }
 .slider-container .swiper-slide__description div img {
   max-width: 100%;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: #1B75BB !important;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+  font-size: 20px !important;
 }

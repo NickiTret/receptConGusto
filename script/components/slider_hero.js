@@ -38,11 +38,14 @@ if (sliders) {
         const thumbnails = JSON.parse(thumbnail.getAttribute("data-json"));
         new Swiper(slider, {
             spaceBetween: 0,
-            autoHeight: true,
-            // navigation: {
-            //     nextEl: ".swiper-button-next",
-            //     prevEl: ".swiper-button-prev",
-            // },
+            // allowSlideNext: false,
+            // allowSlidePrev: false,
+            allowTouchMove: false,
+            autoHeight: false,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
