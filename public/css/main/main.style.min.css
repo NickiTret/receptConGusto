@@ -4085,7 +4085,6 @@ h2 {
 @media (max-width: 1024px) {
   .slider-container .tabs__content img {
     height: 100%;
-    max-height: 702px;
     width: auto;
     max-width: none;
     -o-object-fit: cover;
