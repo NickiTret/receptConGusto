@@ -50,9 +50,6 @@
                         </div>
                         <div><img src="{{ $sous->getImage() }}" alt="" class="img-image mt-2" width="200"></div>
                     </div>
-
-                </div>
-
                 <!-- /.card-body -->
                 <div class="form-group">
                     <label for="link">Название</label>
@@ -67,6 +64,9 @@
                         @endforeach
                     </select>
                 </div>
+                </div>
+
+
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Сохранить</button>
                 </div>
