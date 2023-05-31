@@ -11,40 +11,58 @@
     }
 
     & .container {
-        width: calc( $column_abs * 6 + $gutter_abs * 5 );
+        width: calc($column_abs * 6 + $gutter_abs * 5);
         padding: 0;
         @media (max-width: 1600px) {
-            width: calc( $column_abs_maxW_1600 * 10 + $gutter_abs_maxW_1600 * 9 );
+            width: calc($column_abs_maxW_1600 * 10 + $gutter_abs_maxW_1600 * 9);
         }
 
         @media (max-width: 1440px) {
-            width: calc( $column_abs_maxW_1440 * 10 + $gutter_abs_maxW_1440 * 9 );
+            width: calc($column_abs_maxW_1440 * 10 + $gutter_abs_maxW_1440 * 9);
         }
 
         @media (max-width: 1280px) {
-            width: calc( $column_abs_maxW_1280 * 10 + $gutter_abs_maxW_1280 * 9 );
+            width: calc($column_abs_maxW_1280 * 10 + $gutter_abs_maxW_1280 * 9);
         }
 
         @media (max-width: 1024px) {
-            width: calc( $column_abs_maxW_1024 * 6 + $gutter_abs_maxW_1024 * 5 );
+            width: calc($column_abs_maxW_1024 * 6 + $gutter_abs_maxW_1024 * 5);
         }
 
         @media (max-width: 768px) {
-            width: calc( $column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3 );
+            width: calc($column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3);
         }
         & > p {
             @include font_p1($font-family, $clr_text);
             margin-bottom: 12px;
 
-
-        & > a {
-            color: $clr_main;
-            &:hover {
-                color: $clr_yellow;
+            & > a {
+                color: $clr_main;
+                &:hover {
+                    color: $clr_yellow;
+                }
             }
         }
+
+        & > .content > p {
+            @include font_p1($font-family, $clr_text);
+            margin-bottom: 14px;
+        }
+
+        & > .content > ul {
+            list-style-type: disc;
+            @include font_lead($font-family, $clr_main);
+            font-weight: bold;
+            margin-bottom: 14px;
+            // border-right: 5px solid $clr_text;
+            padding: 24px 48px;
+            border-radius: 14px 0 0 14px;
+            background-color: $clr_bg;
+
+            @media (max-width: 480px) {
+                padding-left: 26px;
+                padding-right: 8px;
+            }
         }
     }
-
-
 }

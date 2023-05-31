@@ -40,6 +40,8 @@ Route::get('/news/{slug}', [IndexController::class, 'new'])->name('new');
 
 Route::get('/marinade', [IndexController::class, 'marinade'])->name('marinade');
 
+Route::get('/dessert', [IndexController::class, 'dessert'])->name('dessert');
+
 
 
 Route::middleware(['admin'])->prefix('admin')->group(function () {

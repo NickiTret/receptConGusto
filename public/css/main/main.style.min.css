@@ -3961,6 +3961,70 @@ h2 {
 .about_content .container > p > a:hover {
   color: #FFC814;
 }
+.about_content .container > .content > p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 145%;
+  color: #1F3347;
+  margin-bottom: 14px;
+}
+@media (max-width: 1600px) {
+  .about_content .container > .content > p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .about_content .container > .content > p {
+    font-size: 16px;
+  }
+}
+.about_content .container > .content > ul {
+  list-style-type: disc;
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 139%;
+  color: #1B75BB;
+  font-weight: bold;
+  margin-bottom: 14px;
+  padding: 24px 48px;
+  border-radius: 14px 0 0 14px;
+  background-color: #E4E6F1;
+}
+@media (max-width: 1600px) {
+  .about_content .container > .content > ul {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1440px) {
+  .about_content .container > .content > ul {
+    font-size: 22px;
+  }
+}
+@media (max-width: 1280px) {
+  .about_content .container > .content > ul {
+    font-size: 22px;
+  }
+}
+@media (max-width: 1024px) {
+  .about_content .container > .content > ul {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .about_content .container > .content > ul {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .about_content .container > .content > ul {
+    padding-left: 26px;
+    padding-right: 8px;
+  }
+}
 
 .choices {
   margin-top: 0;

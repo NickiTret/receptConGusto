@@ -9,6 +9,7 @@
         <nav title="Главное меню" data-menu>
             <ul class="reset-list">
                 @foreach ($headers as $header_item)
+                @if ($loop->iteration == 5) @continue @endif
                     <li>
                         <a href="{{ $header_item->link }}">{{ $header_item->title }}</a>
                     </li>

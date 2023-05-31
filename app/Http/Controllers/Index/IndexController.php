@@ -26,39 +26,39 @@ class IndexController extends Controller
 
     public function index()
     {
-        if(Cache::has(('fasts'))) {
+        if (Cache::has(('fasts'))) {
             $fasts = Cache::get('fasts');
         } else {
             $fasts = Fast::all();
-            Cache::put('fasts', $fasts, 604800 );
+            Cache::put('fasts', $fasts, 604800);
         }
 
-        if(Cache::has(('heros'))) {
+        if (Cache::has(('heros'))) {
             $heros = Cache::get('heros');
         } else {
             $heros = Hero::latest()->get();
-            Cache::put('heros', $heros, 604800 );
+            Cache::put('heros', $heros, 604800);
         }
 
-        if(Cache::has(('random'))) {
+        if (Cache::has(('random'))) {
             $random = Cache::get('random');
         } else {
             $random = Post::all()->random();
-            Cache::put('random', $random, 604800 );
+            Cache::put('random', $random, 604800);
         }
 
-        if(Cache::has(('posts'))) {
+        if (Cache::has(('posts'))) {
             $posts = Cache::get('posts');
         } else {
             $posts = Post::orderBy('views', 'desc')->limit(4)->get();
-            Cache::put('posts', $posts, 604800 );
+            Cache::put('posts', $posts, 604800);
         }
 
-        if(Cache::has(('allPosts'))) {
+        if (Cache::has(('allPosts'))) {
             $allPosts = Cache::get('allPosts');
         } else {
             $allPosts = Post::all();
-            Cache::put('allPosts', $allPosts, 604800 );
+            Cache::put('allPosts', $allPosts, 604800);
         }
 
         // if(Cache::has(('features'))) {
@@ -68,18 +68,18 @@ class IndexController extends Controller
         //     Cache::put('features', $features, 604800 );
         // }
 
-        if(Cache::has(('categories'))) {
+        if (Cache::has(('categories'))) {
             $categories = Cache::get('categories');
         } else {
             $categories = Category::pluck('title', 'id')->all();
-            Cache::put('categories', $categories, 604800 );
+            Cache::put('categories', $categories, 604800);
         }
 
-        if(Cache::has(('tags'))) {
+        if (Cache::has(('tags'))) {
             $tags = Cache::get('tags');
         } else {
             $tags = Tag::pluck('title', 'id')->all();
-            Cache::put('tags', $tags, 604800 );
+            Cache::put('tags', $tags, 604800);
         }
 
 
@@ -87,17 +87,17 @@ class IndexController extends Controller
         $maps = Tag::orderBy('created_at', 'desc')->get();
         $lastPost = Post::orderBy('created_at', 'desc')->limit(4)->get();
 
-        return view('welcome', compact(  'categories', 'tags', 'maps' , 'random' , 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'lastPost'));
+        return view('welcome', compact('categories', 'tags', 'maps', 'random', 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'lastPost'));
     }
 
     public function show($slug)
     {
 
-        if(Cache::has(('fasts'))) {
+        if (Cache::has(('fasts'))) {
             $fasts = Cache::get('fasts');
         } else {
             $fasts = Fast::all();
-            Cache::put('fasts', $fasts, 604800 );
+            Cache::put('fasts', $fasts, 604800);
         }
 
         $currentURL = url()->full();
@@ -109,23 +109,23 @@ class IndexController extends Controller
         $categories = Category::pluck('title', 'id')->all();
         $category = Category::where('id', $post->category_id)->first();
         $tags = Tag::pluck('title', 'id')->all();
-        return view('single', compact( 'post', 'tags', 'categories', 'category', 'fasts', 'posts', 'currentURL'));
+        return view('single', compact('post', 'tags', 'categories', 'category', 'fasts', 'posts', 'currentURL'));
     }
 
     public function fast($slug)
     {
 
-        if(Cache::has(('posts'))) {
+        if (Cache::has(('posts'))) {
             $posts = Cache::get('posts');
         } else {
             $posts = Fast::all();
-            Cache::put('posts', $posts, 604800 );
+            Cache::put('posts', $posts, 604800);
         }
 
 
         $currentURL = url()->full();
         $post = Fast::where('slug', $slug)->first();
-        return view('single', compact( 'post', 'posts', 'currentURL'));
+        return view('single', compact('post', 'posts', 'currentURL'));
     }
 
     public function category()
@@ -133,7 +133,7 @@ class IndexController extends Controller
         $fasts = Fast::all();
         $banner = Banner::where('page', 'Категории')->firstOrFail();
         $categories = Category::orderBy('title')->get();
-        return view('category', compact(  'categories', 'banner', 'fasts'));
+        return view('category', compact('categories', 'banner', 'fasts'));
     }
 
     public function tag($id)
@@ -143,7 +143,7 @@ class IndexController extends Controller
         $tag = Tag::where('id', $id)->firstOrFail();
         $posts = $tag->posts()->orderBy('id', 'desc')->paginate(50);
         $banner = Banner::where('page', 'Тег')->first();
-        return view('tags', compact( 'tag','hat', 'posts', 'banner', 'fasts'));
+        return view('tags', compact('tag', 'hat', 'posts', 'banner', 'fasts'));
     }
 
     public function category_item($slug)
@@ -151,24 +151,25 @@ class IndexController extends Controller
         // $banner = Banner::where('page', 'Категории')->firstOrFail();
         $category_item = Category::where('slug', $slug)->firstOrfail();
         $posts = Post::where('category_id', $category_item->id)->get();
-        return view('category-item', compact(  'posts', 'category_item'));
+        return view('category-item', compact('posts', 'category_item'));
     }
 
-//    public function search(Request $request) {
-//        $request->validate([
-//            's' => 'required',
-//        ]);
-//        $currentURL = url()->full();
-//        $s = $request->s;
-//        $postsAll = Post::where('title', 'LIKE', "%{$s}%")->with('category')->paginate(20);
-//        $fastsAll = Fast::where('title', 'LIKE', "%{$s}%")->paginate(20);
-//
-//        $posts = $postsAll->merge($fastsAll);
-//
-//        return view('search', compact('posts', 's',  'currentURL'));
-//    }
+    //    public function search(Request $request) {
+    //        $request->validate([
+    //            's' => 'required',
+    //        ]);
+    //        $currentURL = url()->full();
+    //        $s = $request->s;
+    //        $postsAll = Post::where('title', 'LIKE', "%{$s}%")->with('category')->paginate(20);
+    //        $fastsAll = Fast::where('title', 'LIKE', "%{$s}%")->paginate(20);
+    //
+    //        $posts = $postsAll->merge($fastsAll);
+    //
+    //        return view('search', compact('posts', 's',  'currentURL'));
+    //    }
 
-    public function search(ReceptFilter $filter) {
+    public function search(ReceptFilter $filter)
+    {
 
         $currentURL = url()->full();
         $category = Category::all();
@@ -176,12 +177,13 @@ class IndexController extends Controller
         $fasts = Fast::filter($filter)->paginate(20);
         $posts = $postsAll->merge($fasts);
 
-        return view('search', compact('posts', 'category' ,  'currentURL'));
+        return view('search', compact('posts', 'category',  'currentURL'));
     }
 
-    public function about() {
+    public function about()
+    {
         $hat = Hat::where('page_name', 'О сайте')->first();
-        return view('about', compact( 'hat'));
+        return view('about', compact('hat'));
     }
 
     public function news()
@@ -192,7 +194,7 @@ class IndexController extends Controller
         $posts = News::where('restorant', 0)->orderBy('views', 'desc')->get();
         $categories = Category::pluck('title', 'id')->all();
         $tags = Tag::pluck('title', 'id')->all();
-        return view('news', compact(  'categories', 'tags', 'posts', 'fasts', 'currentURL'));
+        return view('news', compact('categories', 'tags', 'posts', 'fasts', 'currentURL'));
     }
 
     public function new($slug)
@@ -205,7 +207,7 @@ class IndexController extends Controller
 
         $post->update();
 
-        return view('single', compact( 'post', 'fasts', 'posts', 'currentURL'));
+        return view('single', compact('post', 'fasts', 'posts', 'currentURL'));
     }
 
     public function marinade()
@@ -215,5 +217,16 @@ class IndexController extends Controller
         $groups = Subcat::all();
         $banner = Banner::where('page', 'Коллекция маринадов')->firstOrFail();
         return view('marinade', compact('currentURL', 'groups', 'slider', 'banner'));
+    }
+
+    public function dessert()
+    {
+        $data = (object) [
+            'title' => 'Пирожные на заказ СПб',
+            'description' => 'ДЕСЕРТЫ, КОТОРЫЕ МИНУЯ ЖЕЛУДОК, ПОПАДАЮТ ПРЯМО В СЕРДЦЕ! Наполеончики к чаю',
+          ];
+        $fasts = Fast::all();
+        $banner = Banner::where('page', 'Категории')->firstOrFail();
+        return view('dessert', compact( 'banner', 'data' ));
     }
 }
