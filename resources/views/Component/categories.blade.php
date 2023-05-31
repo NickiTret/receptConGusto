@@ -4,6 +4,17 @@
         <div class="content">
             <ul>
                 @if (!empty($data))
+                <li>
+                    <a href="{{ route('marinade') }}">
+                        <div>
+                            <img src="/images/2023-05-17/sJ01l9hbA7G5eSUlSKqm6S7VfBKUOOUlvkGSJB2S.jpg" alt="Коллекция маринадов">
+                        </div>
+                        <p>Коллекция маринадов</p>
+                        <p class="category-description"><small>
+                            Заранее подержите рыбу, мясо или морепродукты в маринадн минимум 2 - 4 часа. После дайте маринаду хорошо стечь. Когда мясо почти готово, смажьте продукт остатками маринада, для вкусной и привлекательной корочки.
+                        </small></p>
+                    </a>
+                </li>
                     @foreach ($data as $item)
                         @if ($item->posts->count() > 0)
                             <li>
