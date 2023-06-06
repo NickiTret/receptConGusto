@@ -18,22 +18,24 @@
     <meta name="description" content="Con gusto, рецепты, домашняя еда по ресторанным рецептам">
     @endif
 
-
+    <meta name="twitter:card" content="summary_large_image" />
 
     @if (!empty($post->thumbnail))
     <meta property=”og:image” content="{{asset($post->thumbnail)}}"/>
+    <meta name="twitter:image" content="{{asset($post->thumbnail)}}" />
     @elseif (!empty($banner) && empty($data))
     <meta property=”og:image” content="{{asset($banner->image)}}"/>
+    <meta name="twitter:image" content="{{asset($banner->image)}}" />
     @elseif (!empty($category_item) && empty($post->thumbnail))
     <meta property=”og:image” content="{{asset($category_item->image)}}"/>
+    <meta name="twitter:image" content="{{asset($category_item->image)}}" />
     @elseif (!empty($data->image))
     <meta property=”og:image” content="{{asset($data->image)}}"/>
+    <meta name="twitter:image" content="{{asset($data->image)}}" />
     @endif
 
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:image:width" content="600" />
-    <meta property="og:image:height" content="300" />
+
 
 
 
