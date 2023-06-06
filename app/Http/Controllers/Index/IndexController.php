@@ -87,11 +87,7 @@ class IndexController extends Controller
         $maps = Tag::orderBy('created_at', 'desc')->get();
         $lastPost = Post::orderBy('created_at', 'desc')->limit(4)->get();
 
-        $data = (object) [
-            'image' => 'https://e-con-gusto.ru/images/2023-04-10/tyJHosRVPYDp7sOO4NKP6AgvekuQJF77LjzV26WJ.jpg'
-          ];
-
-        return view('welcome', compact('categories', 'tags', 'maps', 'random', 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'lastPost', 'data'));
+        return view('welcome', compact('categories', 'tags', 'maps', 'random', 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'lastPost'));
     }
 
     public function show($slug)
@@ -187,10 +183,7 @@ class IndexController extends Controller
     public function about()
     {
         $hat = Hat::where('page_name', 'О сайте')->first();
-        $data = (object) [
-            'image' => 'https://e-con-gusto.ru/images/2023-05-01/wOJstYMquaQxokqSXHrnfa1CCWt0bhpjHPDGVOEA.jpg'
-          ];
-        return view('about', compact('hat', 'data'));
+        return view('about', compact('hat'));
     }
 
     public function news()
@@ -214,11 +207,7 @@ class IndexController extends Controller
 
         $post->update();
 
-        $data = (object) [
-            'image' => 'https://e-con-gusto.ru/images/2023-05-01/wOJstYMquaQxokqSXHrnfa1CCWt0bhpjHPDGVOEA.jpg'
-          ];
-
-        return view('single', compact('post', 'fasts', 'posts', 'currentURL', 'data'));
+        return view('single', compact('post', 'fasts', 'posts', 'currentURL'));
     }
 
     public function marinade()
@@ -228,12 +217,7 @@ class IndexController extends Controller
         $groups = Subcat::all();
         $banner = Banner::where('page', 'Коллекция маринадов')->firstOrFail();
 
-        $data = (object) [
-            'image' => 'https://e-con-gusto.ru/images/2023-05-16/JaEb75yyvaBagj9qiNJeTv0RP9jRX19ax1ykYIv6.jpg'
-          ];
-
-
-        return view('marinade', compact('currentURL', 'groups', 'slider', 'banner', 'data'));
+        return view('marinade', compact('currentURL', 'groups', 'slider', 'banner'));
     }
 
     public function dessert()
