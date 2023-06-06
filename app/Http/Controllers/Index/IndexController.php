@@ -88,8 +88,6 @@ class IndexController extends Controller
         $lastPost = Post::orderBy('created_at', 'desc')->limit(4)->get();
 
         $data = (object) [
-            'title' => 'Пирожные на заказ СПб',
-            'description' => 'ДЕСЕРТЫ, КОТОРЫЕ МИНУЯ ЖЕЛУДОК, ПОПАДАЮТ ПРЯМО В СЕРДЦЕ! Наполеончики к чаю',
             'image' => 'https://e-con-gusto.ru/images/2023-04-10/tyJHosRVPYDp7sOO4NKP6AgvekuQJF77LjzV26WJ.jpg'
           ];
 
@@ -190,8 +188,6 @@ class IndexController extends Controller
     {
         $hat = Hat::where('page_name', 'О сайте')->first();
         $data = (object) [
-            'title' => 'Пирожные на заказ СПб',
-            'description' => 'ДЕСЕРТЫ, КОТОРЫЕ МИНУЯ ЖЕЛУДОК, ПОПАДАЮТ ПРЯМО В СЕРДЦЕ! Наполеончики к чаю',
             'image' => 'https://e-con-gusto.ru/images/2023-05-01/wOJstYMquaQxokqSXHrnfa1CCWt0bhpjHPDGVOEA.jpg'
           ];
         return view('about', compact('hat', 'data'));
@@ -219,8 +215,6 @@ class IndexController extends Controller
         $post->update();
 
         $data = (object) [
-            'title' => 'Пирожные на заказ СПб',
-            'description' => 'ДЕСЕРТЫ, КОТОРЫЕ МИНУЯ ЖЕЛУДОК, ПОПАДАЮТ ПРЯМО В СЕРДЦЕ! Наполеончики к чаю',
             'image' => 'https://e-con-gusto.ru/images/2023-05-01/wOJstYMquaQxokqSXHrnfa1CCWt0bhpjHPDGVOEA.jpg'
           ];
 
@@ -235,8 +229,6 @@ class IndexController extends Controller
         $banner = Banner::where('page', 'Коллекция маринадов')->firstOrFail();
 
         $data = (object) [
-            'title' => 'Пирожные на заказ СПб',
-            'description' => 'ДЕСЕРТЫ, КОТОРЫЕ МИНУЯ ЖЕЛУДОК, ПОПАДАЮТ ПРЯМО В СЕРДЦЕ! Наполеончики к чаю',
             'image' => 'https://e-con-gusto.ru/images/2023-05-16/JaEb75yyvaBagj9qiNJeTv0RP9jRX19ax1ykYIv6.jpg'
           ];
 
