@@ -87,7 +87,13 @@ class IndexController extends Controller
         $maps = Tag::orderBy('created_at', 'desc')->get();
         $lastPost = Post::orderBy('created_at', 'desc')->limit(4)->get();
 
-        return view('welcome', compact('categories', 'tags', 'maps', 'random', 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'lastPost'));
+        $data = (object) [
+            'title' => 'Пирожные на заказ СПб',
+            'description' => 'ДЕСЕРТЫ, КОТОРЫЕ МИНУЯ ЖЕЛУДОК, ПОПАДАЮТ ПРЯМО В СЕРДЦЕ! Наполеончики к чаю',
+            'image' => 'https://e-con-gusto.ru/images/2023-04-10/tyJHosRVPYDp7sOO4NKP6AgvekuQJF77LjzV26WJ.jpg'
+          ];
+
+        return view('welcome', compact('categories', 'tags', 'maps', 'random', 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'lastPost', 'data'));
     }
 
     public function show($slug)
@@ -183,7 +189,12 @@ class IndexController extends Controller
     public function about()
     {
         $hat = Hat::where('page_name', 'О сайте')->first();
-        return view('about', compact('hat'));
+        $data = (object) [
+            'title' => 'Пирожные на заказ СПб',
+            'description' => 'ДЕСЕРТЫ, КОТОРЫЕ МИНУЯ ЖЕЛУДОК, ПОПАДАЮТ ПРЯМО В СЕРДЦЕ! Наполеончики к чаю',
+            'image' => 'https://e-con-gusto.ru/images/2023-05-01/wOJstYMquaQxokqSXHrnfa1CCWt0bhpjHPDGVOEA.jpg'
+          ];
+        return view('about', compact('hat', 'data'));
     }
 
     public function news()
@@ -207,7 +218,13 @@ class IndexController extends Controller
 
         $post->update();
 
-        return view('single', compact('post', 'fasts', 'posts', 'currentURL'));
+        $data = (object) [
+            'title' => 'Пирожные на заказ СПб',
+            'description' => 'ДЕСЕРТЫ, КОТОРЫЕ МИНУЯ ЖЕЛУДОК, ПОПАДАЮТ ПРЯМО В СЕРДЦЕ! Наполеончики к чаю',
+            'image' => 'https://e-con-gusto.ru/images/2023-05-01/wOJstYMquaQxokqSXHrnfa1CCWt0bhpjHPDGVOEA.jpg'
+          ];
+
+        return view('single', compact('post', 'fasts', 'posts', 'currentURL', 'data'));
     }
 
     public function marinade()
@@ -216,7 +233,15 @@ class IndexController extends Controller
         $slider = Sous::where('marinade', 1)->get()->toJson();
         $groups = Subcat::all();
         $banner = Banner::where('page', 'Коллекция маринадов')->firstOrFail();
-        return view('marinade', compact('currentURL', 'groups', 'slider', 'banner'));
+
+        $data = (object) [
+            'title' => 'Пирожные на заказ СПб',
+            'description' => 'ДЕСЕРТЫ, КОТОРЫЕ МИНУЯ ЖЕЛУДОК, ПОПАДАЮТ ПРЯМО В СЕРДЦЕ! Наполеончики к чаю',
+            'image' => 'https://e-con-gusto.ru/images/2023-05-16/JaEb75yyvaBagj9qiNJeTv0RP9jRX19ax1ykYIv6.jpg'
+          ];
+
+
+        return view('marinade', compact('currentURL', 'groups', 'slider', 'banner', 'data'));
     }
 
     public function dessert()
@@ -224,6 +249,7 @@ class IndexController extends Controller
         $data = (object) [
             'title' => 'Пирожные на заказ СПб',
             'description' => 'ДЕСЕРТЫ, КОТОРЫЕ МИНУЯ ЖЕЛУДОК, ПОПАДАЮТ ПРЯМО В СЕРДЦЕ! Наполеончики к чаю',
+            'image' => 'https://sun9-67.userapi.com/impg/omytr-P9L6OWwLEqtJEzx_spOiM5YV415sD-zA/7_CCo0_6Iqo.jpg?size=2560x1435&quality=95&sign=c773e9ad023b37acfb73a7bd18a7c5e7&type=album'
           ];
         $fasts = Fast::all();
         $banner = Banner::where('page', 'Категории')->firstOrFail();

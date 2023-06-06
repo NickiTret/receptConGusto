@@ -17,6 +17,25 @@
     @else
     <meta name="description" content="Con gusto, рецепты, домашняя еда по ресторанным рецептам">
     @endif
+
+
+
+    @if (!empty($post->thumbnail))
+    <meta property=”og:image” content="{{asset($post->thumbnail)}}"/>
+    @elseif (!empty($banner) && empty($data))
+    <meta property=”og:image” content="{{asset($banner->image)}}"/>
+    @elseif (!empty($category_item) && empty($post->thumbnail))
+    <meta property=”og:image” content="{{asset($category_item->image)}}"/>
+    @elseif (!empty($data->image))
+    <meta property=”og:image” content="{{asset($data->image)}}"/>
+    @endif
+
+
+
+
+
+
+
     <link rel="icon" href="{{ asset('css/favicon.ico') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
@@ -45,4 +64,6 @@
             }
         </style>
     </noscript>
+
+
 </head>
