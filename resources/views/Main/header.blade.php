@@ -1,7 +1,7 @@
 <header data-aos="fade-down" data-aos-duration="1000" class="header">
     <div class="container-header">
         <a href="/" class="logo">
-            <img width="200" src="{{ asset('assets/base/logo.png') }}" alt="logo">
+            <img width="200" src="{{ asset('assets/base/logo2.png') }}" alt="logo">
         </a>
         <button type="button" class="burger" aria-label="Открыть меню" aria-expended='false' data-burger>
             <span class="burger__line"></span>
