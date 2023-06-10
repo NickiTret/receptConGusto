@@ -17,9 +17,7 @@
     @else
     <meta name="description" content="Con gusto, рецепты, домашняя еда по ресторанным рецептам">
     @endif
-
-    <meta name="twitter:card" content="summary_large_image" />
-
+    <meta name="twitter:card content="summary_large_image" />
     @if (!empty($post->thumbnail))
     <meta property=”og:image” content="{{asset($post->thumbnail)}}"/>
     <meta name="twitter:image" content="{{asset($post->thumbnail)}}" />
@@ -33,16 +31,10 @@
     <meta property=”og:image” content="{{asset($data->image)}}"/>
     <meta name="twitter:image" content="{{asset($data->image)}}" />
     @endif
-
-
-
-
-
-
     <link rel="icon" href="{{ asset('css/favicon.ico') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <link href="{{ asset('css/main/main.style.min.css') }}?1" rel="stylesheet">
+    <link href="{{ asset('css/main/main.style.min.css') }}?101" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
