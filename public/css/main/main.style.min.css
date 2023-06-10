@@ -517,6 +517,9 @@ section {
     border: 1px solid rgba(159, 100, 83, 0.8509803922);
   }
 }
+.header > .container-header a.login {
+  color: #000;
+}
 .header > .container-header > ul.category-list {
   display: flex;
   align-items: center;
@@ -578,6 +581,7 @@ section {
   align-items: center;
   gap: 12px;
   color: #ffffff;
+  margin-top: 27px;
 }
 .header > .container-header > .log-box > .login {
   display: flex;
@@ -591,7 +595,7 @@ section {
   flex: 0 0 auto;
 }
 .header > .container-header > .log-box > .login > svg path {
-  fill: #ffffff;
+  fill: #1F3347;
 }
 .header > .container-header > .log-box > button {
   position: relative;
@@ -618,16 +622,21 @@ section {
 }
 .header > .container-header > .log-box > a {
   height: 18px;
+  color: rgba(123, 75, 62, 0.8509803922);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 .header > .container-header > .log-box > a:hover > svg > path {
-  fill: #ffffff;
+  fill: rgba(159, 100, 83, 0.8509803922);
 }
 .header > .container-header > .log-box > a svg {
   width: 18px;
   height: 18px;
 }
 .header > .container-header > .log-box > a svg > path {
-  fill: #ffffff;
+  fill: #1F3347;
 }
 @media (max-width: 768px) {
   .header > .container-header > .log-box {

@@ -215,6 +215,10 @@
         //     }
         // }
 
+        a.login {
+            color: #000;
+        }
+
         & > ul.category-list {
             display: flex;
             align-items: center;
@@ -251,18 +255,20 @@
             align-items: center;
             gap: 12px;
             color: $clr_white;
+            margin-top: 27px;
 
             & > .login {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 gap: 8px;
+                // margin-top: 27px;
                 & > svg {
                     width: 20px;
                     height: 20px;
                     flex: 0 0 auto;
                     & path {
-                        fill: $clr_white;
+                        fill: $clr_text;
                     }
                 }
             }
@@ -294,10 +300,14 @@
 
             & > a {
                 height: 18px;
-
+                color: $clr_text2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
                 &:hover {
                     & > svg > path {
-                        fill: $clr_white;
+                        fill: $clr_main;
                     }
                 }
             }
@@ -306,7 +316,7 @@
                 width: 18px;
                 height: 18px;
                 & > path {
-                    fill: $clr_white;
+                    fill: $clr_text;
                 }
             }
 
