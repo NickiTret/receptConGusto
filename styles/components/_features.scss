@@ -48,11 +48,11 @@
 }
 
 h2 {
-    @include font_h1($font-family, $clr_main);
+    @include font_h1($font-family, $clr_text);
 }
 
 .title {
-    @include font_h2($font-family, $clr_main);
+    @include font_h2($font-family, $clr_text);
     max-width: max-content;
     margin-bottom: 32px;
     @media (max-width: 1024px) {

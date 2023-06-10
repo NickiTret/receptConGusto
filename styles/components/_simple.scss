@@ -17,6 +17,7 @@
                 & li {
                     flex: 0 0 auto;
                     width: calc( $column_abs * 3 + $gutter_abs * 2 );
+                    @include box-shadow;
                     & > a {
                         & > img {
                             width: 100%;
@@ -31,7 +32,7 @@
                                @include font_small($font-family, $clr_grey);
                             }
                         }
-    
+
                         & > .text {
                             @include font_p1($font-family, $clr_text);
                             text-decoration: none;

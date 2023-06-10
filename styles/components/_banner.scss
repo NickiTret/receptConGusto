@@ -65,7 +65,7 @@
             border-radius: 14px 0;
             z-index: 1;
             padding: 24px;
-
+            @include box-shadow;
             @media(max-width: 1600px) {
                 width: calc( $column_abs_maxW_1600 * 6 + $gutter_abs_maxW_1600 * 6 );
                 margin-left: calc($column_abs_maxW_1600 * -1);
@@ -103,12 +103,12 @@
             }
 
             & > h3 {
-                @include font_lead($font-family, $clr_main2);
+                @include font_lead($font-family, $clr_text);
                 margin: 0;
                 margin-bottom: 14px;
             }
             & > h2 {
-                @include font_h2($font-family, $clr_main);
+                @include font_h2($font-family, $clr_text);
                 margin: 0;
                 margin-bottom: 14px;
             }
@@ -116,6 +116,7 @@
                 @include font_min_lead($font-family, $clr_text);
                 margin: 0;
                 margin-bottom: 14px;
+                text-align: center;
             }
             & > a {
                 @include main_btn($font-family, $clr_white);

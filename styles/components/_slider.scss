@@ -98,13 +98,13 @@
             border: 2px solid transparent;
             cursor: pointer;
             width: 100%;
-
+            @include box-shadow;
             &:hover {
                 border: 2px solid $clr_main;
             }
         }
         .tabs__nav-btn--active {
-            border: 2px solid $clr_yellow;
+            border: 2px solid $clr_text;
         }
 
         .swiper-slide {

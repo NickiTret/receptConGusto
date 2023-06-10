@@ -1,8 +1,9 @@
 .hits {
     & > .container {
         & > h2 {
-            @include font_h1($font-family, $clr_main);
+            @include font_h1($font-family, $clr_text2);
             margin-bottom: 28px;
+            margin-top: 24px;
         }
 
         & > ul {
@@ -31,6 +32,7 @@
                 border-top: 2px solid $clr_grey3;
                 border-left: 2px solid $clr_grey3;
                 transition: all 0.2s ease-in;
+                @include box-shadow;
 
                 @media (max-width: 1600px) {
                   width: calc($column_abs_maxW_1600 * 3 + $gutter_abs_maxW_1600 * 2);
@@ -46,6 +48,7 @@
 
                 @media (max-width: 768px) {
                     width: calc($column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3);
+                    gap: 14px;
                 }
 
                 @media (max-width: 480px) {
@@ -117,7 +120,7 @@
                     }
 
                     & h3 {
-                        @include font_lead($font-family, $clr_main);
+                        @include font_lead($font-family, $clr_text);
                         margin-bottom: 7px;
                         font-weight: bold;
                     }
@@ -125,7 +128,7 @@
                     & > div.scroll {
                         max-height: 200px;
                         & p {
-                            @include font_small($font-family, $clr_grey);
+                            @include font_small($font-family, $clr_text);
 
                             overflow: auto;
                         }
@@ -138,8 +141,9 @@
             margin-top: 10px;
 
             & > li {
+                @include font_small($font-family, $clr_text);
+                font-size: 12px;
                 margin-top: 7px;
-                color: $clr_text;
             }
         }
     }

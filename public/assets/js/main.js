@@ -553,8 +553,9 @@ if (scrollElements) {
 var search = document.querySelector(".search");
 if (search) {
   var searchInput = document.querySelector(".search input");
-  search.addEventListener("mouseenter", function (event) {
+  search.addEventListener("click", function (event) {
     if (!searchInput.classList.contains("expand")) {
+      event.preventDefault();
       searchInput.classList.add("expand");
       searchInput.value = "";
       searchInput.focus();

@@ -10,9 +10,10 @@
   padding: 0;
   width: $burger-width;
   height: $burger-height;
-  color: $clr_bg;
+  color: $clr_main;
   background-color: transparent;
   cursor: pointer;
+  margin: auto 0;
 
   &::before,
   &::after {

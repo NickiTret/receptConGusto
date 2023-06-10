@@ -46,7 +46,7 @@
                   }
 
                 & > li {
-
+                    @include box-shadow;
                     & > a {
                         display: flex;
                         flex-direction: column;
@@ -73,11 +73,13 @@
 
                         & > p {
                             @include font_lead($font-family, $clr_main);
-                            margin: 14px 0;
+                            margin: 14px 0 0;
 
                             &.category-description {
-                                @include font_lead($font-family, $clr_text);
-                                text-align: center;
+                                @include font_p1($font-family, $clr_text);
+                                text-align: left;
+                                padding: 0 14px;
+                                margin: 7px 0 14px;
                             }
                         }
                         &:hover {

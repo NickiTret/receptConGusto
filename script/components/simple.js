@@ -17,8 +17,9 @@ let search = document.querySelector(".search");
 if (search) {
     let searchInput = document.querySelector(".search input");
 
-    search.addEventListener("mouseenter", (event) => {
+    search.addEventListener("click", (event) => {
         if (!searchInput.classList.contains("expand")) {
+            event.preventDefault();
             searchInput.classList.add("expand");
             searchInput.value = "";
             searchInput.focus();

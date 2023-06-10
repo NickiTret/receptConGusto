@@ -20,7 +20,7 @@
 
             & a {
                 transition: all 0.2s ease-in;
-                color: $clr_yellow;
+                color: $clr_text;
 
                 &:hover {
                     color: $clr_white;
@@ -44,11 +44,11 @@
 
                 & > li {
                     & > a {
-                        @include font_small($font-family, $clr_bg);
+                        @include font_small($font-family, $clr_white);
                         transition: color 0.3 ease-in-out;
                         white-space: nowrap;
                         &:hover {
-                            color: $clr_main2;
+                            color: $clr_text;
                         }
                     }
                 }

@@ -8,6 +8,14 @@
         white-space: nowrap;
         flex: 0 0 auto;
         margin-bottom: 16px;
+
+    }
+
+    .content {
+        & > h2 {
+            @include font_h1($font-family, $clr_text2);
+            margin-top: 24px;
+        }
     }
 
     & .container {
@@ -32,6 +40,7 @@
         @media (max-width: 768px) {
             width: calc($column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3);
         }
+
         & > p {
             @include font_p1($font-family, $clr_text);
             margin-bottom: 12px;
@@ -51,7 +60,7 @@
 
         & > .content > ul {
             list-style-type: disc;
-            @include font_lead($font-family, $clr_main);
+            @include font_lead($font-family, $clr_text);
             font-weight: bold;
             margin-bottom: 14px;
             // border-right: 5px solid $clr_text;

@@ -1,10 +1,10 @@
 @mixin main_btn($font-family, $color) {
     padding: 15px 30px;
-    background: #1B75BB;
+    background: $clr_main;
     border-radius: 5px;
     color: $color;
     border-radius: 0 14px 0 14px;
-    border: 1px solid $clr_main;
+    border: 1px solid $clr_main2;
     text-transform: uppercase;
     font-weight: bold;
 
