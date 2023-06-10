@@ -585,7 +585,7 @@ section {
 }
 @media (max-width: 768px) {
   .header > .container-header > .log-box {
-    display: none;
+    margin-top: 41px;
   }
 }
 .header > .container-header > .log-box > .login {
