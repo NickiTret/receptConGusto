@@ -583,6 +583,11 @@ section {
   color: #ffffff;
   margin-top: 27px;
 }
+@media (max-width: 768px) {
+  .header > .container-header > .log-box {
+    display: none;
+  }
+}
 .header > .container-header > .log-box > .login {
   display: flex;
   align-items: center;

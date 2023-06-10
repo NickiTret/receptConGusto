@@ -257,6 +257,10 @@
             color: $clr_white;
             margin-top: 27px;
 
+            @media(max-width: 768px) {
+                display: none;
+            }
+
             & > .login {
                 display: flex;
                 align-items: center;
