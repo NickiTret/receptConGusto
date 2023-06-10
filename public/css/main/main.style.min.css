@@ -1706,6 +1706,9 @@ input.search-input.focus-visible.expand {
     width: 100%;
     gap: 14px;
   }
+  .hits > .container > ul > li:not(:last-child) {
+    margin-bottom: 14px;
+  }
 }
 @media (max-width: 480px) {
   .hits > .container > ul > li {
