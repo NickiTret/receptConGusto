@@ -46,15 +46,19 @@
 
         & > a.logo {
             @include font_h2($font-family, $clr_white);
-            margin-right: 52px;
+            margin-right: 24px;
             white-space: nowrap;
             // overflow: hidden;
             display: block;
             position: relative;
             width: 220px;
             height: 100px;
+            flex: 0 0 auto;
             @media (max-width: 768px) {
                 order: 1;
+                flex: 0 1 auto;
+                margin-right: 24px;
+                z-index: 10;
             }
 
             & > img {
@@ -191,7 +195,7 @@
                     padding: 24px;
                     transform: translateY(0%);
                     width: 85%;
-
+                    margin-top: 0;
                     & > ul {
                         @include font_lead($font-family, $clr_main);
                         flex-direction: column;
@@ -327,7 +331,7 @@
             @media (max-width: 768px) {
                 order: 2;
                 margin-left: auto;
-                margin-right: 24px;
+                margin-right: 12px;
             }
         }
     }

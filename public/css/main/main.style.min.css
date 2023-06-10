@@ -282,12 +282,13 @@ section {
   font-size: 36px;
   line-height: 110%;
   color: #ffffff;
-  margin-right: 52px;
+  margin-right: 24px;
   white-space: nowrap;
   display: block;
   position: relative;
   width: 220px;
   height: 100px;
+  flex: 0 0 auto;
 }
 @media (max-width: 1600px) {
   .header > .container-header > a.logo {
@@ -317,6 +318,9 @@ section {
 @media (max-width: 768px) {
   .header > .container-header > a.logo {
     order: 1;
+    flex: 0 1 auto;
+    margin-right: 24px;
+    z-index: 10;
   }
 }
 .header > .container-header > a.logo > img {
@@ -458,6 +462,7 @@ section {
     padding: 24px;
     transform: translateY(0%);
     width: 85%;
+    margin-top: 0;
   }
   .header > .container-header > nav.menu--active > ul {
     font-family: "Source Sans Pro", sans-serif;
@@ -647,7 +652,7 @@ section {
   .header > .container-header > .log-box {
     order: 2;
     margin-left: auto;
-    margin-right: 24px;
+    margin-right: 12px;
   }
 }
 
