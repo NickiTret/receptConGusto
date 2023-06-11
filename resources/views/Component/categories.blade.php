@@ -7,7 +7,7 @@
                 <li>
                     <a href="{{ route('marinade') }}">
                         <div>
-                            <img src="/images/2023-05-17/sJ01l9hbA7G5eSUlSKqm6S7VfBKUOOUlvkGSJB2S.jpg" alt="Коллекция маринадов">
+                            <img src="//cdn.optipic.io/site-104010/images/2023-05-31/hLMfaDZfeWR0Fu0sdiJsIHVFE2X4Daiq3OXS5oTA.jpg" alt="Коллекция маринадов">
                         </div>
                         <p>Коллекция маринадов</p>
                         <p class="category-description"><small>
