@@ -607,6 +607,12 @@ section {
 .header > .container-header > .log-box > .login > svg path {
   fill: #1F3347;
 }
+.header > .container-header > .log-box > .login > .avatar {
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-radius: 50%;
+}
 .header > .container-header > .log-box > button {
   position: relative;
 }
@@ -840,6 +846,179 @@ input.search-input.focus-visible.expand {
   width: 100%;
   padding: 10px 10px;
   color: #fff;
+}
+
+.dropdown {
+  position: relative;
+  width: 400px;
+  cursor: pointer;
+}
+
+.dropdown.open .dropdown__menu {
+  display: block;
+}
+
+.dropdown__label {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.dropdown.open .dropdown__label {
+  border-radius: 5px 5px 0 0;
+}
+
+.dropdown__menu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  list-style-type: none;
+  display: none;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.dropdown__menu > li {
+  padding: 5px 10px;
+}
+
+.dropdown__menu > li:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dropdown__menu > li:active {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.steak > .container .steak-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.steak > .container .steak-nav > h1 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 57px;
+  line-height: 120%;
+  color: rgba(159, 100, 83, 0.8509803922);
+  transition: color 0.2s ease-in-out;
+}
+@media (max-width: 1600px) {
+  .steak > .container .steak-nav > h1 {
+    font-size: 57px;
+  }
+}
+@media (max-width: 1440px) {
+  .steak > .container .steak-nav > h1 {
+    font-size: 46px;
+  }
+}
+@media (max-width: 1280px) {
+  .steak > .container .steak-nav > h1 {
+    font-size: 46px;
+  }
+}
+@media (max-width: 1024px) {
+  .steak > .container .steak-nav > h1 {
+    font-size: 38px;
+  }
+}
+@media (max-width: 768px) {
+  .steak > .container .steak-nav > h1 {
+    font-size: 38px;
+  }
+}
+.steak > .container .steak-nav > h1 .active {
+  color: rgba(123, 75, 62, 0.8509803922);
+}
+.steak > .container .steak-nav > h1:hover {
+  color: #1F3347;
+}
+.steak > .container .image {
+  position: relative;
+  width: 100%;
+}
+.steak > .container .image > svg {
+  width: 100%;
+}
+.steak > .container .image > svg > path {
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
+}
+.steak > .container .image > svg > path:hover {
+  opacity: 1;
+}
+.steak > .container .image .hover-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 14px;
+  border-radius: 15px 0 15px 0;
+  background-color: #F7F7F7;
+  border: 1px solid rgba(123, 75, 62, 0.8509803922);
+  opacity: 0;
+}
+.steak > .container .image .hover-list.show {
+  opacity: 1;
+}
+.steak > .container .image .hover-list > h2 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 139%;
+  color: rgba(123, 75, 62, 0.8509803922);
+  margin-bottom: 10px;
+}
+@media (max-width: 1600px) {
+  .steak > .container .image .hover-list > h2 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1440px) {
+  .steak > .container .image .hover-list > h2 {
+    font-size: 22px;
+  }
+}
+@media (max-width: 1280px) {
+  .steak > .container .image .hover-list > h2 {
+    font-size: 22px;
+  }
+}
+@media (max-width: 1024px) {
+  .steak > .container .image .hover-list > h2 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .steak > .container .image .hover-list > h2 {
+    font-size: 14px;
+  }
+}
+.steak > .container .image .hover-list > p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 120%;
+  color: rgba(159, 100, 83, 0.8509803922);
+}
+@media (max-width: 1600px) {
+  .steak > .container .image .hover-list > p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .steak > .container .image .hover-list > p {
+    font-size: 16px;
+  }
 }
 
 .aside {
@@ -1320,13 +1499,14 @@ input.search-input.focus-visible.expand {
   flex-wrap: wrap;
   gap: 20px;
   max-width: 100%;
+  padding-bottom: 32px;
 }
 .first-screen .swiper > ul li > div.text ul.text-list > li {
   border-radius: 30px 0 0 0;
   overflow: hidden;
   flex: 0 0 calc(25% - 40px);
   padding: 0;
-  height: 250px;
+  height: 220px;
   box-shadow: 10px 12px 28px -8px rgba(34, 60, 80, 0.2);
 }
 @media (max-width: 1600px) {
