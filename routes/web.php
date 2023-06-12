@@ -44,7 +44,7 @@ Route::get('/dessert', [IndexController::class, 'dessert'])->name('dessert');
 
 Route::get('/steak', [IndexController::class, 'steak'])->name('steak');
 
-Route::get('/feed', [IndexController::class, 'feed'])->name('feed');
+Route::get('/feed.xml', [IndexController::class, 'feed'])->name('feed');
 
 
 Route::middleware(['admin'])->prefix('admin')->group(function () {
