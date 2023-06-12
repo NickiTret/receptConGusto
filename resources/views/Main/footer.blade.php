@@ -21,10 +21,12 @@
         <nav>
             <ul>
                 @foreach ($headers as $header_item)
-                @if ($loop->iteration == 5) @continue @endif
-                <li>
-                    <a href=" {{ $header_item->link }}">{{ $header_item->title }}</a>
-                </li>
+                    @if ($loop->iteration == 5)
+                        @continue
+                    @endif
+                    <li>
+                        <a href=" {{ $header_item->link }}">{{ $header_item->title }}</a>
+                    </li>
                 @endforeach
                 |
                 <li>
@@ -33,6 +35,12 @@
                 |
                 <li>
                     <a href="https://dzen.ru/e-con-gusto.ru" target="_blank">Яндекс Дзен</a>
+                </li>
+                <li>
+                    <a href="https://www.liveinternet.ru/click" target="_blank"><img id="licnt59E3" width="31"
+                            height="31" style="border:0" title="LiveInternet"
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                            alt="" /></a>
                 </li>
             </ul>
     </div>

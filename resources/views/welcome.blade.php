@@ -4,9 +4,7 @@
 @include('Main.head')
 
 <body class="page__body">
-    <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click" target="_blank"><img id="licnt59E3"
-            width="31" height="31" style="border:0" title="LiveInternet"
-            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" alt="" /></a>
+    <!--LiveInternet counter-->
     <script>
         (function(d, s) {
             d.getElementById("licnt59E3").src =
