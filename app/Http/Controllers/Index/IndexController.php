@@ -226,9 +226,92 @@ class IndexController extends Controller
             'title' => 'Пирожные на заказ СПб',
             'description' => 'ДЕСЕРТЫ, КОТОРЫЕ МИНУЯ ЖЕЛУДОК, ПОПАДАЮТ ПРЯМО В СЕРДЦЕ! Наполеончики к чаю',
             'image' => 'https://sun9-67.userapi.com/impg/omytr-P9L6OWwLEqtJEzx_spOiM5YV415sD-zA/7_CCo0_6Iqo.jpg?size=2560x1435&quality=95&sign=c773e9ad023b37acfb73a7bd18a7c5e7&type=album'
-          ];
+        ];
         $fasts = Fast::all();
         $banner = Banner::where('page', 'Категории')->firstOrFail();
-        return view('dessert', compact( 'banner', 'data' ));
+        return view('dessert', compact('banner', 'data'));
+    }
+
+
+    public function steak()
+    {
+
+        $data = (object) [
+            'title' => 'Всё о стейках',
+            'description' => 'Приготовление и маринование стейков',
+            'image' => ''
+        ];
+        // $banner = Banner::where('page', 'Стейк')->firstOrFail();
+        return view('steak', compact('data'));
+    }
+
+    public function feed()
+    {
+
+        $posts = Post::all();
+        $all_item = null;
+        $newposts = array();
+
+        foreach ($posts as $post) {
+
+
+
+            $data_dob = date(DATE_RFC822, strtotime($post['created_at'])); // переводим дату в нужный для RSS формат
+            $id = $post['id']; // ид записи (новости)
+            $title = $post['title']; // заголовок новости
+            $des = strip_tags($post['description']); // описание новости, удаляем все html теги
+            $image = $post['thumbnail']; // картинка новости (превью)
+            $text = $post['content']; // текст новости (в тексте новости могут быть лишние теги, картинки которые с относительными путями к рисункам, а они должны быть абсолютными)
+
+            // преобразуем пути картинок, т.е вместо /img_news/image.jpg должно быть https://seolik.ru/img_news/image.jpg
+            // $text = str_ireplace("/img_news/", "https://seolik.ru/img_news/", $text);
+
+            // ищем все картинки в новости и добавляем их в описании публикации
+            // $doc = new DOMDocument();
+            // @$doc->loadHTML($text);
+
+            // Преобразует все HTML-сущности в соответствующие символы
+            $text = html_entity_decode($text);
+
+            // Удаляем все html теги кроме нужных нам в разметке
+            $text =  strip_tags($text, '<p><a><b><i><s><h1><h2><h3><h4><blockquote><ul><li><ol><li><img><figure>');
+
+
+            // ПЕРЕМЕННАЯ превью картинки. Первое изображение в статье, размеченное этим элементом, отображается на карточке в ленте Дзена
+            // $image_first = '<figure><img src="https://seolik.ru' . $image . '"></figure>';
+            $image_first = 'https://e-con-gusto.ru/' . $post->thumbnail;
+
+            // добавляем элементы item rss для Дзен https://yandex.ru/support/zen/publishers/rss-modify.html#publication
+            $all_item = '
+            <item>
+                <title>' . $title . '</title>
+                <link>https://e-con-gusto.ru/recept/' . $post->slug . '</link>
+                <pdalink>https://e-con-gusto.ru/recept/' . $id . '</pdalink>
+                <media:rating scheme="urn:simple">nonadult</media:rating>
+                <pubDate>' . $data_dob . '</pubDate>
+                <author>e-con-gusto.ru</author>
+                <category>' . $post->category->title . '</category>
+                <enclosure url="https://e-con-gusto.ru' . $image . '" type="image/jpeg"/>
+                ' . '
+                <description>
+                    <![CDATA[
+            ' . $image_first . '
+            ' . $des . '
+                    ]]>
+                </description>
+                <content:encoded>
+                    <![CDATA[
+                   '  . $post->title . '<br>' . '<h1>' . $post->title . '</h1>' . $post->description . '<br>' . '<figure><img alt="' . $post->title . '"
+                   src="' . 'https://e-con-gusto.ru/' . $image . '"></figure>' . '<br>' . $text . '
+                   <p class="article-render__block article-render__block_unstyled" data-points="5"><span>Этот и другие рецепты вы найдете на моём сайте </span><a class="article-link article-link_theme_undefined article-link_color_default" rel="noopener nofollow" target="_blank" href="https://e-con-gusto.ru/"><b>ConGusto</b></a><span><b> и в телеграмм канале </b></span><a class="article-link article-link_theme_undefined article-link_color_default" rel="noopener nofollow" target="_blank" href="https://t.me/econgusto"><b>ConGusto</b></a><span><b>, </b></span><span>где я собираю только проверенные и классические рецепты по ресторанным технологиям.</span></p>
+                    ]]>
+                </content:encoded>
+            </item>';
+
+            array_push($newposts, $post['feed'] = $all_item);
+        }
+
+
+        return view('feed', compact('posts', 'newposts'));
     }
 }
