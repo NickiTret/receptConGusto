@@ -279,6 +279,13 @@
                         fill: $clr_text;
                     }
                 }
+
+                & > .avatar {
+                    width: 40px;
+                    height: 40px;
+                    display: block;
+                    border-radius: 50%;
+                }
             }
 
             & > button {

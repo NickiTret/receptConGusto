@@ -1,0 +1,64 @@
+.steak {
+    & > .container {
+        .steak-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 24px;
+
+            & > h1 {
+                @include font_h1($font-family, $clr_main);
+                transition: color 0.2s ease-in-out;
+
+                .active {
+                    color: $clr_text2;
+                }
+
+                &:hover {
+                    color: $clr_text;
+                }
+            }
+        }
+        .image {
+            position: relative;
+            width: 100%;
+
+            > svg {
+                width: 100%;
+                & > path {
+                    opacity: 0.8;
+                    transition: opacity 0.2s ease-in-out;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .hover-list {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 14px;
+                border-radius: 15px 0 15px 0;
+                background-color: $clr_bg2;
+                border: 1px solid $clr_text2;
+                opacity: 0;
+
+                &.show {
+                    opacity: 1;
+                }
+
+                & > h2 {
+                    @include font_lead($font-family, $clr_text2);
+                    margin-bottom: 10px;
+                }
+
+                & > p {
+                    @include font_p1($font-family, $clr_main);
+                }
+            }
+        }
+    }
+}

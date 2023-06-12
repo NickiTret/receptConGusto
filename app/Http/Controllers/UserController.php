@@ -11,7 +11,7 @@ use Session;
 
 class UserController extends Controller
 {
-    public function create() 
+    public function create()
     {
         return view('User.create');
     }
@@ -22,12 +22,16 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed',
+            'avatar' => 'nullable|image'
         ]);
+
+        $data['avatar'] = User::uploadImage($request);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request['password'])
+            'password' => Hash::make($request['password']),
+            'avatar' => $data['avatar']
         ]);
 
         session()->flash('success', 'Регистрация прошла успешно!');
@@ -52,10 +56,10 @@ class UserController extends Controller
         if (Auth::attempt([
             'email' => $request->email,
             'password' => $request->password,
-        ])) 
+        ]))
         {
             session()->flash('success', 'Вы авторизированы');
-            
+
             if (Auth::user()->is_admin) {
                 return redirect()->route('admin.index');
             } else {

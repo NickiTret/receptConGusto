@@ -35,6 +35,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_choices_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/choices.js */ "./script/components/choices.js");
 /* harmony import */ var _components_fancybox_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/fancybox.js */ "./script/components/fancybox.js");
 /* harmony import */ var _components_fancybox_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_fancybox_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _components_drop2_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/drop2.js */ "./script/components/drop2.js");
+/* harmony import */ var _components_drop2_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_components_drop2_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _components_steak_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/steak.js */ "./script/components/steak.js");
+/* harmony import */ var _components_steak_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_components_steak_js__WEBPACK_IMPORTED_MODULE_12__);
+
+
 
 
 
@@ -194,7 +200,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 
 var errorPage = document.querySelector('.error-page');
-console.log(errorPage);
+
+// console.log(errorPage)
+
 if (errorPage) {
   var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     paused: false,
@@ -283,6 +291,73 @@ if (element) {
 // };
 
 // groupSelect();
+
+/***/ }),
+
+/***/ "./script/components/drop2.js":
+/*!************************************!*\
+  !*** ./script/components/drop2.js ***!
+  \************************************/
+/***/ (() => {
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var Dropdown = /*#__PURE__*/function () {
+  function Dropdown(selector, options) {
+    var _this = this;
+    _classCallCheck(this, Dropdown);
+    this.$el = document.querySelector(selector);
+    this.items = options.items;
+    this.$el.querySelector('.dropdown__label').textContent = this.items[0].label;
+    this.$el.addEventListener('click', function (event) {
+      if (event.target.classList.contains('dropdown__label')) {
+        if (_this.$el.classList.contains('open')) {
+          _this.close();
+        } else {
+          _this.open();
+        }
+      } else if (event.target.tagName.toLowerCase() === 'li') {
+        _this.select(event.target.dataset.id);
+      }
+    });
+    var itemsHtml = this.items.map(function (i) {
+      return "<li data-id=\"".concat(i.id, "\">").concat(i.label, "</li>");
+    }).join(' ');
+    this.$el.querySelector('.dropdown__menu').insertAdjacentHTML('afterbegin', itemsHtml);
+  }
+  _createClass(Dropdown, [{
+    key: "select",
+    value: function select(id) {
+      var item = this.items.find(function (item) {
+        return item.id === id;
+      });
+      this.$el.querySelector('.dropdown__label').textContent = item.label;
+      this.close();
+    }
+  }, {
+    key: "open",
+    value: function open() {
+      this.$el.classList.add('open');
+    }
+  }, {
+    key: "close",
+    value: function close() {
+      this.$el.classList.remove('open');
+    }
+  }]);
+  return Dropdown;
+}(); // const dropdown = new Dropdown('#drop-header', {
+//     items: [
+//         {label: 'Москва', id: 'msk'},
+//         {label: 'Санкт-Петербург', id: 'spb'},
+//         {label: 'Новосибирск', id: 'nsk'},
+//         {label: 'Краснодар', id: 'krd'}
+//     ]
+// });
 
 /***/ }),
 
@@ -641,6 +716,53 @@ if (sliders) {
     });
   });
 }
+
+/***/ }),
+
+/***/ "./script/components/steak.js":
+/*!************************************!*\
+  !*** ./script/components/steak.js ***!
+  \************************************/
+/***/ (() => {
+
+// class Steak {
+//     constructor(element, option) {
+//         this.element = document.querySelector(element);
+//         this.items = option.items;
+//         this.hoverList = this.element.querySelector('.hover-list');
+//         this.element.addEventListener('mouseover', (event) => {
+//             console.log(event.target)
+
+//             if (event.target.dataset.id) {
+//                 this.show()
+//             }
+//         })
+//         this.element.addEventListener('mouseout', (event) => {
+//             if (event.target.dataset.id) {
+//                 this.hide()
+//             }
+//         })
+//     }
+
+//     show() {
+//         this.hoverList.classList.add('show');
+//     }
+
+//     hide() {
+//         this.hoverList.classList.remove('show');
+//     }
+// }
+
+// const dropdown = new Steak('#steak', {
+//     items: [
+//         {
+//             id: 1,
+//             title: 'title 1',
+//             description: 'Описание 1'
+
+//         }
+//     ]
+// });
 
 /***/ }),
 
@@ -33468,6 +33590,7 @@ module.exports = JSON.parse('{"w_1920":{"full_width":1920,"content_width":1768,"
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/404.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/aside_image.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/choices.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/drop2.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/dropdown.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/ex.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/fancybox.js")))
@@ -33477,6 +33600,7 @@ module.exports = JSON.parse('{"w_1920":{"full_width":1920,"content_width":1768,"
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/share.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/simple.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/slider_hero.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/steak.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/functions/burger.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/functions/check-viewport.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/functions/disable-scroll.js")))

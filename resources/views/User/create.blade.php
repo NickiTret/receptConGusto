@@ -24,7 +24,7 @@
             @include('Component.errors')
             <div class="card-body register-card-body">
 
-                <form action="{{ route('register.store') }}" method="post">
+                <form action="{{ route('register.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <div class="input-group mb-3">
@@ -59,6 +59,16 @@
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="avatar">Аватар</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" name="avatar" id="avatar"
+                                       class="custom-file-input">
+                                <label class="custom-file-label" for="avatar">Choose file</label>
                             </div>
                         </div>
                     </div>

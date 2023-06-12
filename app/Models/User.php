@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Storage;
+use illuminate\Http\Request;
 
 class User extends Authenticatable
 {
@@ -21,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'avatar'
     ];
 
     /**
@@ -41,4 +44,30 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function uploadImage(Request $request, $avatar = null)
+    {
+        if ($request->hasFile('avatar')) {
+
+            if ($avatar) {
+                Storage::delete($avatar);
+            }
+
+            $folder = date('Y-m-d');
+
+            return $request->file('avatar')->store("images/users/{$folder}");
+        }
+
+        return $avatar;
+    }
+
+
+    public function getImage()
+    {
+        if (!$this->avatar) {
+            return asset("assets/admin/img/no-image.jpeg");
+        }
+
+        return asset($this->avatar);
+    }
 }
