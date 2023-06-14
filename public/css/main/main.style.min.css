@@ -435,6 +435,7 @@ section {
   gap: 14px;
   white-space: nowrap;
   overflow: auto;
+  flex-wrap: nowrap;
 }
 @media (max-width: 1600px) {
   .header > .container-header > nav > ul {
