@@ -1,88 +1,81 @@
-<section class="transform">
-    <div class="container">
-        <!-- Yandex.RTB R-A-2349463-3 -->
-        <div id="yandex_rtb_R-A-2349463-3"></div>
-        <script>
-            window.yaContextCb.push(() => {
-                Ya.Context.AdvManager.render({
-                    "blockId": "R-A-2349463-3",
-                    "renderTo": "yandex_rtb_R-A-2349463-3"
+
+    <section class="transform">
+        <div class="container">
+            <!-- Yandex.RTB R-A-2349463-3 -->
+            <div id="yandex_rtb_R-A-2349463-3"></div>
+            <script>
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-2349463-3",
+                        "renderTo": "yandex_rtb_R-A-2349463-3"
+                    })
                 })
-            })
-        </script>
-    </div>
-</section>
-<footer class="footer">
-    <div class="container">
-        <div class="left-box">
-            <p>Разработка сайта - <a href="http://infonickweb.ru/" target="_blank">NICKWEB</a>
-            </p>
+            </script>
         </div>
-        <nav>
-            <ul>
-                @foreach ($headers as $header_item)
-                    @if ($loop->iteration == 5)
-                        @continue
-                    @endif
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="left-box">
+                <p>Разработка сайта - <a href="http://infonickweb.ru/" target="_blank">NICKWEB</a>
+                </p>
+            </div>
+            <nav>
+                <ul>
+                    @foreach ($headers as $header_item)
+                        @if ($loop->iteration == 5)
+                            @continue
+                        @endif
+                        <li>
+                            <a href=" {{ $header_item->link }}">{{ $header_item->title }}</a>
+                        </li>
+                    @endforeach
+                    |
                     <li>
-                        <a href=" {{ $header_item->link }}">{{ $header_item->title }}</a>
+                        <a href="https://t.me/econgusto" target="_blank">Telegram канал</a>
                     </li>
-                @endforeach
-                |
-                <li>
-                    <a href="https://t.me/econgusto" target="_blank">Telegram канал</a>
-                </li>
-                |
-                <li>
-                    <a href="https://dzen.ru/e-con-gusto.ru" target="_blank">Яндекс Дзен</a>
-                </li>
-                <li>
-                    <a href="https://www.liveinternet.ru/click" target="_blank"><img id="licnt59E3" width="31"
-                            height="31" style="border:0" title="LiveInternet"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
-                            alt="" /></a>
-                </li>
-            </ul>
-    </div>
-    </div>
-</footer>
-
-<script type="module" src="{{ asset('assets/js/main.js') }}?1"></script>
-<!-- Yandex.Metrika counter -->
-<script>
-    (function(m, e, t, r, i, k, a) {
-        m[i] = m[i] || function() {
-            (m[i].a = m[i].a || []).push(arguments)
-        };
-        m[i].l = 1 * new Date();
-        for (var j = 0; j < document.scripts.length; j++) {
-            if (document.scripts[j].src === r) {
-                return;
+                    |
+                    <li>
+                        <a href="https://dzen.ru/e-con-gusto.ru" target="_blank">Яндекс Дзен</a>
+                    </li>
+                </ul>
+        </div>
+        </div>
+    </footer>
+    <script type="module" src="{{ asset('assets/js/main.js') }}?2"></script>
+    <!-- Yandex.Metrika counter -->
+    <script>
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
             }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(
+                k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(92999372, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt="">
+        </div>
+    </noscript>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VXQC75FB6B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
         }
-        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(
-            k, a)
-    })
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-    ym(92999372, "init", {
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true
-    });
-</script>
-<noscript>
-    <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt=""></div>
-</noscript>
-<!-- /Yandex.Metrika counter -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VXQC75FB6B"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-VXQC75FB6B');
-</script>
+        gtag('js', new Date());
+        gtag('config', 'G-VXQC75FB6B');
+    </script>

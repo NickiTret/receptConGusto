@@ -4,18 +4,7 @@
 @include('Main.head')
 
 <body class="page__body">
-    <!--LiveInternet counter-->
-    <script>
-        (function(d, s) {
-            d.getElementById("licnt59E3").src =
-                "https://counter.yadro.ru/hit?t45.9;r" + escape(d.referrer) +
-                ((typeof(s) == "undefined") ? "" : ";s" + s.width + "*" + s.height + "*" +
-                    (s.colorDepth ? s.colorDepth : s.pixelDepth)) + ";u" + escape(d.URL) +
-                ";h" + escape(d.title.substring(0, 150)) + ";" + Math.random()
-        })
-        (document, screen)
-    </script>
-    <!--/LiveInternet-->
+
     @include('Main.header')
     <div class="site-container" style="overflow: hidden">
         <main>

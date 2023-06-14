@@ -8,7 +8,7 @@ import './components/header.js';
 import './components/share.js';
 import './components/404.js';
 import './components/choices.js';
-import './components/fancybox.js';
+// import './components/fancybox.js';
 import './components/drop2.js';
 import './components/steak.js';
 

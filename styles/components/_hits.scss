@@ -88,7 +88,7 @@
                             width: 28px;
                         }
                         & > .category {
-                            @include font_small($font-family, $clr_main);
+                            @include font_small($font-family, $clr_text2);
                             position: relative;
                             display: flex;
                             align-items: center;
