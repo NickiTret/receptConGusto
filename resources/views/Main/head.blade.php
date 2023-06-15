@@ -4,10 +4,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#111111">
     <meta name="yandex-verification" content="3519ed7046470147" />
-    <title>Con gusto @if (!empty($data))
-            - {{ strip_tags($data->title) }}
+    <title>Con gusto  @if (!empty($data))
+            - {{ strip_tags($data->title) }} - готовь с нами
         @elseif (!empty($banner) && empty($data))
-            - {{ strip_tags($banner->title) }}
+            - {{ strip_tags($banner->title) }} - готовь с нами
         @endif
     </title>
     @if (!empty($data->description))
