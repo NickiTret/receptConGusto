@@ -8,6 +8,7 @@
             - {{ strip_tags($data->title) }} - готовь с нами
         @elseif (!empty($banner) && empty($data))
             - {{ strip_tags($banner->title) }} - готовь с нами
+            @else - готовь с нами по классическим рецптам e-con-gusto.ru
         @endif
     </title>
     @if (!empty($data->description))
