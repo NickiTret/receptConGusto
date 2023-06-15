@@ -14,13 +14,13 @@
         <meta name="description" content="{{ strip_tags($data->description) }}">
     @elseif (!empty($data->title))
         <meta name="description"
-            content="Con gusto, рецепты, рецепты, домашняя еда по ресторанным рецептам {{ strip_tags($data->title) }}">
+            content="Con gusto, рецепты, рецепты, домашняя еда по ресторанным рецептам {{ strip_tags($data->title) }} | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
     @elseif (!empty($heros) || !empty($categories))
-        <meta name="description" content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно">
+        <meta name="description" content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
     @elseif (!empty($banner) && empty($data))
-        <meta name="description" content="{{ strip_tags($banner->subtitle) }}">
+        <meta name="description" content="{{ strip_tags($banner->subtitle) }} | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
     @else
-        <meta name="description" content="Con gusto, рецепты, домашняя еда по ресторанным рецептам">
+        <meta name="description" content="Con gusto, рецепты, домашняя еда по ресторанным рецептам. Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
     @endif
     <meta name="twitter:card content="summary_large_image" />
     @if (!empty($post->thumbnail))
