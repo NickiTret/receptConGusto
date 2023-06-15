@@ -38,7 +38,7 @@
                          <a href="https://dzen.ru/e-con-gusto.ru" target="_blank">Яндекс Дзен</a>
                     </li>
                 </ul>
-        </div>
+            </nav>
         </div>
     </footer>
     <script type="module" src="{{ asset('assets/js/main.js') }}?2"></script>

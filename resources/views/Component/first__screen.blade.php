@@ -15,7 +15,7 @@
                                 <a href="{{  route('single',  $item->slug) }}">
                                     <img src="/{{ $item->thumbnail }}" alt="{{ $item->title }}">
                                    <h3>{{  $item->title }}</h3>
-                                   <p>{!!  $item->description !!}</p>
+                                   {!!  $item->description !!}
                                 </a>
                             </li>
                             @endforeach
