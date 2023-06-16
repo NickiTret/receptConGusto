@@ -4,7 +4,13 @@
         <div class="content">
             <div class="image" >
                 <picture>
-                    <img src="{{ $random->thumbnail }}" alt="{{ $random->title }}">
+                    @if ($random->addImageFormat())
+                        <source type="image/avif" srcset="/{{ $random->addImageFormat()['imageAvif'] }}" />
+                        <source type="image/webp" srcset="/{{ $random->addImageFormat()['imageWebp'] }}" />
+                    @endif
+                    <img title="{{ $random->title }}" alt="{{ $random->title }}"
+                        src="/{{ $random->addImageFormat()['imageDefault'] }}">
+
                 </picture>
             </div>
             <div class="content-text">

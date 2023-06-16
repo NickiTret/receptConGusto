@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
-
 @include('Main.head', ['data' => $post])
 
+{{-- {{dd($post->addImageFormat()['imageWebp'])}} --}}
 <body class="page__body">
     @include('Main.header')
     <div class="site-container">

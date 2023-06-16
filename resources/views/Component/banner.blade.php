@@ -4,7 +4,13 @@
         @if (!empty($banner))
         <div class="image">
             <picture>
-                <img src="/{{$data->image}}" alt="{{$data->title}}">
+                @if ($data->addImageFormat())
+                    <source type="image/avif" srcset="/{{ $data->addImageFormat()['imageAvif'] }}" />
+                    <source type="image/webp" srcset="/{{ $data->addImageFormat()['imageWebp'] }}" />
+                @endif
+                <img title="{{ $data->title }}" alt="{{ $data->title }}"
+                    src="/{{ $data->addImageFormat()['imageDefault'] }}">
+
             </picture>
            </div>
            <div class="text">
@@ -16,7 +22,13 @@
         @else
         <div class="image">
             <picture>
-                <img src="/{{$category_item->image}}" alt="{{$category_item->title}}">
+                @if ($category_item->addImageFormat())
+                    <source type="image/avif" srcset="/{{ $category_item->addImageFormat()['imageAvif'] }}" />
+                    <source type="image/webp" srcset="/{{ $category_item->addImageFormat()['imageWebp'] }}" />
+                @endif
+                <img title="{{ $category_item->title }}" alt="{{ $category_item->title }}"
+                    src="/{{ $category_item->addImageFormat()['imageDefault'] }}">
+
             </picture>
            </div>
            <div class="text">

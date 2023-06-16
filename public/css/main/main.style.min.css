@@ -2615,7 +2615,7 @@ input.search-input.focus-visible.expand {
   overflow: hidden;
   border-radius: 14px 0 14px 0;
 }
-.category > .container > .content > ul > li > a > div > img {
+.category > .container > .content > ul > li > a > div > picture > img {
   border-radius: 14px 0 14px 0;
   filter: blur(0.5px);
   transition: all 0.2s ease-in-out;

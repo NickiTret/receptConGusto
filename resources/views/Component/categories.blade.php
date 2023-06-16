@@ -20,7 +20,15 @@
                             <li>
                                 <a href="{{ route('category_item', $item->slug) }}">
                                     <div>
-                                        <img src="/{{ $item->image }}" alt="{{ $item->title }}">
+                                        <picture>
+                                            @if ($item->addImageFormat())
+                                                <source type="image/avif" srcset="/{{ $item->addImageFormat()['imageAvif'] }}" />
+                                                <source type="image/webp" srcset="/{{ $item->addImageFormat()['imageWebp'] }}" />
+                                            @endif
+                                            <img title="{{ $item->title }}" alt="{{ $item->title }}"
+                                                src="/{{ $item->addImageFormat()['imageDefault'] }}">
+
+                                        </picture>
                                     </div>
                                     <p>{{ $item->title }}</p>
                                     @if (!empty($item->description))

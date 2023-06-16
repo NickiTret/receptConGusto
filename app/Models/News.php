@@ -43,6 +43,16 @@ class News extends Model
         return $image;
     }
 
+    public function addImageFormat () {
+        if ($this->image) {
+            return $this->images = [
+                'imageDefault' => $this->image,
+                'imageAvif' => str_replace('.jpg', '.avif', $this->image),
+                'imageWebp' => str_replace('.jpg', '.wepb', $this->image)
+            ];
+        }
+    }
+
     public function getImage()
     {
         if(!$this->image)

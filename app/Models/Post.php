@@ -55,6 +55,16 @@ class Post extends Model
         return $image;
     }
 
+    public function addImageFormat () {
+        if ($this->thumbnail) {
+            return $this->images = [
+                'imageDefault' => $this->thumbnail,
+                'imageAvif' => str_replace('.jpg', '.avif', $this->thumbnail),
+                'imageWebp' => str_replace('.jpg', '.wepb', $this->thumbnail)
+            ];
+        }
+    }
+
 
     public function getImage()
     {

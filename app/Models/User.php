@@ -61,6 +61,16 @@ class User extends Authenticatable
         return $avatar;
     }
 
+    public function addImageFormat () {
+        if ($this->avatar) {
+            return $this->images = [
+                'imageDefault' => $this->avatar,
+                'imageAvif' => str_replace('.jpg', '.avif', $this->avatar),
+                'imageWebp' => str_replace('.jpg', '.wepb', $this->avatar)
+            ];
+        }
+    }
+
 
     public function getImage()
     {
