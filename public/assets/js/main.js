@@ -8485,7 +8485,7 @@ class GraphTabs {
       this.tabsBtns = this.tabList.querySelectorAll('.tabs__nav-btn');
       this.tabsPanels = this.tabs.querySelectorAll('.tabs__panel');
     } else {
-      console.error('Селектор data-tabs не существует!');
+      console.log('Селектор data-tabs не существует!');
       return;
     }
 
@@ -8585,6 +8585,7 @@ class GraphTabs {
     this.options.isChanged(this);
   }
 }
+
 
 /***/ }),
 
