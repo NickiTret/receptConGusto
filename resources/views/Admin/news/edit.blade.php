@@ -48,7 +48,7 @@
                                 <label class="custom-file-label" for="image">Choose file</label>
                             </div>
                         </div>
-                        <div><img src="{{ $new->getImage() }}" alt="" class="img-image mt-2" width="200"></div>
+                        <div><img loading="lazy" src="{{ $new->getImage() }}" alt="" class="img-image mt-2" width="200"></div>
                     </div>
 
                 </div>

@@ -13,7 +13,7 @@
                                     <source type="image/avif" srcset="/{{ $item->addImageFormat()['imageAvif'] }}" />
                                     <source type="image/webp" srcset="/{{ $item->addImageFormat()['imageWebp'] }}" />
                                 @endif
-                                <img title="{{ $item->title }}" alt="{{ $item->title }}"
+                                <img loading="lazy" title="{{ $item->title }}" alt="{{ $item->title }}"
                                     src="/{{ $item->addImageFormat()['imageDefault'] }}">
 
                             </picture>

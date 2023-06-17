@@ -1,7 +1,7 @@
 <header data-aos="fade-down" data-aos-duration="1000" class="header">
     <div class="container-header">
         <a href="/" class="logo">
-            <img width="200" src="{{ asset('assets/base/logo2.png') }}" alt="logo">
+            <img loading="lazy" width="200" src="{{ asset('assets/base/logo2.png') }}" alt="logo">
         </a>
         <button type="button" class="burger" aria-label="Открыть меню" aria-expended='false' data-burger>
             <span class="burger__line"></span>
@@ -22,7 +22,7 @@
             <input required name="search_input" type="text" placeholder="Поиск по рецептам" class="search-input"
                 @if (isset($_GET['search_input'])) value="{{ $_GET['search_input'] }}" @endif />
             <button type="submit">
-                <img src="/content/icons/search.svg" alt="icon-search">
+                <img loading="lazy" src="/content/icons/search.svg" alt="icon-search">
             </button>
         </form>
         <div class="log-box">
@@ -36,7 +36,7 @@
             @if (!empty(Auth::user()))
                 <a class="login" href="{{ route('logout') }}/">
                     @if (Auth::user()->avatar)
-                        <img class="avatar" src="{{ asset(Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}">
+                        <img loading="lazy" class="avatar" src="{{ asset(Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}">
                     @else
                         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                             <defs>

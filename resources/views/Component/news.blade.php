@@ -7,7 +7,7 @@
                         <source type="image/avif" srcset="/{{ $data->addImageFormat()['imageAvif'] }}" />
                         <source type="image/webp" srcset="/{{ $data->addImageFormat()['imageWebp'] }}" />
                     @endif
-                    <img title="{{ $data->title }}" alt="{{ $data->title }}"
+                    <img loading="lazy" title="{{ $data->title }}" alt="{{ $data->title }}"
                         src="/{{ $data->addImageFormat()['imageDefault'] }}">
 
                 </picture>

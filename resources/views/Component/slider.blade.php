@@ -19,7 +19,7 @@
                                 <div class="swiper-wrapper" data-json="{{ $slider->sous }}">
                                     @foreach ($slider->sous as $item_slide)
                                         <div class="swiper-slide">
-                                            <img src="{{ $item_slide->getImage() }}" alt="{{ $item_slide->title }}" />
+                                            <img loading="lazy" src="{{ $item_slide->getImage() }}" alt="{{ $item_slide->title }}" />
                                             <div class="swiper-slide__description">
                                                 <h3>{{ $item_slide->title }}</h3>
                                                 <div>

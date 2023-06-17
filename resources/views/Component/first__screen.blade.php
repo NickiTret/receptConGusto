@@ -4,7 +4,7 @@
             @foreach ($heros as $item)
                 <li class="swiper-slide">
                     <picture>
-                        <img src="/{{ $item->image }}" alt="{{ $item->title }}">
+                        <img loading="lazy" src="/{{ $item->image }}" alt="{{ $item->title }}">
                     </picture>
                     <div class="text text__left">
                         <h1>{{ $item->title }}</h1>
@@ -13,7 +13,7 @@
                             @foreach ($lastPost as $item)
                             <li class="text-list__item">
                                 <a href="{{  route('single',  $item->slug) }}">
-                                    <img src="/{{ $item->thumbnail }}" alt="{{ $item->title }}">
+                                    <img loading="lazy" src="/{{ $item->thumbnail }}" alt="{{ $item->title }}">
                                    <h3>{{  $item->title }}</h3>
                                    {!!  $item->description !!}
                                 </a>

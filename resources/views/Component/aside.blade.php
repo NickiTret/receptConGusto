@@ -7,9 +7,9 @@
                     <h4>{{ $post->title }}</h3>
                         <div class="disabled">
                             @if (!empty($post->thumbnail))
-                            <img src="/{{ $post->thumbnail }}" alt="{{ $post->title }}">
+                            <img loading="lazy" src="/{{ $post->thumbnail }}" alt="{{ $post->title }}">
                             @else
-                            <img src="/{{ $post->image }}" alt="{{ $post->title }}">
+                            <img loading="lazy" src="/{{ $post->image }}" alt="{{ $post->title }}">
                             @endif
                         </div>
                 </a>

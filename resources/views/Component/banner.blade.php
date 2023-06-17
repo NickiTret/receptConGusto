@@ -8,7 +8,7 @@
                     <source type="image/avif" srcset="/{{ $data->addImageFormat()['imageAvif'] }}" />
                     <source type="image/webp" srcset="/{{ $data->addImageFormat()['imageWebp'] }}" />
                 @endif
-                <img title="{{ $data->title }}" alt="{{ $data->title }}"
+                <img loading="lazy" title="{{ $data->title }}" alt="{{ $data->title }}"
                     src="/{{ $data->addImageFormat()['imageDefault'] }}">
 
             </picture>
@@ -26,7 +26,7 @@
                     <source type="image/avif" srcset="/{{ $category_item->addImageFormat()['imageAvif'] }}" />
                     <source type="image/webp" srcset="/{{ $category_item->addImageFormat()['imageWebp'] }}" />
                 @endif
-                <img title="{{ $category_item->title }}" alt="{{ $category_item->title }}"
+                <img loading="lazy" title="{{ $category_item->title }}" alt="{{ $category_item->title }}"
                     src="/{{ $category_item->addImageFormat()['imageDefault'] }}">
 
             </picture>

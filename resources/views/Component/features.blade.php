@@ -2,7 +2,7 @@
   @foreach ($data as $item)
   @if($loop->iteration % 2)
     <div class="image-box" data-reveal="right">
-      <img src="{{$item->image}}" alt="{{$item->title}}" class="{{$item->title}}">
+      <img loading="lazy" src="{{$item->image}}" alt="{{$item->title}}" class="{{$item->title}}">
     </div>
     <div class="content-box">
       <h2 class="title" data-reveal="left">
@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="image-box" data-reveal="right">
-      <img src="{{$item->image}}" alt="{{$item->title}}" class="{{$item->title}}">
+      <img loading="lazy" src="{{$item->image}}" alt="{{$item->title}}" class="{{$item->title}}">
     </div>
     @endif
   @endforeach

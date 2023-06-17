@@ -7,7 +7,7 @@
                 <li>
                     <a href="{{ route('marinade') }}">
                         <div>
-                            <img src="//cdn.optipic.io/site-104010/images/2023-05-31/hLMfaDZfeWR0Fu0sdiJsIHVFE2X4Daiq3OXS5oTA.jpg" alt="Коллекция маринадов">
+                            <img loading="lazy" src="//cdn.optipic.io/site-104010/images/2023-05-31/hLMfaDZfeWR0Fu0sdiJsIHVFE2X4Daiq3OXS5oTA.jpg" alt="Коллекция маринадов">
                         </div>
                         <p>Коллекция маринадов</p>
                         <p class="category-description"><small>
@@ -25,7 +25,7 @@
                                                 <source type="image/avif" srcset="/{{ $item->addImageFormat()['imageAvif'] }}" />
                                                 <source type="image/webp" srcset="/{{ $item->addImageFormat()['imageWebp'] }}" />
                                             @endif
-                                            <img title="{{ $item->title }}" alt="{{ $item->title }}"
+                                            <img loading="lazy" title="{{ $item->title }}" alt="{{ $item->title }}"
                                                 src="/{{ $item->addImageFormat()['imageDefault'] }}">
 
                                         </picture>

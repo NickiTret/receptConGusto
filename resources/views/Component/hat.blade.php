@@ -3,7 +3,7 @@
     @if (!empty($data->image))
     <div class="image">
         <picture>
-            <img src="/{{$data->image}}" alt="{{$data->title}}">
+            <img loading="lazy" src="/{{$data->image}}" alt="{{$data->title}}">
         </picture>
     </div>
     @endif
@@ -14,7 +14,7 @@
         @else
         <h1>Поиск по параметрам</h1>
         @endif
-        
+
         @if (!empty($data->content))
         <h3>{!! $data->content !!}</h3>
         @endif
