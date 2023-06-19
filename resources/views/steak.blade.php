@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="ru" class="page">
 
 @include('Main.head')
@@ -10,9 +10,11 @@
             <section class="steak">
                 <div class="container">
                     <div class="steak-nav">
-                        <h1><a href="#" class="active">Говядина</a></h1>
-                        <h1><a href="#">Свинина</a></h1>
-                        <h1><a href="#">Баранина</a></h1>
+                        <h1>
+                            @foreach ($meats as $meat)
+                            <a href="#" class="active">{{$meat->title}}</a>
+
+                        </h1>
                     </div>
                     <div class="image" id="steak">
                         <svg width="277" height="187" viewBox="0 0 277 187" fill="none"
@@ -63,23 +65,28 @@
                                 d="M242 128.5L240 134.5L238 140L236 145L234 149L232.5 153.5L231 158L230 161L229 167V169L228 171H226H225V174V177L223.5 178L221.5 180.5H215H209L213.5 174V173L215 171L216.5 168L218 165V163L219 159.5L220.5 155.5L221.5 151.5L222.5 148L223.5 145L225 141V138V135.5L223.5 132.5V126L222.5 124L221.5 122.5L219.5 118.5V115L218 111.5V108.5L217 106L215 103.5L212.5 101L214.5 100.5H216.5L220 99.5H223.5L228 99L229.5 100.5L231 102L234 106.5L236 110L238 113L241.5 121L243.5 124.5L245.5 128L248 130L250 129L254.5 128L258 124.5L261.5 123.5L265.5 119.5L266.5 123.5L265.5 128L264 132.5V143.5V150.5V157L265.5 162V168V172V174H264L262.5 177V179.5L261.5 182L260 184.5L258 185.5H253H250H246M241.5 129H243.5L245.5 132.5L247 137L250 142.5L252 150.5V155.5V162V167L253 172L252 175L250.5 178.5L250 179.5L247 182L246 186"
                                 stroke="#8E0909" />
                         </svg>
+
                         <div class="hover-list">
-                            <h2>Название отруба</h2>
-                            <p>Описание отруба</p>
+                            <h2>Тонкий край</h2>
+                            <p>Премиальные отрубы</p>
                         </div>
                     </div>
                     <div class="content">
-                        <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, minima.</h3>
-                        <div class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At quisquam
-                            laudantium voluptatum distinctio vitae expedita iste officiis vero nobis iure ea, assumenda
-                            quasi, consectetur impedit doloribus, eligendi praesentium explicabo? Quasi odio ab,
-                            sapiente iste minus officia aliquam cumque facilis a!</div>
+                        <h3>Виды стейков и их приготовление</h3>
+                        <ul>
+                            <li>
+                                <h3>Вырезка "Экстра"</h3>
+                                <p>Одна из самых дорогих частей туши бычка, грейдинга Choice, продается зачищенной и охлажденной. Вырезка является самым «элегантным» и изысканным отрубом высочайшего качества. Так как мышца всю жизнь животного остается неподвижной, это делает мясо невероятно мягким, нежнейшим по вкусу, с прекрасной текстурой и ароматом.
+                                    Постная, практически не содержит жира, что делает ее особенно ценной для любителей правильного питания. Именно из вырезки выделяются известные стейки филе-миньон, которые ценители называют иногда Леди-стейк.</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+                @endforeach
             </section>
         </main>
         @include('Main.footer')
     </div>
 </body>
 
-</html>
+</html> --}}
