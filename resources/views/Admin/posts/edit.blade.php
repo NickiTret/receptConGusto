@@ -61,6 +61,10 @@
                         </div>
                         <div><img loading="lazy" src="{{ $post->getImage() }}" alt="" class="img-thumbnail mt-2" width="200"></div>
                     </div>
+                    <div class="form-group">
+                        <label for="video">Видео код вк</label>
+                        <textarea name="video" class="redactor2 form-control @error('video') is-invalid @enderror" id="video" rows="7">{{ $post->video }}</textarea>
+                    </div>
 
                 </div>
                 <!-- /.card-body -->

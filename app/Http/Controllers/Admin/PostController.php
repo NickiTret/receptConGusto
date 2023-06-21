@@ -33,7 +33,8 @@ class PostController extends Controller
             'description' => 'required',
             'content' => 'required',
             'category_id' => 'required|integer',
-            'thumbnail' => 'nullable|image',
+            'thumbnail' => 'nullable|image|mimes:jpg',
+            'video' => 'nullable'
         ]);
 
         $data = $request->all();
@@ -62,7 +63,8 @@ class PostController extends Controller
             'description' => 'required',
             'content' => 'required',
             'category_id' => 'required|integer',
-            'thumbnail' => 'nullable|image',
+            'thumbnail' => 'nullable|image|mimes:jpg',
+            'video' => 'nullable'
         ]);
 
 
