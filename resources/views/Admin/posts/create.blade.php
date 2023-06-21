@@ -56,7 +56,7 @@
                     </div>
                     <div class="form-group">
                         <label for="video">Код для видео вк</label>
-                        <textarea name="video" id="video" class="redactor2 form-control @error('video') is-invalid @enderror" rows="10" placeholder="Код для видео"></textarea>
+                        <input name="video" type="text" id="video" class=" form-control @error('video') is-invalid @enderror"  placeholder="Код для видео">
                     </div>
                 </div>
                 <!-- /.card-body -->

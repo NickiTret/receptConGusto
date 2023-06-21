@@ -63,7 +63,7 @@
                     </div>
                     <div class="form-group">
                         <label for="video">Видео код вк</label>
-                        <textarea name="video" class="redactor2 form-control @error('video') is-invalid @enderror" id="video" rows="7">{{ $post->video }}</textarea>
+                        <input name="video" type="text" class=" form-control @error('video') is-invalid @enderror" id="video" rows="7">{{ $post->video }}
                     </div>
 
                 </div>
