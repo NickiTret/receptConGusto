@@ -32,7 +32,7 @@
                         </li>
                     @endforeach --}}
                     <li>
-                         <a href="https://t.me/econgusto" target="_blank">Telegram канал</a>
+                         <a href="https://t.me/econgusto" target="_blank">Telegram</a>
                     </li>
 
                     <li>
