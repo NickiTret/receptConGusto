@@ -2,6 +2,7 @@
 @extends('Admin.layouts.layout')
 
 @section('content')
+
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <div class="container-fluid">
@@ -16,11 +17,11 @@
         <section class="content">
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Создание категории</h3>
+                    <h3 class="card-title">Отруб куска мяса</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" method="post" action="{{  route('categories.store') }}" enctype="multipart/form-data">
+                <form role="form" method="post" action="{{  route('steak.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
@@ -30,6 +31,18 @@
                         <div class="form-group">
                             <label for="description">Описание</label>
                             <input type="text" name="description" class="form-control @error('description' ) is-invalid @enderror" id="description" placeholder="Название" >
+                        </div>
+                        <div class="form-group">
+                            <label for="content">Контент</label>
+                            <textarea name="content" id="content" class="redactor2 form-control @error('content') is-invalid @enderror" rows="10" placeholder="Контент"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="steaks_id">Выбор для куска вид мяса</label>
+                            <select name="steaks_id" id="steaks_id" class="form-control">
+                                @foreach ($pieces as $k => $v)
+                                    <option value="{{ $k }}">{{ $v }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="image">Изображение</label>

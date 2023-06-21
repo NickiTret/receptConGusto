@@ -30,7 +30,7 @@ class CategoryController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'nullable',
-            'image' => 'nullable|image',
+            'image' => 'nullable|image|mimes:jpg',
 
 
         ]);
@@ -59,7 +59,7 @@ class CategoryController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'nullable',
-            'image' => 'nullable|image',
+            'image' => 'nullable|image|mimes:jpg',
 
         ]);
 

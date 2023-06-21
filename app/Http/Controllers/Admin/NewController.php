@@ -28,7 +28,7 @@ class NewController extends Controller
             'description' => 'required',
             'content' => 'required',
             'restorant' => 'required',
-            'image' => 'image',
+            'image' => 'image|mimes:jpg',
             'alt_img' => 'nullable|image',
 
         ]);
@@ -56,7 +56,7 @@ class NewController extends Controller
             'description' => 'required',
             'content' => 'required',
             'restorant' => 'required',
-            'image' => 'image',
+            'image' => 'image|mimes:jpg',
             'alt_img' => 'nullable|image',
         ]);
 

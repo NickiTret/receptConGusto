@@ -31,8 +31,8 @@ class BannerController extends Controller
             'subtitle' => 'required',
             'content' => 'required',
             'page' => 'required',
-            'image' => 'nullable|image',
-            
+            'image' => 'nullable|image|mimes:jpg',
+
         ]);
 
         $data = $request->all();
@@ -58,7 +58,7 @@ class BannerController extends Controller
             'subtitle' => 'required',
             'content' => 'required',
             'page' => 'required',
-            'image' => 'nullable|image',
+            'image' => 'nullable|image|mimes:jpg',
         ]);
 
         $banner = Banner::find($id);

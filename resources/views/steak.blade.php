@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru" class="page">
 
 @include('Main.head')
@@ -89,4 +89,4 @@
     </div>
 </body>
 
-</html> --}}
+</html>

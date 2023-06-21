@@ -4,7 +4,7 @@
 
 <body class="page__body">
     @include('Main.header')
-    <div class="site-container">
+    <div class="site-container" style="overflow: scroll">
         <main>
             <section class="about_content">
                 <div class="content">
@@ -53,6 +53,39 @@
                         <p>И если заказом готовой еды, появились сервисы заказа продуктов и всего самого нужного
                             оборудования, то эти обязательно нужно воспользоваться. Это очень удобно, практично и самое
                             главное очень выгодно.
+                        </p>
+                    </div>
+                    <h2>Рекламодателям</h2>
+                    <div class="container">
+                        <h3>Контактная информация</h3>
+                        <ul class="social__list">
+                            <li>
+                                Электронная почта - <a
+                                    href="mailto:tretjakov.nickit@yandex.ru">tretjakov.nickit@yandex.ru</a>
+                            </li>
+                            <li>
+                                ВК - <a href="https://vk.com/id119029110">Сыллка на профиль</a>
+                            </li>
+                            <li>
+                                Телеграм - <a href="https://t.me/niktret">Сыллка на профиль</a>
+                            </li>
+                            <li>
+                                WatsApp - <a href="https://api.whatsapp.com/send/?phone=79218911907">Сыллка на
+                                    профиль</a>
+                            </li>
+                            <li>
+                                Yandex Dzhen - <a href="https://dzen.ru/e-con-gusto.ru">Сыллка на канал</a>
+                            </li>
+                            <li>
+                                Телеграм Con Gusto - <a href="https://t.me/econgusto">Сыллка на канал</a>
+                            </li>
+                            <li>
+                                Сайт портфолио web - разработки "Nickweb create" - <a href="https://t.me/econgusto">Сыллка на сайт</a>
+                            </li>
+                        </ul>
+                        <h3>Заказ сайта визитки от 5 000 рублей, <br> лендинга от 8 000 рублей, <br> многостраничного сайта от 30 000 рублей</h3>
+                        <p>
+                            Создаю валидные сайты оптимизированные под SEO сайты для бизнеса, и стартапов с индивидуальным или готовым дизайном.
                         </p>
                     </div>
                 </div>

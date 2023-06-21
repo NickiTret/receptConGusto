@@ -2,6 +2,7 @@
     @include grid();
     display: flex;
     justify-content: space-between;
+    overflow: initial;
 
     & > h2 {
         @include font_h2($font-family, $clr_text);
@@ -51,6 +52,32 @@
                     color: $clr_yellow;
                 }
             }
+        }
+
+        & > ul {
+            list-style-type: disc;
+            @include font_lead($font-family, $clr_text);
+            font-weight: bold;
+            margin-bottom: 14px;
+            // border-right: 5px solid $clr_text;
+            padding: 24px 48px;
+            border-radius: 14px 0 0 14px;
+            background-color: $clr_bg;
+
+            @media (max-width: 480px) {
+                padding-left: 26px;
+                padding-right: 8px;
+            }
+
+            & a {
+                color: $clr_text2;
+                text-decoration: underline;
+            }
+        }
+
+        & > h3 {
+            @include font_lead($font-family, $clr_text);
+            margin-bottom: 14px;
         }
 
         & > .content > p {

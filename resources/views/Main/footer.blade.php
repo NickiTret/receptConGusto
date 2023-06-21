@@ -16,7 +16,7 @@
     <footer class="footer">
         <div class="container">
             <div class="left-box">
-                <p>Разработка сайта - <a href="http://infonickweb.ru/" target="_blank">NICKWEB</a>
+                <p>Разработка сайта - <a href="https://infonickweb.ru/" target="_blank">NICKWEB</a>
                 </p>
             </div>
             <nav>

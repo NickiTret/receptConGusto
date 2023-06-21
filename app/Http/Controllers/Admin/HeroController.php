@@ -29,7 +29,7 @@ class HeroController extends Controller
             'title' => 'required',
             'description' => 'required',
             'link' => 'required',
-            'image' => 'image',
+            'image' => 'image|mimes:jpg',
         ]);
 
         $data = $request->all();
@@ -53,10 +53,10 @@ class HeroController extends Controller
             'title' => 'required',
             'description' => 'required',
             'link' => 'required',
-            'image' => 'image',
+            'image' => 'image|mimes:jpg',
         ]);
 
-    
+
         $hero = Hero::find($id);
         $data = $request->all();
 

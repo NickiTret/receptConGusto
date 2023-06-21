@@ -41,6 +41,12 @@
                                 <p>Главная</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('seo.index') }}" class="nav-link">
+                                <i class="nav-icon far fa-circle text-info"></i>
+                                <p>Seo настройки</p>
+                            </a>
+                        </li>
                         <li class="nav-item has-treeview">
                             <a href="{{ route('admin.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-tags"></i>
@@ -87,7 +93,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item has-treeview">
+                        {{-- <li class="nav-item has-treeview">
                             <a href="{{ route('admin.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-tags"></i>
                                 <p>
@@ -109,7 +115,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li class="nav-item has-treeview">
                             <a href="{{ route('admin.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-archive"></i>
@@ -294,6 +300,34 @@
                                     <a href="{{ route('subcats.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Подкатегории</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="{{ route('admin.index') }}" class="nav-link">
+                                <p>
+                                    Стейки картинки
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('meats.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Вид мяса</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('piece.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Кусок мяса</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('steak.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Стейки</p>
                                     </a>
                                 </li>
                             </ul>

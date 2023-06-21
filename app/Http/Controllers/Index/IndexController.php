@@ -15,8 +15,12 @@ use App\Models\Fast;
 use App\Models\Feat;
 use App\Models\Banner;
 use App\Models\Hat;
+use App\Models\Meat;
 use App\Models\News;
+use App\Models\Piece;
+use App\Models\Seo;
 use App\Models\Sous;
+use App\Models\Steak;
 use App\Models\Subcat;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Cookie;
@@ -83,11 +87,13 @@ class IndexController extends Controller
         }
 
 
+        $seo = Seo::where('name_page', 'Главная страница')->first();
+
         $currentURL = url()->full();
         $maps = Tag::orderBy('created_at', 'desc')->get();
         $lastPost = Post::orderBy('created_at', 'desc')->limit(4)->get();
 
-        return view('welcome', compact('categories', 'tags', 'maps', 'random', 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'lastPost'));
+        return view('welcome', compact('categories', 'tags', 'maps', 'random', 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'lastPost', 'seo'));
     }
 
     public function show($slug)
@@ -133,7 +139,8 @@ class IndexController extends Controller
         $fasts = Fast::all();
         $banner = Banner::where('page', 'Категории')->firstOrFail();
         $categories = Category::orderBy('title')->get();
-        return view('category', compact('categories', 'banner', 'fasts'));
+        $seo = Seo::where('name_page', 'Категории')->first();
+        return view('category', compact('categories', 'banner', 'fasts', 'seo'));
     }
 
     public function tag($id)
@@ -143,6 +150,7 @@ class IndexController extends Controller
         $tag = Tag::where('id', $id)->firstOrFail();
         $posts = $tag->posts()->orderBy('id', 'desc')->paginate(50);
         $banner = Banner::where('page', 'Тег')->first();
+
         return view('tags', compact('tag', 'hat', 'posts', 'banner', 'fasts'));
     }
 
@@ -176,14 +184,16 @@ class IndexController extends Controller
         $postsAll = Post::filter($filter)->paginate(100);
         $fasts = Fast::filter($filter)->paginate(20);
         $posts = $postsAll->merge($fasts);
+        $seo = Seo::where('name_page', 'Поиск')->first();
 
-        return view('search', compact('posts', 'category',  'currentURL'));
+        return view('search', compact('posts', 'category',  'currentURL', 'seo'));
     }
 
     public function about()
     {
         $hat = Hat::where('page_name', 'О сайте')->first();
-        return view('about', compact('hat'));
+        $seo = Seo::where('name_page', 'О сайте')->first();
+        return view('about', compact('hat', 'seo'));
     }
 
     public function news()
@@ -194,7 +204,8 @@ class IndexController extends Controller
         $posts = News::where('restorant', 0)->orderBy('views', 'desc')->get();
         $categories = Category::pluck('title', 'id')->all();
         $tags = Tag::pluck('title', 'id')->all();
-        return view('news', compact('categories', 'tags', 'posts', 'fasts', 'currentURL'));
+        $seo = Seo::where('name_page', 'Статьи')->first();
+        return view('news', compact('categories', 'tags', 'posts', 'fasts', 'currentURL', 'seo'));
     }
 
     public function new($slug)
@@ -216,8 +227,8 @@ class IndexController extends Controller
         $slider = Sous::where('marinade', 1)->get()->toJson();
         $groups = Subcat::all();
         $banner = Banner::where('page', 'Коллекция маринадов')->firstOrFail();
-
-        return view('marinade', compact('currentURL', 'groups', 'slider', 'banner'));
+        $seo = Seo::where('name_page', 'Маринады')->first();
+        return view('marinade', compact('currentURL', 'groups', 'slider', 'banner', 'seo'));
     }
 
     public function dessert()
@@ -229,7 +240,8 @@ class IndexController extends Controller
         ];
         $fasts = Fast::all();
         $banner = Banner::where('page', 'Категории')->firstOrFail();
-        return view('dessert', compact('banner', 'data'));
+        $seo = Seo::where('name_page', 'Десерты')->first();
+        return view('dessert', compact('banner', 'data', 'seo'));
     }
 
 
@@ -242,7 +254,12 @@ class IndexController extends Controller
             'image' => ''
         ];
         // $banner = Banner::where('page', 'Стейк')->firstOrFail();
-        return view('steak', compact('data'));
+        $seo = Seo::where('name_page', 'Стейки')->first();
+        $meats = Meat::all();
+        $pieces = Piece::all();
+        $steaks = Steak::all();
+
+        return view('steak', compact('data', 'steaks', 'meats', 'pieces'));
     }
 
     public function feed()
