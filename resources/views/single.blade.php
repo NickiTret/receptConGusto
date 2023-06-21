@@ -6,12 +6,6 @@
 
 <body class="page__body">
     @include('Main.header')
-    <script async src="https://ad.mail.ru/static/ads-async.js"></script>
-    <ins class="mrg-tag" style="display:inline-block;width:100%;height:50px" data-ad-client="ad-1306627"
-        data-ad-slot="1306627"></ins>
-    <script>
-        (MRGtag = window.MRGtag || []).push({});
-    </script>
     <div class="site-container">
         <main>
             @if (!empty($post))
