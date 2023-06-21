@@ -13,7 +13,10 @@
                     <div class="container full-content">
                         <div class="content">
                             @if($post->video)
+                            <div class="video">
+                                <h2>Видеорецепт</h2>
                                 {!! $post->video !!}
+                            </div>
                             @endif
                             {!! $post->content !!}
                         </div>
