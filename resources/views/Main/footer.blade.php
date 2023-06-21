@@ -46,7 +46,7 @@
             </nav>
         </div>
     </footer>
-    <script type="module" src="{{ asset('assets/js/main.js') }}?6"></script>
+    <script type="module" src="{{ asset('assets/js/main.js') }}?7"></script>
     <!-- Yandex.Metrika counter -->
     <script>
         (function(m, e, t, r, i, k, a) {
