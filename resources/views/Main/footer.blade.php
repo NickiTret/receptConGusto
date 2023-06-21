@@ -16,27 +16,32 @@
     <footer class="footer">
         <div class="container">
             <div class="left-box">
-                <p>Разработка сайта - <a href="https://infonickweb.ru/" target="_blank">NICKWEB</a>
+                <p>&copy; 2023 Con Gusto</p>
+                |
+                <p>Разработка сайта - <a href="https://infonickweb.ru/" target="_blank">NickWeb Create</a>
                 </p>
             </div>
             <nav>
                 <ul>
-                    @foreach ($headers as $header_item)
+                    {{-- @foreach ($headers as $header_item)
                         @if ($loop->iteration == 5)
                             @continue
                         @endif
                         <li>
                             <a href=" {{ $header_item->link }}">{{ $header_item->title }}</a>
                         </li>
-                    @endforeach
-
+                    @endforeach --}}
                     <li>
                          <a href="https://t.me/econgusto" target="_blank">Telegram канал</a>
                     </li>
 
                     <li>
-                         <a href="https://dzen.ru/e-con-gusto.ru" target="_blank">Яндекс Дзен</a>
+                         <a href="https://dzen.ru/e-con-gusto.ru" target="_blank">Дзен</a>
                     </li>
+
+                    <li>
+                        <a href="https://vk.com/public221195230" target="_blank">VK</a>
+                   </li>
                 </ul>
             </nav>
         </div>
