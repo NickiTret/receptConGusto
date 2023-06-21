@@ -13,7 +13,7 @@
                     <div class="container full-content">
                         <div class="content">
                             @if($post->video)
-                                {!! $post->video !!}
+                                {{ $post->video }}
                             @endif
                             {!! $post->content !!}
                         </div>
