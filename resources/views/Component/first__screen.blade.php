@@ -4,7 +4,7 @@
             @foreach ($heros as $item)
                 <li class="swiper-slide">
                     <picture>
-                        <img loading="lazy" src="/{{ $item->image }}" alt="{{ $item->title }}">
+                        <img src="/{{ $item->image }}" alt="{{ $item->title }}">
                     </picture>
                     <div class="text text__left">
                         <h1>{{ $item->title }}</h1>
