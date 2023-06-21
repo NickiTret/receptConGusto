@@ -57,10 +57,10 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::resource('/hat', HatController::class);
     Route::resource('/souses', SousController::class);
     Route::resource('/subcats', SubcatController::class);
-    // Route::resource('/meats', MeatController::class);
+    Route::resource('/meats', MeatController::class);
     Route::resource('/seo', SeoController::class);
-    // Route::resource('/piece', PieceController::class);
-    // Route::resource('/steak', SteakController::class);
+    Route::resource('/piece', PieceController::class);
+    Route::resource('/steak', SteakController::class);
 });
 
 //login, logout control
