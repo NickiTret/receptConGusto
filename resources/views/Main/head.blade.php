@@ -109,5 +109,11 @@
                 alt="Top.Mail.Ru" /></div>
     </noscript>
     <!-- /Top.Mail.Ru counter -->
-
+<!-- SAPE RTB JS -->
+<script
+    async="async"
+    src="https://cdn-rtb.sape.ru/rtb-b/js/933/2/140933.js"
+    type="text/javascript">
+</script>
+<!-- SAPE RTB END -->
 </head>
