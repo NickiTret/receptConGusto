@@ -118,30 +118,7 @@
             </section>
         </main>
         <section class="links">
-            <div class="container">
-                <!-- Yandex.RTB R-A-2349463-10 -->
-                <div id="yandex_rtb_R-A-2349463-10"></div>
-                <script>
-                    window.yaContextCb.push(() => {
-                        Ya.Context.AdvManager.renderFeed({
-                            "blockId": "R-A-2349463-10",
-                            "renderTo": "yandex_rtb_R-A-2349463-10"
-                        })
-                    })
-                </script>
-            </div>
-            <div class="container">
-                <!-- Yandex Native Ads C-A-2349463-4 -->
-                <div id="yandex_rtb_C-A-2349463-4"></div>
-                <script>
-                    window.yaContextCb.push(() => {
-                        Ya.Context.AdvManager.renderWidget({
-                            renderTo: 'yandex_rtb_C-A-2349463-4',
-                            blockId: 'C-A-2349463-4'
-                        })
-                    })
-                </script>
-            </div>
+            <div class="container"></div>
         </section>
         @include('Main.footer')
     </div>
