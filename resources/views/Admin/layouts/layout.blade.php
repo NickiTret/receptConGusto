@@ -390,22 +390,22 @@
     <!-- ./wrapper -->
 
     <script>
-        tinymce.init({
-            selector: 'textarea',
-            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
-            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-            tinycomments_mode: 'embedded',
-            tinycomments_author: 'Author name',
-            mergetags_list: [{
-                    value: 'First.Name',
-                    title: 'First Name'
-                },
-                {
-                    value: 'Email',
-                    title: 'Email'
-                },
-            ]
-        });
+        // tinymce.init({
+        //     selector: 'textarea',
+        //     plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+        //     toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+        //     tinycomments_mode: 'embedded',
+        //     tinycomments_author: 'Author name',
+        //     mergetags_list: [{
+        //             value: 'First.Name',
+        //             title: 'First Name'
+        //         },
+        //         {
+        //             value: 'Email',
+        //             title: 'Email'
+        //         },
+        //     ]
+        // });
     </script>
 
     <!-- jQuery -->
@@ -414,12 +414,12 @@
     <script>
         //Initialize Select2 Elements
         $('.select2').select2()
-        //  if ($('.redactor')) {
-        //     $('.redactor').summernote()
-        //  }
-        //  if ($('.redactor2')) {
-        //     $('.redactor2').summernote()
-        //  }
+         if ($('.redactor')) {
+            $('.redactor').summernote()
+         }
+         if ($('.redactor2')) {
+            $('.redactor2').summernote()
+         }
         $('.nav-sidebar').each(function() {
             let location = window.location.protocol + '//' + window.location.host + window.location.pathname;
 
@@ -429,6 +429,8 @@
                 $(this).closest('.has-treeview').addClass('menu-open');
             };
         });
+
+
     </script>
 
 </body>
