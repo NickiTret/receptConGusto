@@ -5,7 +5,7 @@
     margin-bottom: 30px;
     height: auto;
     align-self: stretch;
-    overflow: hidden;
+
 
     @media (max-width: 1280px) {
         display: none;
@@ -22,7 +22,7 @@
         border: 2px solid $clr_grey2;
         padding: 14px;
         width: calc($column_abs * 4 + $gutter_abs * 3);
-
+        overflow: hidden;
         & > h3 {
             @include font_lead($font-family, $clr_text);
         }
