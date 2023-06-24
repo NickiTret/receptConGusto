@@ -38,7 +38,7 @@
         {{--        <h3>Рецепты по&nbsp;тегам:</h3> --}}
         <ul class="first-screen__aside-tags">
             @foreach ($maps as $tag)
-                @if ($loop->iteration === 9)
+                @if ($loop->iteration === 8)
                     @continue
                 @endif
                 <li>
