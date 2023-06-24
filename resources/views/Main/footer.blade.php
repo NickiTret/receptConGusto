@@ -45,13 +45,10 @@
             </nav>
         </div>
         <div class="container">
-            <div class="left-box">
-                <p>Ссылки на внешие ресурсы:</p>
-            </div>
             <nav>
                 <ul>
                     <li>
-                        <a href='http://modnayamoda.ru/recepty/produkty-svojstva-polza/' target="_blank" title='Продукты свойства польза'>Продукты свойства польза</a>
+                        <a href='http://modnayamoda.ru/recepty/produkty-svojstva-polza/' target="_blank" title='Продукты свойства польза'>Promotion.su</a>
                     </li>
                 </ul>
             </nav>
