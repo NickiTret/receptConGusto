@@ -44,6 +44,18 @@
                 </ul>
             </nav>
         </div>
+        <div class="container">
+            <div class="left-box">
+                <p>Ссылки на внешие ресурсы:</p>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href='http://modnayamoda.ru/recepty/produkty-svojstva-polza/' target="_blank" title='Продукты свойства польза'>Продукты свойства польза</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </footer>
     <script type="module" src="{{ asset('assets/js/main.js') }}?8"></script>
     <!-- Yandex.Metrika counter -->

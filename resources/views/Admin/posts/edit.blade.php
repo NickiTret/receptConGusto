@@ -70,7 +70,7 @@
                         <label for="show">Индексация</label>
                         <select name="show" id="show" class="form-control">
                             <option value="0">Нет</option>
-                            <option value="1">Да</option>
+                            <option selected value="1">Да</option>
                         </select>
                     </div>
 
