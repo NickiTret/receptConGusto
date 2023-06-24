@@ -5,6 +5,7 @@
     margin-bottom: 30px;
     height: auto;
     align-self: stretch;
+    overflow: hidden;
 
     @media (max-width: 1280px) {
         display: none;
