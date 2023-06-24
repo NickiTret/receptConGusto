@@ -1,3 +1,12 @@
+<!-- Yandex.RTB R-A-2349463-11 -->
+<script>window.yaContextCb.push(()=>{
+	Ya.Context.AdvManager.render({
+		"blockId": "R-A-2349463-11",
+		"type": "fullscreen",
+		"platform": "touch"
+	})
+})
+</script>
 <header data-aos="fade-down" data-aos-duration="1000" class="header">
     <div class="container-header">
         <a href="/" class="logo">

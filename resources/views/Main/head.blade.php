@@ -109,40 +109,36 @@
                 alt="Top.Mail.Ru" /></div>
     </noscript>
     <!-- /Top.Mail.Ru counter -->
-<!-- SAPE RTB JS -->
-<script
-    async="async"
-    src="https://cdn-rtb.sape.ru/rtb-b/js/933/2/140933.js"
-    type="text/javascript">
-</script>
-<!-- SAPE RTB END -->
-<!-- Top100 (Kraken) Counter -->
-<script>
-    (function (w, d, c) {
-    (w[c] = w[c] || []).push(function() {
-        var options = {
-            project: 7715281,
-        };
-        try {
-            w.top100Counter = new top100(options);
-        } catch(e) { }
-    });
-    var n = d.getElementsByTagName("script")[0],
-    s = d.createElement("script"),
-    f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = "text/javascript";
-    s.async = true;
-    s.src =
-    (d.location.protocol == "https:" ? "https:" : "http:") +
-    "//st.top100.ru/top100/top100.js";
+    <script>
+        (function(w, d, c) {
+            (w[c] = w[c] || []).push(function() {
+                var options = {
+                    project: 7715281,
+                };
+                try {
+                    w.top100Counter = new top100(options);
+                } catch (e) {}
+            });
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function() {
+                    n.parentNode.insertBefore(s, n);
+                };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src =
+                (d.location.protocol == "https:" ? "https:" : "http:") +
+                "//st.top100.ru/top100/top100.js";
 
-    if (w.opera == "[object Opera]") {
-    d.addEventListener("DOMContentLoaded", f, false);
-} else { f(); }
-})(window, document, "_top100q");
-</script>
-<noscript>
-  <img src="//counter.rambler.ru/top100.cnt?pid=7715281" alt="Топ-100" />
-</noscript>
-<!-- END Top100 (Kraken) Counter -->
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else {
+                f();
+            }
+        })(window, document, "_top100q");
+    </script>
+    <noscript>
+        <img src="//counter.rambler.ru/top100.cnt?pid=7715281" alt="Топ-100" />
+    </noscript>
+    <!-- END Top100 (Kraken) Counter -->
 </head>
