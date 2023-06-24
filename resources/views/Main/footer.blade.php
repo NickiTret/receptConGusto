@@ -59,7 +59,7 @@
                                 style="color: Green; font-size: 11px;">каталог</span> <span
                                 style="color: Red; font-size: 11px;">сайтов</span></a><br /><span
                             style="color: red; font-size: 11px;">No</span><span
-                            style="color: Green; font-size: 11px;">folloW</span>.Ru
+                            style="color: Green; font-size: 11px;">folloW</span>
                     </div>
                 </li>
 
