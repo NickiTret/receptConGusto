@@ -51,7 +51,7 @@
                         title='Продукты свойства польза'>Promotion.su</a>
                 </li>
                 <li>
-                    <div style="width: 88px; height: 31px; border: 1px solid rgb(143, 188, 188); text-align: center; line-height: 1em; vertical-align: middle; background-color: white;"
+                    <div style="width: 88px; height: 39px; border: 1px solid rgb(143, 188, 188); text-align: center; line-height: 1em; vertical-align: middle; background-color: white;"
                         id="z456123" class="x321456">
 
                         <a style="vertical-align: middle; text-decoration: none;" href="http://www.nofollow.ru"
