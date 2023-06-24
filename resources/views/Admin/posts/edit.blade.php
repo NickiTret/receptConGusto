@@ -63,7 +63,7 @@
                     </div>
                     <div class="form-group">
                         <label for="video">Видео код вк</label>
-                        <input name="video" type="text" class=" form-control @error('video') is-invalid @enderror" id="video" rows="7">{{ $post->video }}
+                        <input name="video" type="text" value="{{ $post->video }}" class=" form-control @error('video') is-invalid @enderror" id="video" rows="7">
                     </div>
 
                     <div class="form-group">
