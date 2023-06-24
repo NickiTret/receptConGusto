@@ -4,10 +4,13 @@
         @if (count($posts) == 0)
             <h3>Нечего не найдено по вашему запросу</h3>
         @endif
+        @if(isset($tag) &&  $tag->title)
+            <h2>{{$tag->title}}</h2>
+        @endif
         @if (!empty($posts))
             <ul>
                 @foreach ($posts as $post)
-                    <li>
+                    <li @if (!empty($post->category_id)) class="hits-recepts" @endif>
                         <a href="{{ route('single', $post->slug) }}">
                             <picture>
                                 @if ($post->addImageFormat())

@@ -1,4 +1,5 @@
 .hits {
+
     & > .container {
         & > h2 {
             @include font_h1($font-family, $clr_text2);
@@ -9,16 +10,24 @@
         & > ul {
             display: flex;
             align-items: flex-start;
-            justify-content: flex-start;
+            justify-content: stretch;
             flex-wrap: wrap;
             gap: calc($gutter_abs * 1);
+            margin-bottom: calc($gutter_abs * -1);
 
             @media (max-width: 1440px) {
                 gap: calc($gutter_abs_maxW_1440 * 1);
+                margin-bottom: calc($gutter_abs_maxW_1440 * -1);
             }
 
             @media (max-width: 1280px) {
                 gap: calc($gutter_abs_maxW_1280 * 1);
+                margin-bottom: calc($gutter_abs_maxW_1280 * -1);
+            }
+
+            @media (max-width: 1024px) {
+                gap: calc($gutter_abs_maxW_1024 * 1);
+                margin-bottom: calc($gutter_abs_maxW_1024 * -1);
             }
 
             & > li {
@@ -32,23 +41,47 @@
                 border-top: 2px solid $clr_grey3;
                 border-left: 2px solid $clr_grey3;
                 transition: all 0.2s ease-in;
+                height: 524px;
                 @include box-shadow;
+                margin-bottom: calc($gutter_abs * 1);
 
                 @media (max-width: 1600px) {
-                  width: calc($column_abs_maxW_1600 * 3 + $gutter_abs_maxW_1600 * 2);
-              }
+                    width: calc(
+                        $column_abs_maxW_1600 * 3 + $gutter_abs_maxW_1600 * 2
+                    );
+                    margin-bottom: calc($gutter_abs_maxW_1600 * 1);
+                }
 
                 @media (max-width: 1440px) {
-                    width: calc($column_abs_maxW_1440 * 3 + $gutter_abs_maxW_1440 * 2);
+                    width: calc(
+                        $column_abs_maxW_1440 * 3 + $gutter_abs_maxW_1440 * 2
+                    );
+                    margin-bottom: calc($gutter_abs_maxW_1440 * 1);
                 }
 
                 @media (max-width: 1280px) {
-                  width: calc($column_abs_maxW_1280 * 3 + $gutter_abs_maxW_1280 * 2);
-              }
+                    width: calc(
+                        $column_abs_maxW_1280 * 3 + $gutter_abs_maxW_1280 * 2
+                    );
+                    margin-bottom: calc($gutter_abs_maxW_1280 * 1);
+                }
+
+                @media (max-width: 1024px) {
+                    width: calc(
+                        $column_abs_maxW_1024 * 4 + $gutter_abs_maxW_1024 * 3
+                    );
+                    margin-bottom: calc($gutter_abs_maxW_1024 * 1);
+                    flex: 1 0 auto;
+                }
 
                 @media (max-width: 768px) {
-                    width: calc($column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3);
+                    width: calc(
+                        $column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3
+                    );
                     gap: 14px;
+                    margin-bottom: calc($gutter_abs_maxW_768 * 1);
+                    height: auto;
+
 
                     &:not(:last-child) {
                         margin-bottom: 14px;
@@ -56,11 +89,21 @@
                 }
 
                 @media (max-width: 480px) {
-                    width: calc($column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3);
+                    width: calc(
+                        $column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3
+                    );
+                }
+
+
+                &.hits-recepts {
+                    height: auto;
+                    max-height: none;
+                    align-self: stretch;
+                    flex: 1 0 auto;
                 }
 
                 & img {
-                   transition: all 0.2s ease-in-out;
+                    transition: all 0.2s ease-in-out;
                 }
 
                 &:hover {
@@ -77,8 +120,12 @@
                 }
                 & > a {
                     box-sizing: border-box;
-                    display: block;
+                    display: flex;
+                    flex-direction: column;
+                    // align-items: flex-start;
                     padding: 14px;
+                    height: 100%;
+                    position: relative;
 
                     & > div.top {
                         display: flex;
@@ -131,9 +178,9 @@
 
                     & > div.scroll {
                         max-height: 200px;
+                        height: 130px;
                         & p {
-                            @include font_small($font-family, $clr_text);
-
+                            @include font_min_lead($font-family, $clr_text);
                             overflow: auto;
                         }
                     }
@@ -142,7 +189,8 @@
         }
 
         & .post-description {
-            margin-top: 10px;
+            vertical-align: bottom;
+            margin-top: auto;
 
             & > li {
                 @include font_small($font-family, $clr_text);

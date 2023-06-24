@@ -4,7 +4,7 @@
 
 <body class="page__body">
     @include('Main.header')
-    <div class="site-container" style="overflow: scroll">
+    <div class="site-container">
         <main>
             <section class="about_content">
                 <div class="content">
@@ -80,7 +80,7 @@
                                 Телеграм Con Gusto - <a href="https://t.me/econgusto">Сыллка на канал</a>
                             </li>
                             <li>
-                                Сайт портфолио web - разработки "Nickweb create" - <a href="https://t.me/econgusto">Сыллка на сайт</a>
+                                Сайт портфолио web - разработки "Nickweb&nbsp;create" - <a href="https://t.me/econgusto">Сыллка на сайт</a>
                             </li>
                         </ul>
                         <h3>Заказ сайта визитки от 5 000 рублей, <br> лендинга от 8 000 рублей, <br> многостраничного сайта от 30 000 рублей</h3>

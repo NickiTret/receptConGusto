@@ -30,6 +30,7 @@ class NewController extends Controller
             'restorant' => 'required',
             'image' => 'image|mimes:jpg',
             'alt_img' => 'nullable|image',
+            'show' => 'required'
 
         ]);
 
@@ -58,6 +59,7 @@ class NewController extends Controller
             'restorant' => 'required',
             'image' => 'image|mimes:jpg',
             'alt_img' => 'nullable|image',
+            'show' => 'required'
         ]);
 
         $new = News::find($id);

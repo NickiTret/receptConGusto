@@ -16,7 +16,7 @@ class News extends Model
     use Sluggable;
 
     protected $table = 'news';
-    protected $fillable = ['title', 'slug', 'description', 'content', 'views', 'image', 'alt_img', 'restorant'];
+    protected $fillable = ['title', 'slug', 'description', 'content', 'views', 'image', 'alt_img', 'restorant', 'show'];
 
     public function sluggable(): array
     {

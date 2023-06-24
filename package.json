@@ -33,7 +33,8 @@
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.57.1",
         "sass-loader": "^12.6.0",
-        "svg-sprite-loader": "^6.0.11"
+        "svg-sprite-loader": "^6.0.11",
+        "svg-spritemap-webpack-plugin": "^4.5.0"
     },
     "dependencies": {
         "aos": "^2.3.4",

@@ -17,8 +17,7 @@
         <div class="container">
             <div class="left-box">
                 <p>&copy; 2023 Con Gusto</p>
-                |
-                <p>Разработка сайта - <a href="https://infonickweb.ru/" target="_blank">NickWeb Create</a>
+                <p>Разработка сайта - <a href="https://infonickweb.ru/" target="_blank">NickWeb&nbsp;reate</a>
                 </p>
             </div>
             <nav>

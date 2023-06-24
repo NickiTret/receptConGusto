@@ -58,6 +58,13 @@
                         <label for="video">Код для видео вк</label>
                         <input name="video" type="text" id="video" class=" form-control @error('video') is-invalid @enderror"  placeholder="Код для видео">
                     </div>
+                    <div class="form-group">
+                        <label for="show">Индексация</label>
+                        <select name="show" id="show" class="form-control">
+                            <option value="0">Нет</option>
+                            <option value="1">Да</option>
+                        </select>
+                    </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">

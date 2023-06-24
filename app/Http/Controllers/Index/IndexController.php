@@ -54,14 +54,14 @@ class IndexController extends Controller
         if (Cache::has(('posts'))) {
             $posts = Cache::get('posts');
         } else {
-            $posts = Post::orderBy('views', 'desc')->limit(4)->get();
+            $posts = Post::where('show', '1')->orderBy('views', 'desc')->limit(4)->get();
             Cache::put('posts', $posts, 604800);
         }
 
         if (Cache::has(('allPosts'))) {
             $allPosts = Cache::get('allPosts');
         } else {
-            $allPosts = Post::all();
+            $allPosts = Post::where('show', '1')->get();
             Cache::put('allPosts', $allPosts, 604800);
         }
 
@@ -90,8 +90,8 @@ class IndexController extends Controller
         $seo = Seo::where('name_page', 'Главная страница')->first();
 
         $currentURL = url()->full();
-        $maps = Tag::orderBy('created_at', 'desc')->get();
-        $lastPost = Post::orderBy('created_at', 'desc')->limit(4)->get();
+        $maps = Tag::orderBy('title', 'asc')->get();
+        $lastPost = Post::where('show', '1')->orderBy('created_at', 'desc')->limit(4)->get();
 
         return view('welcome', compact('categories', 'tags', 'maps', 'random', 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'lastPost', 'seo'));
     }
@@ -102,14 +102,14 @@ class IndexController extends Controller
         if (Cache::has(('fasts'))) {
             $fasts = Cache::get('fasts');
         } else {
-            $fasts = Fast::all();
+            $fasts = Fast::where('show', '1')->get();
             Cache::put('fasts', $fasts, 604800);
         }
 
         $currentURL = url()->full();
 
         $post = Post::where('slug', $slug)->firstOrFail();
-        $posts = Post::where('category_id', $post->category_id)->limit(5)->get();
+        $posts = Post::where('show', '1')->where('category_id', $post->category_id)->limit(5)->get();
         $post->views += 1;
         $post->update();
         $categories = Category::pluck('title', 'id')->all();
@@ -124,7 +124,7 @@ class IndexController extends Controller
         if (Cache::has(('posts'))) {
             $posts = Cache::get('posts');
         } else {
-            $posts = Fast::all();
+            $posts = Fast::where('show', '1')->get();
             Cache::put('posts', $posts, 604800);
         }
 
@@ -136,7 +136,7 @@ class IndexController extends Controller
 
     public function category()
     {
-        $fasts = Fast::all();
+        $fasts = Fast::where('show', '1')->get();
         $banner = Banner::where('page', 'Категории')->firstOrFail();
         $categories = Category::orderBy('title')->get();
         $seo = Seo::where('name_page', 'Категории')->first();
@@ -148,7 +148,7 @@ class IndexController extends Controller
         $hat = Hat::where('page_name', 'Тег')->first();
         $fasts = Fast::all();
         $tag = Tag::where('id', $id)->firstOrFail();
-        $posts = $tag->posts()->orderBy('id', 'desc')->paginate(50);
+        $posts = $tag->posts()->where('show', '1')->orderBy('id', 'desc')->paginate(50);
         $banner = Banner::where('page', 'Тег')->first();
 
         return view('tags', compact('tag', 'hat', 'posts', 'banner', 'fasts'));
@@ -158,7 +158,7 @@ class IndexController extends Controller
     {
         // $banner = Banner::where('page', 'Категории')->firstOrFail();
         $category_item = Category::where('slug', $slug)->firstOrfail();
-        $posts = Post::where('category_id', $category_item->id)->get();
+        $posts = Post::where('show', '1')->where('category_id', $category_item->id)->get();
         return view('category-item', compact('posts', 'category_item'));
     }
 
@@ -200,8 +200,8 @@ class IndexController extends Controller
     {
 
         $currentURL = url()->full();
-        $fasts = Fast::all();
-        $posts = News::where('restorant', 0)->orderBy('views', 'desc')->get();
+        $fasts = Fast::where('show', '1')->get();
+        $posts = News::where('show', '1')->where('restorant', 0)->orderBy('views', 'desc')->get();
         $categories = Category::pluck('title', 'id')->all();
         $tags = Tag::pluck('title', 'id')->all();
         $seo = Seo::where('name_page', 'Статьи')->first();
@@ -211,15 +211,16 @@ class IndexController extends Controller
     public function new($slug)
     {
         $currentURL = url()->full();
-        $fasts = Fast::all();
+        $fasts = Fast::where('show', '1')->get();
         $post = News::where('slug', $slug)->firstOrFail();
-        $posts = Post::orderBy('views', 'desc')->limit(4)->get();
+        $posts = Post::where('show', '1')->orderBy('views', 'desc')->limit(4)->get();
         $post->views += 1;
 
         $post->update();
 
         return view('single', compact('post', 'fasts', 'posts', 'currentURL'));
     }
+
 
     public function marinade()
     {

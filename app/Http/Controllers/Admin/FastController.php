@@ -27,7 +27,8 @@ class FastController extends Controller
             'title' => 'required',
             'content' => 'required',
             'image' => 'nullable|image',
-            
+            'show' => 'required'
+
         ]);
 
         $data = $request->all();
@@ -42,7 +43,7 @@ class FastController extends Controller
     public function edit($id)
     {
         $fast = Fast::find($id);
-        
+
         return view('Admin.fasts.edit', compact('fast'));
     }
 
@@ -52,6 +53,7 @@ class FastController extends Controller
             'title' => 'required',
             'content' => 'required',
             'image' => 'image',
+            'show' => 'required'
         ]);
 
         // $fast = Fast::find($id);

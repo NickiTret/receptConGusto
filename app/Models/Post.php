@@ -18,7 +18,7 @@ class Post extends Model
 {
     use Sluggable;
 
-    protected $fillable = ['title', 'content', 'description', 'category_id', 'thumbnail', 'video'];
+    protected $fillable = ['title', 'content', 'description', 'category_id', 'thumbnail', 'video', 'show'];
 
     public function tags()
     {

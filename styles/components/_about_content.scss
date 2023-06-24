@@ -1,8 +1,8 @@
 .about_content {
     @include grid();
     display: flex;
+    align-items: stretch;
     justify-content: space-between;
-    overflow: initial;
 
     & > h2 {
         @include font_h2($font-family, $clr_text);

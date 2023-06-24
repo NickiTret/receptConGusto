@@ -9,17 +9,17 @@
             max-height: 350px;
             & ul {
                 display: flex;
-                align-items: center;
+                align-items: stretch;
                 justify-content: flex-start;
                 gap: calc($gutter_abs * 1);
-                max-height: 300px;
+                max-height: 400px;
                 padding-bottom: 24px;
                 & li {
                     flex: 0 0 auto;
                     width: calc( $column_abs * 3 + $gutter_abs * 2 );
                     @include box-shadow;
                     & > a {
-                        & > img {
+                        & > picture > img {
                             width: 100%;
                             height: 200px;
                             margin-bottom: 7px;

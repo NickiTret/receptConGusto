@@ -51,6 +51,14 @@
                         <div><img loading="lazy" src="{{ $new->getImage() }}" alt="" class="img-image mt-2" width="200"></div>
                     </div>
 
+                    <div class="form-group">
+                        <label for="show">Индексация</label>
+                        <select name="show" id="show" class="form-control">
+                            <option value="0">Нет</option>
+                            <option value="1">Да</option>
+                        </select>
+                    </div>
+
                 </div>
                 <!-- /.card-body -->
 

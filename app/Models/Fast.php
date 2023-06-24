@@ -15,7 +15,7 @@ class Fast extends Model
     use Sluggable;
 
     protected $table = 'fasts';
-    protected $fillable = ['title', 'slug', 'description', 'content', 'image'];
+    protected $fillable = ['title', 'slug', 'description', 'content', 'image', 'show'];
 
     public function sluggable(): array
     {

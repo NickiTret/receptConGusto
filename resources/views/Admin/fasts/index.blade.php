@@ -28,6 +28,7 @@
                         <tr>
                             <th style="width: 10px">#</th>
                             <th>Наименование</th>
+                            <td>Индексация</td>
                             <th>Дата создания</th>
                             <th style="width: 40px">Actions</th>
                         </tr>
@@ -37,6 +38,7 @@
                         <tr>
                             <td>{{  $fast->id }}</td>
                             <td>{{  $fast->title }}</td>
+                            <td>@if($fast->show === '1') Да @else Нет @endif</td>
                             <td>{{  $fast->created_at }}</td>
                             <td>
                                 <a href="{{  route('fasts.edit', ['fast' => $fast->id]) }}" class="btn btn-info btn-sm float-left mb-1">

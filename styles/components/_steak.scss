@@ -5,7 +5,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            margin-bottom: 24px;
+            margin-bottom: 12px;
 
             & > h1 {
                 @include font_h1($font-family, $clr_main);
@@ -20,13 +20,87 @@
                 }
             }
         }
+        & > h3 {
+            @include font_min_lead($font-family, $clr_text);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .content {
+            h3 {
+                @include font_h2($font-family, $clr_text);
+                margin-bottom: 24px;
+            }
+
+            ul {
+                li {
+                    margin-bottom: 12px;
+                    h4 {
+                        @include font_lead($font-family, $clr_text);
+                        margin-bottom: 12px;
+                    }
+
+                    div {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: space-between;
+
+
+                        // @media (max-width: 1600px) {
+                        //     gap: calc(gutter_abs_maxW_1600 * 1);
+                        // }
+
+                        // @media (max-width: 1440px) {
+                        //     gap: calc(gutter_abs_maxW_1440 * 1);
+                        // }
+
+                        // @media (max-width: 1280px) {
+                        //     gap: calc(gutter_abs_maxW_1280 * 1);
+                        // }
+
+                        @media (max-width: 1024px) {
+                            flex-direction: column-reverse;
+                            gap: 24px;
+                        }
+
+                        p {
+                            @include font_p1($font-family, $clr_text);
+                            margin-bottom: 12px;
+
+                            width: calc($column_abs * 7 + $gutter_abs * 6);
+                            flex:  0 0 auto;
+
+                            @media (max-width: 1600px) {
+                                width: calc($column_abs_maxW_1600 * 7 + $gutter_abs_maxW_1600 * 6);
+                            }
+
+                            @media (max-width: 1440px) {
+                                width: calc($column_abs_maxW_1440 * 7 + $gutter_abs_maxW_1440 * 6);
+                            }
+
+                            @media (max-width: 1280px) {
+                                width: calc($column_abs_maxW_1280 * 7 + $gutter_abs_maxW_1280 * 6);
+                            }
+
+                            @media (max-width: 1024px) {
+                                width: 100%;
+                            }
+                        }
+
+                        svg, img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
         .image {
             position: relative;
             width: 100%;
 
             > svg {
                 width: 100%;
-                & > path {
+                & path {
                     opacity: 0.8;
                     transition: opacity 0.2s ease-in-out;
                     cursor: pointer;

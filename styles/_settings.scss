@@ -55,7 +55,7 @@ ul {
     min-height: 100vh;
     padding-top: 100px;
     background-color: #F7F7F7;
-    overflow-x: hidden;
+    // overflow-x: hidden;
 }
 
 @media (max-width: 1024px) {
@@ -123,6 +123,10 @@ section {
     padding-bottom: 35px;
     // margin-bottom: 20px;
     background-color: $clr_bg2;
+
+    @media(max-width:767px) {
+        padding-top: 65px;
+    }
 }
 
 .container {

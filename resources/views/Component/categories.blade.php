@@ -16,7 +16,12 @@
                     </a>
                 </li>
                     @foreach ($data as $item)
+
                         @if ($item->posts->count() > 0)
+                            {{-- не выводим категорию ПАСХА --}}
+                            @if($loop->iteration === 6)
+                                @continue
+                            @endif
                             <li>
                                 <a href="{{ route('category_item', $item->slug) }}">
                                     <div>

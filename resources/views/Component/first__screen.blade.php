@@ -11,13 +11,13 @@
                         <h2>{!! $item->description !!}</h2>
                         <ul class="text-list">
                             @foreach ($lastPost as $item)
-                            <li class="text-list__item">
-                                <a href="{{  route('single',  $item->slug) }}">
-                                    <img loading="lazy" src="/{{ $item->thumbnail }}" alt="{{ $item->title }}">
-                                   <h3>{{  $item->title }}</h3>
-                                   {!!  $item->description !!}
-                                </a>
-                            </li>
+                                <li class="text-list__item">
+                                    <a href="{{ route('single', $item->slug) }}">
+                                        <img loading="lazy" src="/{{ $item->thumbnail }}" alt="{{ $item->title }}">
+                                        <h3>{{ $item->title }}</h3>
+                                        {!! $item->description !!}
+                                    </a>
+                                </li>
                             @endforeach
                         </ul>
                     </div>
@@ -35,9 +35,12 @@
                 <h4>Рецептов на&nbsp;сайте</h4>
             </li>
         </ul>
-{{--        <h3>Рецепты по&nbsp;тегам:</h3>--}}
+        {{--        <h3>Рецепты по&nbsp;тегам:</h3> --}}
         <ul class="first-screen__aside-tags">
             @foreach ($maps as $tag)
+                @if ($loop->iteration === 9)
+                    @continue
+                @endif
                 <li>
                     <a href="{{ route('tags.single', ['id' => $tag->id]) }}">{{ $tag->title }}</a>
                 </li>
@@ -45,6 +48,3 @@
         </ul>
     </aside>
 </section>
-
-
-

@@ -1,16 +1,19 @@
 .aside {
-    position: sticky;
-    top: 135px;
+    position: relative;
     padding-top: 0;
     padding-bottom: 0;
     margin-bottom: 30px;
+    height: auto;
+    align-self: stretch;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1280px) {
         display: none;
     }
 
-    &>aside {
-
+    & > aside {
+        position: sticky;
+        top: 175px;
+        right: 0;
         box-sizing: border-box;
         flex: 0 0 auto;
         background-color: $clr_white;
@@ -19,28 +22,28 @@
         padding: 14px;
         width: calc($column_abs * 4 + $gutter_abs * 3);
 
-        &>h3 {
+        & > h3 {
             @include font_lead($font-family, $clr_text);
         }
 
-        &>ul {
+        & > ul {
             position: relative;
             list-style-type: none;
 
-
-            &>li {
+            & > li {
                 padding-top: 14px;
 
                 border-bottom: 1px solid $clr_grey2;
 
                 & a {
-                    &>h4 {
-                        @include font_lead($font-family, $clr_text);
+                    & > h4 {
+                        @include font_h2($font-family, $clr_text);
                         margin-bottom: 7px;
                         pointer-events: none;
+                        margin-bottom: 14px;
                     }
 
-                    &>.disabled {
+                    & > .disabled {
                         position: absolute;
                         top: 0;
                         left: 0;
@@ -51,7 +54,8 @@
 
                         overflow: hidden;
 
-                        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                        transition: transform 0.3s ease-in-out,
+                            opacity 0.3s ease-in-out;
 
                         opacity: 0;
 
@@ -60,12 +64,11 @@
 
                             opacity: 1;
                         }
-
                     }
 
-                    &>p {
-                        @include font_p1($font-family, $clr_text);
-                        text-align: center;
+                    & > p {
+                        @include font_min_lead($font-family, $clr_text);
+                        // text-align: center;
                     }
                 }
 

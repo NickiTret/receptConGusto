@@ -66,6 +66,14 @@
                         <input name="video" type="text" class=" form-control @error('video') is-invalid @enderror" id="video" rows="7">{{ $post->video }}
                     </div>
 
+                    <div class="form-group">
+                        <label for="show">Индексация</label>
+                        <select name="show" id="show" class="form-control">
+                            <option value="0">Нет</option>
+                            <option value="1">Да</option>
+                        </select>
+                    </div>
+
                 </div>
                 <!-- /.card-body -->
 

@@ -1,12 +1,15 @@
 .banner {
     padding-top: 30px;
     padding-bottom: 0;
+    @media (max-width: 768px) {
+        padding-top: 60px;
+    }
     & > .container {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
 
-        @media(max-width: 768px) {
+        @media(max-width: 1024px) {
            flex-direction: column;
         }
 
@@ -33,7 +36,7 @@
             }
 
             @media(max-width: 1024px) {
-                width: calc( $column_abs_maxW_1024 * 6 + $gutter_abs_maxW_1024 * 5 );
+                width: 100%;
 
             }
 
@@ -85,15 +88,15 @@
             }
 
             @media(max-width: 1024px) {
-                width: calc( $column_abs_maxW_1024 * 6 + $gutter_abs_maxW_1024 * 5 );
-                margin-left: calc($column_abs_maxW_1024 * -5);
+                width: 100%;
+                margin-left: calc($column_abs_maxW_1024 * 0);
                 text-align: center;
 
             }
 
             @media(max-width: 768px) {
                 width: calc( $column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3 );
-                margin-left: calc($column_abs_maxW_1024 * 0);
+                margin-left: calc($column_abs_maxW_768 * 0);
                 margin-top: -50px;
 
             }

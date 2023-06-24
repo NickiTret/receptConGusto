@@ -28,6 +28,7 @@
                         <tr>
                             <th style="width: 10px">#</th>
                             <th>Наименование</th>
+                            <td>Индексация</td>
                             <th>Ресторан</th>
                             <th>Дата создания</th>
                             <th style="width: 40px">Actions</th>
@@ -38,6 +39,7 @@
                         <tr>
                             <td>{{  $new->id }}</td>
                             <td>{{  $new->title }}</td>
+                            <td>@if($new->show === '1') Да @else Нет @endif</td>
                             <td>
                                 @if ($new->restorant == '1')
                                     Да
