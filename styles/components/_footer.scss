@@ -29,6 +29,7 @@
             }
             @media(max-width: 768px) {
                 order: 2;
+                flex-wrap: wrap;
             }
         }
         & > nav {

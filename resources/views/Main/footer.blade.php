@@ -15,8 +15,8 @@
 <footer class="footer">
     <div class="container">
         <div class="left-box">
-            <p>&copy; 2023 Con Gusto</p>
-            <p>Разработка сайта - <a href="https://infonickweb.ru/" target="_blank">NickWeb&nbsp;reate</a>
+            <p>&copy; 2023&nbsp;Con&nbsp;Gusto</p>
+            <p>Разработка&nbsp;сайта - <a href="https://infonickweb.ru/" target="_blank">NickWeb&nbsp;reate</a>
             </p>
         </div>
         <nav>
@@ -40,12 +40,6 @@
                 <li>
                     <a href="https://vk.com/public221195230" target="_blank">VK</a>
                 </li>
-            </ul>
-        </nav>
-    </div>
-    <div class="container">
-        <nav>
-            <ul>
                 <li>
                     <a href='http://modnayamoda.ru/recepty/produkty-svojstva-polza/' target="_blank"
                         title='Продукты свойства польза'>Promotion.su</a>
@@ -62,14 +56,15 @@
                             style="color: Green; font-size: 11px;">folloW</span>
                     </div>
                 </li>
-
-
-
-
-
             </ul>
         </nav>
     </div>
+    {{-- <div class="container">
+        <nav>
+            <ul>
+            </ul>
+        </nav>
+    </div> --}}
 </footer>
 <script type="module" src="{{ asset('assets/js/main.js') }}?8"></script>
 <!-- Yandex.Metrika counter -->

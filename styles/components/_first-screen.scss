@@ -53,14 +53,14 @@
                 & > picture > img {
                     position: absolute;
                     top: 0;
-                    left: 0;
+                    left: auto;
                     right: 0;
                     bottom: 0;
-                    width: 100%;
+                    width: auto;
                     height: 100%;
                     z-index: -1;
-
-                    object-fit: contain;
+                    max-width: none;
+                    object-fit: cover;
 
                     &:nth-child(2n) {
                         transform: rotate(180deg);
@@ -295,6 +295,7 @@
         background-color: $clr_main;
         padding: 72px 56px 56px 56px;
         width: calc($column_abs * 3 + $gutter_abs * 3);
+        // background-color: rgba($color: $clr_main, $alpha: 0.6);
 
         @media (max-width: 1280px) {
             display: none;
