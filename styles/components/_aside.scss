@@ -38,7 +38,7 @@
 
                 & a {
                     & > h4 {
-                        @include font_h2($font-family, $clr_text);
+                        @include font_lead($font-family, $clr_text);
                         margin-bottom: 7px;
                         pointer-events: none;
                         margin-bottom: 14px;
