@@ -141,4 +141,5 @@
         <img src="//counter.rambler.ru/top100.cnt?pid=7715281" alt="Топ-100" />
     </noscript>
     <!-- END Top100 (Kraken) Counter -->
+    <meta name="robots" content="all" />
 </head>
