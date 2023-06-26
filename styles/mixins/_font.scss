@@ -7,21 +7,21 @@
     color: $color;
 
     @media(max-width: 1600px) {
-        font-size: 57px;
+        font-size: 48px;
     }
     @media(max-width: 1440px) {
-        font-size: 46px;
+        font-size: 42px;
     }
     @media(max-width: 1280px) {
-        font-size: 46px;
+        font-size: 38px;
     }
 
     @media(max-width: 1024px) {
-        font-size: 38px;
+        font-size: 36px;
     }
 
     @media(max-width: 768px) {
-        font-size: 38px;
+        font-size: 32px;
     }
 }
 
@@ -34,22 +34,22 @@
     color: $color;
 
     @media(max-width: 1600px) {
-        font-size: 36px;
+        font-size: 32px;
     }
     @media(max-width: 1440px) {
-        font-size: 32px;
+        font-size: 28px;
     }
     @media(max-width: 1280px) {
-        font-size: 32px;
+        font-size: 24px;
     }
 
-    @media(max-width: 1024px) {
-        font-size: 28px;
-    }
+    // @media(max-width: 1024px) {
+    //     font-size: 28px;
+    // }
 
-    @media(max-width: 768px) {
-        font-size: 28px;
-    }
+    // @media(max-width: 768px) {
+    //     font-size: 28px;
+    // }
 
 
 }

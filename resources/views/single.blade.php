@@ -2,8 +2,6 @@
 <html lang="ru" class="page">
 @include('Main.head', ['data' => $post])
 
-{{-- {{dd($post->addImageFormat()['imageWebp'])}} --}}
-
 <body class="page__body">
     @include('Main.header')
     <div class="site-container">
@@ -63,7 +61,7 @@
             @if (!empty($posts))
                 <section>
                     <div class="container">
-                        <h2> Может быть интересно: </h2>
+                        <h2> Похожие рецепты </h2>
                     </div>
                 </section>
                 @include('Component.hits', ['posts' => $posts, 'url' => $currentURL])

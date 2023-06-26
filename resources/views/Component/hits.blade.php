@@ -4,7 +4,7 @@
         @if (count($posts) == 0)
             <h3>Нечего не найдено по вашему запросу</h3>
         @endif
-        @if(isset($tag) &&  $tag->title)
+        @if(isset($tag) && $tag->title && !isset($post))
             <h2>{{$tag->title}}</h2>
         @endif
         @if (!empty($posts))

@@ -44,12 +44,7 @@ class IndexController extends Controller
             Cache::put('heros', $heros, 604800);
         }
 
-        if (Cache::has(('random'))) {
-            $random = Cache::get('random');
-        } else {
-            $random = Post::all()->random();
-            Cache::put('random', $random, 604800);
-        }
+        $random = Post::all()->random();
 
         if (Cache::has(('posts'))) {
             $posts = Cache::get('posts');
@@ -109,7 +104,8 @@ class IndexController extends Controller
         $currentURL = url()->full();
 
         $post = Post::where('slug', $slug)->firstOrFail();
-        $posts = Post::where('show', '1')->where('category_id', $post->category_id)->limit(5)->get();
+        $posts = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
+        // $posts_tags = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
         $post->views += 1;
         $post->update();
         $categories = Category::pluck('title', 'id')->all();
@@ -199,9 +195,16 @@ class IndexController extends Controller
     public function news()
     {
 
+        if (Cache::has(('posts'))) {
+            $posts = Cache::get('posts');
+        } else {
+            $posts = News::where('show', '1')->where('restorant', 0)->orderBy('views', 'desc')->get();
+            Cache::put('posts', $posts, 604800);
+        }
+
         $currentURL = url()->full();
         $fasts = Fast::where('show', '1')->get();
-        $posts = News::where('show', '1')->where('restorant', 0)->orderBy('views', 'desc')->get();
+
         $categories = Category::pluck('title', 'id')->all();
         $tags = Tag::pluck('title', 'id')->all();
         $seo = Seo::where('name_page', 'Статьи')->first();
