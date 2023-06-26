@@ -8,7 +8,7 @@
         <main>
             @if (!empty($post))
                 @include('Component.news', ['data' => $post])
-                <section class="recept">
+                <section class="recept single">
                     <div class="container full-content">
                         <div class="content">
                             @if ($post->video)
@@ -59,12 +59,12 @@
                 </section>
             @endif
             @if (!empty($posts))
-                <section>
+                <section class="clear">
                     <div class="container">
                         <h2> Похожие рецепты </h2>
                     </div>
                 </section>
-                @include('Component.hits', ['posts' => $posts, 'url' => $currentURL])
+                @include('Component.hits', ['posts' => $posts, 'url' => $currentURL, 'post' => $post])
             @endif
             <div class="share">
                 <span>

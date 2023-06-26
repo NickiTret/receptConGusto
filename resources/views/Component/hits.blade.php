@@ -1,4 +1,4 @@
-<section class="hits">
+<section class="hits" @if (isset($post)) style="padding: 12px 0 0 0" @endif>
     <div class="container">
         {{-- <h2>{{$posts[0]->category->title}}</h2> --}}
         @if (count($posts) == 0)
