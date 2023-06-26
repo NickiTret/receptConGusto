@@ -195,11 +195,11 @@ class IndexController extends Controller
     public function news()
     {
 
-        if (Cache::has(('posts'))) {
-            $posts = Cache::get('posts');
+        if (Cache::has(('news'))) {
+            $news = Cache::get('news');
         } else {
-            $posts = News::where('show', '1')->where('restorant', 0)->orderBy('views', 'desc')->get();
-            Cache::put('posts', $posts, 604800);
+            $news = News::where('show', '1')->where('restorant', 0)->orderBy('views', 'desc')->get();
+            Cache::put('news', $news, 604800);
         }
 
         $currentURL = url()->full();
@@ -208,7 +208,7 @@ class IndexController extends Controller
         $categories = Category::pluck('title', 'id')->all();
         $tags = Tag::pluck('title', 'id')->all();
         $seo = Seo::where('name_page', 'Статьи')->first();
-        return view('news', compact('categories', 'tags', 'posts', 'fasts', 'currentURL', 'seo'));
+        return view('news', compact('categories', 'tags', 'news', 'fasts', 'currentURL', 'seo'));
     }
 
     public function new($slug)

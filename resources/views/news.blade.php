@@ -7,12 +7,12 @@
     @include('Main.header')
     <div class="site-container">
         <main>
-            @if (!empty($posts))
+            @if (!empty($news))
                 <section class="hits">
                     <div class="container">
                         <h2> Статьи </h2>
                         <ul>
-                            @foreach ($posts as $post)
+                            @foreach ($news as $post)
                                 <li data-aos="flip-left" data-aos-duration="300" data-aos-delay="{{ $post->id * 50 }}">
                                     <a href="{{ route('new', $post->slug) }}">
                                         @if (!empty($post->thumbnail))
