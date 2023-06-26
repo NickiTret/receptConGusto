@@ -1,8 +1,9 @@
 
 
 const aside = document.querySelector('.aside');
+const singlePage = document.querySelector('section.single');
 
-if (aside) {
+if (aside && singlePage) {
     const asideList = Array.from(aside.querySelectorAll('a'));
 
 
@@ -12,7 +13,7 @@ if (aside) {
             evt.target.querySelector('.disabled').classList.add('active');
             let topMouse = evt.offsetY;
             let leftMouse = evt.offsetX;
-        
+
             evt.target.querySelector('.disabled').style.top = `${topMouse}px`;
             evt.target.querySelector('.disabled').style.left = `${leftMouse}px`;
 
