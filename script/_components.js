@@ -12,5 +12,6 @@ import './components/choices.js';
 import './components/drop2.js';
 import './components/steak.js';
 import './components/mnigallery.js';
+import './components/usermodel.js';
 
 

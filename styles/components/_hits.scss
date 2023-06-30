@@ -161,6 +161,34 @@
                         }
                     }
 
+                    & > div.bottom {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        padding-top: 14px;
+                        & > form.delete {
+                            & > button {
+                                @include main_btn($font-family, $clr_text);
+                                padding: 7px 15px;
+
+                                & > svg {
+                                    width: 25px;
+                                    height: 25px;
+
+                                    & path.basket {
+                                        fill: $clr_white;
+                                    }
+                                }
+
+                                &:hover {
+                                    & > svg path.basket {
+                                        fill: $clr_main;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                     & img {
                         border-radius: 14px 0 14px 0;
                         margin-bottom: 14px;
@@ -179,6 +207,7 @@
                     & > div.scroll {
                         max-height: 200px;
                         height: 130px;
+                        margin-bottom: auto;
                         & p {
                             @include font_min_lead($font-family, $clr_text);
                             overflow: auto;

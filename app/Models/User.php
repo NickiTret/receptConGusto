@@ -80,4 +80,17 @@ class User extends Authenticatable
 
         return asset($this->avatar);
     }
+
+    public function likedPosts() {
+        return $this->belongsToMany(Post::class, 'post_user_likes', 'user_id', 'post_id');
+    }
+
+    public function hasLiked($post) {
+        $posts = auth()->user()->likedPosts->contains($post);
+        return $posts;
+    }
+
+    public function comments() {
+        return $this->hasMany(Comment::class, 'user_id', 'id');
+    }
 }

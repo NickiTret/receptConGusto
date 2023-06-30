@@ -14,6 +14,7 @@ use App\Models\Hero;
 use App\Models\Fast;
 use App\Models\Feat;
 use App\Models\Banner;
+use App\Models\Comment;
 use App\Models\Hat;
 use App\Models\Meat;
 use App\Models\News;
@@ -106,12 +107,25 @@ class IndexController extends Controller
         $post = Post::where('slug', $slug)->firstOrFail();
         $posts = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
         // $posts_tags = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
-        $post->views += 1;
-        $post->update();
+
+        // $post->views += 1;
+        // $post->update();
+
         $categories = Category::pluck('title', 'id')->all();
         $category = Category::where('id', $post->category_id)->first();
         $tags = Tag::pluck('title', 'id')->all();
-        return view('single', compact('post', 'tags', 'categories', 'category', 'fasts', 'posts', 'currentURL'));
+
+        $comments = Comment::where('post_id', $post->id)->orderBy('created_at', 'asc')->get();
+
+        return view('single', compact('post', 'tags', 'categories', 'category', 'fasts', 'posts', 'currentURL', 'comments'));
+    }
+
+    public function jsonShow($slug) {
+        $post = Post::where('slug', $slug)->firstOrFail();
+        $comments = Comment::where('post_id', $post->id)->orderBy('created_at', 'asc')->get();
+        $post['comments'] = $comments;
+
+        return response()->json($post);
     }
 
     public function fast($slug)

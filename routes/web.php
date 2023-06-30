@@ -25,6 +25,11 @@ use App\Http\Controllers\Admin\SteakController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Index\IndexController;
 
+// users liked
+
+use App\Http\Controllers\Personal\Liked\LikedController;
+use App\Http\Controllers\Personal\Comment\CommentController;
+
 
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
@@ -41,6 +46,9 @@ Route::get('/marinade', [IndexController::class, 'marinade'])->name('marinade');
 Route::get('/dessert', [IndexController::class, 'dessert'])->name('dessert');
 Route::get('/steak', [IndexController::class, 'steak'])->name('steak');
 Route::get('/feed.xml', [IndexController::class, 'feed'])->name('feed');
+
+//json
+Route::get('/json/{slug}', [IndexController::class, 'jsonShow'])->name('jsonShow');
 
 
 Route::middleware(['admin'])->prefix('admin')->group(function () {
@@ -61,6 +69,17 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::resource('/seo', SeoController::class);
     Route::resource('/piece', PieceController::class);
     Route::resource('/steak', SteakController::class);
+});
+
+//user personal likes and like
+Route::middleware(['auth'])->group(function () {
+    Route::get('/liked', [LikedController::class, 'index'])->name('personal.liked');
+    Route::delete('/liked/{post}', [LikedController::class, 'delete'])->name('personal.liked.delete');
+    Route::post('/liked/{post}', [LikedController::class, 'addLiked'])->name('personal.liked.post');
+
+    Route::post('/comment/{post}', [CommentController::class, 'addComment'])->name('personal.comment.add');
+
+    Route::post('/comment/{comment}', [CommentController::class, 'addLike'])->name('personal.comment.addLike');
 });
 
 //login, logout control

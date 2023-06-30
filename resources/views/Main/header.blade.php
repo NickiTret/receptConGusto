@@ -43,7 +43,7 @@
                 <span class="counter">0</span>
             </button> --}}
             @if (!empty(Auth::user()))
-                <a class="login" href="{{ route('logout') }}/">
+                <a class="login" href="{{ route('personal.liked') }}/">
                     @if (Auth::user()->avatar)
                         <img loading="lazy" class="avatar" src="{{ asset(Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}">
                     @else
@@ -70,9 +70,9 @@
                             </g>
                         </svg>
                     @endif
-                    {{ Auth::user()->name }}
-
+                    {{-- {{ Auth::user()->name }} --}}
                 </a>
+                <a class="login" href="{{ route('logout') }}/">Выйти</a>
             @else
                 <a href="{{ route('logout') }}/">
                     Войти

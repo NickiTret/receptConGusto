@@ -18,7 +18,9 @@
                                 </div>
                             @endif
                             {!! $post->content !!}
+                                @include('Component.comments')
                         </div>
+
                         @if (!empty($posts))
                             @include('Component.aside', ['posts' => $posts])
                         @endif
