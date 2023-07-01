@@ -23,6 +23,7 @@
     "/assets/admin/img/default-150x150.png": "/assets/admin/img/default-150x150.png",
     "/assets/admin/img/icons.png": "/assets/admin/img/icons.png",
     "/assets/admin/img/no-image.jpeg": "/assets/admin/img/no-image.jpeg",
+    "/assets/admin/img/noavatar.jpeg": "/assets/admin/img/noavatar.jpeg",
     "/assets/admin/img/photo1.png": "/assets/admin/img/photo1.png",
     "/assets/admin/img/photo2.png": "/assets/admin/img/photo2.png",
     "/assets/admin/img/photo3.jpg": "/assets/admin/img/photo3.jpg",
@@ -54,6 +55,5 @@
     "/assets/admin/webfonts/fa-solid-900.svg": "/assets/admin/webfonts/fa-solid-900.svg",
     "/assets/admin/webfonts/fa-solid-900.ttf": "/assets/admin/webfonts/fa-solid-900.ttf",
     "/assets/admin/webfonts/fa-solid-900.woff": "/assets/admin/webfonts/fa-solid-900.woff",
-    "/assets/admin/webfonts/fa-solid-900.woff2": "/assets/admin/webfonts/fa-solid-900.woff2",
-    "/assets/admin/img/noavatar.jpeg": "/assets/admin/img/noavatar.jpeg"
+    "/assets/admin/webfonts/fa-solid-900.woff2": "/assets/admin/webfonts/fa-solid-900.woff2"
 }
