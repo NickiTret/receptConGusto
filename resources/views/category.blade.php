@@ -15,6 +15,8 @@
             @include('Component.categories', ['data' => $categories])
             @endif
 
+
+            @env('local')
             <section class="links">
                 <div class="container">
                     <!-- Yandex.RTB R-A-2349463-2 -->
@@ -28,6 +30,7 @@
                     </script>
                 </div>
             </section>
+            @endenv
 
             @if ($fasts)
             @include('Component.simple', ['fasts' => $fasts])

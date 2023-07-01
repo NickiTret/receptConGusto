@@ -48,7 +48,7 @@
                                             <svg width="40px" height="40px" viewBox="0 0 24 24" version="1.1"
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                <title>delete_2_fill</title>
+                                                <title>Удалить из избранного</title>
                                                 <g id="页面-1" stroke="none" stroke-width="1" fill="none"
                                                     fill-rule="evenodd">
                                                     <g id="System" transform="translate(-576.000000, -240.000000)">
@@ -76,7 +76,7 @@
                                             <svg width="40px" height="40px" viewBox="0 0 24 24" version="1.1"
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                <title>certificate_fill</title>
+                                                <title>Добавить в избранное</title>
                                                 <g id="页面-1" stroke="none" stroke-width="1" fill="none"
                                                     fill-rule="evenodd">
                                                     <g id="System" transform="translate(-334.000000, -240.000000)">

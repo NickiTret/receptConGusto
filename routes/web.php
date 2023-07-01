@@ -80,6 +80,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/comment/{post}', [CommentController::class, 'addComment'])->name('personal.comment.add');
 
     Route::post('/comment/{comment}', [CommentController::class, 'addLike'])->name('personal.comment.addLike');
+    Route::delete('/comment/{comment}', [CommentController::class, 'deleteComment'])->name('personal.comment.deleteComment');
 });
 
 //login, logout control

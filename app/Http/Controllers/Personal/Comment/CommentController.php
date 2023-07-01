@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CommentController extends Controller {
     // public function index() {
@@ -40,6 +41,13 @@ class CommentController extends Controller {
         $comment->likes += 1;
         $comment->update();
 
+        return back();
+    }
+
+    public function deleteComment($id)
+    {
+       $comment = Comment::find($id);
+       $comment->delete();
         return back();
     }
 

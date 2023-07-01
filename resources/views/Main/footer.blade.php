@@ -1,3 +1,4 @@
+@env('local')
 <section class="transform">
     <div class="container">
         <!-- Yandex.RTB R-A-2349463-3 -->
@@ -12,11 +13,12 @@
         </script>
     </div>
 </section>
+@endenv
 <footer class="footer">
     <div class="container">
         <div class="left-box">
             <p>&copy; 2023&nbsp;Con&nbsp;Gusto</p>
-            <p>Разработка&nbsp;сайта - <a href="https://infonickweb.ru/" target="_blank">NickWeb&nbsp;reate</a>
+            <p>Разработка&nbsp;сайта - <a href="https://infonickweb.ru/" target="_blank">NickWeb&nbsp;Create</a>
             </p>
         </div>
         <nav>

@@ -1,11 +1,11 @@
-<div class="comments" data-json-slug="{{ $post->slug }}" >
+<div class="comments" data-json-post="{{ $post }}">
     <h2>Комментарии</h2>
     @if (!empty(Auth::user()))
-        <div class="comment_form" >
+        <div class="comment_form">
             <form method="POST" action="{{ route('personal.comment.add', ['post' => $post->id]) }}">
                 @csrf
                 <div class="form__group">
-                    <img class="img-circle img-bordered-sm" src="{{ asset(Auth::user()->avatar) }}" alt="User Image">
+                    <img class="img-circle img-bordered-sm" src="{{ asset(Auth::user()->getImage()) }}" alt="User Image">
                     <textarea required name="message" id="message" placeholder="Напишите коментарии"></textarea>
                 </div>
                 <div class="form__btn">
@@ -25,7 +25,7 @@
         @foreach ($comments as $comment)
             <div class="comment clearfix" data-json="{{ $comments }}">
                 <div class="user-block">
-                    <img class="img-circle img-bordered-sm" src="{{ asset($comment->user->avatar) }}" alt="User Image">
+                    <img class="img-circle img-bordered-sm" src="{{ asset($comment->user->getImage()) }}" alt="User Image">
                     <span class="username">
                         {{ $comment->user->name }}
                         <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
@@ -36,8 +36,7 @@
                     {!! $comment->message !!}
                 </p>
                 <p>
-                    <a href="#"
-                        class="link-black text-sm">
+                    <a href="#" class="link-black text-sm">
                         @if ($comment->likes == null)
                             0
                         @else
@@ -50,6 +49,16 @@
                         </svg>
                         Нравиться
                     </a>
+                    @if (Auth::user()->is_admin)
+                        <form action="{{ route('personal.comment.deleteComment', ['comment' => $comment->id]) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn link-black text-sm">
+                                Удалить
+                            </button>
+                        </form>
+                    @endif
+
                 </p>
             </div>
         @endforeach

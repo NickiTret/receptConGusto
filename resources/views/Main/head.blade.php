@@ -5,43 +5,49 @@
     <meta name="theme-color" content="#111111">
     <meta name="yandex-verification" content="3519ed7046470147" />
     @if (!empty($seo))
-    <title>{{ strip_tags($seo->title) }}</title>
-    <meta name="description" content="{{ strip_tags($seo->description) }}">
-    <meta name="twitter:card content="summary_large_image" />
-    <meta property=”og:image” content="{{ asset($seo->image_page) }}" />
-    <meta name="twitter:image" content="{{ asset($seo->image_page) }}" />
-    <meta name="keywords" content="{{ strip_tags($seo->keywords) }}" />
+        <title>{{ strip_tags($seo->title) }}</title>
+        <meta name="description" content="{{ strip_tags($seo->description) }}">
+        <meta name="twitter:card content="summary_large_image" />
+        <meta property=”og:image” content="{{ asset($seo->image_page) }}" />
+        <meta name="twitter:image" content="{{ asset($seo->image_page) }}" />
+        <meta name="keywords" content="{{ strip_tags($seo->keywords) }}" />
     @else
-    <title>Con gusto @if (!empty($data)) - {{ strip_tags($data->title) }} - готовь с нами @elseif (!empty($banner) && empty($data)) - {{ strip_tags($banner->title) }} - готовь с нами @else - готовь с нами по классическим рецептам e-con-gusto.ru @endif
-    </title>
-    @if (!empty($data->description))
-    <meta name="description" content="{{ strip_tags($data->description) }}">
-    @elseif (!empty($data->title))
-    <meta name="description"
-        content="Con gusto, рецепты, рецепты, домашняя еда по ресторанным рецептам {{ strip_tags($data->title) }} | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
-    @elseif (!empty($heros) || !empty($categories))
-    <meta name="description"
-        content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
-    @elseif (!empty($banner) && empty($data))
-    <meta name="description"
-        content="{{ strip_tags($banner->subtitle) }} | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
-    @else
-    <meta name="description"
-        content="Con gusto, рецепты, домашняя еда по ресторанным рецептам. Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
-    @endif
-    @if (!empty($post->thumbnail))
-    <meta property=”og:image” content="{{ asset($post->thumbnail) }}" />
-    <meta name="twitter:image" content="{{ asset($post->thumbnail) }}" />
-    @elseif (!empty($banner) && empty($data))
-    <meta property=”og:image” content="{{ asset($banner->image) }}" />
-    <meta name="twitter:image" content="{{ asset($banner->image) }}" />
-    @elseif (!empty($category_item) && empty($post->thumbnail))
-    <meta property=”og:image” content="{{ asset($category_item->image) }}" />
-    <meta name="twitter:image" content="{{ asset($category_item->image) }}" />
-    @elseif (!empty($data->image))
-    <meta property=”og:image” content="{{ asset($data->image) }}" />
-    <meta name="twitter:image" content="{{ asset($data->image) }}" />
-    @endif
+        <title>Con gusto @if (!empty($data))
+                - {{ strip_tags($data->title) }} - готовь с нами
+            @elseif (!empty($banner) && empty($data))
+                - {{ strip_tags($banner->title) }} - готовь с нами
+            @else
+                - готовь с нами по классическим рецептам e-con-gusto.ru
+            @endif
+        </title>
+        @if (!empty($data->description))
+            <meta name="description" content="{{ strip_tags($data->description) }}">
+        @elseif (!empty($data->title))
+            <meta name="description"
+                content="Con gusto, рецепты, рецепты, домашняя еда по ресторанным рецептам {{ strip_tags($data->title) }} | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
+        @elseif (!empty($heros) || !empty($categories))
+            <meta name="description"
+                content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
+        @elseif (!empty($banner) && empty($data))
+            <meta name="description"
+                content="{{ strip_tags($banner->subtitle) }} | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
+        @else
+            <meta name="description"
+                content="Con gusto, рецепты, домашняя еда по ресторанным рецептам. Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
+        @endif
+        @if (!empty($post->thumbnail))
+            <meta property=”og:image” content="{{ asset($post->thumbnail) }}" />
+            <meta name="twitter:image" content="{{ asset($post->thumbnail) }}" />
+        @elseif (!empty($banner) && empty($data))
+            <meta property=”og:image” content="{{ asset($banner->image) }}" />
+            <meta name="twitter:image" content="{{ asset($banner->image) }}" />
+        @elseif (!empty($category_item) && empty($post->thumbnail))
+            <meta property=”og:image” content="{{ asset($category_item->image) }}" />
+            <meta name="twitter:image" content="{{ asset($category_item->image) }}" />
+        @elseif (!empty($data->image))
+            <meta property=”og:image” content="{{ asset($data->image) }}" />
+            <meta name="twitter:image" content="{{ asset($data->image) }}" />
+        @endif
     @endif
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{ asset('css/favicon.ico') }}">
@@ -52,6 +58,9 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+
+
+    @env('local')
     <!-- Yandex Native Ads -->
     <!-- Yandex.RTB -->
     <script>
@@ -136,5 +145,10 @@
         <img src="//counter.rambler.ru/top100.cnt?pid=7715281" alt="Топ-100" />
     </noscript>
     <!-- END Top100 (Kraken) Counter -->
+    @endenv
+
+
+
+
     <meta name="robots" content="all" />
 </head>

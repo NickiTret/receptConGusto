@@ -75,11 +75,15 @@ class User extends Authenticatable
     public function getImage()
     {
         if (!$this->avatar) {
-            return asset("assets/admin/img/no-image.jpeg");
+            return asset("assets/admin/img/noavatar.jpeg");
         }
 
         return asset($this->avatar);
     }
+
+
+
+
 
     public function likedPosts() {
         return $this->belongsToMany(Post::class, 'post_user_likes', 'user_id', 'post_id');

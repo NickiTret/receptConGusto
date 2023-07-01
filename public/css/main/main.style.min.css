@@ -97,6 +97,11 @@ ul {
   background: transparent;
   cursor: pointer;
 }
+@media (max-width: 480px) {
+  .btn-reset {
+    display: none;
+  }
+}
 
 .list-reset {
   list-style: none;

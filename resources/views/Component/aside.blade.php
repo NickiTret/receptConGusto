@@ -15,6 +15,7 @@
                     </a>
                 </li>
             @endforeach
+            @env('local')
             <li>
                 <!-- Yandex.RTB R-A-2349463-12 -->
                 <div id="yandex_rtb_R-A-2349463-12"></div>
@@ -27,6 +28,8 @@
                     })
                 </script>
             </li>
+            @endenv
+
         </ul>
     </aside>
 </section>

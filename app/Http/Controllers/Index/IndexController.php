@@ -50,7 +50,7 @@ class IndexController extends Controller
         if (Cache::has(('posts'))) {
             $posts = Cache::get('posts');
         } else {
-            $posts = Post::where('show', '1')->orderBy('views', 'desc')->limit(4)->get();
+            $posts = Post::where('show', '1')->orderBy('views', 'desc')->limit(8)->get();
             Cache::put('posts', $posts, 604800);
         }
 
@@ -108,22 +108,23 @@ class IndexController extends Controller
         $posts = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
         // $posts_tags = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
 
-        // $post->views += 1;
-        // $post->update();
+        $post->views += 1;
+        $post->update();
 
         $categories = Category::pluck('title', 'id')->all();
         $category = Category::where('id', $post->category_id)->first();
         $tags = Tag::pluck('title', 'id')->all();
 
-        $comments = Comment::where('post_id', $post->id)->orderBy('created_at', 'asc')->get();
+        $comments = Comment::where('post_id', $post->id)->orderBy('created_at', 'desc')->get();
 
         return view('single', compact('post', 'tags', 'categories', 'category', 'fasts', 'posts', 'currentURL', 'comments'));
     }
 
     public function jsonShow($slug) {
         $post = Post::where('slug', $slug)->firstOrFail();
-        $comments = Comment::where('post_id', $post->id)->orderBy('created_at', 'asc')->get();
+        $comments = Comment::where('post_id', $post->id)->orderBy('created_at', 'desc')->get();
         $post['comments'] = $comments;
+        $post['users_data'] = auth()->user;
 
         return response()->json($post);
     }

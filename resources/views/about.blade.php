@@ -116,7 +116,9 @@
                                         SEO</p>
                                 </a>
                             </li>
+                            @env('local')
                             <li>
+
                                 <!-- Yandex.RTB R-A-2349463-13 -->
                                 <div id="yandex_rtb_R-A-2349463-13"></div>
                                 <script>
@@ -128,6 +130,7 @@
                                     })
                                 </script>
                             </li>
+                            @endenv
                         </ul>
                     </aside>
                 </section>
