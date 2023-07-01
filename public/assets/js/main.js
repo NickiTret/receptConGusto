@@ -828,13 +828,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 var jsonData = document.querySelector("[data-json]");
 var slug = document.querySelector("[data-json-slug]");
-
-// if (jsonData) {
-//     let jsonObject = JSON.parse(jsonData.getAttribute("data-json"));
-//     const urlGetData = `http://127.0.0.1:8000/recept/${jsonObject[0].post_id}`;
-//     console.log(urlGetData);
-// }
-
 if (jsonData) {
   var sendRequest = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(method, url) {
@@ -867,13 +860,15 @@ if (jsonData) {
           case 0:
             body = _args2.length > 2 && _args2[2] !== undefined ? _args2[2] : null;
             headers = {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'X-CSRF-Token': '{{ csrf_token() }}'
             };
             return _context2.abrupt("return", fetch(url, {
               method: method,
-              body: JSON.stringify(body)
-              // headers: headers
+              body: JSON.stringify(body),
+              headers: headers
             }).then(function (response) {
+              console.log(response);
               return response.json();
             }));
           case 3:
@@ -888,31 +883,30 @@ if (jsonData) {
   }();
   var jsonObject = JSON.parse(jsonData.getAttribute("data-json"));
   var jsonSlug = slug.getAttribute("data-json-slug");
-
-  // console.log(postId)
-
-  console.log(jsonSlug);
+  var form = document.querySelector('.comment_form>form');
+  var fromAction = form.getAttribute('action');
   var urlGetData = "http://127.0.0.1:8000/json/".concat(jsonSlug);
-  var urlAddComment = "http://127.0.0.1:8000/comment/".concat(jsonSlug);
+  var urlAddComment = '{{url("personal.comment.add")}}';
   var body = {
     message: 'message'
   };
   var addComment = function addComment() {
-    saveRequest('POST', urlGetData, body).then(function (data) {
+    saveRequest('POST', urlAddComment, body).then(function (data) {
       return console.log(data);
     })["catch"](function (error) {
       return console.log(error);
     });
+    console.log(body);
   };
   addComment();
-  var getCommets = function getCommets() {
-    sendRequest("GET", urlGetData).then(function (data) {
-      return console.log(data.comments);
-    })["catch"](function (error) {
-      return console.log(error);
-    });
-  };
-  getCommets();
+
+  // const getCommets = () => {
+  //     sendRequest("GET", urlGetData)
+  //     .then((data) => console.log(data.comments))
+  //     .catch((error) => console.log(error));
+  // }
+
+  // getCommets();
 }
 
 /***/ }),

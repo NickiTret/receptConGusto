@@ -1,7 +1,7 @@
-<div class="comments">
+<div class="comments" data-json-slug="{{ $post->slug }}" >
     <h2>Комментарии</h2>
     @if (!empty(Auth::user()))
-        <div class="comment_form" data-json-slug="{{ $post->slug }}">
+        <div class="comment_form" >
             <form method="POST" action="{{ route('personal.comment.add', ['post' => $post->id]) }}">
                 @csrf
                 <div class="form__group">
