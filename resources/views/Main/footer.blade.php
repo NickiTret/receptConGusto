@@ -1,13 +1,13 @@
 @env('local')
 <section class="transform">
     <div class="container">
-        <!-- Yandex.RTB R-A-2349463-3 -->
-        <div id="yandex_rtb_R-A-2349463-3"></div>
+        <!-- Yandex.RTB R-A-2349463-14 -->
+        <div id="yandex_rtb_R-A-2349463-14"></div>
         <script>
             window.yaContextCb.push(() => {
-                Ya.Context.AdvManager.render({
-                    "blockId": "R-A-2349463-3",
-                    "renderTo": "yandex_rtb_R-A-2349463-3"
+                Ya.Context.AdvManager.renderFeed({
+                    "blockId": "R-A-2349463-14",
+                    "renderTo": "yandex_rtb_R-A-2349463-14"
                 })
             })
         </script>
@@ -20,13 +20,13 @@
         <nav>
             <ul>
                 @foreach ($headers as $header_item)
-                        @if ($loop->iteration == 5)
-                            @continue
-                        @endif
-                        <li>
-                            <a href=" {{ $header_item->link }}">{{ $header_item->title }}</a>
-                        </li>
-                    @endforeach
+                    @if ($loop->iteration == 5)
+                        @continue
+                    @endif
+                    <li>
+                        <a href=" {{ $header_item->link }}">{{ $header_item->title }}</a>
+                    </li>
+                @endforeach
             </ul>
         </nav>
 
