@@ -52,7 +52,7 @@
         </ul>
     </div>
 </footer>
-<script type="module" src="{{ asset('assets/js/main.js') }}?13"></script>
+<script type="module" src="{{ asset('assets/js/main.js') }}?14"></script>
 <!-- Yandex.Metrika counter -->
 <script>
     (function(m, e, t, r, i, k, a) {
