@@ -93,7 +93,7 @@
             @endif
         </div>
     </div>
-    {{-- <div class="container-header">
+    <div class="container-header">
         <ul class="list-reset category-list">
             @foreach ($categories_menu as $item)
                 @if ($item->posts->count())
@@ -103,5 +103,5 @@
                 @endif
             @endforeach
          </ul>
-    </div> --}}
+    </div>
 </header>

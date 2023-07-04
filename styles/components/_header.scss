@@ -228,17 +228,17 @@
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            gap: 24px;
+            // gap: 24px;
             width: 100%;
 
             overflow: auto;
 
-            @media (max-width: 665px) {
+            @media (max-width: 769px) {
                 display: none;
             }
 
             & > li {
-                padding-right: 24px;
+                padding-right: 8px;
                 white-space: nowrap;
 
                 &:not(:last-child) {
@@ -246,7 +246,17 @@
                 }
 
                 & > a {
-                    @include font_lead($font-family, $clr_white);
+                    position: relative;
+                    @include font_min_lead($font-family, $clr_main);
+
+                    &::before {
+                        content: '|';
+                        margin-right: 8px;
+                    }
+
+                    // &:first-child:before {
+                    //     content: none;
+                    // }
 
                     &:hover {
                         color: $clr_text;

@@ -15,7 +15,7 @@
             gap: calc($gutter_abs * 1);
             // width: calc( $column_abs * 3 + $gutter_abs * 2 );
 
-            @media (max-width: 1440px) {
+            @media (max-width: 1024px) {
                 flex-direction: column;
             }
 
@@ -23,8 +23,21 @@
                 flex: 0 0 auto;
                 width: calc( $column_abs * 6 + $gutter_abs * 6 );
                 border-radius: 0 14px 0 14px;
+                max-height: 400px;
+                overflow: hidden;
 
                 @media (max-width: 1440px) {
+                    gap: calc($gutter_abs_maxW_1440 * 1);
+                    width: calc( $column_abs_maxW_1440  * 8 + $gutter_abs_maxW_1440  * 7 );
+                }
+
+                @media (max-width: 1280px) {
+                    gap: calc($gutter_abs_maxW_1280 * 1);
+                    width: calc( $column_abs_maxW_1280  * 8 + $gutter_abs_maxW_1280  * 7 );
+                }
+
+                @media (max-width: 1024px) {
+                    gap: 0;
                     width: 100%;
                 }
 
@@ -42,6 +55,7 @@
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: flex-start;
+                width: 100%;
 
                  & > h3 {
                     @include font_lead($font-family, $clr_main);

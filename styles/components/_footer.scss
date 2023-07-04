@@ -7,6 +7,10 @@
         justify-content: space-between;
         gap: 20px;
 
+        &:first-child {
+            margin-bottom: 24px;
+        }
+
         @media(max-width: 768px) {
             flex-wrap: wrap;
         }
@@ -51,6 +55,25 @@
                         &:hover {
                             color: $clr_text;
                         }
+                    }
+                }
+            }
+        }
+
+        & > ul.social {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+
+
+            & > li {
+                & > a {
+                    @include font_min_lead($font-family, $clr_white);
+                    transition: color 0.3 ease-in-out;
+                    white-space: nowrap;
+                    &:hover {
+                        color: $clr_text;
                     }
                 }
             }

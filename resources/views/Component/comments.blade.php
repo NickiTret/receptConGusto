@@ -6,7 +6,7 @@
                 @csrf
                 <div class="form__group">
                     <img class="img-circle img-bordered-sm" src="{{ asset(Auth::user()->getImage()) }}" alt="User Image">
-                    <textarea required name="message" id="message" placeholder="Напишите коментарии"></textarea>
+                    <textarea required name="message" id="message" placeholder="Напишите комментарии"></textarea>
                 </div>
                 <div class="form__btn">
                     <button class="btn" type="submit">Отправить</button>
