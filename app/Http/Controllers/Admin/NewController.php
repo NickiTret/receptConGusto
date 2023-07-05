@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class NewController extends Controller
 {
@@ -23,6 +24,7 @@ class NewController extends Controller
 
     public function store(Request $request)
     {
+        Cache::flush();
         $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -52,6 +54,7 @@ class NewController extends Controller
 
     public function update(Request $request, $id)
     {
+        Cache::flush();
         $request->validate([
             'title' => 'required',
             'description' => 'required',
