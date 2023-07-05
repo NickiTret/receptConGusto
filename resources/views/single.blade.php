@@ -18,7 +18,10 @@
                                 </div>
                             @endif
                             {!! $post->content !!}
-                                @include('Component.comments')
+                            @if (!isset($post->restorant))
+                            @include('Component.comments')
+                            @endif
+
                         </div>
 
                         @if (!empty($posts))
