@@ -15,7 +15,9 @@
                 @include('Component.categories', ['data' => $categories])
             @endif
 
-
+            @if ($fasts)
+                @include('Component.simple', ['fasts' => $fasts])
+            @endif
             @env('local')
             <section class="links">
                 <div class="container">
@@ -32,11 +34,6 @@
                 </div>
             </section>
             @endenv
-
-            @if ($fasts)
-                @include('Component.simple', ['fasts' => $fasts])
-            @endif
-
         </main>
         @include('Main.footer')
     </div>
