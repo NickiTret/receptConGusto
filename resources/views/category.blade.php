@@ -19,20 +19,11 @@
                 @include('Component.simple', ['fasts' => $fasts])
             @endif
             @env('local')
-            <section class="links">
+            {{-- <section class="links">
                 <div class="container">
-                    <!-- Yandex.RTB R-A-2349463-15 -->
-                    <div id="yandex_rtb_R-A-2349463-15"></div>
-                    <script>
-                        window.yaContextCb.push(() => {
-                            Ya.Context.AdvManager.render({
-                                "blockId": "R-A-2349463-15",
-                                "renderTo": "yandex_rtb_R-A-2349463-15"
-                            })
-                        })
-                    </script>
+
                 </div>
-            </section>
+            </section> --}}
             @endenv
         </main>
         @include('Main.footer')

@@ -1,13 +1,13 @@
 @env('local')
 <section class="transform">
     <div class="container">
-        <!-- Yandex.RTB R-A-2349463-14 -->
-        <div id="yandex_rtb_R-A-2349463-14"></div>
+        <!-- Yandex.RTB R-A-2349463-15 -->
+        <div id="yandex_rtb_R-A-2349463-15"></div>
         <script>
             window.yaContextCb.push(() => {
-                Ya.Context.AdvManager.renderFeed({
-                    "blockId": "R-A-2349463-14",
-                    "renderTo": "yandex_rtb_R-A-2349463-14"
+                Ya.Context.AdvManager.render({
+                    "blockId": "R-A-2349463-15",
+                    "renderTo": "yandex_rtb_R-A-2349463-15"
                 })
             })
         </script>
