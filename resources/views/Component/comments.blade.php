@@ -16,7 +16,7 @@
             </form>
         </div>
     @else
-        <p class="coment_notauth">Что бы оставить коментарии, нужно <a href="{{ route('register.create') }}"
+        <p class="coment_notauth">Что бы оставить комментарии, нужно <a href="{{ route('register.create') }}"
                 target="_blank">зарегистрироваться</a> / <a href="{{ route('login.create') }}"
                 target="_blank">авторизоваться</a> </p>
     @endif
