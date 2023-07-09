@@ -145,6 +145,9 @@
         <img src="//counter.rambler.ru/top100.cnt?pid=7715281" alt="Топ-100" />
     </noscript>
     <!-- END Top100 (Kraken) Counter -->
+    <!-- Stat.MegaIndex.ru Start -->
+<script type="text/javascript">var mi=document.createElement('script');mi.type='text/javascript';mi.async=true;mi.src=(document.location.protocol=='https:'?'https':'http')+'://counter.megaindex.ru/core.js?t;'+escape(document.referrer)+((typeof(screen)=='undefined')?'':';'+screen.width+'*'+screen.height)+';'+escape(document.URL)+';'+document.title.substring(0,256)+';1675943';document.getElementsByTagName('head')[0].appendChild(mi);</script>
+<!-- Stat.MegaIndex.ru End -->
     @endenv
 
 
