@@ -146,21 +146,27 @@
     </noscript>
     <!-- END Top100 (Kraken) Counter -->
     <!-- Stat.MegaIndex.ru Start -->
-<script type="text/javascript">var mi=document.createElement('script');mi.type='text/javascript';mi.async=true;mi.src=(document.location.protocol=='https:'?'https':'http')+'://counter.megaindex.ru/core.js?t;'+escape(document.referrer)+((typeof(screen)=='undefined')?'':';'+screen.width+'*'+screen.height)+';'+escape(document.URL)+';'+document.title.substring(0,256)+';1675943';document.getElementsByTagName('head')[0].appendChild(mi);</script>
-<!-- Stat.MegaIndex.ru End -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BCDZCP104C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script type="text/javascript">
+        var mi = document.createElement('script');
+        mi.type = 'text/javascript';
+        mi.async = true;
+        mi.src = (document.location.protocol == 'https:' ? 'https' : 'http') + '://counter.megaindex.ru/core.js?t;' +
+            escape(document.referrer) + ((typeof(screen) == 'undefined') ? '' : ';' + screen.width + '*' + screen.height) +
+            ';' + escape(document.URL) + ';' + document.title.substring(0, 256) + ';1675943';
+        document.getElementsByTagName('head')[0].appendChild(mi);
+    </script>
+    <!-- Stat.MegaIndex.ru End -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCDZCP104C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-BCDZCP104C');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BCDZCP104C');
+    </script>
     @endenv
-
-
-
-
-    <meta name="robots" content="all" />
 </head>
