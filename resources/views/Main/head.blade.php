@@ -7,7 +7,7 @@
     @if (!empty($seo))
         <title>{{ strip_tags($seo->title) }}</title>
         <meta name="description" content="{{ strip_tags($seo->description) }}">
-        <meta name="twitter:card content="summary_large_image" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta property=”og:image” content="{{ asset($seo->image_page) }}" />
         <meta name="twitter:image" content="{{ asset($seo->image_page) }}" />
         <meta name="keywords" content="{{ strip_tags($seo->keywords) }}" />
