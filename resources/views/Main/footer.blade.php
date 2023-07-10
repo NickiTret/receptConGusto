@@ -51,6 +51,25 @@
             </li>
         </ul>
     </div>
+    <div class="container">
+        <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click" target="_blank"><img id="licnt95FA"
+                width="88" height="120" style="border:0"
+                title="LiveInternet: показано количество просмотров и посетителей"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                alt="" /></a>
+        <script>
+            (function(d, s) {
+                d.getElementById("licnt95FA").src =
+                    "https://counter.yadro.ru/hit?t29.18;r" + escape(d.referrer) +
+                    ((typeof(s) == "undefined") ? "" : ";s" + s.width + "*" + s.height + "*" +
+                        (s.colorDepth ? s.colorDepth : s.pixelDepth)) + ";u" + escape(d.URL) +
+                    ";h" + escape(d.title.substring(0, 150)) + ";" + Math.random()
+            })
+            (document, screen)
+        </script>
+        <!--/LiveInternet-->
+
+    </div>
 </footer>
 <script type="module" src="{{ asset('assets/js/main.js') }}?14"></script>
 <!-- Yandex.Metrika counter -->
