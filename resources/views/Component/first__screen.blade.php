@@ -8,7 +8,7 @@
                     </picture>
                     <div class="text text__left">
                         <h1>{{ $item->title }}</h1>
-                        <h2>{!! $item->description !!}</h2>
+                        {!! $item->description !!}
                         <ul class="text-list">
                             @foreach ($lastPost as $item)
                                 <li class="text-list__item">
