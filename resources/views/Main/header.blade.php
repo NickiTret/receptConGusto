@@ -3,7 +3,7 @@
         <a href="/" class="logo">
             <img loading="lazy" width="200" src="{{ asset('assets/base/logo2.png') }}" alt="logo">
         </a>
-        <button type="button" class="burger" aria-label="Открыть меню" aria-expended='false' data-burger>
+        <button type="button" class="burger" aria-label="Открыть меню" data-burger>
             <span class="burger__line"></span>
         </button>
         <nav title="Главное меню" data-menu>
