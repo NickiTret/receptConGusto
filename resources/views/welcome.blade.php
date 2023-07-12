@@ -2,6 +2,7 @@
 <html lang="ru" class="page">
 
 @include('Main.head')
+
 <body class="page__body">
 
     @include('Main.header')

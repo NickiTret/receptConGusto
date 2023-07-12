@@ -55,11 +55,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="{{ asset('css/main/main.style.min.css') }}?322" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     @env('local')
     <!-- Yandex Native Ads -->
     <!-- Yandex.RTB -->
@@ -83,7 +79,7 @@
         </style>
     </noscript>
     <!-- Top.Mail.Ru counter -->
-    <script type="text/javascript">
+    <script>
         var _tmr = window._tmr || (window._tmr = []);
         _tmr.push({
             id: "3328776",
@@ -108,10 +104,12 @@
             }
         })(document, window, "tmr-code");
     </script>
-    <noscript>
-        <div><img src="https://top-fwz1.mail.ru/counter?id=3328776;js=na" style="position:absolute;left:-9999px;"
-                alt="Top.Mail.Ru" /></div>
-    </noscript>
+    {{-- <noscript>
+        <div>
+            <img src="https://top-fwz1.mail.ru/counter?id=3328776;js=na" style="position:absolute;left:-9999px;"
+                alt="Top.Mail.Ru" />
+            </div>
+    </noscript> --}}
     <!-- /Top.Mail.Ru counter -->
     <script>
         (function(w, d, c) {
@@ -141,12 +139,12 @@
             }
         })(window, document, "_top100q");
     </script>
-    <noscript>
+    {{-- <noscript>
         <img src="//counter.rambler.ru/top100.cnt?pid=7715281" alt="Топ-100" />
-    </noscript>
+    </noscript> --}}
     <!-- END Top100 (Kraken) Counter -->
     <!-- Stat.MegaIndex.ru Start -->
-    <script type="text/javascript">
+    <script>
         var mi = document.createElement('script');
         mi.type = 'text/javascript';
         mi.async = true;

@@ -96,10 +96,10 @@
         accurateTrackBounce: true
     });
 </script>
-<noscript>
+{{-- <noscript>
     <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt="">
     </div>
-</noscript>
+</noscript> --}}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VXQC75FB6B"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
