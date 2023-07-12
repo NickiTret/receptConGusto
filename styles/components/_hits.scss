@@ -1,7 +1,7 @@
 .hits {
 
     & > .container {
-        & > h2 {
+        & > h2, & > h1 {
             @include font_h1($font-family, $clr_text2);
             margin-bottom: 28px;
             margin-top: 24px;

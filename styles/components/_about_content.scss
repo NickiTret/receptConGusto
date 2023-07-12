@@ -4,7 +4,7 @@
     align-items: stretch;
     justify-content: space-between;
 
-    & > h2 {
+    & > h2, & > h1 {
         @include font_h2($font-family, $clr_text);
         white-space: nowrap;
         flex: 0 0 auto;

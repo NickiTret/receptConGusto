@@ -14,8 +14,8 @@
             </picture>
            </div>
            <div class="text">
+            <h1>{{$data->title}}</h1>
             <h3>{{$data->subtitle}}</h3>
-            <h2>{{$data->title}}</h2>
             <p>{{ strip_tags($data->content) }}</p>
                 {{-- <a href="{{$data->btn_link}}">{{$data->btn_name}}</a> --}}
            </div>

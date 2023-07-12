@@ -10,7 +10,7 @@
             @if (!empty($news))
                 <section class="hits">
                     <div class="container">
-                        <h2> Статьи </h2>
+                        <h1> Статьи </h1>
                         <ul>
                             @foreach ($news as $post)
                                 <li data-aos="flip-left" data-aos-duration="300" data-aos-delay="{{ $post->id * 50 }}">
