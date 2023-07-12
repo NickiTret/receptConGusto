@@ -6,7 +6,7 @@
             <h3>Нечего не найдено по вашему запросу</h3>
         @endif
         @if (isset($tag) && $tag->title && !isset($post))
-            <h2>{{ $tag->title }}</h2>
+            <h1>{{ $tag->title }}</h1>
         @endif
         @if (!empty($posts))
             <ul>

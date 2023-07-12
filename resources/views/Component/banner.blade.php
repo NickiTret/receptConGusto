@@ -32,7 +32,7 @@
             </picture>
            </div>
            <div class="text">
-            <h2>{{$category_item->title}}</h2>
+            <h1>{{$category_item->title}}</h1>
             @if(!empty($category_item->description))
                 <p>{{ strip_tags( $category_item->description) }}</p>
             @endif
