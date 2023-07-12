@@ -51,7 +51,7 @@
                                                         <title>delete_2_fill</title>
                                                         <g id="页面-1" stroke="none" stroke-width="1" fill="none"
                                                             fill-rule="evenodd">
-                                                            <g id="System"
+                                                            <g
                                                                 transform="translate(-576.000000, -240.000000)">
                                                                 <g id="delete_2_fill"
                                                                     transform="translate(576.000000, 240.000000)">
