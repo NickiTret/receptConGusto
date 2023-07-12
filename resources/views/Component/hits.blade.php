@@ -51,7 +51,7 @@
                                                 <title>Удалить из избранного</title>
                                                 <g id="页面-1" stroke="none" stroke-width="1" fill="none"
                                                     fill-rule="evenodd">
-                                                    <g id="System" transform="translate(-576.000000, -240.000000)">
+                                                    <g id="System1" transform="translate(-576.000000, -240.000000)">
                                                         <g id="delete_2_fill"
                                                             transform="translate(576.000000, 240.000000)">
                                                             <path
@@ -79,7 +79,7 @@
                                                 <title>Добавить в избранное</title>
                                                 <g id="页面-1" stroke="none" stroke-width="1" fill="none"
                                                     fill-rule="evenodd">
-                                                    <g id="System" transform="translate(-334.000000, -240.000000)">
+                                                    <g id="System2" transform="translate(-334.000000, -240.000000)">
                                                         <g id="certificate_fill"
                                                             transform="translate(334.000000, 240.000000)">
                                                             <path
