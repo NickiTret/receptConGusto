@@ -45,6 +45,12 @@
             <li>
                 <a href="https://vk.com/public221195230" target="_blank">VK</a>
             </li>
+            <li>
+                <a href="https://ok.ru/group/70000003459339" target="_blank">ОК!</a>
+            </li>
+
+
+
         </ul>
     </div>
     <div class="container" style="margin-top: 14px">
