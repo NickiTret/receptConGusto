@@ -19,7 +19,7 @@
 
                         @if ($item->posts->count() > 0)
                             {{-- не выводим категорию ПАСХА --}}
-                            @if($loop->iteration === 6)
+                            @if($loop->iteration === 7)
                                 @continue
                             @endif
                             <li>
@@ -30,7 +30,7 @@
                                                 <source type="image/avif" srcset="/{{ $item->addImageFormat()['imageAvif'] }}" />
                                                 <source type="image/webp" srcset="/{{ $item->addImageFormat()['imageWebp'] }}" />
                                             @endif
-                                            <img loading="lazy" title="{{ $item->title }}" alt="{{ $item->title }}"
+                                            <img width="274" height="280" loading="lazy" title="{{ $item->title }}" alt="{{ $item->title }}"
                                                 src="/{{ $item->addImageFormat()['imageDefault'] }}">
 
                                         </picture>

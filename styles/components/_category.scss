@@ -61,7 +61,8 @@
                             // max-height: 229px;
                             overflow: hidden;
                             border-radius: 14px 0 14px 0;
-                            height: 230px;
+                            height: 280px;
+
                             & > picture > img {
                                 border-radius: 14px 0 14px 0;
                                 filter: blur(0.5px);
@@ -69,7 +70,7 @@
                                 flex: 0 0 auto;
                                 object-fit: cover;
                                 width: auto;
-
+                                text-align: center;
                                 height: 100%;
                             }
                         }

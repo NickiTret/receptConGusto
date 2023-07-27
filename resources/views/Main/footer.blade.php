@@ -43,10 +43,6 @@
             </li>
 
             <li>
-                <a href="https://dzen.ru/e-con-gusto.ru" target="_blank">Дзен</a>
-            </li>
-
-            <li>
                 <a href="https://vk.com/public221195230" target="_blank">VK</a>
             </li>
         </ul>
@@ -72,7 +68,7 @@
 
     </div>
 </footer>
-<script type="module" src="{{ asset('assets/js/main.js') }}?14"></script>
+<script type="module" src="{{ asset('assets/js/main.js') }}?15"></script>
 <!-- Yandex.Metrika counter -->
 <script>
     (function(m, e, t, r, i, k, a) {
