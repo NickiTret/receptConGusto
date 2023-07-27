@@ -1,16 +1,18 @@
 .news {
     overflow: hidden;
     position: relative;
+    background-position: center;
+    background-size: cover;
 
     &>.container {
         // padding: 0;
         height: 70vh;
-        
+
 
         &>.content-box {
             padding-left: 0;
             padding-right: 0;
-            
+
             &>.content-header {
                 display: flex;
                 align-items: flex-start;

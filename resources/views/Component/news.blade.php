@@ -1,4 +1,4 @@
-<section class="news">
+<section class="news" style="background-image: url('/{{ $data->addImageFormat()['imageDefault'] }}')">
     <div class="container">
         <div class="content-box">
             <div class="content-header">
