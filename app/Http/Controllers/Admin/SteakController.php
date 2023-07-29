@@ -56,7 +56,7 @@ class SteakController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required|image|mimes:jpg',
+            'image' => 'nullable|image|mimes:jpg',
             'content' => 'required',
             'steaks_id' => 'required|integer',
         ]);
