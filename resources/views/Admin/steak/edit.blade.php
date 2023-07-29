@@ -42,6 +42,7 @@
                     <div class="form-group">
                         <label for="steaks_id">Выбор отруба для стейка</label>
                         <select class="form-control @error('steaks_id') is-invalid @enderror" id="steaks_id" name="steaks_id">
+
                             @foreach($pieces as $k => $v)
                                 <option value="{{ $k }}" @if($k == $steak->steaks_id) selected @endif>{{ $v }}</option>
                             @endforeach

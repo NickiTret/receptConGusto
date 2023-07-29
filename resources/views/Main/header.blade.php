@@ -9,7 +9,7 @@
         <nav title="Главное меню" data-menu>
             <ul class="reset-list">
                 @foreach ($headers as $header_item)
-                    @if ($loop->iteration == 5)
+                    @if ($header_item->title == 'Пасха')
                         @continue
                     @endif
                     <li>

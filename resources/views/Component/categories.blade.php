@@ -19,7 +19,7 @@
 
                         @if ($item->posts->count() > 0)
                             {{-- не выводим категорию ПАСХА --}}
-                            @if($loop->iteration === 7)
+                            @if($item->title === 'Пасха')
                                 @continue
                             @endif
                             <li>

@@ -34,10 +34,15 @@
                         </thead>
                         <tbody>
                         @foreach($pieces as $piece)
+                        {{-- <pre>
+                            {{dd($pieces[1]->meat)}}
+                        </pre> --}}
+
                         <tr>
                             <td>{{  $piece->id }}</td>
                             <td>{{  $piece->title }}</td>
                             <td>{{  $piece->meat->title }}</td>
+
                             <td>
                                 <a href="{{  route('piece.edit', ['piece' => $piece->id]) }}" class="btn btn-info btn-sm float-left mb-1">
                                     <i class="fas fa-pencil-alt"></i>

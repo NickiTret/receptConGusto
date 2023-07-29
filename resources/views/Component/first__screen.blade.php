@@ -39,7 +39,7 @@
         <h4>Рецепты по интересам:</h4>
         <ul class="first-screen__aside-tags">
             @foreach ($maps as $tag)
-                @if ($loop->iteration === 8)
+                @if ($tag->title === 'Пасха')
                     @continue
                 @endif
                 <li>
