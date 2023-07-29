@@ -46,7 +46,7 @@ class SteakController extends Controller
     public function edit($id)
     {
         $steak = Steak::find($id);
-        $pieces = Piece::pluck('title', 'piece_id')->all();
+        $pieces = Piece::pluck('title', 'id')->all();
         return view('Admin.steak.edit', compact('steak', 'pieces'));
     }
 
