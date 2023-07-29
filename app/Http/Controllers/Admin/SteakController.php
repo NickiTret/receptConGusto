@@ -19,7 +19,7 @@ class SteakController extends Controller
 
     public function create()
     {
-        $pieces = Piece::pluck('title', 'piece_id')->all();
+        $pieces = Piece::pluck('title', 'id')->all();
         return view('Admin.steak.create', compact('pieces'));
     }
 
