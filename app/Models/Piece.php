@@ -15,7 +15,7 @@ class Piece extends Model
 
     public function meat()
     {
-        return $this->belongsTo(Meat::class, 'id');
+        return $this->belongsTo(Meat::class, 'piece_id');
     }
 
     public function steaks() {
