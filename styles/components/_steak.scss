@@ -34,8 +34,22 @@
             ul {
                 li {
                     margin-bottom: 12px;
+                    padding-bottom: 12px;
+                    border-bottom: 1px solid $clr_main;
                     h4 {
                         @include font_lead($font-family, $clr_text);
+                        margin-bottom: 12px;
+                        font-weight: 700;
+
+
+
+                        @media (max-width: 768px) {
+                            font-size: 20px;
+                        }
+                    }
+
+                    p {
+                        @include font_min_lead($font-family, $clr_text);
                         margin-bottom: 12px;
                     }
 
@@ -44,6 +58,45 @@
                         align-items: flex-start;
                         justify-content: space-between;
 
+                        div.text {
+                            display: block;
+                            width: calc($column_abs * 7 + $gutter_abs * 6);
+
+                            @media (max-width: 1600px) {
+                                width: calc($column_abs_maxW_1600 * 7 + $gutter_abs_maxW_1600 * 6);
+                            }
+
+                            @media (max-width: 1440px) {
+                                width: calc($column_abs_maxW_1440 * 7 + $gutter_abs_maxW_1440 * 6);
+                            }
+
+                            @media (max-width: 1280px) {
+                                width: calc($column_abs_maxW_1280 * 7 + $gutter_abs_maxW_1280 * 6);
+                            }
+
+                            @media (max-width: 1024px) {
+                                width: 100%;
+                            }
+
+                            a {
+                                color: $clr_main;
+                                text-decoration: underline;
+                                font-weight: 700 !important;
+                            }
+
+                            p {
+                                @include font_p1($font-family, $clr_text);
+
+                                margin-bottom: 12px;
+
+
+                                flex:  0 0 auto;
+                                text-transform: none;
+                                opacity: 1;
+
+
+                            }
+                        }
 
                         // @media (max-width: 1600px) {
                         //     gap: calc(gutter_abs_maxW_1600 * 1);
@@ -62,32 +115,26 @@
                             gap: 24px;
                         }
 
-                        p {
-                            @include font_p1($font-family, $clr_text);
-                            margin-bottom: 12px;
-
-                            width: calc($column_abs * 7 + $gutter_abs * 6);
-                            flex:  0 0 auto;
+                        svg, img {
+                            width: calc($column_abs * 4 + $gutter_abs * 3);
+                            overflow: hidden;
+                            border-radius: 14px 0 0 0;
 
                             @media (max-width: 1600px) {
-                                width: calc($column_abs_maxW_1600 * 7 + $gutter_abs_maxW_1600 * 6);
+                                width: calc($column_abs_maxW_1600 * 4 + $gutter_abs_maxW_1600 * 3);
                             }
 
                             @media (max-width: 1440px) {
-                                width: calc($column_abs_maxW_1440 * 7 + $gutter_abs_maxW_1440 * 6);
+                                width: calc($column_abs_maxW_1440 * 4 + $gutter_abs_maxW_1440 * 3);
                             }
 
                             @media (max-width: 1280px) {
-                                width: calc($column_abs_maxW_1280 * 7 + $gutter_abs_maxW_1280 * 6);
+                                width: calc($column_abs_maxW_1280 * 4 + $gutter_abs_maxW_1280 * 3);
                             }
 
                             @media (max-width: 1024px) {
                                 width: 100%;
                             }
-                        }
-
-                        svg, img {
-                            width: 100%;
                         }
                     }
                 }
@@ -119,13 +166,20 @@
                 background-color: $clr_bg2;
                 border: 1px solid $clr_text2;
                 opacity: 0;
+                pointer-events: none;
+
+                @media (max-width: 1024px) {
+                    position: static;
+                    margin-bottom: 24px;
+                }
+
 
                 &.show {
                     opacity: 1;
                 }
 
                 & > h2 {
-                    @include font_lead($font-family, $clr_text2);
+                    @include font_h2($font-family, $clr_text2);
                     margin-bottom: 10px;
                 }
 
