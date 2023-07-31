@@ -13,13 +13,13 @@
         <meta name="twitter:image" content="{{ asset($seo->image_page) }}" />
         <meta name="keywords" content="{{ strip_tags($seo->keywords) }}" />
     @else
-        <title>Con gusto @if (!empty($data))
-                - {{ strip_tags($data->title) }} - готовь с нами
+        <title>@if (!empty($data))
+                {{ strip_tags($data->title) }} - готовь с нами
             @elseif (!empty($banner) && empty($data))
-                - {{ strip_tags($banner->title) }} - готовь с нами
+                {{ strip_tags($banner->title) }} - готовь с нами
             @else
-                - готовь с нами по классическим рецептам e-con-gusto.ru
-            @endif
+                готовь с нами по классическим рецептам e-con-gusto.ru
+            @endif – Con gusto
         </title>
         @if (!empty($data->description))
             <meta name="description" content="{{ strip_tags($data->description) }}">
