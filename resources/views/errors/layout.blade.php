@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
 
-@include('Main.head')
-
 <head lang="ru">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
