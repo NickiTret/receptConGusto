@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#111111">
     <meta name="yandex-verification" content="3519ed7046470147" />
-
+    <link rel="canonical" href="{{ url()->current() }}" />
     @if (!empty($seo))
         <title>{{ strip_tags($seo->title) }}</title>
         <meta name="description" content="{{ strip_tags($seo->description) }}">
