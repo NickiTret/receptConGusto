@@ -103,13 +103,15 @@
                     justify-content: flex-start;
                     @media (max-width: 1600px) {
                         margin-left: calc(
-                            $column_abs_maxW_1600 * 2 + $gutter_abs_maxW_1600 * 3
+                            $column_abs_maxW_1600 * 2 + $gutter_abs_maxW_1600 *
+                                3
                         );
                     }
 
                     @media (max-width: 1440px) {
                         margin-left: calc(
-                            $column_abs_maxW_1440 * 3 + $gutter_abs_maxW_1440 * 3
+                            $column_abs_maxW_1440 * 3 + $gutter_abs_maxW_1440 *
+                                3
                         );
                     }
 
@@ -154,12 +156,12 @@
                             transition: text-decoration 0.2s ease-in-out;
 
                             @media (max-width: 1280px) {
-                            padding-left: 51px;
-                            margin-left: -51px;
+                                padding-left: 51px;
+                                margin-left: -51px;
                             }
 
                             &:hover {
-                                text-decoration: underline
+                                text-decoration: underline;
                             }
                         }
                     }
@@ -215,6 +217,8 @@
                                 transition: opacity 0.2s ease-in,
                                     transform 0.2s ease-in;
                                 opacity: 0.9;
+                                background-size: cover;
+                                background-position: center;
                                 &::before {
                                     position: absolute;
                                     top: 0;
@@ -259,7 +263,7 @@
                                     padding: 0 5px;
                                     margin: 0 -5px;
                                 }
-                                & > img {
+                                & > picture > img {
                                     position: absolute;
                                     top: 0;
                                     left: 0;
@@ -296,6 +300,7 @@
         padding: 72px 56px 56px 56px;
         width: calc($column_abs * 3 + $gutter_abs * 3);
         // background-color: rgba($color: $clr_main, $alpha: 0.6);
+        overflow: auto;
 
         @media (max-width: 1280px) {
             display: none;
@@ -348,5 +353,22 @@
                 }
             }
         }
+
+        /* плашка-бегунок и фон */
+        scrollbar-color: $clr_main2 $clr_main;
+
+        &::-webkit-scrollbar {
+            width: 10px; /* в основном для вертикальных полос прокрутки */
+            height: 10px; /* в основном для горизонтальных полос прокрутки */
+        }
+        &::-webkit-scrollbar-thumb {
+            /* плашка-бегунок */
+            background: $clr_main2;
+        }
+        &::-webkit-scrollbar-track {
+            /* фон */
+            background: $clr_main;
+        }
     }
+
 }

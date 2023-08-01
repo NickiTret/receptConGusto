@@ -185,6 +185,23 @@
                         }
                     }
                 }
+
+                scrollbar-color: $clr_main2 $clr_main;
+                padding-bottom: 10px;
+
+                &::-webkit-scrollbar {
+                    width: 5px; /* в основном для вертикальных полос прокрутки */
+                    height: 5px; /* в основном для горизонтальных полос прокрутки */
+                }
+                &::-webkit-scrollbar-thumb {
+                    /* плашка-бегунок */
+                    background: $clr_main;
+                    cursor: pointer;
+                }
+                &::-webkit-scrollbar-track {
+                    /* фон */
+                    background: transparent;
+                }
             }
 
             &.menu--active {
@@ -212,6 +229,8 @@
                     }
                 }
             }
+
+
         }
 
         // @media (max-width: 665px) {

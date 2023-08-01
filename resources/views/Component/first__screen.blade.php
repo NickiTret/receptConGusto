@@ -12,8 +12,19 @@
                         <ul class="text-list">
                             @foreach ($lastPost as $item)
                                 <li class="text-list__item">
-                                    <a href="{{ route('single', $item->slug) }}">
-                                        <img loading="lazy" src="/{{ $item->thumbnail }}" alt="{{ $item->title }}">
+                                    <a style="background-image: url(/{{ $item->thumbnail }});" href="{{ route('single', $item->slug) }}">
+                                        {{-- @if($item->thumbnail)
+                                        <img loading="lazy" src="/{{ $item->thumbnail }}asdsa" alt="{{ $item->title }}">
+                                        @endif --}}
+                                        <picture>
+                                            @if ($item->addImageFormat())
+                                                <source type="image/avif" srcset="/{{ $item->addImageFormat()['imageAvif'] }}" />
+                                                <source type="image/webp" srcset="/{{ $item->addImageFormat()['imageWebp'] }}" />
+                                            @endif
+                                            <img width="324" height="220" loading="lazy" title="{{ $item->title }}" alt="{{ $item->title }}"
+                                                src="/{{ $item->addImageFormat()['imageDefault'] }}">
+                                        </picture>
+
                                         <h3>{{ $item->title }}</h3>
                                         {!! $item->description !!}
                                     </a>

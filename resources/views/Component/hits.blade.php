@@ -18,7 +18,7 @@
                                     <source type="image/avif" srcset="/{{ $post->addImageFormat()['imageAvif'] }}" />
                                     <source type="image/webp" srcset="/{{ $post->addImageFormat()['imageWebp'] }}" />
                                 @endif
-                                <img loading="lazy" title="{{ $post->title }}" alt="{{ $post->title }}"
+                                <img  width="314" height="200" loading="lazy" title="{{ $post->title }}" alt="{{ $post->title }}"
                                     src="/{{ $post->addImageFormat()['imageDefault'] }}">
 
                             </picture>
