@@ -15,11 +15,19 @@
                             @foreach ($news as $post)
                                 <li data-aos="flip-left" data-aos-duration="300" data-aos-delay="{{ $post->id * 50 }}">
                                     <a href="{{ route('new', $post->slug) }}">
-                                        @if (!empty($post->thumbnail))
+                                        {{-- @if (!empty($post->thumbnail))
                                             <img src="/{{ $post->thumbnail }}" alt="{{ $post->title }}">
                                         @else
                                             <img src="/{{ $post->image }}" alt="{{ $post->title }}">
-                                        @endif
+                                        @endif --}}
+                                        <picture>
+                                            @if ($post->addImageFormat())
+                                                <source type="image/avif" srcset="/{{ $post->addImageFormat()['imageAvif'] }}" />
+                                                <source type="image/webp" srcset="/{{ $post->addImageFormat()['imageWebp'] }}" />
+                                            @endif
+                                            <img  width="314" height="200" loading="lazy" title="{{ $post->title }}" alt="{{ $post->title }}"
+                                                src="/{{ $post->addImageFormat()['imageDefault'] }}">
+                                        </picture>
                                         <div class="description">
                                             <div class="top">
                                                 @if ($post->restorant)
