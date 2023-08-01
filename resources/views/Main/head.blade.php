@@ -168,5 +168,5 @@
         gtag('config', 'G-BCDZCP104C');
     </script>
     @endenv
-    <script async type="module" src="{{ asset('assets/js/main.js') }}?18"></script>
+    <script type="module" defer src="{{ asset('assets/js/main.js') }}?18"></script>
 </head>
