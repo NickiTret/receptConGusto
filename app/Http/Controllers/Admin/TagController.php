@@ -13,10 +13,10 @@ class TagController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    
+
     public function index()
     {
-        $tags = Tag::paginate(10);
+        $tags = Tag::paginate(100);
         return view('Admin.tags.index', compact('tags'));
     }
 
