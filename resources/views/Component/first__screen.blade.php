@@ -50,7 +50,7 @@
         <h4>Рецепты по интересам:</h4>
         <ul class="first-screen__aside-tags">
             @foreach ($maps as $tag)
-                @if ($tag->title === 'Пасха')
+                @if ($tag->title === 'Христос воскрес')
                     @continue
                 @endif
                 <li>
