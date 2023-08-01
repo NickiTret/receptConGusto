@@ -71,6 +71,12 @@
                         @include font_min_lead($font-family, $clr_text);
                         // text-align: center;
                     }
+
+                    &:hover {
+                        & > h4 {
+                            color: $clr_main;
+                        }
+                    }
                 }
 
                 &:not(:last-child) {

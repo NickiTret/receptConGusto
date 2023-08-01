@@ -267,18 +267,18 @@ class IndexController extends Controller
     public function steak()
     {
 
-        $data = (object) [
-            'title' => 'Всё о стейках',
-            'description' => 'Приготовление и маринование стейков',
-            'image' => ''
-        ];
+        // $data = (object) [
+        //     'title' => 'Всё о стейках',
+        //     'description' => 'Приготовление и маринование стейков',
+        //     'image' => ''
+        // ];
         // $banner = Banner::where('page', 'Стейк')->firstOrFail();
-        $seo = Seo::where('name_page', 'Стейки')->first();
+        $seo = Seo::where('name_page', 'Карта частей животных')->first();
         $meats = Meat::all();
         $pieces = Piece::all();
         $steaks = Steak::all();
 
-        return view('steak', compact('data', 'steaks', 'meats', 'pieces'));
+        return view('steak', compact( 'steaks', 'meats', 'pieces', 'seo'));
     }
 
     public function feed()
