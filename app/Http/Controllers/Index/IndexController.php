@@ -55,13 +55,34 @@ class IndexController extends Controller
 
     public function show($slug)
     {
-        $post = Post::where('slug', $slug)->firstOrFail();
-        $posts = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
+        if (Cache::has(('post'))) {
+            $post = Cache::get('post');
+        } else {
+            $post = Post::where('slug', $slug)->firstOrFail();
+            Cache::put('post', $post, 604800);
+        }
+
+        if (Cache::has(('posts'))) {
+            $posts = Cache::get('posts');
+        } else {
+            $posts = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
+            Cache::put('posts', $posts, 604800);
+        }
+
+        if (Cache::has(('categories'))) {
+            $categories = Cache::get('categories');
+        } else {
+            $categories = Category::pluck('title', 'id')->all();
+            Cache::put('categories', $categories, 604800);
+        }
+
+        // $post = Post::where('slug', $slug)->firstOrFail();
+        // $posts = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
 
         $post->views += 1;
         $post->update();
 
-        $categories = Category::pluck('title', 'id')->all();
+        // $categories = Category::pluck('title', 'id')->all();
         $category = Category::where('id', $post->category_id)->first();
         $tags = Tag::pluck('title', 'id')->all();
 
