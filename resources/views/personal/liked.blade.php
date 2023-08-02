@@ -17,8 +17,6 @@
                                     <a href="{{ route('single', $post->slug) }}">
                                         <picture>
                                             @if ($post->addImageFormat())
-                                                <source type="image/avif"
-                                                    srcset="/{{ $post->addImageFormat()['imageAvif'] }}" />
                                                 <source type="image/webp"
                                                     srcset="/{{ $post->addImageFormat()['imageWebp'] }}" />
                                             @endif

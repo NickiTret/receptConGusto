@@ -27,7 +27,6 @@
                                     <div>
                                         <picture>
                                             @if ($item->addImageFormat())
-                                                <source type="image/avif" srcset="/{{ $item->addImageFormat()['imageAvif'] }}" />
                                                 <source type="image/webp" srcset="/{{ $item->addImageFormat()['imageWebp'] }}" />
                                             @endif
                                             <img width="274" height="280" loading="lazy" title="{{ $item->title }}" alt="{{ $item->title }}"

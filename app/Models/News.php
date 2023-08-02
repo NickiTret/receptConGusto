@@ -47,7 +47,7 @@ class News extends Model
         if ($this->image) {
             return $this->images = [
                 'imageDefault' => $this->image,
-                'imageAvif' => str_replace('.jpg', '.avif', $this->image),
+                // 'imageAvif' => str_replace('.jpg', '.avif', $this->image),
                 'imageWebp' => str_replace('.jpg', '.wepb', $this->image)
             ];
         }
