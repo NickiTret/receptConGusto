@@ -55,12 +55,6 @@ class IndexController extends Controller
 
     public function show($slug)
     {
-        if (Cache::has(('post'))) {
-            $post = Cache::get('post');
-        } else {
-            $post = Post::where('slug', $slug)->firstOrFail();
-            Cache::put('post', $post, 604800);
-        }
 
         if (Cache::has(('posts'))) {
             $posts = Cache::get('posts');
@@ -76,7 +70,7 @@ class IndexController extends Controller
             Cache::put('categories', $categories, 604800);
         }
 
-        // $post = Post::where('slug', $slug)->firstOrFail();
+        $post = Post::where('slug', $slug)->firstOrFail();
         // $posts = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
 
         $post->views += 1;
