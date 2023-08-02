@@ -31,12 +31,6 @@ class IndexController extends Controller
 
     public function index()
     {
-        if (Cache::has(('fasts'))) {
-            $fasts = Cache::get('fasts');
-        } else {
-            $fasts = Fast::all();
-            Cache::put('fasts', $fasts, 604800);
-        }
 
         if (Cache::has(('heros'))) {
             $heros = Cache::get('heros');
@@ -45,8 +39,6 @@ class IndexController extends Controller
             Cache::put('heros', $heros, 604800);
         }
 
-        $random = Post::all()->random();
-
         if (Cache::has(('posts'))) {
             $posts = Cache::get('posts');
         } else {
@@ -54,59 +46,17 @@ class IndexController extends Controller
             Cache::put('posts', $posts, 604800);
         }
 
-        if (Cache::has(('allPosts'))) {
-            $allPosts = Cache::get('allPosts');
-        } else {
-            $allPosts = Post::where('show', '1')->get();
-            Cache::put('allPosts', $allPosts, 604800);
-        }
-
-        // if(Cache::has(('features'))) {
-        //     $features = Cache::get('features');
-        // } else {
-        //     $features = Feat::all();
-        //     Cache::put('features', $features, 604800 );
-        // }
-
-        if (Cache::has(('categories'))) {
-            $categories = Cache::get('categories');
-        } else {
-            $categories = Category::pluck('title', 'id')->all();
-            Cache::put('categories', $categories, 604800);
-        }
-
-        if (Cache::has(('tags'))) {
-            $tags = Cache::get('tags');
-        } else {
-            $tags = Tag::pluck('title', 'id')->all();
-            Cache::put('tags', $tags, 604800);
-        }
-
-
         $seo = Seo::where('name_page', 'Главная страница')->first();
-
-        $currentURL = url()->full();
         $maps = Tag::orderBy('title', 'asc')->get();
         $lastPost = Post::where('show', '1')->orderBy('created_at', 'desc')->limit(4)->get();
 
-        return view('welcome', compact('categories', 'tags', 'maps', 'random', 'posts',  'heros', 'fasts', 'allPosts', 'currentURL', 'lastPost', 'seo'));
+        return view('welcome', compact('maps', 'posts',  'heros', 'lastPost', 'seo'));
     }
 
     public function show($slug)
     {
-
-        if (Cache::has(('fasts'))) {
-            $fasts = Cache::get('fasts');
-        } else {
-            $fasts = Fast::where('show', '1')->get();
-            Cache::put('fasts', $fasts, 604800);
-        }
-
-        $currentURL = url()->full();
-
         $post = Post::where('slug', $slug)->firstOrFail();
         $posts = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
-        // $posts_tags = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
 
         $post->views += 1;
         $post->update();
@@ -117,17 +67,10 @@ class IndexController extends Controller
 
         $comments = Comment::where('post_id', $post->id)->orderBy('created_at', 'desc')->get();
 
-        return view('single', compact('post', 'tags', 'categories', 'category', 'fasts', 'posts', 'currentURL', 'comments'));
+        return view('single', compact('post', 'tags', 'categories', 'category', 'posts',  'comments'));
     }
 
-    public function jsonShow($slug) {
-        $post = Post::where('slug', $slug)->firstOrFail();
-        $comments = Comment::where('post_id', $post->id)->orderBy('created_at', 'desc')->get();
-        $post['comments'] = $comments;
-        $post['users_data'] = auth()->user;
 
-        return response()->json($post);
-    }
 
     public function fast($slug)
     {
@@ -140,7 +83,7 @@ class IndexController extends Controller
         }
 
 
-        $currentURL = url()->full();
+
         $post = Fast::where('slug', $slug)->first();
         return view('single', compact('post', 'posts', 'currentURL'));
     }
@@ -149,9 +92,9 @@ class IndexController extends Controller
     {
         $fasts = Fast::where('show', '1')->get();
         $banner = Banner::where('page', 'Категории')->firstOrFail();
-        $categories = Category::orderBy('title')->get();
+        $categories = Category::with('posts')->orderBy('title')->get();
         $seo = Seo::where('name_page', 'Категории')->first();
-        return view('category', compact('categories', 'banner', 'fasts', 'seo'));
+        return view('category', compact('categories', 'banner', 'seo'));
     }
 
     public function tag($id)
@@ -162,7 +105,7 @@ class IndexController extends Controller
         $posts = $tag->posts()->where('show', '1')->orderBy('id', 'desc')->paginate(50);
         $banner = Banner::where('page', 'Тег')->first();
 
-        return view('tags', compact('tag', 'hat', 'posts', 'banner', 'fasts'));
+        return view('tags', compact('tag', 'hat', 'posts', 'banner'));
     }
 
     public function category_item($slug)
@@ -173,31 +116,17 @@ class IndexController extends Controller
         return view('category-item', compact('posts', 'category_item'));
     }
 
-    //    public function search(Request $request) {
-    //        $request->validate([
-    //            's' => 'required',
-    //        ]);
-    //        $currentURL = url()->full();
-    //        $s = $request->s;
-    //        $postsAll = Post::where('title', 'LIKE', "%{$s}%")->with('category')->paginate(20);
-    //        $fastsAll = Fast::where('title', 'LIKE', "%{$s}%")->paginate(20);
-    //
-    //        $posts = $postsAll->merge($fastsAll);
-    //
-    //        return view('search', compact('posts', 's',  'currentURL'));
-    //    }
-
     public function search(ReceptFilter $filter)
     {
 
-        $currentURL = url()->full();
+
         $category = Category::all();
-        $postsAll = Post::filter($filter)->paginate(100);
+        $posts = Post::filter($filter)->paginate(100);
         $fasts = Fast::filter($filter)->paginate(20);
-        $posts = $postsAll->merge($fasts);
+        // $posts = $postsAll->merge($fasts);
         $seo = Seo::where('name_page', 'Поиск')->first();
 
-        return view('search', compact('posts', 'category',  'currentURL', 'seo'));
+        return view('search', compact('posts', 'category', 'seo'));
     }
 
     public function about()
@@ -217,18 +146,18 @@ class IndexController extends Controller
             Cache::put('news', $news, 604800);
         }
 
-        $currentURL = url()->full();
+
         $fasts = Fast::where('show', '1')->get();
 
         $categories = Category::pluck('title', 'id')->all();
         $tags = Tag::pluck('title', 'id')->all();
         $seo = Seo::where('name_page', 'Статьи')->first();
-        return view('news', compact('categories', 'tags', 'news', 'fasts', 'currentURL', 'seo'));
+        return view('news', compact('categories', 'tags', 'news', 'seo'));
     }
 
     public function new($slug)
     {
-        $currentURL = url()->full();
+
         $fasts = Fast::where('show', '1')->get();
         $post = News::where('slug', $slug)->firstOrFail();
         $posts = Post::where('show', '1')->orderBy('views', 'desc')->limit(4)->get();
@@ -236,18 +165,18 @@ class IndexController extends Controller
 
         $post->update();
 
-        return view('single', compact('post', 'fasts', 'posts', 'currentURL'));
+        return view('single', compact('post', 'posts', 'currentURL'));
     }
 
 
     public function marinade()
     {
-        $currentURL = url()->full();
+
         $slider = Sous::where('marinade', 1)->get()->toJson();
         $groups = Subcat::all();
         $banner = Banner::where('page', 'Коллекция маринадов')->firstOrFail();
         $seo = Seo::where('name_page', 'Маринады')->first();
-        return view('marinade', compact('currentURL', 'groups', 'slider', 'banner', 'seo'));
+        return view('marinade', compact('groups', 'slider', 'banner', 'seo'));
     }
 
     public function dessert()
@@ -266,19 +195,12 @@ class IndexController extends Controller
 
     public function steak()
     {
-
-        // $data = (object) [
-        //     'title' => 'Всё о стейках',
-        //     'description' => 'Приготовление и маринование стейков',
-        //     'image' => ''
-        // ];
-        // $banner = Banner::where('page', 'Стейк')->firstOrFail();
         $seo = Seo::where('name_page', 'Карта частей животных')->first();
         $meats = Meat::all();
         $pieces = Piece::all();
         $steaks = Steak::all();
 
-        return view('steak', compact( 'steaks', 'meats', 'pieces', 'seo'));
+        return view('steak', compact('steaks', 'meats', 'pieces', 'seo'));
     }
 
     public function feed()
@@ -349,5 +271,15 @@ class IndexController extends Controller
 
 
         return view('feed', compact('posts', 'newposts'));
+    }
+
+    public function jsonShow($slug)
+    {
+        $post = Post::where('slug', $slug)->firstOrFail();
+        $comments = Comment::where('post_id', $post->id)->orderBy('created_at', 'desc')->get();
+        $post['comments'] = $comments;
+        $post['users_data'] = auth()->user;
+
+        return response()->json($post);
     }
 }

@@ -40,13 +40,6 @@
     <aside class="first-screen__aside">
         <h3>Проверенные и&nbsp;классические рецепты</h3>
         <h4>Новые классные рецепты каждую неделю</h4>
-        {{-- <ul class="first-screen__aside-list">
-            <li>
-                <p>{{ $allPosts->count() + $fasts->count() }}</p>
-                <h4>Рецептов на&nbsp;сайте</h4>
-            </li>
-        </ul> --}}
-        {{--        <h3>Рецепты по&nbsp;тегам:</h3> --}}
         <h4>Рецепты по интересам:</h4>
         <ul class="first-screen__aside-tags">
             @foreach ($maps as $tag)

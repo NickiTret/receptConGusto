@@ -36,7 +36,8 @@
             @if (!empty(Auth::user()))
                 <a class="login" href="{{ route('personal.liked') }}/">
                     @if (Auth::user()->avatar)
-                        <img loading="lazy" class="avatar" src="{{ asset(Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}">
+                        <img loading="lazy" class="avatar" src="{{ asset(Auth::user()->avatar) }}"
+                            alt="{{ Auth::user()->name }}">
                     @else
                         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                             <defs>
@@ -85,22 +86,26 @@
         <ul class="list-reset category-list">
             @foreach ($categories_menu as $item)
                 @if ($item->posts->count())
+                    @if ($item->title === 'Пасха')
+                        @continue
+                    @endif
                     <li class="category-list__item">
                         <a href="{{ route('category_item', $item->slug) }}">{{ $item->title }}</a>
                     </li>
                 @endif
             @endforeach
-         </ul>
+        </ul>
     </div>
 </header>
 @env('local')
-    <!-- Yandex.RTB R-A-2349463-11 -->
-<script>window.yaContextCb.push(()=>{
-	Ya.Context.AdvManager.render({
-		"blockId": "R-A-2349463-11",
-		"type": "fullscreen",
-		"platform": "touch"
-	})
-})
+<!-- Yandex.RTB R-A-2349463-11 -->
+<script>
+    window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.render({
+            "blockId": "R-A-2349463-11",
+            "type": "fullscreen",
+            "platform": "touch"
+        })
+    })
 </script>
 @endenv

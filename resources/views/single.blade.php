@@ -69,7 +69,7 @@
                         <h2> Похожие рецепты </h2>
                     </div>
                 </section>
-                @include('Component.hits', ['posts' => $posts, 'url' => $currentURL, 'post' => $post])
+                @include('Component.hits', ['posts' => $posts, 'post' => $post])
             @endif
             <div class="share">
                 <span>

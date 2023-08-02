@@ -51,9 +51,6 @@
                     </div>
                 </section>
             @endif
-            @if (!empty($fasts))
-                @include('Component.simple', ['fasts' => $fasts])
-            @endif
 
         </main>
         @include('Main.footer')

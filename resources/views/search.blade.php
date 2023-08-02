@@ -28,7 +28,7 @@
             @endif
 
             @if (!empty($posts))
-                @include('Component.hits', ['posts' => $posts, 'url' => $currentURL])
+                @include('Component.hits', ['posts' => $posts])
             @endif
         </main>
         @include('Main.footer')

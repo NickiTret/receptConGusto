@@ -23,11 +23,12 @@
 
                             </picture>
                             <div class="top">
-                                @if (!empty($post->category->title))
-                                    <span class="category">
-                                        {{ $post->category->title }}
-                                    </span>
-                                @endif
+
+                                @isset ($post->category)
+                                <span class="category">
+                                    {{ $post->category->title }}
+                                </span>
+                                @endisset
 
                                 @if (!empty($post->views))
                                     <span class="views">

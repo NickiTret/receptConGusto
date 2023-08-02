@@ -15,9 +15,6 @@
                 @include('Component.categories', ['data' => $categories])
             @endif
 
-            @if ($fasts)
-                @include('Component.simple', ['fasts' => $fasts])
-            @endif
             @env('local')
             {{-- <section class="links">
                 <div class="container">

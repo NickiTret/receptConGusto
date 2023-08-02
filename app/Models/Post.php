@@ -20,6 +20,8 @@ class Post extends Model
 
     protected $fillable = ['title', 'content', 'description', 'category_id', 'thumbnail', 'video', 'show'];
 
+    // protected $with = ['category'];
+
     public function tags()
     {
         return $this->belongsToMany(Tag::class)->withTimestamps();
