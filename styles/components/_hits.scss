@@ -266,7 +266,7 @@
                         flex-direction: column;
                     }
 
-                    & img {
+                    & picture {
                         width: calc($column_abs * 4 + $gutter_abs * 3);
 
                         @media (max-width: 1600px) {
