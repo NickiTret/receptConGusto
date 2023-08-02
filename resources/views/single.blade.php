@@ -17,9 +17,19 @@
                                     {!! $post->video !!}
                                 </div>
                             @endif
+
+
                             {!! $post->content !!}
+
+                            <p><span style="font-weight: bolder;">Подписывайтесь на нас в соц сетях:</span></p>
+                            <ul>
+                                <li><a href="https://t.me/econgusto" target="_blank">На телеграмм канал</a></li>
+                                <li><a href="https://vk.com/public221195230" target="_blank">в VK сообщество</a></li>
+                                <li><a href="https://ok.ru/group/70000003459339" target="_blank">в группу Одноклассники</a>
+                                </li>
+                            </ul>
                             @if (!isset($post->restorant))
-                            @include('Component.comments')
+                                @include('Component.comments')
                             @endif
 
                         </div>
