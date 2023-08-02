@@ -12,7 +12,7 @@
                         <ul class="text-list">
                             @foreach ($lastPost as $item)
                                 <li class="text-list__item">
-                                    <a style="background-image: url(/{{ $item->thumbnail }});" href="{{ route('single', $item->slug) }}">
+                                    <a href="{{ route('single', $item->slug) }}">
                                         {{-- @if($item->thumbnail)
                                         <img loading="lazy" src="/{{ $item->thumbnail }}asdsa" alt="{{ $item->title }}">
                                         @endif --}}
