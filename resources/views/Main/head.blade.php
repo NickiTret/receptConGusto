@@ -13,7 +13,8 @@
         <meta name="twitter:image" content="{{ asset($seo->image_page) }}" />
         <meta name="keywords" content="{{ strip_tags($seo->keywords) }}" />
     @else
-        <title>@if (!empty($data))
+        <title>
+            @if (!empty($data))
                 {{ strip_tags($data->title) }} - готовь с нами
             @elseif (!empty($banner) && empty($data))
                 {{ strip_tags($banner->title) }} - готовь с нами
@@ -60,7 +61,7 @@
     @env('local')
     <!-- Yandex Native Ads -->
     <!-- Yandex.RTB -->
-    <script>
+    <script async>
         window.yaContextCb = window.yaContextCb || []
     </script>
     <script src="https://yandex.ru/ads/system/context.js" async></script>
@@ -80,7 +81,7 @@
         </style>
     </noscript>
     <!-- Top.Mail.Ru counter -->
-    <script>
+    <script async>
         var _tmr = window._tmr || (window._tmr = []);
         _tmr.push({
             id: "3328776",
@@ -112,7 +113,7 @@
             </div>
     </noscript> --}}
     <!-- /Top.Mail.Ru counter -->
-    <script>
+    <script async>
         (function(w, d, c) {
             (w[c] = w[c] || []).push(function() {
                 var options = {
@@ -145,7 +146,7 @@
     </noscript> --}}
     <!-- END Top100 (Kraken) Counter -->
     <!-- Stat.MegaIndex.ru Start -->
-    <script>
+    <script async>
         var mi = document.createElement('script');
         mi.type = 'text/javascript';
         mi.async = true;
@@ -157,7 +158,7 @@
     <!-- Stat.MegaIndex.ru End -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCDZCP104C"></script>
-    <script>
+    <script async>
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -169,4 +170,42 @@
     </script>
     @endenv
     <script type="module" defer src="{{ asset('assets/js/main.js') }}?18"></script>
+
+    <!-- Yandex.Metrika counter -->
+    <script>
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(
+                k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(92999372, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
+        });
+    </script>
+    {{-- <noscript>
+    <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt="">
+    </div>
+</noscript> --}}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VXQC75FB6B"></script>
+    <script async>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-VXQC75FB6B');
+    </script>
 </head>
