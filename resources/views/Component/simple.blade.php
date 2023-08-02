@@ -10,6 +10,7 @@
                         <a href="{{ route('fast', $item->slug) }}">
                             <picture>
                                 @if ($item->addImageFormat())
+                                    <source type="image/avif" srcset="/{{ $item->addImageFormat()['imageAvif'] }}" />
                                     <source type="image/webp" srcset="/{{ $item->addImageFormat()['imageWebp'] }}" />
                                 @endif
                                 <img loading="lazy" title="{{ $item->title }}" alt="{{ $item->title }}"
