@@ -165,7 +165,7 @@ class IndexController extends Controller
 
         $post->update();
 
-        return view('single', compact('post', 'posts', 'currentURL'));
+        return view('single', compact('post', 'posts'));
     }
 
 
