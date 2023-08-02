@@ -1,5 +1,5 @@
 <section class="recept-day">
-    <div data-aos="fade-up" class="container">
+    <div class="container">
         <h2>Случайный рецепт</h2>
         <div class="content">
             <div class="image">

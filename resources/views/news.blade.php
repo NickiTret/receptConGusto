@@ -13,7 +13,7 @@
                         <h1> Статьи </h1>
                         <ul class="hits-news">
                             @foreach ($news as $post)
-                                <li data-aos="flip-left" data-aos-duration="300" data-aos-delay="{{ $post->id * 50 }}">
+                                <li>
                                     <a href="{{ route('new', $post->slug) }}">
                                         {{-- @if (!empty($post->thumbnail))
                                             <img src="/{{ $post->thumbnail }}" alt="{{ $post->title }}">

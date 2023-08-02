@@ -1,4 +1,4 @@
-<header data-aos="fade-down" data-aos-duration="1000" class="header">
+<header class="header">
     <div class="container-header">
         <a href="/" class="logo">
             <picture>

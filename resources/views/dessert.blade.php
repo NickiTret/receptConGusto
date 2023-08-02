@@ -25,7 +25,7 @@
                 </div>
             </section>
             <section class="simple">
-                <div data-aos="slide-right" data-aos-duration="1500" class="container">
+                <div class="container">
                     <h2>Наполеончики</h2>
                     <div class="scroll" data-simplebar>
                         <ul>
