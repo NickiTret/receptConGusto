@@ -1,5 +1,6 @@
 const mix = require("laravel-mix");
 const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
+require('@chiiya/laravel-mix-image-minimizer');
 
 mix.webpackConfig({
     stats: {
@@ -45,3 +46,17 @@ mix.copyDirectory(
     "resources/assets/admin/plugins/fontawesome-free/webfonts",
     "public/assets/admin/webfonts"
 );
+
+// mix.images({
+//     from: 'public/images',
+//     to: 'public/images',
+//     webp: true,
+//   });
+
+// mix.images( {
+//     webp: true,
+//     implementation: 'imagemin',
+//     patterns: [
+//         { from: "**/*", to: "images", context: "public/images" }
+//     ]
+// } );

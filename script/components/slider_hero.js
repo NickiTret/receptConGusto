@@ -59,7 +59,7 @@ if (sliders) {
                         '<span class="' +
                         className +
                         '">' +
-                        `<img src="https://e-con-gusto.ru/${image.image}" alt="Картинка соуса">` +
+                        `<img lazy="loading" src="https://e-con-gusto.ru/${image.image}" alt="Картинка соуса">` +
                         "</span>"
                     );
                 },

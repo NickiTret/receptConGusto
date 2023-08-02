@@ -12,7 +12,7 @@
 
                     <div class="image">
                         <picture>
-                            <img src="https://sun9-67.userapi.com/impg/omytr-P9L6OWwLEqtJEzx_spOiM5YV415sD-zA/7_CCo0_6Iqo.jpg?size=2560x1435&quality=95&sign=c773e9ad023b37acfb73a7bd18a7c5e7&type=album"
+                            <img lazy="loading" src="https://sun9-67.userapi.com/impg/omytr-P9L6OWwLEqtJEzx_spOiM5YV415sD-zA/7_CCo0_6Iqo.jpg?size=2560x1435&quality=95&sign=c773e9ad023b37acfb73a7bd18a7c5e7&type=album"
                                 alt="Наполеончики к чаю. Пирожные на заказ СПб">
                         </picture>
                     </div>
@@ -32,7 +32,7 @@
                             <li>
                                 <a
                                     target="_blank" href="https://vk.com/uslugi-220369985?screen=group&w=product-220369985_8119735%2Fquery">
-                                    <img src="https://sun9-5.userapi.com/iUW1PQKB2Sm0tRmXodUzUrR_WfrAHUWtGxi8HA/xO2jHEkoBVA.jpg"
+                                    <img lazy="loading" src="https://sun9-5.userapi.com/iUW1PQKB2Sm0tRmXodUzUrR_WfrAHUWtGxi8HA/xO2jHEkoBVA.jpg"
                                         alt="Ягодный Наполеон-мини с классическим кремом">
                                     <p><span>от 600 ₽</span></p>
                                     <p class="text">Ягодный Наполеон-мини с классическим кремом</p>
@@ -40,7 +40,7 @@
                             </li>
                             <li>
                                 <a target="_blank" href="https://vk.com/na_pole_on_mini?w=product-220369985_8100580">
-                                    <img src="https://sun9-43.userapi.com/x1gZF5joE9ufkYAtn2LAAuAXKl9St5xO-h4JbQ/YoWsJRIOMJU.jpg"
+                                    <img  lazy="loading"src="https://sun9-43.userapi.com/x1gZF5joE9ufkYAtn2LAAuAXKl9St5xO-h4JbQ/YoWsJRIOMJU.jpg"
                                         alt="Наполеон-мини на заказ с классическим кремом">
                                     <p><span>от 400 ₽</span></p>
                                     <p class="text">Наполеон-мини на заказ с классическим кремом</p>
@@ -48,7 +48,7 @@
                             </li>
                             <li>
                                 <a target="_blank" href="https://vk.com/na_pole_on_mini?w=wall-220369985_77">
-                                    <img src="https://sun9-16.userapi.com/impg/CgZDDkeCd-6apQ4MSmdl8_8Bfn6XU6--71ZjAw/mzMed7KFWxU.jpg?size=2560x1443&quality=95&sign=f3c47eb91ef052ceb5ec5b0b31f40907&type=album"
+                                    <img lazy="loading" src="https://sun9-16.userapi.com/impg/CgZDDkeCd-6apQ4MSmdl8_8Bfn6XU6--71ZjAw/mzMed7KFWxU.jpg?size=2560x1443&quality=95&sign=f3c47eb91ef052ceb5ec5b0b31f40907&type=album"
                                         alt="пирожные Медовик-мини">
                                     <p><span>700р</span></p>
                                     <p class="text">4 шт. ароматных мини-медовичков </p>

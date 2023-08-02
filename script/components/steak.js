@@ -71,7 +71,7 @@ class Steak {
                                     ${item.content}
                                 </div>
 
-                                <img src="${item.image}" alt="${item.description}" title="${item.title}">
+                                <img lazy="loading" src="${item.image}" alt="${item.description}" title="${item.title}">
                             </div>
                         </li>`;
 

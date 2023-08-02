@@ -22,7 +22,7 @@
                                         @endif --}}
                                         <picture>
                                             @if ($post->addImageFormat())
-                                                <source type="image/avif" srcset="/{{ $post->addImageFormat()['imageAvif'] }}" />
+                                                {{-- <source type="image/avif" srcset="/{{ $post->addImageFormat()['imageAvif'] }}" /> --}}
                                                 <source type="image/webp" srcset="/{{ $post->addImageFormat()['imageWebp'] }}" />
                                             @endif
                                             <img  width="314" height="200" loading="lazy" title="{{ $post->title }}" alt="{{ $post->title }}"

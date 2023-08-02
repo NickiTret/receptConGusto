@@ -5,7 +5,7 @@
             <div class="image">
                 <picture>
                     @if ($random->addImageFormat())
-                        <source type="image/avif" srcset="/{{ $random->addImageFormat()['imageAvif'] }}" />
+                        {{-- <source type="image/avif" srcset="/{{ $random->addImageFormat()['imageAvif'] }}" /> --}}
                         <source type="image/webp" srcset="/{{ $random->addImageFormat()['imageWebp'] }}" />
                     @endif
                     <img loading="lazy" title="{{ $random->title }}" alt="{{ $random->title }}"

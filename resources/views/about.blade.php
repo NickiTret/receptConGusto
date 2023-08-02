@@ -47,12 +47,12 @@
                     </div>
                     <div id="gallery" class="zoomwall">
                         {{-- <img srcset="lowres.jpg 200w, highres.jpg 800w" sizes="(max-width: 1200px) 200px, 800px" src="lowres.jpg" /> --}}
-                        <img src="{{ asset('assets/base/about/1.jpg') }}" data-highres="{{ asset('assets/base/about/1.jpg') }}"  alt="about_us" />
-                        <img src="{{ asset('assets/base/about/2.jpg') }}" data-highres="{{ asset('assets/base/about/2.jpg') }}"  alt="about_us" />
-                        <img src="{{ asset('assets/base/about/3.jpg') }}" data-highres="{{ asset('assets/base/about/3.jpg') }}"  alt="about_us" />
-                        <img src="{{ asset('assets/base/about/4.jpg') }}" data-highres="{{ asset('assets/base/about/4.jpg') }}"  alt="about_us" />
-                        <img src="{{ asset('assets/base/about/5.jpg') }}" data-highres="{{ asset('assets/base/about/5.jpg') }}"  alt="about_us" />
-                        <img src="{{ asset('assets/base/about/6.jpg') }}" data-highres="{{ asset('assets/base/about/6.jpg') }}"  alt="about_us" />
+                        <img lazy="loading" src="{{ asset('assets/base/about/1.jpg') }}" data-highres="{{ asset('assets/base/about/1.jpg') }}"  alt="about_us" />
+                        <img lazy="loading" src="{{ asset('assets/base/about/2.jpg') }}" data-highres="{{ asset('assets/base/about/2.jpg') }}"  alt="about_us" />
+                        <img lazy="loading" src="{{ asset('assets/base/about/3.jpg') }}" data-highres="{{ asset('assets/base/about/3.jpg') }}"  alt="about_us" />
+                        <img lazy="loading" src="{{ asset('assets/base/about/4.jpg') }}" data-highres="{{ asset('assets/base/about/4.jpg') }}"  alt="about_us" />
+                        <img lazy="loading" src="{{ asset('assets/base/about/5.jpg') }}" data-highres="{{ asset('assets/base/about/5.jpg') }}"  alt="about_us" />
+                        <img lazy="loading" src="{{ asset('assets/base/about/6.jpg') }}" data-highres="{{ asset('assets/base/about/6.jpg') }}"  alt="about_us" />
                       </div>
                     <h2>Про оборудование</h2>
                     <div class="container">
@@ -111,7 +111,7 @@
                             <li>
                                 <a href="https://infonickweb.ru/" target="_blank">
                                     <h4 style="text-align: center">Разработка сайтов</h4>
-                                    <img src="{{ asset('assets/base/site.png') }}" alt="Разработка сайтов">
+                                    <img lazy="loading" src="{{ asset('assets/base/site.png') }}" alt="Разработка сайтов">
                                     <p>Оригинальный дизайн и чистый валидный код, адаптированы под любые устройства и
                                         SEO</p>
                                 </a>

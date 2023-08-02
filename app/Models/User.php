@@ -66,7 +66,7 @@ class User extends Authenticatable
             return $this->images = [
                 'imageDefault' => $this->avatar,
                 'imageAvif' => str_replace('.jpg', '.avif', $this->avatar),
-                'imageWebp' => str_replace('.jpg', '.wepb', $this->avatar)
+                'imageWebp' => str_replace('.jpg', '.webp', $this->avatar)
             ];
         }
     }

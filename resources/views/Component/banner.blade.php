@@ -5,7 +5,7 @@
         <div class="image">
             <picture>
                 @if ($data->addImageFormat())
-                    <source type="image/avif" srcset="/{{ $data->addImageFormat()['imageAvif'] }}" />
+                    {{-- <source type="image/avif" srcset="/{{ $data->addImageFormat()['imageAvif'] }}" /> --}}
                     <source type="image/webp" srcset="/{{ $data->addImageFormat()['imageWebp'] }}" />
                 @endif
                 <img loading="lazy" title="{{ $data->title }}" alt="{{ $data->title }}"
@@ -23,7 +23,7 @@
         <div class="image">
             <picture>
                 @if ($category_item->addImageFormat())
-                    <source type="image/avif" srcset="/{{ $category_item->addImageFormat()['imageAvif'] }}" />
+                    {{-- <source type="image/avif" srcset="/{{ $category_item->addImageFormat()['imageAvif'] }}" /> --}}
                     <source type="image/webp" srcset="/{{ $category_item->addImageFormat()['imageWebp'] }}" />
                 @endif
                 <img loading="lazy" title="{{ $category_item->title }}" alt="{{ $category_item->title }}"

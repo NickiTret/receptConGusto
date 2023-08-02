@@ -27,6 +27,7 @@
         "gulp-svgmin": "^4.1.0",
         "gulp-webp": "^4.0.1",
         "laravel-mix": "^6.0.6",
+        "laravel-mix-imagemin": "^1.0.3",
         "laravel-mix-svg-sprite": "^2.0.0",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
@@ -37,6 +38,9 @@
         "svg-spritemap-webpack-plugin": "^4.5.0"
     },
     "dependencies": {
+        "-": "^0.0.1",
+        "@chiiya/laravel-mix-image-minimizer": "^0.3.0",
+        "@squoosh/lib": "^0.5.3",
         "aos": "^2.3.4",
         "choices.js": "^10.2.0",
         "graph-tabs": "^1.0.2",
@@ -50,4 +54,3 @@
         "zoomwall.js": "^2.1.1"
     }
 }
-

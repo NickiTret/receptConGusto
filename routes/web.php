@@ -30,21 +30,24 @@ use App\Http\Controllers\Index\IndexController;
 use App\Http\Controllers\Personal\Liked\LikedController;
 use App\Http\Controllers\Personal\Comment\CommentController;
 
+Route::group(['middleware'=>'HtmlMinifier'], function(){
 
+    Route::get('/', [IndexController::class, 'index'])->name('home');
+    Route::get('/recept/{slug}', [IndexController::class, 'show'])->name('single');
+    Route::get('/fast/{slug}', [IndexController::class, 'fast'])->name('fast');
+    Route::get('/category', [IndexController::class, 'category'])->name('category');
+    Route::get('/tag/{id}', [IndexController::class, 'tag'])->name('tags.single');
+    Route::get('/category/{slug}', [IndexController::class, 'category_item'])->name('category_item');
+    Route::get('/search', [IndexController::class, 'search'])->name('search');
+    Route::get('/about', [IndexController::class, 'about'])->name('about');
+    Route::get('/news', [IndexController::class, 'news'])->name('news');
+    Route::get('/news/{slug}', [IndexController::class, 'new'])->name('new');
+    Route::get('/marinade', [IndexController::class, 'marinade'])->name('marinade');
+    Route::get('/dessert', [IndexController::class, 'dessert'])->name('dessert');
+    Route::get('/steak', [IndexController::class, 'steak'])->name('steak');
 
-Route::get('/', [IndexController::class, 'index'])->name('home');
-Route::get('/recept/{slug}', [IndexController::class, 'show'])->name('single');
-Route::get('/fast/{slug}', [IndexController::class, 'fast'])->name('fast');
-Route::get('/category', [IndexController::class, 'category'])->name('category');
-Route::get('/tag/{id}', [IndexController::class, 'tag'])->name('tags.single');
-Route::get('/category/{slug}', [IndexController::class, 'category_item'])->name('category_item');
-Route::get('/search', [IndexController::class, 'search'])->name('search');
-Route::get('/about', [IndexController::class, 'about'])->name('about');
-Route::get('/news', [IndexController::class, 'news'])->name('news');
-Route::get('/news/{slug}', [IndexController::class, 'new'])->name('new');
-Route::get('/marinade', [IndexController::class, 'marinade'])->name('marinade');
-Route::get('/dessert', [IndexController::class, 'dessert'])->name('dessert');
-Route::get('/steak', [IndexController::class, 'steak'])->name('steak');
+  });
+
 Route::get('/feed.xml', [IndexController::class, 'feed'])->name('feed');
 
 //json

@@ -26,7 +26,7 @@ class Banner extends Model
             return $this->images = [
                 'imageDefault' => $this->image,
                 'imageAvif' => str_replace('.png', '.avif', $this->image),
-                'imageWebp' => str_replace('.png', '.wepb', $this->image)
+                'imageWebp' => str_replace('.png', '.webp', $this->image)
             ];
         }
     }

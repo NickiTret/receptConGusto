@@ -1,7 +1,10 @@
 <header data-aos="fade-down" data-aos-duration="1000" class="header">
     <div class="container-header">
         <a href="/" class="logo">
-            <img loading="lazy" width="200" src="{{ asset('assets/base/logo2.png') }}" alt="logo">
+            <picture>
+                <source type="image/webp" srcset="{{ asset('assets/base/logo2.webp') }}" />
+                <img loading="lazy" width="200" src="{{ asset('assets/base/logo2.png') }}" alt="logo">
+            </picture>
         </a>
         <button type="button" class="burger" aria-label="Открыть меню" data-burger>
             <span class="burger__line"></span>

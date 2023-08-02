@@ -62,7 +62,7 @@ class Post extends Model
             return $this->images = [
                 'imageDefault' => $this->thumbnail,
                 'imageAvif' => str_replace('.jpg', '.avif', $this->thumbnail),
-                'imageWebp' => str_replace('.jpg', '.wepb', $this->thumbnail)
+                'imageWebp' => str_replace('.jpg', '.webp', $this->thumbnail)
             ];
         }
     }
