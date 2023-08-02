@@ -25,7 +25,8 @@
                             <ul>
                                 <li><a href="https://t.me/econgusto" target="_blank">На телеграмм канал</a></li>
                                 <li><a href="https://vk.com/public221195230" target="_blank">в VK сообщество</a></li>
-                                <li><a href="https://ok.ru/group/70000003459339" target="_blank">в группу Одноклассники</a>
+                                <li><a href="https://ok.ru/group/70000003459339" target="_blank">в группу
+                                        Одноклассники</a>
                                 </li>
                             </ul>
                             @if (!isset($post->restorant))
@@ -40,12 +41,6 @@
 
                     </div>
                     <div class="container">
-                        <div @if (!empty($post->thumbnail)) style="background-image: url(../{{ $post->thumbnail }});"
-                    @else
-                    style="background-image: url(../{{ $post->image }});" @endif
-                            class="title-img">
-                            <p>{!! $post->description !!}</p>
-                        </div>
                         <ul class="content-set">
                             @if (!empty($post->views))
                                 <li>Просмотров: <span>{{ $post->views }}</span> </li>
