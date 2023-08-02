@@ -195,7 +195,7 @@ class IndexController extends Controller
 
     public function steak()
     {
-        $seo = Seo::where('name_page', 'Карта частей животных')->first();
+        $seo = Seo::where('name_page', 'Мясные карты')->first();
         $meats = Meat::all();
         $pieces = Piece::all();
         $steaks = Steak::all();
