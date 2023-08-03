@@ -212,7 +212,7 @@
                     }
 
                     & h2 {
-                        @include font_min_lead($font-family, $clr_text);
+                        @include font_p1($font-family, $clr_text);
                         overflow: auto;
                     }
 
