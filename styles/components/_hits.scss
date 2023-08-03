@@ -200,7 +200,7 @@
                         transition: border-radius 0.2s ease-in-out;
                     }
 
-                    & h2, & h3 {
+                    & h3 {
                         @include font_h3($font-family, $clr_text);
                         margin-bottom: 7px;
                         font-weight: bold;
@@ -209,6 +209,11 @@
                             color: inherit;
                             text-decoration: none;
                         }
+                    }
+
+                    & h2 {
+                        @include font_min_lead($font-family, $clr_text);
+                        overflow: auto;
                     }
 
                     & > div.scroll {
