@@ -4,7 +4,7 @@
             @foreach ($posts as $post)
                 <li>
                     <a href="{{ route('single', $post->slug) }}">
-                        <h4>{{ $post->title }}</h3>
+                        <h4>{{ $post->title }}</h4>
                             {{-- <div class="disabled">
                                 @if (!empty($post->thumbnail))
                                     <img loading="lazy" src="/{{ $post->thumbnail }}" alt="{{ $post->title }}">
