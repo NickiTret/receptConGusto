@@ -169,7 +169,7 @@
         gtag('config', 'G-BCDZCP104C');
     </script>
     @endenv
-    <script type="module" defer src="{{ asset('assets/js/main.js') }}?18"></script>
+    <script defer src="{{ asset('assets/js/main.js') }}?18"></script>
 
     <!-- Yandex.Metrika counter -->
     <script>
