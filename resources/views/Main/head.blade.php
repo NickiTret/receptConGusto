@@ -61,7 +61,7 @@
     @env('local')
     <!-- Yandex Native Ads -->
     <!-- Yandex.RTB -->
-    <script async>
+    <script>
         window.yaContextCb = window.yaContextCb || []
     </script>
     <script src="https://yandex.ru/ads/system/context.js" async></script>
@@ -81,7 +81,7 @@
         </style>
     </noscript>
     <!-- Top.Mail.Ru counter -->
-    <script async>
+    <script>
         var _tmr = window._tmr || (window._tmr = []);
         _tmr.push({
             id: "3328776",
@@ -113,7 +113,7 @@
             </div>
     </noscript> --}}
     <!-- /Top.Mail.Ru counter -->
-    <script async>
+    <script>
         (function(w, d, c) {
             (w[c] = w[c] || []).push(function() {
                 var options = {
@@ -146,7 +146,7 @@
     </noscript> --}}
     <!-- END Top100 (Kraken) Counter -->
     <!-- Stat.MegaIndex.ru Start -->
-    <script async>
+    <script>
         var mi = document.createElement('script');
         mi.type = 'text/javascript';
         mi.async = true;
@@ -158,7 +158,7 @@
     <!-- Stat.MegaIndex.ru End -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCDZCP104C"></script>
-    <script async>
+    <script>
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -199,7 +199,7 @@
     </div>
 </noscript> --}}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VXQC75FB6B"></script>
-    <script async>
+    <script>
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
