@@ -219,6 +219,11 @@
                             @include font_min_lead($font-family, $clr_text);
                             overflow: auto;
                         }
+
+                        & h2 {
+                            @include font_min_lead($font-family, $clr_text);
+                            overflow: auto;
+                        }
                     }
                 }
             }

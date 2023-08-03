@@ -251,7 +251,7 @@
                                     position: relative;
                                     text-shadow: $clr_text 1px 0 10px;
                                 }
-                                & > p {
+                                & > h2 {
                                     @include font_small(
                                         $font-family,
                                         $clr_white
