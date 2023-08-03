@@ -53,7 +53,7 @@
         </ul>
     </div>
     <div class="container" style="margin-top: 14px">
-        <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click" target="_blank"><img lazy="loading" id="licnt5139"
+        <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click" target="_blank"><img  id="licnt5139"
                 width="88" height="15" style="border:0"
                 title="LiveInternet: показано число посетителей за сегодня"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
