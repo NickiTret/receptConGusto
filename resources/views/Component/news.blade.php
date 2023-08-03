@@ -14,9 +14,9 @@
                 <h1>
                     {{ $data->title }}
                 </h1>
-                <h2>
-                    {!! $data->description !!}
-                </h2>
+
+                {!! $data->description !!}
+
                 <ul>
                     <li>Дата публикации: <span>{{ $data->created_at->format('d.m.Y') }}</span></li>
                     @if (!empty($data->views))
