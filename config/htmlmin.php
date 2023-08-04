@@ -58,6 +58,7 @@ return [
 
     'ignore' => [
         'resources/views/emails',
+        'resources/views/Admin',
         'resources/views/html',
         'resources/views/notifications',
         'resources/views/markdown',
