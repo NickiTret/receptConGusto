@@ -49,6 +49,7 @@ Route::get('/steak', [IndexController::class, 'steak'])->name('steak');
 
 
 Route::get('/feed.xml', [IndexController::class, 'feed'])->name('feed');
+Route::get('/feed_news.xml', [IndexController::class, 'feed_news'])->name('feed_news');
 
 //json
 Route::get('/json/{slug}', [IndexController::class, 'jsonShow'])->name('jsonShow');
