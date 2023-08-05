@@ -231,7 +231,7 @@ class IndexController extends Controller
             $id = $post['id']; // ид записи (новости)
             $title = $post['title']; // заголовок новости
             $des = strip_tags($post['description']); // описание новости, удаляем все html теги
-            $image = $post['thumbnail']; // картинка новости (превью)
+            $image = $post->addImageFormat()['imageWebp']; // картинка новости (превью)
             $text = $post['content']; // текст новости (в тексте новости могут быть лишние теги, картинки которые с относительными путями к рисункам, а они должны быть абсолютными)
 
             // преобразуем пути картинок, т.е вместо /img_news/image.jpg должно быть https://seolik.ru/img_news/image.jpg
