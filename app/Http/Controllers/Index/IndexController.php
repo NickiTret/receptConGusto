@@ -227,8 +227,6 @@ class IndexController extends Controller
 
         foreach ($posts as $post) {
 
-
-
             $data_dob = date(DATE_RFC822, strtotime($post['created_at'])); // переводим дату в нужный для RSS формат
             $id = $post['id']; // ид записи (новости)
             $title = $post['title']; // заголовок новости
@@ -254,32 +252,31 @@ class IndexController extends Controller
             // $image_first = '<figure><img src="https://seolik.ru' . $image . '"></figure>';
             $image_first = 'https://e-con-gusto.ru/' . $post->thumbnail;
 
-            // добавляем элементы item rss для Дзен https://yandex.ru/support/zen/publishers/rss-modify.html#publication
             $all_item = '
-            <item>
-                <title>' . $title . '</title>
-                <link>https://e-con-gusto.ru/recept/' . $post->slug . '</link>
-                <pdalink>https://e-con-gusto.ru/recept/' . $id . '</pdalink>
-                <media:rating scheme="urn:simple">nonadult</media:rating>
-                <pubDate>' . $data_dob . '</pubDate>
-                <author>e-con-gusto.ru</author>
-                <category>' . $post->category->title . '</category>
-                <enclosure url="https://e-con-gusto.ru' . $image . '" type="image/jpeg"/>
-                ' . '
-                <description>
-                    <![CDATA[
-            ' . $image_first . '
-            ' . $des . '
-                    ]]>
-                </description>
-                <content:encoded>
-                    <![CDATA[
-                   '  . $post->title . '<br>' . '<h1>' . $post->title . '</h1>' . $post->description . '<br>' . '<figure><img alt="' . $post->title . '"
-                   src="' . 'https://e-con-gusto.ru/' . $image . '"></figure>' . '<br>' . $text . '
-                   <p class="article-render__block article-render__block_unstyled" data-points="5"><span>Этот и другие рецепты вы найдете на моём сайте </span><a class="article-link article-link_theme_undefined article-link_color_default" rel="noopener nofollow" target="_blank" href="https://e-con-gusto.ru/"><b>ConGusto</b></a><span><b> и в телеграмм канале </b></span><a class="article-link article-link_theme_undefined article-link_color_default" rel="noopener nofollow" target="_blank" href="https://t.me/econgusto"><b>ConGusto</b></a><span><b>, </b></span><span>где я собираю только проверенные и классические рецепты по ресторанным технологиям.</span></p>
-                    ]]>
-                </content:encoded>
-            </item>';
+                    <item turbo="true">
+                        <title>' . $title . '</title>
+                        <link>https://e-con-gusto.ru/recept/' . $post->slug . '</link>
+                        <pdalink>https://e-con-gusto.ru/recept/' . $id . '</pdalink>
+                        <media:rating scheme="urn:simple">nonadult</media:rating>
+                        <pubDate>' . $data_dob . '</pubDate>
+                        <author>e-con-gusto.ru</author>
+                        <category>' . $post->category->title . '</category>
+                        <enclosure url="https://e-con-gusto.ru' . $image . '" type="image/jpeg"/>
+                        ' . '
+                        <description>
+                            <![CDATA[
+                    ' . $image_first . '
+                    ' . $des . '
+                            ]]>
+                        </description>
+                        <turbo:content>
+                            <![CDATA[
+                        '  . $post->title . '<br>' . '<h1>' . $post->title . '</h1>' . $post->description . '<br>' . '<figure><img alt="' . $post->title . '"
+                        src="' . 'https://e-con-gusto.ru/' . $image . '"></figure>' . '<br>' . $text . '
+                        <p class="article-render__block article-render__block_unstyled" data-points="5"><span>Этот и другие рецепты вы найдете на моём сайте </span><a class="article-link article-link_theme_undefined article-link_color_default" rel="noopener nofollow" target="_blank" href="https://e-con-gusto.ru/"><b>ConGusto</b></a><span><b> и в телеграмм канале </b></span><a class="article-link article-link_theme_undefined article-link_color_default" rel="noopener nofollow" target="_blank" href="https://t.me/econgusto"><b>ConGusto</b></a><span><b>, </b></span><span>где я собираю только проверенные и классические рецепты по ресторанным технологиям.</span></p>
+                            ]]>
+                        </turbo:content>
+                    </item>';
 
             array_push($newposts, $post['feed'] = $all_item);
         }
