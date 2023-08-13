@@ -48,7 +48,9 @@
             <li>
                 <a href="https://ok.ru/group/70000003459339" target="_blank">ОК!</a>
             </li>
-
+ <li>
+                <a href="https://rutube.ru/channel/32029491/" target="_blank">RUTUBE</a>
+            </li>
 
         </ul>
     </div>
