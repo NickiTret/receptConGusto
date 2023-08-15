@@ -128,7 +128,7 @@
         & > .content > ul {
             list-style-type: disc;
             @include font_lead($font-family, $clr_text);
-            font-weight: bold;
+            font-weight: normal;
             margin-bottom: 14px;
             // border-right: 5px solid $clr_text;
             padding: 24px 48px;
