@@ -1,0 +1,29 @@
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+
+    & > li {
+        position: relative;
+        color: $clr_main;
+
+
+        & a {
+            color: $clr_text;
+            text-decoration: underline;
+        }
+
+        &:not(:last-child) {
+            &::after {
+                content: '/';
+                display: inline-block;
+                margin-left: 6px;
+
+
+            }
+        }
+
+    }
+}

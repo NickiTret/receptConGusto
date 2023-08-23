@@ -9,6 +9,17 @@
             @if (!empty($post))
                 @include('Component.news', ['data' => $post])
                 <section class="recept single">
+                    <div class="container">
+                        <ul class="breadcrumbs">
+                            <li><a href="/">Главная</a></li>
+                            @if (isset($post->category))
+                                <li><a href="{{ route('category_item', $post->category->slug) }}">{{ $post->category->title }}</a></li>
+                            @else
+                            <li><a href="{{ route('news') }}">Статьи</a></li>
+                            @endif
+                            <li>{{ $post->title }}</li>
+                        </ul>
+                    </div>
                     <div class="container full-content">
                         <div class="content">
                             @if ($post->video)
@@ -24,7 +35,8 @@
                             <p><span style="font-weight: bolder;">Подписывайтесь на нас в соц сетях:</span></p>
                             <ul>
 
-                                <li><a href="https://rutube.ru/channel/32029491/" target="_blank">На RUTUBE канал</a></li>
+                                <li><a href="https://rutube.ru/channel/32029491/" target="_blank">На RUTUBE канал</a>
+                                </li>
                                 <li><a href="https://t.me/econgusto" target="_blank">На телеграмм канал</a></li>
                                 <li><a href="https://vk.com/public221195230" target="_blank">в VK сообщество</a></li>
                                 <li><a href="https://ok.ru/group/70000003459339" target="_blank">в группу
