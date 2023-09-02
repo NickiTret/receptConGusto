@@ -414,12 +414,30 @@
     <script>
         //Initialize Select2 Elements
         $('.select2').select2()
-         if ($('.redactor')) {
+        if ($('.redactor')) {
             $('.redactor').summernote()
-         }
-         if ($('.redactor2')) {
-            $('.redactor2').summernote()
-         }
+        }
+        if ($('.redactor2')) {
+            $('.redactor2').summernote(
+                {imageAttributes: {
+                    icon: '<i class="note-icon-pencil"/>',
+                    figureClass: 'figureClass',
+                    figcaptionClass: 'captionClass',
+                    captionText: 'Caption Goes Here.',
+                    manageAspectRatio: true // true = Lock the Image Width/Height, Default to true
+                },
+                lang: 'en-US',
+                popover: {
+                    image: [
+                        ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']], ,
+                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                        ['remove', ['removeMedia']],
+                        ['custom', ['imageAttributes']],
+                    ],
+                },
+            }
+            )
+        }
         $('.nav-sidebar').each(function() {
             let location = window.location.protocol + '//' + window.location.host + window.location.pathname;
 
@@ -429,8 +447,6 @@
                 $(this).closest('.has-treeview').addClass('menu-open');
             };
         });
-
-
     </script>
 
 </body>

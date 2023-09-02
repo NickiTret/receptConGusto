@@ -33,7 +33,9 @@ mix.scripts(
         "resources/assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js",
         "resources/assets/admin/plugins/select2/js/select2.full.min.js",
         "resources/assets/admin/plugins/summernote/summernote-bs4.min.js",
+        "resources/assets/admin/plugins/summernote/summernote-image.js",
         "resources/assets/admin/js/adminlte.min.js",
+        "resources/assets/admin/plugins/summernote/summernote-lang.js",
         "resources/assets/admin/js/demo.js",
     ],
     "public/assets/js/admin.js"

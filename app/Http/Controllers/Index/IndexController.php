@@ -245,7 +245,7 @@ class IndexController extends Controller
             $text = html_entity_decode($text);
 
             // Удаляем все html теги кроме нужных нам в разметке
-            $text =  strip_tags($text, '<p><a><b><i><s><h1><h2><h3><h4><blockquote><ul><li><ol><li><img><figure>');
+            $text =  strip_tags($text, '<p><a><b><i><s><h1><h2><h3><h4><blockquote><ul><li><ol><li><img><figure>class="MsoNormal"<o:p>');
 
 
             // ПЕРЕМЕННАЯ превью картинки. Первое изображение в статье, размеченное этим элементом, отображается на карточке в ленте Дзена
