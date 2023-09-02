@@ -94,7 +94,7 @@
 									</div>
 								</div>`;
 
-					var footer = `<button href="#" class="btn btn-primary note-image-title-btn note-btn">${lang.imageAttributes.dialogSaveBtnMessage}</button>`;
+					var footer = `<button type="button" class="btn btn-primary note-image-title-btn note-btn">${lang.imageAttributes.dialogSaveBtnMessage}</button>`;
 
 					this.$dialog = ui.dialog({
 						title: lang.imageAttributes.dialogTitle,
