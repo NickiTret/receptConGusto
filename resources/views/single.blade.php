@@ -10,14 +10,33 @@
                 @include('Component.news', ['data' => $post])
                 <section class="recept single">
                     <div class="container">
-                        <ul class="breadcrumbs">
-                            <li><a href="/">Главная</a></li>
+                        <ul class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                <a href="/" title="Главная" itemprop="item">
+                                    <span itemprop="name">Главная</span>
+                                    <meta itemprop="position" content="0">
+                                </a>
+                            </li>
                             @if (isset($post->category))
-                                <li><a href="{{ route('category_item', $post->category->slug) }}">{{ $post->category->title }}</a></li>
+                                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                    <a href="{{ route('category_item', $post->category->slug) }}" title="{{ $post->category->title }}" itemprop="item">
+                                        <span itemprop="name">{{ $post->category->title }}</span>
+                                        <meta itemprop="position" content="1">
+                                    </a>
+                                </li>
                             @else
-                            <li><a href="{{ route('news') }}">Статьи</a></li>
+                            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                <a href="{{ route('news') }}" title="Статьи" itemprop="item">
+                                    <span itemprop="name">Статьи</span>
+                                    <meta itemprop="position" content="1">
+                                </a>
+
+                            </li>
                             @endif
-                            <li>{{ $post->title }}</li>
+                            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                <span itemprop="name">{{ $post->title }}</span>
+                                <meta itemprop="position" content="2">
+                            </li>
                         </ul>
                     </div>
                     <div class="container full-content">
