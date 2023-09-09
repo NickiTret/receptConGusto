@@ -46,11 +46,18 @@ class IndexController extends Controller
             Cache::put('posts', $posts, 604800);
         }
 
+        if (Cache::has(('news'))) {
+            $news = Cache::get('news');
+        } else {
+            $news = News::where('show', '1')->where('restorant', 0)->orderBy('views', 'desc')->limit(3)->get();
+            Cache::put('news', $news, 604800);
+        }
+
         $seo = Seo::where('name_page', 'Главная страница')->first();
         $maps = Tag::orderBy('title', 'asc')->get();
         $lastPost = Post::where('show', '1')->orderBy('created_at', 'desc')->limit(4)->get();
 
-        return view('welcome', compact('maps', 'posts',  'heros', 'lastPost', 'seo'));
+        return view('welcome', compact('maps', 'posts',  'heros', 'lastPost', 'seo', 'news'));
     }
 
     public function show($slug)

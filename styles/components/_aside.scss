@@ -23,6 +23,10 @@
         padding: 14px;
         width: calc($column_abs * 4 + $gutter_abs * 3);
         overflow: hidden;
+        & > h2 {
+            @include font_min_lead($font-family, $clr_text);
+            text-align: center;
+        }
         & > h3 {
             @include font_lead($font-family, $clr_text);
         }
@@ -42,6 +46,17 @@
                         margin-bottom: 7px;
                         pointer-events: none;
                         margin-bottom: 14px;
+                    }
+
+                    & > h3 {
+                        @include font_min_lead($font-family, $clr_main);
+                    }
+
+                    & picture {
+                        display: block;
+                        margin-bottom: 14px;
+                        overflow: hidden;
+                        border-radius: 14px 0 14px 0;
                     }
 
                     & > .disabled {

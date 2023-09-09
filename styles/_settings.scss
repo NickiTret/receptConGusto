@@ -131,6 +131,11 @@ section {
     @media(max-width:767px) {
         padding-top: 65px;
     }
+
+    &.pt-none {
+        padding-top: 0;
+        padding-bottom: 15px;
+    }
 }
 
 section.clear {
