@@ -19,7 +19,7 @@
             <section class="recept single">
                 <div class="container full-content">
                     <div class="content">
-                        <h2>Кулинарный сайт Con Gusto</h2>
+                        <h2>Кулинарный сайт <span style="white-space: nowrap">Con Gusto</span></h2>
                         <br>
                         <img src="{{ asset('content/сало.jpg') }}" alt="Рецепт домашнего сало из свиной грудинки">
                         <small><a href="/recept/domashnee-salo/">Домашнее сало из свиной грудинки</a></small>
@@ -31,7 +31,7 @@
                             консервацию, вакуумирования и
                             приготовлению в сювиде и т.д.</p>
                         <img src="{{ asset('content/шашл.jpg') }}" alt="Шашлыки из свиной шеи">
-                        <small><a href="/category/gril/">Шашлыка из свиной шеи</a></small>
+                        <small><a href="/category/gril/">Шашлык из свиной шеи</a></small>
                         <br>
                         <p>Кулинарные советы: Мы предлагаем полезные советы по выбору ингредиентов, их сочетанию, а
                             также по технике приготовления блюд. Благодаря этим советам, вы сможете создавать настоящие
