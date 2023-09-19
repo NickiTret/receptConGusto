@@ -161,14 +161,14 @@ class IndexController extends Controller
     public function news()
     {
 
-        if (Cache::has(('news'))) {
-            $news = Cache::get('news');
-        } else {
-            $news = News::where('show', '1')->where('restorant', 0)->orderBy('views', 'desc')->get();
-            Cache::put('news', $news, 604800);
-        }
+        // if (Cache::has(('news'))) {
+        //     $news = Cache::get('news');
+        // } else {
+        //     $news = News::where('show', '1')->where('restorant', 0)->orderBy('views', 'desc')->get();
+        //     Cache::put('news', $news, 604800);
+        // }
 
-
+        $news = News::where('show', '1')->where('restorant', 0)->orderBy('views', 'desc')->get();
         $fasts = Fast::where('show', '1')->get();
 
         $categories = Category::pluck('title', 'id')->all();
