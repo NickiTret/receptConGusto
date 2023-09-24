@@ -26,7 +26,7 @@
                                         </picture>
 
                                         <h3>{{ $item->title }}</h3>
-                                        {!! $item->description !!}
+                                        {{-- {!! $item->description !!} --}}
                                     </a>
                                 </li>
                             @endforeach
