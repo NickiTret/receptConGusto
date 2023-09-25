@@ -10,9 +10,6 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
 
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
-
     @if (!empty($seo))
         <title>{{strip_tags($seo->title)}}</title>
         <meta name="description" content="{{ strip_tags($seo->description)}}">
