@@ -16,7 +16,7 @@
         <meta property="og:title" content="{{strip_tags($seo->title)}}">
     <meta property="og:description" content="{{ strip_tags($seo->description)}}">
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property=”og:image” content="{{asset($seo->image_page)}}" />
+        <meta property="og:image" content="{{asset($seo->image_page)}}" />
         <meta name="twitter:image" content="{{asset($seo->image_page)}}" />
         <meta name="keywords" content="{{strip_tags($seo->keywords)}}" />
     @else
@@ -50,16 +50,16 @@
                 <meta property="og:description" content="Con gusto, рецепты, домашняя еда по ресторанным рецептам. Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
         @endif
         @if (!empty($post->thumbnail))
-            <meta property=”og:image” content="{{ asset($post->thumbnail) }}" />
+            <meta property="og:image" content="{{ asset($post->thumbnail) }}" />
             <meta name="twitter:image" content="{{ asset($post->thumbnail) }}" />
         @elseif (!empty($banner) && empty($data))
-            <meta property=”og:image” content="{{ asset($banner->image) }}" />
+            <meta property="og:image" content="{{ asset($banner->image) }}" />
             <meta name="twitter:image" content="{{ asset($banner->image) }}" />
         @elseif (!empty($category_item) && empty($post->thumbnail))
-            <meta property=”og:image” content="{{ asset($category_item->image) }}" />
+            <meta property="og:image" content="{{ asset($category_item->image) }}" />
             <meta name="twitter:image" content="{{ asset($category_item->image) }}" />
         @elseif (!empty($data->image))
-            <meta property=”og:image” content="{{ asset($data->image) }}" />
+            <meta property="og:image" content="{{ asset($data->image) }}" />
             <meta name="twitter:image" content="{{ asset($data->image) }}" />
         @endif
     @endif
