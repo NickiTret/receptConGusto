@@ -123,7 +123,7 @@
                     <div class="odnoklassniki"></div>
                     <div class="telegram"></div>
                     <div class="whatsapp"></div>
-                    <div class="pinterest" data-media="i/pinnable.jpg"></div>
+                    <div class="pinterest" data-media="{{ $post->addImageFormat()['imageDefault'] }}"></div>
                 </div>
             </div>
         </main>
