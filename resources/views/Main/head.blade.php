@@ -5,8 +5,6 @@
     <meta name="theme-color" content="#111111">
     <meta name="yandex-verification" content="3519ed7046470147" />
     <link rel="canonical" href="{{ url()->current() }}" />
-
-
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
 
