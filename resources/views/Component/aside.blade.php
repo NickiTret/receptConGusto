@@ -2,18 +2,26 @@
     <aside>
         <ul>
             @foreach ($posts as $post)
-                <li>
-                    <a href="{{ route('single', $post->slug) }}">
-                        <h4>{{ $post->title }}</h4>
+                @if (isset($post->category_id))
+                    <li>
+                        <a href="{{ route('single', $post->slug) }}">
+                            <h4>{{ $post->title }}</h4>
                             {{-- <div class="disabled">
-                                @if (!empty($post->thumbnail))
-                                    <img loading="lazy" src="/{{ $post->thumbnail }}" alt="{{ $post->title }}">
-                                @else
-                                    <img loading="lazy" src="/{{ $post->image }}" alt="{{ $post->title }}">
-                                @endif
-                            </div> --}}
-                    </a>
-                </li>
+                            @if (!empty($post->thumbnail))
+                                <img loading="lazy" src="/{{ $post->thumbnail }}" alt="{{ $post->title }}">
+                            @else
+                                <img loading="lazy" src="/{{ $post->image }}" alt="{{ $post->title }}">
+                            @endif
+                        </div> --}}
+                        </a>
+                    </li>
+                @elseif(!isset($post->category_id))
+                    <li>
+                        <a href="{{ route('new', $post->slug) }}">
+                            <h4>{{ $post->title }}</h4>
+                        </a>
+                    </li>
+                @endif
             @endforeach
             @env('local')
             <li>
