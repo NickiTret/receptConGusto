@@ -63,12 +63,12 @@ class IndexController extends Controller
     public function show($slug)
     {
 
-        if (Cache::has(('posts'))) {
-            $posts = Cache::get('posts');
-        } else {
-            $posts = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
-            Cache::put('posts', $posts, 604800);
-        }
+        // if (Cache::has(('posts'))) {
+        //     $posts = Cache::get('posts');
+        // } else {
+        //     $posts = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
+            // Cache::put('posts', $posts, 604800);
+        // }
 
         if (Cache::has(('categories'))) {
             $categories = Cache::get('categories');
@@ -78,7 +78,7 @@ class IndexController extends Controller
         }
 
         $post = Post::where('slug', $slug)->firstOrFail();
-        // $posts = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
+        $posts = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
 
         $post->views += 1;
         $post->update();
@@ -182,7 +182,7 @@ class IndexController extends Controller
 
         $fasts = Fast::where('show', '1')->get();
         $post = News::where('slug', $slug)->firstOrFail();
-        $posts = Post::where('show', '1')->orderBy('views', 'desc')->limit(4)->get();
+        $posts = News::where('show', '1')->orderBy('views', 'desc')->limit(8)->get();
         $post->views += 1;
 
         $post->update();

@@ -104,7 +104,7 @@
             @if (!empty($posts))
                 <section class="clear">
                     <div class="container">
-                        <h2> Похожие рецепты </h2>
+                        <h2> Похожие рецепты и статьи</h2>
                     </div>
                 </section>
                 @include('Component.hits', ['posts' => $posts, 'post' => $post])
