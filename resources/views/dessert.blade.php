@@ -39,7 +39,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://vk.com/na_pole_on_mini?w=product-220369985_8100580">
+                                <a target="_blank" href="https://vk.com/uslugi-220369985?screen=group&w=product-220369985_8100580%2Fquery">
                                     <img  lazy="loading"src="https://sun9-43.userapi.com/x1gZF5joE9ufkYAtn2LAAuAXKl9St5xO-h4JbQ/YoWsJRIOMJU.jpg"
                                         alt="Наполеон-мини на заказ с классическим кремом">
                                     <p><span>от 400 ₽</span></p>
@@ -47,13 +47,14 @@
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://vk.com/na_pole_on_mini?w=wall-220369985_77">
-                                    <img lazy="loading" src="https://sun9-16.userapi.com/impg/CgZDDkeCd-6apQ4MSmdl8_8Bfn6XU6--71ZjAw/mzMed7KFWxU.jpg?size=2560x1443&quality=95&sign=f3c47eb91ef052ceb5ec5b0b31f40907&type=album"
+                                <a target="_blank" href="https://vk.com/uslugi-220369985?screen=group&w=product-220369985_8698329%2Fquery">
+                                    <img lazy="loading" src="https://sun9-43.userapi.com/lFEwq6LE2pCAF7k_ZmoaHkChasgSpLOTtoA1iA/N51FKtk_cpw.jpg"
                                         alt="пирожные Медовик-мини">
-                                    <p><span>700р</span></p>
-                                    <p class="text">4 шт. ароматных мини-медовичков </p>
+                                    <p><span>900р</span></p>
+                                    <p class="text">Бенто–торт</p>
                                 </a>
                             </li>
+
                         </ul>
                     </div>
                 </div>
