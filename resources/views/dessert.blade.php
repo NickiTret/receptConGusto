@@ -20,7 +20,7 @@
                         <h3>Наполеончики к чаю</h3>
                         <h1>Пирожные на заказ СПб</h1>
                         <p>Десерты, которые минуя желудок, попадают прямо в сердце!</p>
-                        <a target="blank" href="https://vk.com/uslugi-220369985?screen=group&w=product-220369985_8698329%2Fquery">Заказать</a>
+                        <a target="blank" href="https://vk.com/bentalino">Заказать</a>
                     </div>
                 </div>
             </section>
