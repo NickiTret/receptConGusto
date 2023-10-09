@@ -42,6 +42,7 @@ class NewController extends Controller
 
         $new = News::create($data);
 
+        exec('npm run imagemin');
         return redirect()->route('news.index')->with('success', 'Статья добавлена');
     }
 

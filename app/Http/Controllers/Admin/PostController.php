@@ -45,6 +45,7 @@ class PostController extends Controller
         $post = Post::create($data);
         $post->tags()->sync($request->tags);
 
+        exec('npm run imagemin');
         return redirect()->route('posts.index')->with('success', 'Статья добавлена');
     }
 
