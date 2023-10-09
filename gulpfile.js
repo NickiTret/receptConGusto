@@ -133,6 +133,6 @@ const avifImages = () => {
 // };
 
 
-exports.imagemin = series (images, webpImages, svgSprites);
+// exports.imagemin = series (images, webpImages, svgSprites);
 
 // exports.imagemin = series (images, webpImages, avifImages,  svgSprites); // avif not
