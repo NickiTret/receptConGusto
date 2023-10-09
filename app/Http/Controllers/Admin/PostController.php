@@ -45,7 +45,7 @@ class PostController extends Controller
         $post = Post::create($data);
         $post->tags()->sync($request->tags);
 
-        exec('npm run imagemin');
+        exec('npm run production');
         return redirect()->route('posts.index')->with('success', 'Статья добавлена');
     }
 
@@ -82,7 +82,7 @@ class PostController extends Controller
 
 
 
-        exec('npm run imagemin');
+        exec('npm run production');
         return redirect()->route('posts.index')->with('success', 'Изменения сохранены');
     }
 

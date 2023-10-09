@@ -42,7 +42,7 @@ class NewController extends Controller
 
         $new = News::create($data);
 
-        exec('npm run imagemin');
+        exec('npm run production');
         return redirect()->route('news.index')->with('success', 'Статья добавлена');
     }
 
@@ -75,7 +75,7 @@ class NewController extends Controller
 
 //        $new->update($request->all());
 
-        exec('npm run imagemin');
+        exec('npm run production');
         return redirect()->route('news.index')->with('success', 'Изменения сохранены');
     }
 
