@@ -3,6 +3,9 @@
 /public/hot
 /public/images
 /public/storage
+/public/assets/js/main.js
+/public/assets/js/main.js.LICENSE.txt
+/public/css/main/main.style.min.js
 /storage/*.key
 /vendor
 .env
