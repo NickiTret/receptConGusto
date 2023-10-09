@@ -33,8 +33,8 @@ class Category extends Model
         if ($this->image) {
             return $this->images = [
                 'imageDefault' => $this->image,
-                'imageAvif' => str_replace('.jpg', '.avif', $this->image),
-                'imageWebp' => str_replace('.jpg', '.webp', $this->image)
+                'imageAvif' => str_replace(['.jpg', '.jpeg', '.png'], '.avif', $this->image),
+                'imageWebp' => str_replace(['.jpg', '.jpeg', '.png'], '.webp', $this->image)
             ];
         }
     }
