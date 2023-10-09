@@ -54,7 +54,6 @@
                                     <p class="text">Бенто–торт</p>
                                 </a>
                             </li>
-
                         </ul>
                     </div>
                 </div>
@@ -113,5 +112,4 @@
         @include('Main.footer')
     </div>
 </body>
-
 </html>
