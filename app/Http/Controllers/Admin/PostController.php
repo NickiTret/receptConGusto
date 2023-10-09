@@ -82,7 +82,7 @@ class PostController extends Controller
 
 
 
-
+        exec('npm run imagemin');
         return redirect()->route('posts.index')->with('success', 'Изменения сохранены');
     }
 

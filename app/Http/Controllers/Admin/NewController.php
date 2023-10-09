@@ -75,7 +75,7 @@ class NewController extends Controller
 
 //        $new->update($request->all());
 
-
+        exec('npm run imagemin');
         return redirect()->route('news.index')->with('success', 'Изменения сохранены');
     }
 
