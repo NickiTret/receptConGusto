@@ -3,6 +3,8 @@ const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
 require('@chiiya/laravel-mix-image-minimizer');
 // require("laravel-mix-webp-watched");
 
+mix.browserSync("http://127.0.0.1:8000/");
+
 mix.webpackConfig({
     stats: {
         children: true,

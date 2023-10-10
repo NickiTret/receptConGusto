@@ -55,7 +55,7 @@ class IndexController extends Controller
 
         $seo = Seo::where('name_page', 'Главная страница')->first();
         $maps = Tag::orderBy('title', 'asc')->get();
-        $lastPost = Post::where('show', '1')->orderBy('created_at', 'desc')->limit(4)->get();
+        $lastPost = Post::where('show', '1')->orderBy('created_at', 'desc')->limit(8)->get();
 
         return view('welcome', compact('maps', 'posts',  'heros', 'lastPost', 'seo', 'news'));
     }

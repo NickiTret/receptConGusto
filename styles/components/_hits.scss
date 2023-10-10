@@ -262,7 +262,6 @@
                 width: 100%;
                 height: auto;
 
-
                 & > a {
                     display: flex;
                     flex-direction: row;
@@ -277,7 +276,9 @@
                     }
 
                     & picture {
-                        width: calc($column_abs * 4 + $gutter_abs * 3);
+
+                        width: calc($column_abs * 4 + $gutter_abs * 4);
+                        flex: 0 0 auto;
 
                         @media (max-width: 1600px) {
                             width: calc(
