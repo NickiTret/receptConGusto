@@ -1,7 +1,7 @@
 const mix = require("laravel-mix");
 const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
 require('@chiiya/laravel-mix-image-minimizer');
-require("laravel-mix-webp-watched");
+// require("laravel-mix-webp-watched");
 
 mix.webpackConfig({
     stats: {
@@ -15,11 +15,11 @@ mix.webpackConfig({
     ],
 });
 
-mix.webpWatched("public/images/", "public/images/", {
-    imageminWebpOptions: {
-        quality: 50,
-    },
-});
+// mix.webpWatched("public/images/", "public/images/", {
+//     imageminWebpOptions: {
+//         quality: 50,
+//     },
+// });
 
 mix.sass("styles/main.scss", "public/css/main/main.style.min.css");
 
