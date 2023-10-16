@@ -201,7 +201,7 @@
                     }
 
                     & h3 {
-                        @include font_h3($font-family, $clr_text);
+                        @include font_lead($font-family, $clr_text);
                         margin-bottom: 7px;
                         font-weight: bold;
 

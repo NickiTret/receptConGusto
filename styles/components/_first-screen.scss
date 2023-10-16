@@ -308,6 +308,16 @@
         // background-color: rgba($color: $clr_main, $alpha: 0.6);
         overflow: auto;
 
+        @media(max-width: 1600px) {
+            width: calc($column_abs_maxW_1600 * 3 + $gutter_abs_maxW_1600 * 3);
+            padding: 72px 42px 56px 42px;
+        }
+
+        @media(max-width: 1440px) {
+            width: calc($column_abs_maxW_1440 * 3 + $gutter_abs_maxW_1440 * 3);
+            padding: 72px 36px 56px 36px;
+        }
+
         @media (max-width: 1280px) {
             display: none;
         }

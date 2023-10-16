@@ -5,6 +5,18 @@
             align-items: flex-start;
             gap: calc($gutter_abs * 1);
 
+            @media (max-width: 1600px) {
+                gap: calc($gutter_abs_maxW_1600 * 1);
+            }
+
+            @media (max-width: 1440px) {
+                gap: calc($gutter_abs_maxW_1440 * 1);
+            }
+
+            @media (max-width: 1280px) {
+                gap: calc($gutter_abs_maxW_1280 * 1);
+            }
+
             & ul {
                 list-style-type: none;
                 border: none;
@@ -116,6 +128,28 @@
 
         & > .content {
             width: calc($column_abs * 8 + $gutter_abs * 7);
+
+            @media (max-width: 1600px) {
+                width: calc(
+                    $column_abs_maxW_1600 * 8 + $gutter_abs_maxW_1600 * 7
+                );
+            }
+
+            @media (max-width: 1440px) {
+                width: calc(
+                    $column_abs_maxW_1440 * 8 + $gutter_abs_maxW_1440 * 7
+                );
+            }
+
+            @media (max-width: 1280px) {
+                width: calc(
+                    $column_abs_maxW_1280 * 8 + $gutter_abs_maxW_1280 * 7
+                );
+            }
+
+            @media (max-width: 1024px) {
+                width: 100%;
+            }
         }
 
         & > .content > p {

@@ -5,9 +5,21 @@
     margin-bottom: 30px;
     height: auto;
     align-self: stretch;
+    width: calc($column_abs * 4 + $gutter_abs * 3);
+    @media(max-width: 1600px) {
+        width: calc($column_abs_maxW_1600 * 4 + $gutter_abs_maxW_1600 * 3);
+    }
+
+    @media(max-width: 1440px) {
+        width: calc($column_abs_maxW_1440 * 4 + $gutter_abs_maxW_1440 * 3);
+    }
+
+    @media(max-width: 1280px) {
+        width: calc($column_abs_maxW_1280 * 4 + $gutter_abs_maxW_1280 * 3);
+    }
 
 
-    @media (max-width: 1280px) {
+    @media (max-width: 1024px) {
         display: none;
     }
 
@@ -21,8 +33,10 @@
         border-radius: 14px 0 14px 0;
         border: 2px solid $clr_grey2;
         padding: 14px;
-        width: calc($column_abs * 4 + $gutter_abs * 3);
         overflow: hidden;
+
+
+
         & > h2 {
             @include font_min_lead($font-family, $clr_text);
             text-align: center;
@@ -42,7 +56,8 @@
 
                 & a {
                     & > h4 {
-                        @include font_lead($font-family, $clr_text);
+                        @include font_small($font-family, $clr_text);
+                        font-weight: 700;
                         margin-bottom: 7px;
                         pointer-events: none;
                         margin-bottom: 14px;
