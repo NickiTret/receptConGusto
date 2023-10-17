@@ -9,14 +9,14 @@
     <meta property="og:url" content="{{ url()->current() }}">
 
     @if (!empty($seo))
-        <title>{{strip_tags($seo->title)}}</title>
-        <meta name="description" content="{{ strip_tags($seo->description)}}">
-        <meta property="og:title" content="{{strip_tags($seo->title)}}">
-    <meta property="og:description" content="{{ strip_tags($seo->description)}}">
+        <title>{{ strip_tags($seo->title) }}</title>
+        <meta name="description" content="{{ strip_tags($seo->description) }}">
+        <meta property="og:title" content="{{ strip_tags($seo->title) }}">
+        <meta property="og:description" content="{{ strip_tags($seo->description) }}">
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="og:image" content="{{asset($seo->image_page)}}" />
-        <meta name="twitter:image" content="{{asset($seo->image_page)}}" />
-        <meta name="keywords" content="{{strip_tags($seo->keywords)}}" />
+        <meta property="og:image" content="{{ asset($seo->image_page) }}" />
+        <meta name="twitter:image" content="{{ asset($seo->image_page) }}" />
+        <meta name="keywords" content="{{ strip_tags($seo->keywords) }}" />
     @else
         <title>
             @if (!empty($data))
@@ -33,19 +33,23 @@
         @elseif (!empty($data->title))
             <meta name="description"
                 content="Con gusto, рецепты, рецепты, домашняя еда по ресторанным рецептам {{ strip_tags($data->title) }} | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
-                <meta property="og:description" content="Con gusto, рецепты, рецепты, домашняя еда по ресторанным рецептам {{ strip_tags($data->title) }} | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
+            <meta property="og:description"
+                content="Con gusto, рецепты, рецепты, домашняя еда по ресторанным рецептам {{ strip_tags($data->title) }} | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
         @elseif (!empty($heros) || !empty($categories))
             <meta name="description"
                 content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
-                <meta property="og:description" content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
+            <meta property="og:description"
+                content="Con gusto, рецепты, кулинарные истории, кулинария, вкусно и сытно | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
         @elseif (!empty($banner) && empty($data))
             <meta name="description"
                 content="{{ strip_tags($banner->subtitle) }} | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
-                <meta property="og:description" content="{{ strip_tags($banner->subtitle) }} | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
+            <meta property="og:description"
+                content="{{ strip_tags($banner->subtitle) }} | Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
         @else
             <meta name="description"
                 content="Con gusto, рецепты, домашняя еда по ресторанным рецептам. Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
-                <meta property="og:description" content="Con gusto, рецепты, домашняя еда по ресторанным рецептам. Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
+            <meta property="og:description"
+                content="Con gusto, рецепты, домашняя еда по ресторанным рецептам. Хотите приготовить? Узнайте советы, ингредиенты, время и способы приготовления наших вкусных классических рецептов.">
         @endif
         @if (!empty($post->thumbnail))
             <meta property="og:image" content="{{ asset($post->thumbnail) }}" />
@@ -61,18 +65,13 @@
             <meta name="twitter:image" content="{{ asset($data->image) }}" />
         @endif
     @endif
-
-
-
-
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{ asset('css/favicon.ico') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=swap" rel="stylesheet">
     <link href="{{ asset('css/main/main.style.min.css') }}?18" rel="stylesheet">
     {{-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script> --}}
     @env('local')
     <!-- Yandex Native Ads -->
     <!-- Yandex.RTB -->
@@ -95,39 +94,6 @@
             }
         </style>
     </noscript>
-    <!-- Top.Mail.Ru counter -->
-    <script>
-        var _tmr = window._tmr || (window._tmr = []);
-        _tmr.push({
-            id: "3328776",
-            type: "pageView",
-            start: (new Date()).getTime()
-        });
-        (function(d, w, id) {
-            if (d.getElementById(id)) return;
-            var ts = d.createElement("script");
-            ts.type = "text/javascript";
-            ts.async = true;
-            ts.id = id;
-            ts.src = "https://top-fwz1.mail.ru/js/code.js";
-            var f = function() {
-                var s = d.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(ts, s);
-            };
-            if (w.opera == "[object Opera]") {
-                d.addEventListener("DOMContentLoaded", f, false);
-            } else {
-                f();
-            }
-        })(document, window, "tmr-code");
-    </script>
-    {{-- <noscript>
-        <div>
-            <img src="https://top-fwz1.mail.ru/counter?id=3328776;js=na" style="position:absolute;left:-9999px;"
-                alt="Top.Mail.Ru" />
-            </div>
-    </noscript> --}}
-    <!-- /Top.Mail.Ru counter -->
     <script>
         (function(w, d, c) {
             (w[c] = w[c] || []).push(function() {
@@ -156,9 +122,9 @@
             }
         })(window, document, "_top100q");
     </script>
-    {{-- <noscript>
+    <noscript>
         <img src="//counter.rambler.ru/top100.cnt?pid=7715281" alt="Топ-100" />
-    </noscript> --}}
+    </noscript>
     <!-- END Top100 (Kraken) Counter -->
     <!-- Stat.MegaIndex.ru Start -->
     <script>
@@ -171,18 +137,6 @@
         document.getElementsByTagName('head')[0].appendChild(mi);
     </script>
     <!-- Stat.MegaIndex.ru End -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCDZCP104C"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-BCDZCP104C');
-    </script>
     @endenv
     <script defer src="{{ asset('assets/js/main.js') }}?18"></script>
     <!-- Yandex.Metrika counter -->
@@ -208,13 +162,14 @@
             accurateTrackBounce: true
         });
     </script>
-    {{-- <noscript>
-    <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt="">
-    </div>
-</noscript> --}}
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt="">
+        </div>
+    </noscript>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VXQC75FB6B"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
