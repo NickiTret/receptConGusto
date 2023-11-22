@@ -9,6 +9,7 @@ use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Symfony\Component\Process\Process;
 
 class PostController extends Controller
 {
@@ -45,7 +46,10 @@ class PostController extends Controller
         $post = Post::create($data);
         $post->tags()->sync($request->tags);
 
-        exec('npm run imagemin');
+        // Вызов команды npm run imagemin
+        $process = new Process(['npm', 'run', 'imagemin']);
+        $process->run();
+
         return redirect()->route('posts.index')->with('success', 'Статья добавлена');
     }
 
@@ -82,17 +86,20 @@ class PostController extends Controller
 
 
 
-        exec('npm run imagemin');
+        // Вызов команды npm run imagemin
+        $process = new Process(['npm', 'run', 'imagemin']);
+        $process->run();
+
         return redirect()->route('posts.index')->with('success', 'Изменения сохранены');
     }
 
     public function destroy($id)
     {
         Cache::flush();
-       $post = Post::find($id);
-       $post->tags()->sync([]);
-       Storage::delete($post->thumbnail);
-       $post->delete();
+        $post = Post::find($id);
+        $post->tags()->sync([]);
+        Storage::delete($post->thumbnail);
+        $post->delete();
         return redirect()->route('posts.index')->with('success', 'Статья удалена');
     }
 }
