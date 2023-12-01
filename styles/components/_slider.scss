@@ -94,17 +94,21 @@
         }
 
         .tabs__nav-btn {
-            @include main_btn($font-family, $clr_white);
+            @include main_btn($font-family, $clr_main);
+            background-color: $clr_main2;
             border: 2px solid transparent;
             cursor: pointer;
             width: 100%;
             @include box-shadow;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,  border 0.2s ease-in-out;
             &:hover {
                 border: 2px solid $clr_main;
             }
         }
         .tabs__nav-btn--active {
-            border: 2px solid $clr_text;
+            border: 2px solid $clr_main2;
+            background-color: $clr_main;
+            color: $clr_bg;
         }
 
         .swiper-slide {

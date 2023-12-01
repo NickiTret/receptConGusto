@@ -6,6 +6,7 @@
     height: auto;
     align-self: stretch;
     width: calc($column_abs * 4 + $gutter_abs * 3);
+    flex: 0 0  auto;
     @media(max-width: 1600px) {
         width: calc($column_abs_maxW_1600 * 4 + $gutter_abs_maxW_1600 * 3);
     }
