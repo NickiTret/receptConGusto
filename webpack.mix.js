@@ -9,12 +9,12 @@ mix.webpackConfig({
     stats: {
         children: true,
     },
-    plugins: [
-        new SVGSpritemapPlugin([
-            "public/images/**/*.svg",
-            // "public/images/icons/**/*.svg",
-        ]),
-    ],
+    // plugins: [
+    //     new SVGSpritemapPlugin([
+    //         "public/images/**/*.svg",
+    //         // "public/images/icons/**/*.svg",
+    //     ]),
+    // ],
 });
 
 mix.webpWatched("public/images/", "public/images/", {
