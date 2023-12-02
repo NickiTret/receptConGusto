@@ -20,3 +20,7 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/public/.htaccess
+/public/robots.txt
+/public/sitemap.xml
+/public_html
