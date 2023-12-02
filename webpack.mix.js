@@ -58,11 +58,11 @@ mix.copyDirectory(
     "public/assets/admin/webfonts"
 );
 
-mix.images({
-    from: 'public/images',
-    to: 'public/images',
-    webp: true,
-  });
+// mix.images({
+//     from: 'public/images',
+//     to: 'public/images',
+//     webp: true,
+//   });
 
 mix.images( {
     webp: true,
