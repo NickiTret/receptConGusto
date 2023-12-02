@@ -9,7 +9,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use illuminate\Http\Request;
-
+use Intervention\Image\Facades\Image;
 
 
 
@@ -51,13 +51,21 @@ class Post extends Model
 
             $folder = date('Y-m-d');
 
+            // имя файла без рашрешении
+            $file = $request->file('thumbnail')->getClientOriginalName();
+            $fileName = pathinfo($file, PATHINFO_FILENAME);
+
+            // open an image file
+            $img = Image::make($request->file('thumbnail'))->encode('webp', 75)->save(("images/{$folder}/" .  $fileName . '.webp'));
+
             return $request->file('thumbnail')->store("images/{$folder}");
         }
 
         return $image;
     }
 
-    public function addImageFormat () {
+    public function addImageFormat()
+    {
         if ($this->thumbnail) {
             return $this->images = [
                 'imageDefault' => $this->thumbnail,
@@ -79,7 +87,8 @@ class Post extends Model
 
     //filter
 
-    public function scopeFilter(Builder $builder, QueryFilter $filter) {
+    public function scopeFilter(Builder $builder, QueryFilter $filter)
+    {
         return $filter->apply($builder);
     }
 }

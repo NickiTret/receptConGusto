@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Symfony\Component\Process\Process;
 
+
 class PostController extends Controller
 {
     public function index()
@@ -46,9 +47,7 @@ class PostController extends Controller
         $post = Post::create($data);
         $post->tags()->sync($request->tags);
 
-        // Вызов команды npm run imagemin
-        $process = new Process(['npm', 'run', 'imagemin']);
-        $process->run();
+
 
         return redirect()->route('posts.index')->with('success', 'Статья добавлена');
     }
@@ -84,11 +83,6 @@ class PostController extends Controller
         $post->update($data);
         $post->tags()->sync($request->tags);
 
-
-
-        // Вызов команды npm run imagemin
-        $process = new Process(['npm', 'run', 'imagemin']);
-        $process->run();
 
         return redirect()->route('posts.index')->with('success', 'Изменения сохранены');
     }
