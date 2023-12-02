@@ -56,7 +56,7 @@ class Post extends Model
             $fileName = pathinfo($file, PATHINFO_FILENAME);
 
             // open an image file
-            $img = Image::make($request->file('thumbnail'))->encode('webp', 75)->save(("images/{$folder}/" .  $fileName . '.webp'));
+            $img = Image::make($request->file('thumbnail'))->orientate()->encode('webp', 75)->save(("images/{$folder}/" .  $fileName . '.webp'));
 
             return $request->file('thumbnail')->store("images/{$folder}");
         }
