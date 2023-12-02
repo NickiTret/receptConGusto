@@ -87,7 +87,7 @@ class PostController extends Controller
 
 
         // Вызов команды npm run imagemin
-        $process = new Process(['npm', 'run', 'imagemin']);
+        $process = new Process(['npm', 'run', 'production']);
         $process->run();
 
         return redirect()->route('posts.index')->with('success', 'Изменения сохранены');

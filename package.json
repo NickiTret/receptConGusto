@@ -27,6 +27,7 @@
         "gulp-svg-sprite": "^1.5.0",
         "gulp-svgmin": "^4.1.0",
         "gulp-webp": "^4.0.1",
+        "imagemin-pngquant": "^9.0.2",
         "laravel-mix": "^6.0.6",
         "laravel-mix-imagemin": "^1.0.3",
         "laravel-mix-svg-sprite": "^2.0.0",
