@@ -22,7 +22,7 @@
                                                 <source type="image/webp" srcset="/{{ $item->addImageFormat()['imageWebp'] }}" />
                                             @endif --}}
                                             <img width="324" height="220" loading="lazy" title="{{ $item->title }}" alt="{{ $item->title }}"
-                                                src="/{{ $item->addImageFormat()['imageDefault'] }}">
+                                                src="{{ $item->getImage() }}">
                                         </picture>
 
                                         <h3>{{ $item->title }}</h3>
