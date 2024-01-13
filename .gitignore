@@ -24,3 +24,5 @@ yarn-error.log
 /public/robots.txt
 /public/sitemap.xml
 /public_html
+/public/mix-manifest.json
+
