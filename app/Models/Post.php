@@ -52,11 +52,10 @@ class Post extends Model
             $folder = date('Y-m-d');
 
             // имя файла без рашрешении
-            $file = $request->file('thumbnail')->getClientOriginalName();
-            $fileName = pathinfo($file, PATHINFO_FILENAME);
-
+            // $file = $request->file('thumbnail')->getClientOriginalName();
+            // $fileName = pathinfo($file, PATHINFO_FILENAME);
             // open an image file
-            $img = Image::make($request->file('thumbnail'))->orientate()->encode('webp', 75)->save(("images/{$folder}/" .  $fileName . '.webp'));
+            // $img = Image::make($request->file('thumbnail'))->orientate()->encode('webp', 75)->save(("images/{$folder}/" .  $fileName . '.webp'));
 
             return $request->file('thumbnail')->store("images/{$folder}");
         }
