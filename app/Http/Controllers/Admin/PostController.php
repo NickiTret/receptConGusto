@@ -10,7 +10,7 @@ use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Symfony\Component\Process\Process;
-
+use Intervention\Image\Facades\Image;
 
 class PostController extends Controller
 {
@@ -44,10 +44,11 @@ class PostController extends Controller
 
         $data['thumbnail'] = Post::uploadImage($request);
 
+        //webP  создание
+        Post::uploadImageWebp($request);
+
         $post = Post::create($data);
         $post->tags()->sync($request->tags);
-
-
 
         return redirect()->route('posts.index')->with('success', 'Статья добавлена');
     }

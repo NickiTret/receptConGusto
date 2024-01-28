@@ -1,9 +1,9 @@
 const mix = require("laravel-mix");
 const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
-require('@chiiya/laravel-mix-image-minimizer');
-require("laravel-mix-webp-watched");
+// require('@chiiya/laravel-mix-image-minimizer');
+// require("laravel-mix-webp-watched");
 
-mix.browserSync("http://127.0.0.1:8000/");
+// mix.browserSync("http://127.0.0.1:8000/");
 
 mix.webpackConfig({
     stats: {
@@ -17,11 +17,11 @@ mix.webpackConfig({
     // ],
 });
 
-mix.webpWatched("public/images/", "public/images/", {
-    imageminWebpOptions: {
-        quality: 50,
-    },
-});
+// mix.webpWatched("public/images/", "public/images/", {
+//     imageminWebpOptions: {
+//         quality: 50,
+//     },
+// });
 
 mix.sass("styles/main.scss", "public/css/main/main.style.min.css");
 
@@ -64,10 +64,10 @@ mix.copyDirectory(
 //     webp: true,
 //   });
 
-mix.images( {
-    webp: true,
-    implementation: 'imagemin',
-    patterns: [
-        { from: "**/*", to: "images", context: "public/images" }
-    ]
-} );
+// mix.images( {
+//     webp: true,
+//     implementation: 'imagemin',
+//     patterns: [
+//         { from: "**/*", to: "images", context: "public/images" }
+//     ]
+// } );

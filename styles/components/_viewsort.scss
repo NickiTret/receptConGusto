@@ -1,0 +1,9 @@
+.viewsort {
+
+    &-btns  {}
+    &-btn {
+        @include main_btn($font-family, $clr_white);
+        font-size: 10px;
+        padding: 8px  15px;
+    }
+}

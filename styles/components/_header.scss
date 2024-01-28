@@ -40,7 +40,7 @@
         justify-content: space-between;
         padding: 0px 0;
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             justify-content: flex-start;
         }
 
@@ -100,7 +100,7 @@
                 }
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: 1024px) {
                 display: none;
             }
 
@@ -154,7 +154,7 @@
                 }
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: 1024px) {
                 position: absolute;
                 transform: translateY(-200%);
                 height: 100vh;
@@ -291,7 +291,7 @@
             color: $clr_white;
             margin-top: 27px;
 
-            @media (max-width: 768px) {
+            @media (max-width: 1024px) {
                 margin-top: 41px;
             }
 
@@ -365,7 +365,7 @@
                 }
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: 1024px) {
                 order: 2;
                 margin-left: auto;
                 margin-right: 12px;
@@ -377,7 +377,7 @@
 .burger {
     display: none;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
         display: block;
         order: 3;
         @include burger;

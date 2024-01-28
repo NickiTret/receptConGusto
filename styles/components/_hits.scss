@@ -1,7 +1,13 @@
 .hits {
+    &-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
     & > .container {
-        & > h2, & > h1 {
+        & > h2,
+        & h1 {
             @include font_h1($font-family, $clr_text2);
             margin-bottom: 28px;
             margin-top: 24px;
@@ -82,7 +88,6 @@
                     margin-bottom: calc($gutter_abs_maxW_768 * 1);
                     height: auto;
 
-
                     &:not(:last-child) {
                         margin-bottom: 14px;
                     }
@@ -93,7 +98,6 @@
                         $column_abs_maxW_768 * 4 + $gutter_abs_maxW_768 * 3
                     );
                 }
-
 
                 &.hits-recepts {
                     height: auto;
@@ -255,7 +259,6 @@
 
             @media (max-width: 768px) {
                 gap: calc($gutter_abs_maxW_768 * 1);
-
             }
 
             & > li {
@@ -276,31 +279,34 @@
                     }
 
                     & picture {
-
                         width: calc($column_abs * 4 + $gutter_abs * 4);
                         flex: 0 0 auto;
 
                         @media (max-width: 1600px) {
                             width: calc(
-                                $column_abs_maxW_1600 * 4 + $gutter_abs_maxW_1600 * 3
+                                $column_abs_maxW_1600 * 4 +
+                                    $gutter_abs_maxW_1600 * 3
                             );
                         }
 
                         @media (max-width: 1440px) {
                             width: calc(
-                                $column_abs_maxW_1440 * 4 + $gutter_abs_maxW_1440 * 3
+                                $column_abs_maxW_1440 * 4 +
+                                    $gutter_abs_maxW_1440 * 3
                             );
                         }
 
                         @media (max-width: 1280px) {
                             width: calc(
-                                $column_abs_maxW_1280 * 4 + $gutter_abs_maxW_1280 * 3
+                                $column_abs_maxW_1280 * 4 +
+                                    $gutter_abs_maxW_1280 * 3
                             );
                         }
 
                         @media (max-width: 1024px) {
                             width: calc(
-                                $column_abs_maxW_1024 * 3 + $gutter_abs_maxW_1024 * 2
+                                $column_abs_maxW_1024 * 3 +
+                                    $gutter_abs_maxW_1024 * 2
                             );
                         }
 
@@ -324,8 +330,120 @@
                         }
                     }
 
+                    .description {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &.grid-sort {
+                align-items: stretch;
+                gap: calc($gutter_abs * 1);
+                padding-bottom: 60px;
+
+                @media (max-width: 1600px) {
+                    gap: calc($gutter_abs_maxW_1600 * 1);
+                }
+                @media (max-width: 1440px) {
+                    gap: calc($gutter_abs_maxW_1440 * 1);
+                }
+                @media (max-width: 1280px) {
+                    gap: calc($gutter_abs_maxW_1280 * 1);
+                }
+                @media (max-width: 1024px) {
+                    gap: calc($gutter_abs_maxW_1024 * 1);
+                }
+                @media (max-width: 768px) {
+                    gap: calc($gutter_abs_maxW_768 * 1);
                 }
 
+                & > li {
+                    width: calc($column_abs * 3 + $gutter_abs * 2);
+                    margin-bottom: 0;
+
+                    @media (max-width: 1600px) {
+                        width: calc(
+                            $column_abs_maxW_1600 * 3 + $gutter_abs_maxW_1600 *
+                                2
+                        );
+                        margin-bottom: calc($gutter_abs_maxW_1600 * 1);
+                    }
+
+                    @media (max-width: 1440px) {
+                        width: calc(
+                            $column_abs_maxW_1440 * 3 + $gutter_abs_maxW_1440 *
+                                2
+                        );
+                        margin-bottom: calc($gutter_abs_maxW_1440 * 1);
+                    }
+
+                    @media (max-width: 1280px) {
+                        width: calc(
+                            $column_abs_maxW_1280 * 3 + $gutter_abs_maxW_1280 *
+                                2
+                        );
+                        margin-bottom: calc($gutter_abs_maxW_1280 * 1);
+                    }
+
+                    @media (max-width: 1024px) {
+                        width: calc(
+                            $column_abs_maxW_1024 * 3 + $gutter_abs_maxW_1024 *
+                                2
+                        );
+                        margin-bottom: calc($gutter_abs_maxW_1024 * 1);
+                    }
+
+                    @media (max-width: 768px) {
+                        width: calc(
+                            $column_abs_maxW_768 * 2 + $gutter_abs_maxW_768 * 1
+                        );
+                        margin-bottom: calc($gutter_abs_maxW_768 * 1);
+                    }
+
+                    @media (max-width: 480px) {
+                        width: 100%;
+                    }
+
+                    & > a {
+                        flex-direction: column;
+                        height: 400px;
+                        gap: calc($gutter_abs_maxW_1600 * 1);
+                        & > picture {
+                            width: 100%;
+
+                            & > img {
+                                margin-bottom: 0;
+                            }
+                        }
+
+                        & > .description {
+                            display: flex;
+                            flex-direction: column;
+
+                            height: 100%;
+                            & > h3 {
+                                @include font_min_lead($font-family, $clr_text);
+                                line-height: 130%;
+                                -webkit-line-clamp: 2; /* Число отображаемых строк */
+                                display: -webkit-box; /* Включаем флексбоксы */
+                                -webkit-box-orient: vertical; /* Вертикальная ориентация */
+                                overflow: hidden;
+                            }
+
+                            & .post-description {
+                                margin-top: auto;
+                            }
+                        }
+
+                        h2 {
+                            @include font_small($font-family, $clr_text);
+                            -webkit-line-clamp: 2; /* Число отображаемых строк */
+                            display: -webkit-box; /* Включаем флексбоксы */
+                            -webkit-box-orient: vertical; /* Вертикальная ориентация */
+                            overflow: hidden;
+                        }
+                    }
+                }
             }
         }
 

@@ -10,8 +10,19 @@
             @if (!empty($news))
                 <section class="hits">
                     <div class="container">
-                        <h1> Статьи </h1>
-                        <ul class="hits-news">
+                        <div class="hits-top">
+                            <h1> Статьи </h1>
+                            <div class="viewsort-btns">
+                                <button type="button" class="viewsort-btn" data-sort="grid">
+                                    Сетка
+                                </button>
+                                <button type="button" class="viewsort-btn" data-sort="row">
+                                    В строку
+                                </button>
+                            </div>
+                        </div>
+
+                        <ul class="hits-news grid-sort">
                             @foreach ($news as $post)
                                 <li>
                                     <a href="{{ route('new', $post->slug) }}">

@@ -63,6 +63,24 @@ class Post extends Model
         return $image;
     }
 
+    public static function uploadImageWebp(Request $request, $imageWebp = null)
+    {
+        if ($request->hasFile('thumbnail')) {
+
+            if ($imageWebp) {
+                Storage::delete($imageWebp);
+            }
+
+            // имя файла без рашрешении
+            $fileName = pathinfo($request['thumbnail']->hashName(), PATHINFO_FILENAME);
+            $folder = date('Y-m-d');
+            // open an image file
+            return $imgWebp = Image::make($request['thumbnail'])->orientate()->encode('webp', 75)->save(("images/{$folder}/" .  $fileName . '.webp'));
+        }
+
+        return $imageWebp;
+    }
+
     public function addImageFormat()
     {
         if ($this->thumbnail) {
