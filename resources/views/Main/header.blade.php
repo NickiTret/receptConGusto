@@ -12,9 +12,9 @@
         <nav title="Главное меню" data-menu>
             <ul class="reset-list">
                 @foreach ($headers as $header_item)
-                    @if ($header_item->title == 'Пасха')
+                    {{-- @if ($header_item->title == 'Пасха')
                         @continue
-                    @endif
+                    @endif --}}
                     <li>
                         <a href="{{ $header_item->link }}">{{ $header_item->title }}</a>
                     </li>
@@ -89,9 +89,9 @@
         <ul class="list-reset category-list">
             @foreach ($categories_menu as $item)
                 @if ($item->posts->count())
-                    @if ($item->title === 'Пасха')
+                    {{-- @if ($item->title === 'Пасха')
                         @continue
-                    @endif
+                    @endif --}}
                     <li class="category-list__item">
                         <a href="{{ route('category_item', $item->slug) }}">{{ $item->title }}</a>
                     </li>

@@ -19,9 +19,9 @@
 
                         @if ($item->posts->count() > 0)
                             {{-- не выводим категорию ПАСХА --}}
-                            @if($item->title === 'Пасха')
+                            {{-- @if($item->title === 'Пасха')
                                 @continue
-                            @endif
+                            @endif --}}
                             <li>
                                 <a href="{{ route('category_item', $item->slug) }}">
                                     <div>
