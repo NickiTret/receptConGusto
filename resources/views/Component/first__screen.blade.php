@@ -43,9 +43,9 @@
         <h4>Рецепты по интересам:</h4>
         <ul class="first-screen__aside-tags">
             @foreach ($maps as $tag)
-                @if ($tag->title === 'Христос воскрес')
+                {{-- @if ($tag->title === 'Христос воскрес')
                     @continue
-                @endif
+                @endif --}}
                 <li>
                     <a href="{{ route('tags.single', ['id' => $tag->id]) }}">{{ $tag->title }}</a>
                 </li>
