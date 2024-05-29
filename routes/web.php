@@ -20,7 +20,8 @@ use App\Http\Controllers\Admin\MeatController;
 use App\Http\Controllers\Admin\SeoController;
 use App\Http\Controllers\Admin\PieceController;
 use App\Http\Controllers\Admin\SteakController;
-
+use App\Http\Controllers\AjaxControlle;
+use App\Http\Controllers\AjaxController;
 //front control
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Index\IndexController;
@@ -57,6 +58,7 @@ Route::get('/json/{slug}', [IndexController::class, 'jsonShow'])->name('jsonShow
 
 Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/', [MainController::class, 'index'])->name('admin.index');
+    Route::get('/cache', [AjaxController::class, 'delete'])->name('cache');
     Route::resource('/categories', CategoryController::class);
     Route::resource('/tags', TagController::class);
     Route::resource('/posts', PostController::class);
@@ -74,6 +76,7 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::resource('/piece', PieceController::class);
     Route::resource('/steak', SteakController::class);
 });
+
 
 //user personal likes and like
 Route::middleware(['auth'])->group(function () {

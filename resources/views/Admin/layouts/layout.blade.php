@@ -208,7 +208,7 @@
 
                             </ul>
                         </li>
-                        <li class="nav-item has-treeview">
+                        {{-- <li class="nav-item has-treeview">
                             <a href="{{ route('fasts.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
@@ -231,7 +231,7 @@
                                 </li>
 
                             </ul>
-                        </li>
+                        </li> --}}
                         <li class="nav-item has-treeview">
                             <a href="{{ route('banners.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>

@@ -21,6 +21,11 @@
 
         <!-- Main content -->
         <section class="content">
+            <div class="row">
+                <div class="col-2">
+                    <a href="{{ route('cache') }}" class="btn btn-block btn-warning btn-lg">Сбросить кеш</a>
+                </div>
+            </div>
         </section>
         <!-- /.content -->
     <!-- /.content-wrapper -->
