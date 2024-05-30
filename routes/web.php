@@ -58,7 +58,7 @@ Route::get('/json/{slug}', [IndexController::class, 'jsonShow'])->name('jsonShow
 
 Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/', [MainController::class, 'index'])->name('admin.index');
-    Route::get('/cache', [AjaxController::class, 'delete'])->name('cache');
+
     Route::resource('/categories', CategoryController::class);
     Route::resource('/tags', TagController::class);
     Route::resource('/posts', PostController::class);
@@ -76,6 +76,9 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::resource('/piece', PieceController::class);
     Route::resource('/steak', SteakController::class);
 });
+
+
+Route::get('admin/cache', [AjaxController::class, 'delete'])->name('cache');
 
 
 //user personal likes and like
