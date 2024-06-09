@@ -43,6 +43,24 @@ class News extends Model
         return $image;
     }
 
+    public static function uploadImageWebp(Request $request, $imageWebp = null)
+    {
+        if ($request->hasFile('image')) {
+
+            if ($imageWebp) {
+                Storage::delete($imageWebp);
+            }
+
+            // имя файла без рашрешении
+            $fileName = pathinfo($request['image']->hashName(), PATHINFO_FILENAME);
+            $folder = date('Y-m-d');
+            // open an image file
+            return $imgWebp = Image::make($request['image'])->orientate()->encode('webp', 75)->save(("images/{$folder}/" .  $fileName . '.webp'));
+        }
+
+        return $imageWebp;
+    }
+
     public function addImageFormat () {
         if ($this->image) {
             return $this->images = [

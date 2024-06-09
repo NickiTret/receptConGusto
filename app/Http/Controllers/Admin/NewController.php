@@ -40,9 +40,13 @@ class NewController extends Controller
 
         $data['image'] = News::uploadImage($request);
 
+        //webP  создание
+        News::uploadImageWebp($request);
+
+
         $new = News::create($data);
 
-        exec('npm run imagemin');
+        // exec('npm run imagemin');
         return redirect()->route('news.index')->with('success', 'Статья добавлена');
     }
 
