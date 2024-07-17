@@ -16,6 +16,28 @@
                 ])
             @endif
 
+            @if(!empty($video))
+            <section class="video-recepts">
+                <div class="container full-content">
+                    <h2>Видеорецепты</h2>
+                    <ul>
+                        @foreach ($video as $item)
+                        <li>
+                            <a href="{{ route('single', $item->slug) }}">
+                                <div class="video-recepts__video">
+                                    {!! $item->video !!}
+                                </div>
+                                <div class="video-recepts__title">{{ $item->title }}</div>
+                                <div class="video-recepts__date">{{ date('d.m.Y H:i', strtotime($item->created_at)) }}</div>
+                            </a>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </section>
+            @endif
+
+
             <section class="recept single">
                 <div class="container full-content">
                     <div class="content">

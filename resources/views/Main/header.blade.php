@@ -20,6 +20,18 @@
                     </li>
                 @endforeach
             </ul>
+            <ul class="reset-list category-list-mobile">
+                @foreach ($categories_menu as $item)
+                    @if ($item->posts->count())
+                        {{-- @if ($item->title === 'Пасха')
+                            @continue
+                        @endif --}}
+                        <li>
+                            <a href="{{ route('category_item', $item->slug) }}">{{ $item->title }}</a>
+                        </li>
+                    @endif
+                @endforeach
+            </ul>
         </nav>
         <form class="search" method="GET" action="{{ route('search') }}">
             <input required name="search_input" type="text" placeholder="Поиск по рецептам" class="search-input"
