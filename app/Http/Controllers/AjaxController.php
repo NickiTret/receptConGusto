@@ -11,8 +11,13 @@ class AjaxController extends Controller
 {
     //
 
-    public function delete() {
-        Artisan::call('cache:clear');
-        return redirect()->action([IndexController::class, 'index']);
+    public function delete()
+    {
+        $exitCode = Artisan::call('cache:clear');
+        if ($exitCode === 0) {
+            return redirect()->action([IndexController::class, 'index']);
+        } else {
+            return back()->withErrors('Ошибка при сбросе кеша.');
+        }
     }
 }

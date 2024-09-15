@@ -31,6 +31,10 @@ use App\Http\Controllers\Index\IndexController;
 use App\Http\Controllers\Personal\Liked\LikedController;
 use App\Http\Controllers\Personal\Comment\CommentController;
 
+use App\Http\Controllers\ContactController;
+
+
+
 
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
@@ -51,6 +55,10 @@ Route::get('/steak', [IndexController::class, 'steak'])->name('steak');
 
 Route::get('/feed.xml', [IndexController::class, 'feed'])->name('feed');
 Route::get('/feed_news.xml', [IndexController::class, 'feed_news'])->name('feed_news');
+
+// Контактная форма
+Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.form');
+Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
 
 //json
 Route::get('/json/{slug}', [IndexController::class, 'jsonShow'])->name('jsonShow');

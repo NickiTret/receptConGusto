@@ -16,7 +16,7 @@
                 @include('Component.banner', ['category' => $category_item])
             @endif
             @if (!empty($posts))
-                @include('Component.hits', ['posts' => $posts])
+                @include('Component.hits', ['posts' => $posts, 'maps' => $maps])
             @endif
         </main>
         @include('Main.footer')

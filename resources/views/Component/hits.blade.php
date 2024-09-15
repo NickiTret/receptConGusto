@@ -1,4 +1,7 @@
 {{-- {{dd(auth()->user()->likedPosts)}} --}}
+
+
+
 <section class="hits" @if (isset($post)) style="padding: 12px 0 0 0" @endif>
     <div class="container">
         {{-- <h2>{{$posts[0]->category->title}}</h2> --}}
@@ -203,3 +206,14 @@
         @endif
     </div>
 </section>
+@if (!empty($maps))
+    <section class="new-first-screen" style="padding-top: 0">
+        <ul class="new-first-screen__aside-tags">
+            @foreach ($maps as $tag)
+                <li>
+                    <a href="{{ route('tags.single', ['id' => $tag->id]) }}">{{ $tag->title }}</a>
+                </li>
+            @endforeach
+        </ul>
+    </section>
+@endif

@@ -55,11 +55,11 @@ class IndexController extends Controller
 
 
         $video = Post::where('show', '1')
-        ->whereNotNull('video')
-        ->orderBy('views', 'desc')
-        ->limit(4)
-        ->select('title', 'slug', 'video', 'created_at')
-        ->get();
+            ->whereNotNull('video')
+            ->orderBy('views', 'desc')
+            ->limit(4)
+            ->select('title', 'slug', 'video', 'created_at')
+            ->get();
 
         $seo = Seo::where('name_page', 'Главная страница')->first();
         $maps = Tag::orderBy('title', 'asc')->get();
@@ -75,7 +75,7 @@ class IndexController extends Controller
         //     $posts = Cache::get('posts');
         // } else {
         //     $posts = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
-            // Cache::put('posts', $posts, 604800);
+        // Cache::put('posts', $posts, 604800);
         // }
 
         if (Cache::has(('categories'))) {
@@ -86,7 +86,13 @@ class IndexController extends Controller
         }
 
         $post = Post::where('slug', $slug)->firstOrFail();
-        $posts = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
+        // $posts = Post::where('show', '1')->where('category_id', $post->category_id)->orderBy('title', 'asc')->get();
+
+        $posts = Post::where('show', '1')
+            ->where('category_id', $post->category_id)
+            ->where('id', '!=', $post->id)
+            ->orderBy('title', 'asc')
+            ->get();
 
         $post->views += 1;
         $post->update();
@@ -120,7 +126,7 @@ class IndexController extends Controller
 
     public function category()
     {
-        $fasts = Fast::where('show', '1')->get();
+        // $fasts = Fast::where('show', '1')->get();
         $banner = Banner::where('page', 'Категории')->firstOrFail();
         $categories = Category::with('posts')->orderBy('title')->get();
         $seo = Seo::where('name_page', 'Категории')->first();
@@ -130,12 +136,13 @@ class IndexController extends Controller
     public function tag($id)
     {
         $hat = Hat::where('page_name', 'Тег')->first();
-        $fasts = Fast::all();
+        // $fasts = Fast::all();
         $tag = Tag::where('id', $id)->firstOrFail();
         $posts = $tag->posts()->where('show', '1')->orderBy('id', 'desc')->paginate(50);
         $banner = Banner::where('page', 'Тег')->first();
+        $maps = Tag::orderBy('title', 'asc')->get();
 
-        return view('tags', compact('tag', 'hat', 'posts', 'banner'));
+        return view('tags', compact('tag', 'hat', 'posts', 'banner', 'maps'));
     }
 
     public function category_item($slug)
@@ -152,7 +159,7 @@ class IndexController extends Controller
 
         $category = Category::all();
         $posts = Post::filter($filter)->paginate(100);
-        $fasts = Fast::filter($filter)->paginate(20);
+        // $fasts = Fast::filter($filter)->paginate(20);
         // $posts = $postsAll->merge($fasts);
         $seo = Seo::where('name_page', 'Поиск')->first();
 
@@ -176,8 +183,11 @@ class IndexController extends Controller
         //     Cache::put('news', $news, 604800);
         // }
 
-        $news = News::where('show', '1')->where('restorant', 0)->orderBy('views', 'desc')->get();
-        $fasts = Fast::where('show', '1')->get();
+        $news = News::where('show', '1')
+        ->where('restorant', 0)
+        ->orderBy('views', 'desc')
+        ->get();
+        // $fasts = Fast::where('show', '1')->get();
 
         $categories = Category::pluck('title', 'id')->all();
         $tags = Tag::pluck('title', 'id')->all();
@@ -188,9 +198,11 @@ class IndexController extends Controller
     public function new($slug)
     {
 
-        $fasts = Fast::where('show', '1')->get();
+        // $fasts = Fast::where('show', '1')->get();
         $post = News::where('slug', $slug)->firstOrFail();
-        $posts = News::where('show', '1')->orderBy('views', 'desc')->limit(8)->get();
+        $posts = News::where('show', '1')
+        ->where('id', '!=', $post->id)
+        ->orderBy('views', 'desc')->limit(8)->get();
         $post->views += 1;
 
         $post->update();
@@ -216,7 +228,7 @@ class IndexController extends Controller
             'description' => 'ДЕСЕРТЫ, КОТОРЫЕ МИНУЯ ЖЕЛУДОК, ПОПАДАЮТ ПРЯМО В СЕРДЦЕ! Наполеончики к чаю',
             'image' => 'https://sun9-67.userapi.com/impg/omytr-P9L6OWwLEqtJEzx_spOiM5YV415sD-zA/7_CCo0_6Iqo.jpg?size=2560x1435&quality=95&sign=c773e9ad023b37acfb73a7bd18a7c5e7&type=album'
         ];
-        $fasts = Fast::all();
+        // $fasts = Fast::all();
         $banner = Banner::where('page', 'Категории')->firstOrFail();
         $seo = Seo::where('name_page', 'Десерты')->first();
         return view('dessert', compact('banner', 'data', 'seo'));

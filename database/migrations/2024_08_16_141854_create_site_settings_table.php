@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHeaderTable extends Migration
+class CreateSiteSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateHeaderTable extends Migration
      */
     public function up()
     {
-        Schema::create('header', function (Blueprint $table) {
+        Schema::create('site_settings', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('link');
+            $table->string('name');
+            $table->string('group');
+            $table->string('value');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateHeaderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('header');
+        Schema::dropIfExists('site_settings');
     }
 }

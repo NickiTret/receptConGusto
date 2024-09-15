@@ -65,6 +65,9 @@
  <li>
                 <a href="https://rutube.ru/channel/32029491/" target="_blank">RUTUBE</a>
             </li>
+            {{-- <li>
+                <a href="{{ route('contact.form') }}">Задать вопрос?</a>
+            </li> --}}
 
         </ul>
     </div>
