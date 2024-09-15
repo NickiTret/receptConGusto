@@ -21,7 +21,7 @@ use App\Http\Controllers\Admin\SeoController;
 use App\Http\Controllers\Admin\PieceController;
 use App\Http\Controllers\Admin\SteakController;
 use App\Http\Controllers\AjaxControlle;
-use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\Admin\AjaxController;
 //front control
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Index\IndexController;
