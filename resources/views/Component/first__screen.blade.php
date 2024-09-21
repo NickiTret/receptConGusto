@@ -58,7 +58,6 @@
                 <p>
                     {{ strip_tags(str_replace('&nbsp;', ' ', $item->description)) }}
                 </p>
-
             @endforeach
 
             {{-- <h3>Проверенные и&nbsp;классические рецепты</h3>
@@ -79,15 +78,42 @@
     <div class="new-first-screen-row">
         @php $i = 0; @endphp
         @foreach ($lastPost as $item)
-            @php $i++; @endphp
-            <div class="new-first-screen-col {{ $i > 1 ? 'hits-recepts' : '' }}">
+            @php
+                // Извлекаем путь из URL
+                $imagePath = parse_url($item->getImage(), PHP_URL_PATH);
+                $imagePath = ltrim($imagePath, '/');
+
+                // Определяем размеры для ресайза
+                if ($loop->first) {
+                    $resizedImagePath = \App\Models\GeneralModel::resize(1496, 674, $imagePath);
+                    $resizedImagePath480 = \App\Models\GeneralModel::resize(480, 400, $imagePath, 100);
+                } else {
+                    $resizedImagePath = \App\Models\GeneralModel::resize(858, 200, $imagePath);
+                    $resizedImagePath480 = \App\Models\GeneralModel::resize(398, 200, $imagePath, 100);
+                }
+
+                // WebP формат
+                $resizedImagePathWebp = $item->addImageFormat()
+                    ? \App\Models\GeneralModel::resize(
+                        1496,
+                        674,
+                        ltrim(parse_url($item->addImageFormat()['imageWebp'], PHP_URL_PATH), '/'),
+                        100,
+                    )
+                    : null;
+            @endphp
+
+            <div class="new-first-screen-col {{ $loop->iteration > 1 ? 'hits-recepts' : '' }}">
                 <a href="{{ route('single', $item->slug) }}">
                     <picture>
-                        @if ($item->addImageFormat())
-                            <source type="image/webp" srcset="/{{ $item->addImageFormat()['imageWebp'] }}" />
+                        <source media="(max-width: 480px)" srcset="{{ asset($resizedImagePath480) }}">
+
+                        @if ($resizedImagePathWebp)
+                            <source type="image/webp" srcset="{{ asset($resizedImagePathWebp) }}">
                         @endif
+
                         <img width="324" height="220" loading="lazy" title="{{ $item->title }}"
-                            alt="{{ $item->title }}" src="{{ asset($item->getImage()) }}">
+                            alt="{{ $item->title }}" src="{{ asset($resizedImagePath) }}">
                     </picture>
                     <div class="new-first-screen-col__content">
                         <h4>{{ date('d.m.Y H:i', strtotime($item->created_at)) }}</h4>
@@ -102,6 +128,3 @@
     </div>
 
 </section>
-
-
-

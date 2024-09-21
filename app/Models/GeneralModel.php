@@ -23,24 +23,28 @@ class GeneralModel extends Model
             }
 
             try {
-                $image = Image::make($file)->resize($w, $h, function ($constraint) {
-                    $constraint->aspectRatio();
-                    $constraint->upsize();
-                });
-
                 $folder = 'images/' . date('Y-m-d');
                 $extension = pathinfo($file, PATHINFO_EXTENSION);
 
                 // Генерируем уникальное имя файла
-                $uniqueName = md5($file . $w . $h . time()) . '.' . $extension;
+                $uniqueName = md5($file . $w . $h) . '.' . $extension;
                 $resizedPath = "{$folder}/{$uniqueName}";
 
-                // Создаем директорию, если она не существует
-                if (!File::exists(public_path($folder))) {
-                    File::makeDirectory(public_path($folder), 0755, true);
-                }
+                // Проверяем, существует ли уже измененное изображение
+                if (!File::exists(public_path($resizedPath))) {
+                    // Создаем директорию, если она не существует
+                    if (!File::exists(public_path($folder))) {
+                        File::makeDirectory(public_path($folder), 0755, true);
+                    }
 
-                $image->save(public_path($resizedPath), $quality);
+                    // Создаем изображение и изменяем его размер
+                    $image = Image::make($file)->resize($w, $h, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    });
+
+                    $image->save(public_path($resizedPath), $quality);
+                }
 
                 return $resizedPath;
             } catch (\Exception $e) {
