@@ -16,7 +16,7 @@
                 ])
             @endif
 
-            @if (!empty($video))
+            {{-- @if (!empty($video))
                 <section class="video-recepts">
                     <div class="container full-content">
                         <h2>Видеорецепты</h2>
@@ -36,7 +36,7 @@
                         </ul>
                     </div>
                 </section>
-            @endif
+            @endif --}}
 
 
             <section class="recept single">

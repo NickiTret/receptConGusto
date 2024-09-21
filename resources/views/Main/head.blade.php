@@ -67,24 +67,6 @@
     @endif
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{ asset('css/favicon.ico') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css">
-    </noscript>
 
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=swap" rel="stylesheet"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=swap"
-            rel="stylesheet">
-    </noscript>
-
-    <link href="{{ asset('css/main/main.style.min.css') }}?19" rel="stylesheet" media="print"
-        onload="this.media='all'">
-    <noscript>
-        <link href="{{ asset('css/main/main.style.min.css') }}?19" rel="stylesheet">
-    </noscript>
 
 </head>
