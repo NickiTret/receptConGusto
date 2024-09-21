@@ -112,15 +112,3 @@
         </ul>
     </div>
 </header>
-@env('local')
-<!-- Yandex.RTB R-A-2349463-11 -->
-<script>
-    window.yaContextCb.push(() => {
-        Ya.Context.AdvManager.render({
-            "blockId": "R-A-2349463-11",
-            "type": "fullscreen",
-            "platform": "touch"
-        })
-    })
-</script>
-@endenv
