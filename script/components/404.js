@@ -1,13 +1,13 @@
 import { gsap } from "gsap";
 
-const errorPage = document.querySelector('.error-page')
+const errorPage = document.querySelector(".error-page");
 
 // console.log(errorPage)
 
-if(errorPage) {
+if (errorPage) {
     let animation = gsap.timeline({
         paused: false,
-        repeat: 99
+        repeat: 99,
     });
 
     animation.to(".circle", {
@@ -16,7 +16,8 @@ if(errorPage) {
         duration: 1,
         ease: "back",
         repeat: -1,
-        repeatRefresh: true
+        repeatRefresh: true,
     });
 }
+
 

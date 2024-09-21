@@ -16,17 +16,34 @@
 <!-- Top.Mail.Ru counter -->
 <script type="text/javascript">
     var _tmr = window._tmr || (window._tmr = []);
-    _tmr.push({id: "3384116", type: "pageView", start: (new Date()).getTime()});
-    (function (d, w, id) {
-      if (d.getElementById(id)) return;
-      var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
-      ts.src = "https://top-fwz1.mail.ru/js/code.js";
-      var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
-      if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+    _tmr.push({
+        id: "3384116",
+        type: "pageView",
+        start: (new Date()).getTime()
+    });
+    (function(d, w, id) {
+        if (d.getElementById(id)) return;
+        var ts = d.createElement("script");
+        ts.type = "text/javascript";
+        ts.async = true;
+        ts.id = id;
+        ts.src = "https://top-fwz1.mail.ru/js/code.js";
+        var f = function() {
+            var s = d.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(ts, s);
+        };
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+            f();
+        }
     })(document, window, "tmr-code");
-    </script>
-    <noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3384116;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div></noscript>
-    <!-- /Top.Mail.Ru counter -->
+</script>
+<noscript>
+    <div><img src="https://top-fwz1.mail.ru/counter?id=3384116;js=na" style="position:absolute;left:-9999px;"
+            alt="Top.Mail.Ru" /></div>
+</noscript>
+<!-- /Top.Mail.Ru counter -->
 @endenv
 <footer class="footer">
     <div class="container">
@@ -62,7 +79,7 @@
             <li>
                 <a href="https://ok.ru/group/70000003459339" target="_blank">ОК!</a>
             </li>
- <li>
+            <li>
                 <a href="https://rutube.ru/channel/32029491/" target="_blank">RUTUBE</a>
             </li>
             {{-- <li>
@@ -72,7 +89,7 @@
         </ul>
     </div>
     <div class="container" style="margin-top: 14px">
-        <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click" target="_blank"><img  id="licnt5139"
+        <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click" target="_blank"><img id="licnt5139"
                 width="88" height="15" style="border:0"
                 title="LiveInternet: показано число посетителей за сегодня"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
@@ -94,3 +111,51 @@
 </footer>
 
 
+
+
+<!-- Загрузочный экран -->
+<div id="loader">
+    <div class="spinner">
+
+    </div>
+</div>
+
+<style>
+    /* Стили для загрузочного экрана */
+    #loader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #F7F7F7;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(/assets/base/logo2.webp);
+        background-position: center 180px;
+        background-repeat: no-repeat;
+        background-size: 350px;
+        transition: all 0.2s ease-in-out
+    }
+
+    .spinner {
+        border: 9px solid #f3f3f3;
+        border-top: 9px solid #3498db;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>

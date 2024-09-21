@@ -17,11 +17,26 @@
                     @if (isset($post->category_id))
                         <li @if (!empty($post->category_id)) class="hits-recepts" @endif>
                             <a href="{{ route('single', $post->slug) }}">
+                                @php
+                                    $resizedImagePath = \App\Models\GeneralModel::resize(
+                                        800,
+                                        200,
+                                        $post->addImageFormat()['imageWebp'],
+                                        100,
+                                    );
+                                    $resizedImagePath480 = \App\Models\GeneralModel::resize(
+                                        637,
+                                        200,
+                                        $post->addImageFormat()['imageWebp'],
+                                        100,
+                                    );
+                                @endphp
                                 <picture>
+                                    <source media="(max-width: 767)" srcset="/{{ $resizedImagePath480 }}" />
                                     @if ($post->addImageFormat())
-                                        {{-- <source type="image/avif" srcset="/{{ $post->addImageFormat()['imageAvif'] }}" /> --}}
-                                        <source type="image/webp" srcset="/{{ $post->addImageFormat()['imageWebp'] }}" />
+                                        <source type="image/webp" srcset="/{{ $resizedImagePath }}" />
                                     @endif
+
                                     <img width="314" height="200" loading="lazy" title="{{ $post->title }}"
                                         alt="{{ $post->title }}" src="/{{ $post->addImageFormat()['imageDefault'] }}">
 
@@ -109,12 +124,26 @@
                     @elseif(!isset($post->category_id))
                         <li @if (!empty($post->category_id)) class="hits-recepts" @endif>
                             <a href="{{ route('new', $post->slug) }}">
+                                @php
+                                    $resizedImagePath = \App\Models\GeneralModel::resize(
+                                        800,
+                                        200,
+                                        $post->addImageFormat()['imageWebp'],
+                                        100,
+                                    );
+                                    $resizedImagePath480 = \App\Models\GeneralModel::resize(
+                                        637,
+                                        200,
+                                        $post->addImageFormat()['imageWebp'],
+                                        100,
+                                    );
+                                @endphp
                                 <picture>
+                                    <source media="(max-width: 480px)" srcset="/{{ $resizedImagePath480 }}" />
                                     @if ($post->addImageFormat())
-                                        {{-- <source type="image/avif" srcset="/{{ $post->addImageFormat()['imageAvif'] }}" /> --}}
-                                        <source type="image/webp"
-                                            srcset="/{{ $post->addImageFormat()['imageWebp'] }}" />
+                                        <source type="image/webp" srcset="/{{ $resizedImagePath }}" />
                                     @endif
+
                                     <img width="314" height="200" loading="lazy" title="{{ $post->title }}"
                                         alt="{{ $post->title }}"
                                         src="/{{ $post->addImageFormat()['imageDefault'] }}">

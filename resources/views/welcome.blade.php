@@ -16,25 +16,26 @@
                 ])
             @endif
 
-            @if(!empty($video))
-            <section class="video-recepts">
-                <div class="container full-content">
-                    <h2>Видеорецепты</h2>
-                    <ul>
-                        @foreach ($video as $item)
-                        <li>
-                            <a href="{{ route('single', $item->slug) }}">
-                                <div class="video-recepts__video">
-                                    {!! $item->video !!}
-                                </div>
-                                <div class="video-recepts__title">{{ $item->title }}</div>
-                                <div class="video-recepts__date">{{ date('d.m.Y H:i', strtotime($item->created_at)) }}</div>
-                            </a>
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </section>
+            @if (!empty($video))
+                <section class="video-recepts">
+                    <div class="container full-content">
+                        <h2>Видеорецепты</h2>
+                        <ul>
+                            @foreach ($video as $item)
+                                <li>
+                                    <a href="{{ route('single', $item->slug) }}">
+                                        <div class="video-recepts__video">
+                                            {!! $item->video !!}
+                                        </div>
+                                        <div class="video-recepts__title">{{ $item->title }}</div>
+                                        <div class="video-recepts__date">
+                                            {{ date('d.m.Y H:i', strtotime($item->created_at)) }}</div>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </section>
             @endif
 
 
@@ -82,11 +83,27 @@
                                 @endif
                                 <li>
                                     <a href="{{ route('new', $post->slug) }}">
+                                        @php
+                                            $resizedImagePath = \App\Models\GeneralModel::resize(
+                                                357,
+                                                238,
+                                                $post->addImageFormat()['imageWebp'],
+                                                100
+                                            );
+                                            // $resizedImagePath480 = \App\Models\GeneralModel::resize(
+                                            //     357,
+                                            //     238,
+                                            //     $post->addImageFormat()['imageWebp'],
+                                            //     100,
+                                            // );
+                                        @endphp
                                         <picture>
+                                            {{-- <source media="(max-width: 480px)"
+                                                srcset="{{ asset($resizedImagePath480) }}"> --}}
                                             @if ($post->addImageFormat())
                                                 {{-- <source type="image/avif" srcset="/{{ $post->addImageFormat()['imageAvif'] }}" /> --}}
                                                 <source type="image/webp"
-                                                    srcset="/{{ $post->addImageFormat()['imageWebp'] }}" />
+                                                    srcset="/{{ $resizedImagePath }}" />
                                             @endif
                                             <img width="314" height="200" loading="lazy"
                                                 title="{{ $post->title }}" alt="{{ $post->title }}"

@@ -193,7 +193,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 
-var errorPage = document.querySelector('.error-page');
+var errorPage = document.querySelector(".error-page");
 
 // console.log(errorPage)
 
@@ -1356,6 +1356,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+// JavaScript для скрытия загрузочного экрана
+window.onload = function () {
+  document.getElementById("loader").style.opacity = 0;
+  setTimeout(function () {
+    document.getElementById("loader").style.display = "none";
+  }, 2000);
+};
 
 /***/ }),
 
