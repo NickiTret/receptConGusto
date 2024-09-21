@@ -1,4 +1,3 @@
-    <!-- Ваш контент -->
 
     <!-- Перемещенные и оптимизированные скрипты -->
     <script async src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
@@ -6,24 +5,9 @@
     <script defer src="{{ asset('assets/js/main.js') }}?18"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VXQC75FB6B"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css">
-    </noscript>
-
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=swap" rel="stylesheet"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=swap"
-            rel="stylesheet">
-    </noscript>
-
-    <link href="{{ asset('css/main/main.style.min.css') }}?19" rel="stylesheet" media="print"
-        onload="this.media='all'">
-    <noscript>
-        <link href="{{ asset('css/main/main.style.min.css') }}?19" rel="stylesheet">
-    </noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=swap" rel="stylesheet">
+    <link href="{{ asset('css/main/main.style.min.css') }}?19" rel="stylesheet">
 
     <script>
         window.yaContextCb = window.yaContextCb || [];
@@ -93,8 +77,7 @@
     </script>
 
     <noscript>
-        <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt="">
-        </div>
+        <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt=""></div>
         <img src="//counter.rambler.ru/top100.cnt?pid=7715281" alt="Топ-100" />
     </noscript>
 
