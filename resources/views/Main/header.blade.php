@@ -78,7 +78,7 @@
 
     <noscript>
         <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt=""></div>
-        <img src="//counter.rambler.ru/top100.cnt?pid=7715281" alt="Топ-100" />
+        {{-- <img src="//counter.rambler.ru/top100.cnt?pid=7715281" alt="Топ-100" /> --}}
     </noscript>
 
     <header class="header">

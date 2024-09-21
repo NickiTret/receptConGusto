@@ -1360,9 +1360,10 @@ __webpack_require__.r(__webpack_exports__);
 // JavaScript для скрытия загрузочного экрана
 window.onload = function () {
   document.getElementById("loader").style.opacity = 0;
+  document.getElementById("loader").style.zIndex = -1;
   setTimeout(function () {
     document.getElementById("loader").style.display = "none";
-  }, 200);
+  }, 100);
 };
 
 /***/ }),
