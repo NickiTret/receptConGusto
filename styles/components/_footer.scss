@@ -80,3 +80,59 @@
         }
     }
 }
+
+
+.cookies-block {
+    display: none;
+    z-index: 1000;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: transparentize(#9f6453, 0.2);
+    backdrop-filter: blur(20px);
+    padding: 30px 0;
+    z-index: 2147484000 !important;
+
+    // @include media('<sm') {
+    //     padding: 20px 0;
+    // }
+
+    &.show {
+        display: block;
+    }
+
+    .cb-content {
+        position: relative;
+        color: #fff;
+
+        .cbc-text {
+            @include font_min_lead($font-family, $clr_white);
+            padding-right: 50px;
+        }
+
+        .cb-close {
+            position: absolute;
+            top: -8px;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+
+            .close {
+                // background-color: transparentize(#9f6453, 0.9);
+
+                svg {
+                    fill: #9f6453;
+                }
+
+                &:hover {
+                    // background-color: transparentize(#9f6453, 0.75);
+                }
+            }
+        }
+    }
+}

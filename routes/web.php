@@ -22,9 +22,11 @@ use App\Http\Controllers\Admin\PieceController;
 use App\Http\Controllers\Admin\SteakController;
 use App\Http\Controllers\AjaxControlle;
 use App\Http\Controllers\Admin\AjaxController;
+use App\Http\Controllers\Admin\ProductController;
 //front control
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Index\IndexController;
+use Illuminate\Support\Facades\Cookie;
 
 // users liked
 
@@ -34,14 +36,11 @@ use App\Http\Controllers\Personal\Comment\CommentController;
 use App\Http\Controllers\ContactController;
 
 
-
-
-
 Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::get('/recept/{slug}', [IndexController::class, 'show'])->name('single');
 Route::get('/fast/{slug}', [IndexController::class, 'fast'])->name('fast');
 Route::get('/category', [IndexController::class, 'category'])->name('category');
-Route::get('/tag/{id}', [IndexController::class, 'tag'])->name('tags.single');
+Route::get('/tag/{slug}', [IndexController::class, 'tag'])->name('tags.single');
 Route::get('/category/{slug}', [IndexController::class, 'category_item'])->name('category_item');
 Route::get('/search', [IndexController::class, 'search'])->name('search');
 Route::get('/about', [IndexController::class, 'about'])->name('about');
@@ -50,7 +49,16 @@ Route::get('/news/{slug}', [IndexController::class, 'new'])->name('new');
 Route::get('/marinade', [IndexController::class, 'marinade'])->name('marinade');
 Route::get('/dessert', [IndexController::class, 'dessert'])->name('dessert');
 Route::get('/steak', [IndexController::class, 'steak'])->name('steak');
+Route::get('/check', [IndexController::class, 'check']);
+Route::get('/result', [IndexController::class, 'result']);
+Route::get('/table-products', [IndexController::class, 'tableKal'])->name('tableKal');
+Route::get('/cookie-policy', [IndexController::class, 'showCookiePolicy'])->name('cookie.policy');
+Route::post('/accept-cookie', function () {
+    // Устанавливаем cookie на 1 год
+    Cookie::queue('acceptCookie', '1', 60 * 24 * 365);
 
+    return response()->json(['message' => 'Cookie accepted.']);
+})->name('cookie.accept');
 
 
 Route::get('/feed.xml', [IndexController::class, 'feed'])->name('feed');
@@ -64,9 +72,26 @@ Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact
 Route::get('/json/{slug}', [IndexController::class, 'jsonShow'])->name('jsonShow');
 
 
+
+
+
+
+
+
 Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/', [MainController::class, 'index'])->name('admin.index');
     Route::get('/cache', [AjaxController::class, 'delete'])->name('cache');
+
+    Route::get('/import', function () {
+        return view('import');
+
+    });
+
+    // Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
+    Route::post('/import', [ProductController::class, 'import'])->name('products.import');
+
+    Route::resource('/products', ProductController::class);
     Route::resource('/categories', CategoryController::class);
     Route::resource('/tags', TagController::class);
     Route::resource('/posts', PostController::class);
@@ -83,6 +108,7 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::resource('/seo', SeoController::class);
     Route::resource('/piece', PieceController::class);
     Route::resource('/steak', SteakController::class);
+
 });
 
 

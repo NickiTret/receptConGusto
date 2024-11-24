@@ -88,6 +88,41 @@
 
         </ul>
     </div>
+
+
+    @if (!$hasAcceptedCookies)
+        <!-- Cookies policy -->
+        <div class="cookies-block" id="cookie-policy">
+            <div class="container">
+                <div class="cb-content">
+                    <div class="cbc-text">
+                        Наш сайт использует файлы cookie и похожие технологии, чтобы гарантировать максимальное удобство
+                        пользователям...
+
+                        Продолжая работу с сайтом, вы соглашаетесь <a href="/cookie-policy" target="_blank">с использованием файлов cookie</a>
+                    </div>
+                    <button id="accept-cookie" type="button" class="cb-close btn-drop">
+                        <div class="btn-drop__icon close">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.6569 1.65685L1.34315 12.9706M12.6569 12.9706L1.34315 1.65685"
+                                    stroke="white" stroke-width="2" />
+                            </svg>
+
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+        </script>
+    @endif
+
+
+
+
     <div class="container" style="margin-top: 14px">
         <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click" target="_blank"><img id="licnt5139"
                 width="88" height="15" style="border:0"

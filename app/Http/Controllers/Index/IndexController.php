@@ -19,6 +19,7 @@ use App\Models\Hat;
 use App\Models\Meat;
 use App\Models\News;
 use App\Models\Piece;
+use App\Models\Product;
 use App\Models\Seo;
 use App\Models\Sous;
 use App\Models\Steak;
@@ -133,11 +134,11 @@ class IndexController extends Controller
         return view('category', compact('categories', 'banner', 'seo'));
     }
 
-    public function tag($id)
+    public function tag($slug)
     {
         $hat = Hat::where('page_name', 'Тег')->first();
         // $fasts = Fast::all();
-        $tag = Tag::where('id', $id)->firstOrFail();
+        $tag = Tag::where('slug', $slug)->firstOrFail();
         $posts = $tag->posts()->where('show', '1')->orderBy('id', 'desc')->paginate(50);
         $banner = Banner::where('page', 'Тег')->first();
         $maps = Tag::orderBy('title', 'asc')->get();
@@ -184,9 +185,9 @@ class IndexController extends Controller
         // }
 
         $news = News::where('show', '1')
-        ->where('restorant', 0)
-        ->orderBy('views', 'desc')
-        ->get();
+            ->where('restorant', 0)
+            ->orderBy('views', 'desc')
+            ->get();
         // $fasts = Fast::where('show', '1')->get();
 
         $categories = Category::pluck('title', 'id')->all();
@@ -201,8 +202,8 @@ class IndexController extends Controller
         // $fasts = Fast::where('show', '1')->get();
         $post = News::where('slug', $slug)->firstOrFail();
         $posts = News::where('show', '1')
-        ->where('id', '!=', $post->id)
-        ->orderBy('views', 'desc')->limit(8)->get();
+            ->where('id', '!=', $post->id)
+            ->orderBy('views', 'desc')->limit(8)->get();
         $post->views += 1;
 
         $post->update();
@@ -386,5 +387,48 @@ class IndexController extends Controller
         $post['users_data'] = auth()->user;
 
         return response()->json($post);
+    }
+
+
+    public function showCookiePolicy(Request $request)
+{
+    // Получаем сообщение из конфигурации или используем значение по умолчанию
+    // $message = config('site.cookie_agreement', 'Наш сайт использует файлы cookie и похожие технологии, чтобы гарантировать максимальное удобство пользователям...');
+
+    // Проверяем, установлено ли cookie с согласием
+    $hasAcceptedCookies = $request->cookie('acceptCookie', false);
+
+    return view('cookiePolicy', compact( 'hasAcceptedCookies'));
+}
+
+
+    public function tableKal(Request $request) {
+        // Получаем параметры сортировки, с дефолтным значением по названию
+        $sortField = $request->input('sort', 'product_name');
+        $sortDirection = $request->input('direction', 'asc');
+
+        // Фильтрация и сортировка продуктов
+        $products = Product::orderBy($sortField, $sortDirection)->get();
+
+        // Получаем посты и новости с кэшированием
+        $posts = Cache::remember('posts.top', 60, function() {
+            return Post::where('show', '1')->orderBy('views', 'desc')->limit(8)->get();
+        });
+
+        $news = Cache::remember('news.top', 60, function() {
+            return News::where('show', '1')->orderBy('views', 'desc')->limit(8)->get();
+        });
+
+        return view('tableKal', compact('products', 'posts', 'news', 'sortField', 'sortDirection'));
+    }
+
+    public function check()
+    {
+        return view('check');
+    }
+
+    public function result()
+    {
+        return view('result');
     }
 }

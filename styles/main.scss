@@ -5,6 +5,8 @@
 @import "fonts";
 @import "settings";
 
+@import "./vendor/custom-select.css";
+
 
 // подключения компонентов страницы
 @import "./components/header";
@@ -35,5 +37,6 @@
 @import "./components/breadcrumbs";
 @import "./components/viewsort";
 @import "./components/video";
+@import "./components/check";
 
 

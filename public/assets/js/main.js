@@ -32,6 +32,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_usermodel_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_components_usermodel_js__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _components_viewsort_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/viewsort.js */ "./script/components/viewsort.js");
 /* harmony import */ var _components_viewsort_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_components_viewsort_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _components_check_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/check.js */ "./script/components/check.js");
+/* harmony import */ var _components_result_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/result.js */ "./script/components/result.js");
+/* harmony import */ var _components_result_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_components_result_js__WEBPACK_IMPORTED_MODULE_16__);
 
 
 
@@ -43,6 +46,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import './components/fancybox.js';
+
+
 
 
 
@@ -179,6 +184,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendor/focus-visible.js */ "./script/vendor/focus-visible.js");
 /* harmony import */ var _vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_custom_select_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/custom-select.js */ "./script/components/custom-select.js");
+
 
 
 /***/ }),
@@ -252,6 +259,368 @@ if (errorPage) {
 
 /***/ }),
 
+/***/ "./script/components/check.js":
+/*!************************************!*\
+  !*** ./script/components/check.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _custom_select__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./custom-select */ "./script/components/custom-select.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+// const resultsPage = document.getElementById("confirmLink").href;
+
+var pageCheck = document.querySelector('.checkPage');
+if (pageCheck) {
+  var Test = /*#__PURE__*/function () {
+    function Test(quizClass, itemClass) {
+      var startItem = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+      _classCallCheck(this, Test);
+      this.quizClass = ".".concat(quizClass);
+      this.itemClass = ".".concat(itemClass);
+      this.startItem = startItem;
+      this.init();
+    }
+    _createClass(Test, [{
+      key: "init",
+      value: function init() {
+        this.quiz = document.querySelector(this.quizClass);
+        this.quizItems = _toConsumableArray(this.quiz.querySelectorAll(this.itemClass));
+        this.currentSlide = this.startItem;
+        this.slides = this.quizItems.length;
+        this.activeItem = this.quizItems[this.currentSlide];
+        this.addTemplates();
+        this.initData();
+        this.activeItem.classList.add("test__unit_active");
+      }
+    }, {
+      key: "addTemplates",
+      value: function addTemplates() {
+        var _this = this;
+        this.quizMeter = document.getElementById("quizMeter");
+        this.backButton = document.getElementById("backButton");
+        this.nextButton = document.getElementById("confirmButton");
+        this.quizItems.forEach(function (item, index) {
+          var quizMeterClone = _this.quizMeter.content.firstElementChild.cloneNode(true);
+          var backButtonClone = _this.backButton.content.firstElementChild.cloneNode(true);
+          var nextButtonClone = _this.nextButton.content.firstElementChild.cloneNode(true);
+          if (index > 0) {
+            quizMeterClone.insertAdjacentElement("afterbegin", backButtonClone);
+          }
+          item.querySelector(".test__title").insertAdjacentElement("beforebegin", quizMeterClone);
+          item.insertAdjacentElement("beforeend", nextButtonClone);
+          _this.setQuizMeterParams(quizMeterClone, index);
+          backButtonClone.addEventListener("click", function () {
+            _this.prevItem();
+          });
+          nextButtonClone.addEventListener("click", function () {
+            if (_this.slides === index + 1) {
+              _this.saveDataToStorage(_this.quizData);
+              document.location.href = "/result";
+            } else {
+              _this.nextItem();
+            }
+          });
+        });
+      }
+    }, {
+      key: "setQuizMeterParams",
+      value: function setQuizMeterParams(quizMeter, index) {
+        var unitID = quizMeter.querySelector(".unitID");
+        var unitTotal = quizMeter.querySelector(".unitTotal");
+        var meterVal = quizMeter.querySelector(".meterVal");
+        unitID.innerText = index + 1;
+        unitTotal.innerText = this.slides;
+        meterVal.style.width = "".concat(100 * (index + 1) / this.slides, "%");
+      }
+    }, {
+      key: "initData",
+      value: function initData() {
+        var _this2 = this;
+        this.quizData = [];
+        this.quizItems.forEach(function (item, index) {
+          _this2.initInputs(index);
+        });
+      }
+    }, {
+      key: "initInputs",
+      value: function initInputs(index) {
+        var _this3 = this;
+        var inputs = _toConsumableArray(this.quizItems[index].querySelectorAll("input"));
+        inputs.forEach(function (input) {
+          input.addEventListener("input", function (e) {
+            _this3.checkConfirmButton(index, e);
+          });
+        });
+      }
+    }, {
+      key: "checkConfirmButton",
+      value: function checkConfirmButton(index, e) {
+        var _this4 = this;
+        var confirmButton = this.quizItems[index].querySelector("button.unitConfirm");
+        var firstInput = this.quizItems[index].querySelector("input");
+        var type = firstInput && firstInput.type;
+        switch (type) {
+          case "radio":
+            if (e && e.target.value !== "") {
+              this.quizData[index] = {
+                name: e.target.name,
+                value: [e.target.value]
+              };
+              confirmButton.removeAttribute("disabled");
+            }
+            break;
+          case "number":
+            var numbers = this.quizItems[index].querySelectorAll("input");
+            if (e && e.target.value !== "") {
+              if (this.quizData[index]) {
+                var check = true;
+                this.quizData[index].forEach(function (el, i) {
+                  if (el.name === e.target.name) {
+                    _this4.quizData[index][i] = {
+                      name: e.target.name,
+                      value: e.target.value
+                    };
+                    check = false;
+                  }
+                });
+                if (check) {
+                  this.quizData[index] = [].concat(_toConsumableArray(this.quizData[index]), [{
+                    name: e.target.name,
+                    value: e.target.value
+                  }]);
+                }
+              } else {
+                this.quizData[index] = [{
+                  name: e.target.name,
+                  value: e.target.value
+                }];
+              }
+            }
+            if (this.quizData[index] && this.quizData[index].length === numbers.length) {
+              confirmButton.removeAttribute("disabled");
+            }
+            break;
+          case "checkbox":
+            if (e) {
+              if (this.quizData[index]) {
+                if (!this.quizData[index].value.includes(e.target.value)) {
+                  this.quizData[index].value.push(e.target.value);
+                } else {
+                  this.quizData[index].value.splice(this.quizData[index].value.indexOf(e.target.value), 1);
+                }
+              } else {
+                this.quizData[index] = {
+                  name: firstInput.name,
+                  value: [e.target.value]
+                };
+              }
+            }
+            if (this.quizData[index] && this.quizData[index].value.length) {
+              confirmButton.removeAttribute("disabled");
+            } else {
+              confirmButton.setAttribute("disabled", "disabled");
+            }
+            break;
+        }
+        if (this.quizItems[index].id === "plag") {
+          confirmButton.removeAttribute("disabled");
+        }
+        if (this.quizItems[index].id === "info") {
+          var infoInputs = this.quizItems[index].querySelectorAll("input");
+          var info = document.querySelector(".info");
+          infoInputs.forEach(function (input) {
+            input.addEventListener("input", function () {
+              info.style.display = "block";
+              confirmButton.style.display = "block";
+              infoInputs.forEach(function (input) {
+                input.disabled = true;
+              });
+            });
+          });
+        }
+        console.log(this.quizData, "this.quizData");
+        var weightResult = document.querySelector('#weight').value - document.querySelector('#normalWeight').value;
+        var weightBox = document.querySelectorAll('.weightBox');
+        weightBox.forEach(function (item) {
+          return item.innerHTML = weightResult;
+        });
+        var placeBox = document.querySelectorAll('.place');
+        var ageBox = document.querySelectorAll('.age');
+        if (this.quizData[4]) {
+          placeBox.forEach(function (item) {
+            return item.innerHTML = _this4.quizData[4].value[0];
+          });
+        }
+        if (document.querySelector('#age').value) {
+          ageBox.forEach(function (item) {
+            return item.innerHTML = document.querySelector('#age').value;
+          });
+        }
+      }
+    }, {
+      key: "togleBg",
+      value: function togleBg(index) {
+        var infoBg = document.querySelector(".infoBg");
+        if (this.quizItems[index].id === "info") {
+          infoBg.style.display = "block";
+        } else {
+          if (infoBg.style.display === "block") {
+            infoBg.style.display = "none";
+          }
+        }
+      }
+    }, {
+      key: "nextItem",
+      value: function nextItem() {
+        if (this.currentSlide >= this.slides - 1) {
+          return;
+        }
+        this.activeItem.classList.remove("test__unit_active");
+        this.currentSlide++;
+        this.activeItem = this.quizItems[this.currentSlide];
+        this.activeItem.classList.add("test__unit_active");
+        this.checkConfirmButton(this.currentSlide);
+        this.togleBg(this.currentSlide);
+      }
+    }, {
+      key: "prevItem",
+      value: function prevItem() {
+        if (this.currentSlide <= 0) {
+          return;
+        }
+        this.activeItem.classList.remove("test__unit_active");
+        this.currentSlide--;
+        this.activeItem = this.quizItems[this.currentSlide];
+        this.activeItem.classList.add("test__unit_active");
+        this.togleBg(this.currentSlide);
+      }
+    }, {
+      key: "saveDataToStorage",
+      value: function saveDataToStorage(data) {
+        var formatted = Object.values(data).reduce(function (acc, data) {
+          if (data.length) {
+            data.forEach(function (item) {
+              acc[item.name] = item.value;
+            });
+          } else {
+            acc[data.name] = data.value;
+          }
+          return acc;
+        }, {});
+        localStorage.setItem("testResults", JSON.stringify(formatted));
+      }
+    }]);
+    return Test;
+  }();
+  var testInit = new Test("quiz", "test__unit", 0);
+  var units = [];
+  var hasSelect = document.querySelector("#unitOfWeight");
+  var hasSelect1 = document.querySelector("#unitOfWeight1");
+  var hasSelect2 = document.querySelector("#unitOfWeight2");
+  if (hasSelect) {
+    var select = new _custom_select__WEBPACK_IMPORTED_MODULE_0__.CustomSelect("#unitOfWeight", {
+      name: "unitOfWeight",
+      targetValue: "КГ",
+      options: [["КГ", "КГ"], ["ФТ", "ФТ"]]
+    });
+    hasSelect.addEventListener("select.change", function (e) {
+      saveParam(e);
+    });
+  }
+  if (hasSelect1) {
+    var _select = new _custom_select__WEBPACK_IMPORTED_MODULE_0__.CustomSelect("#unitOfWeight1", {
+      name: "unitOfWeight1",
+      targetValue: "СМ",
+      options: [["СМ", "СМ"], ["Дюйм", "Дюйм"]]
+    });
+    hasSelect1.addEventListener("select.change", function (e) {
+      saveParam(e);
+    });
+  }
+  if (hasSelect2) {
+    var _select2 = new _custom_select__WEBPACK_IMPORTED_MODULE_0__.CustomSelect("#unitOfWeight2", {
+      name: "unitOfWeight2",
+      targetValue: "КГ",
+      options: [["КГ", "КГ"], ["ФТ", "ФТ"]]
+    });
+    hasSelect1.addEventListener("select.change", function (e) {
+      saveParam(e);
+    });
+  }
+  var saveParam = function saveParam(e) {
+    var btn = e ? e.target.querySelector(".select__toggle") : document.querySelectorAll(".select__toggle");
+    if (e) {
+      units.forEach(function (unit) {
+        if (unit.name === btn.name) {
+          unit.value = btn.value;
+        }
+      });
+    } else {
+      btn.forEach(function (el) {
+        units = [].concat(_toConsumableArray(units), [{
+          name: el.name,
+          value: el.value
+        }]);
+      });
+    }
+    var formatted = Object.values(units).reduce(function (acc, _ref) {
+      var _ref$name = _ref.name,
+        name = _ref$name === void 0 ? "" : _ref$name,
+        _ref$value = _ref.value,
+        value = _ref$value === void 0 ? "" : _ref$value;
+      acc[name] = value;
+      return acc;
+    }, {});
+    localStorage.setItem("units", JSON.stringify(formatted));
+  };
+
+  // const btnNo = document.querySelector('#faith2');
+  var btnResults = document.querySelector('#done');
+  var male = document.querySelector('#gen1');
+  var female = document.querySelector('#gen2');
+  var answerSportMale = document.querySelector('#sportMale');
+  var answerSportFemale = document.querySelector('#sportFemale');
+  var answerDayMale = document.querySelector('#dayMale');
+  var answerDayFemale = document.querySelector('#dayFemale');
+  male.addEventListener('click', function () {
+    answerSportMale.style.display = '';
+    answerSportFemale.style.display = 'none';
+    answerDayMale.style.display = '';
+    answerDayFemale.style.display = 'none';
+  });
+  female.addEventListener('click', function () {
+    answerSportFemale.style.display = '';
+    answerSportMale.style.display = 'none';
+    answerDayFemale.style.display = '';
+    answerDayMale.style.display = 'none';
+  });
+
+  //       btnNo.addEventListener('click', function () {
+  //       btnResults.style.display = '';
+  // })
+
+  saveParam();
+}
+
+// results
+
+/***/ }),
+
 /***/ "./script/components/choices.js":
 /*!**************************************!*\
   !*** ./script/components/choices.js ***!
@@ -298,6 +667,185 @@ if (element) {
 // };
 
 // groupSelect();
+
+/***/ }),
+
+/***/ "./script/components/custom-select.js":
+/*!********************************************!*\
+  !*** ./script/components/custom-select.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CustomSelect: () => (/* binding */ CustomSelect)
+/* harmony export */ });
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var CLASS_NAME_SELECT = 'select';
+var CLASS_NAME_ACTIVE = 'select_show';
+var CLASS_NAME_SELECTED = 'select__option_selected';
+var SELECTOR_ACTIVE = '.select_show';
+var SELECTOR_DATA = '[data-select]';
+var SELECTOR_DATA_TOGGLE = '[data-select="toggle"]';
+var SELECTOR_OPTION_SELECTED = '.select__option_selected';
+var CustomSelect = /*#__PURE__*/function () {
+  function CustomSelect(target, params) {
+    _classCallCheck(this, CustomSelect);
+    this._elRoot = typeof target === 'string' ? document.querySelector(target) : target;
+    this._params = params || {};
+    if (this._params['options']) {
+      this._elRoot.classList.add(CLASS_NAME_SELECT);
+      this._elRoot.innerHTML = CustomSelect.template(this._params);
+    }
+    this._elToggle = this._elRoot.querySelector(SELECTOR_DATA_TOGGLE);
+    this._elRoot.addEventListener('click', this._onClick.bind(this));
+  }
+  _createClass(CustomSelect, [{
+    key: "_onClick",
+    value: function _onClick(e) {
+      var target = e.target;
+      var type = target.closest(SELECTOR_DATA).dataset.select;
+      switch (type) {
+        case 'toggle':
+          this.toggle();
+          break;
+        case 'option':
+          this._changeValue(target);
+          break;
+      }
+    }
+  }, {
+    key: "_update",
+    value: function _update(option) {
+      option = option.closest('.select__option');
+      var selected = this._elRoot.querySelector(SELECTOR_OPTION_SELECTED);
+      if (selected) {
+        selected.classList.remove(CLASS_NAME_SELECTED);
+      }
+      option.classList.add(CLASS_NAME_SELECTED);
+      this._elToggle.textContent = option.textContent;
+      this._elToggle.value = option.dataset['value'];
+      this._elToggle.dataset.index = option.dataset['index'];
+      this._elRoot.dispatchEvent(new CustomEvent('select.change'));
+      this._params.onSelected ? this._params.onSelected(this, option) : null;
+      return option.dataset['value'];
+    }
+  }, {
+    key: "_reset",
+    value: function _reset() {
+      var selected = this._elRoot.querySelector(SELECTOR_OPTION_SELECTED);
+      if (selected) {
+        selected.classList.remove(CLASS_NAME_SELECTED);
+      }
+      this._elToggle.textContent = 'Выберите из списка';
+      this._elToggle.value = '';
+      this._elToggle.dataset.index = -1;
+      this._elRoot.dispatchEvent(new CustomEvent('select.change'));
+      this._params.onSelected ? this._params.onSelected(this, null) : null;
+      return '';
+    }
+  }, {
+    key: "_changeValue",
+    value: function _changeValue(option) {
+      if (option.classList.contains(CLASS_NAME_SELECTED)) {
+        return;
+      }
+      this._update(option);
+      this.hide();
+    }
+  }, {
+    key: "show",
+    value: function show() {
+      document.querySelectorAll(SELECTOR_ACTIVE).forEach(function (select) {
+        select.classList.remove(CLASS_NAME_ACTIVE);
+      });
+      this._elRoot.classList.add(CLASS_NAME_ACTIVE);
+    }
+  }, {
+    key: "hide",
+    value: function hide() {
+      this._elRoot.classList.remove(CLASS_NAME_ACTIVE);
+    }
+  }, {
+    key: "toggle",
+    value: function toggle() {
+      if (this._elRoot.classList.contains(CLASS_NAME_ACTIVE)) {
+        this.hide();
+      } else {
+        this.show();
+      }
+    }
+  }, {
+    key: "dispose",
+    value: function dispose() {
+      this._elRoot.removeEventListener('click', this._onClick);
+    }
+  }, {
+    key: "value",
+    get: function get() {
+      return this._elToggle.value;
+    },
+    set: function set(value) {
+      var _this = this;
+      var isExists = false;
+      this._elRoot.querySelectorAll('.select__option').forEach(function (option) {
+        if (option.dataset['value'] === value) {
+          isExists = true;
+          return _this._update(option);
+        }
+      });
+      if (!isExists) {
+        return this._reset();
+      }
+    }
+  }, {
+    key: "selectedIndex",
+    get: function get() {
+      return this._elToggle.dataset['index'];
+    },
+    set: function set(index) {
+      var option = this._elRoot.querySelector(".select__option[data-index=\"".concat(index, "\"]"));
+      if (option) {
+        return this._update(option);
+      }
+      return this._reset();
+    }
+  }]);
+  return CustomSelect;
+}();
+CustomSelect.template = function (params) {
+  var name = params['name'];
+  var options = params['options'];
+  var targetValue = params['targetValue'];
+  var items = [];
+  var selectedIndex = -1;
+  var selectedValue = '';
+  var selectedContent = 'Выберите из списка';
+  options.forEach(function (option, index) {
+    var selectedClass = '';
+    if (option[0] === targetValue) {
+      selectedClass = ' select__option_selected';
+      selectedIndex = index;
+      selectedValue = option[0];
+      selectedContent = option[1];
+    }
+    items.push("<li class=\"select__option".concat(selectedClass, "\" data-select=\"option\" data-value=\"").concat(option[0], "\" data-index=\"").concat(index, "\">").concat(option[1], "</li>"));
+  });
+  return "<button type=\"button\" class=\"select__toggle\" name=\"".concat(name, "\" value=\"").concat(selectedValue, "\" data-select=\"toggle\" data-index=\"").concat(selectedIndex, "\">").concat(selectedContent, "</button>\n  <div class=\"select__dropdown\">\n    <ul class=\"select__options\">").concat(items.join(''), "</ul>\n  </div>");
+};
+document.addEventListener('click', function (e) {
+  if (!e.target.closest('.select')) {
+    document.querySelectorAll(SELECTOR_ACTIVE).forEach(function (select) {
+      select.classList.remove(CLASS_NAME_ACTIVE);
+    });
+  }
+});
 
 /***/ }),
 
@@ -611,6 +1159,277 @@ window.onload = function () {
 
 /***/ }),
 
+/***/ "./script/components/result.js":
+/*!*************************************!*\
+  !*** ./script/components/result.js ***!
+  \*************************************/
+/***/ (() => {
+
+"use strict";
+
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+var resultPage = document.querySelector(".resultPage");
+if (resultPage) {
+  /* Функция для получения данных из localStorage с обработкой ошибок */
+  var getDataFromStorage = function getDataFromStorage(key) {
+    var defaultValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    try {
+      return JSON.parse(localStorage.getItem(key)) || defaultValue;
+    } catch (error) {
+      console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0438 \u0434\u0430\u043D\u043D\u044B\u0445 ".concat(key, " \u0438\u0437 localStorage:"), error);
+      return defaultValue;
+    }
+  };
+  /* Получение данных из localStorage */
+  var testResults = getDataFromStorage("testResults");
+  if (Object.keys(testResults).length === 0) {
+    window.document.location = "/check";
+  } else {
+    /* Расчет ИМТ */
+    var calculateIMT = function calculateIMT(weight, height) {
+      var heightInMeters = height / 100;
+      return Math.round(weight / Math.pow(heightInMeters, 2));
+    };
+    /* Обновление UI на основе данных */
+    var updateUI = function updateUI() {
+      age.innerHTML = getAgeString(testResults.age);
+      heightweight.innerHTML = "".concat(testResults.height, " ").concat(units.unitOfWeight1, " / ").concat(testResults.weight, " ").concat(units.unitOfWeight);
+      imt.innerHTML = imtValue;
+      calories.innerHTML = "".concat(Math.floor(getCalories(testResults)), " \u043A\u041A\u0430\u043B");
+      waterRate.innerHTML = "".concat(calculateWaterRate(testResults.weight).toFixed(1), " \u043B");
+      imtCircle.style.left = "".concat(calculateIMTPosition(imtValue), "%");
+      console.log(calculateIMTPosition(imtValue));
+      updatePromptName(imtValue);
+    };
+    /* Функция для расчета количества калорий */
+    var getCalories = function getCalories(_ref) {
+      var gender = _ref.gender,
+        weight = _ref.weight,
+        height = _ref.height,
+        age = _ref.age,
+        sport = _ref.sport;
+      var baseCalories = gender[0] === "Женщина" ? 10 * weight + 6.25 * height - 5 * age - 161 : 10 * weight + 6.25 * height - 5 * age + 5;
+      var physicalActivity = {
+        sport1: 0.7,
+        sport2: 0.8,
+        sport3: 1,
+        sport4: 1.2,
+        sport5: 1.6
+      };
+      return baseCalories * (physicalActivity[sport[0]] || 1);
+    };
+    /* Расчет потери веса за первую неделю */
+    var getFirstWeekWeightLoss = function getFirstWeekWeightLoss(weight, normalWeight) {
+      return ((weight - normalWeight) * 0.18).toFixed(1);
+    };
+    /* Функция для генерации данных графика */
+    var getChartData = function getChartData(initialWeight, firstWeekWeight, finalWeight) {
+      var weightLastWeek = firstWeekWeight - (firstWeekWeight - finalWeight) / 2;
+      return [initialWeight, firstWeekWeight, weightLastWeek, finalWeight];
+    };
+    /* Определение плана (набор или потеря веса) и обновление UI */
+    var updatePlan = function updatePlan() {
+      var plan = testResults.normalWeight > testResults.weight ? "min" : "max";
+      var differentWeight = Math.abs(testResults.normalWeight - testResults.weight);
+      var firstWeekWeightLoss = getFirstWeekWeightLoss(testResults.weight, testResults.normalWeight);
+      if (plan === "min") {
+        forecast.innerHTML = "Прогноз набора веса";
+        normweight.innerHTML = "".concat(differentWeight, " ").concat(units.unitOfWeight);
+        firstWeek.innerHTML = "".concat(firstWeekWeightLoss, " ").concat(units.unitOfWeight);
+        chartData = getChartData(testResults.weight, Number(testResults.weight) + Number(firstWeekWeightLoss), testResults.normalWeight);
+      } else {
+        forecast.innerHTML = "Прогноз снижения веса";
+        normweight.innerHTML = "".concat(differentWeight, " ").concat(units.unitOfWeight);
+        firstWeek.innerHTML = "-".concat(firstWeekWeightLoss, " ").concat(units.unitOfWeight);
+        chartData = getChartData(testResults.weight, Number(testResults.weight) - Number(firstWeekWeightLoss), testResults.normalWeight);
+      }
+    };
+    /* Расчет нормы потребления воды */
+    var calculateWaterRate = function calculateWaterRate(weight) {
+      return 0.02835 * weight / (2 * 0.4536);
+    };
+    /* Определение позиции кружка на шкале ИМТ */
+    var calculateIMTPosition = function calculateIMTPosition(imt) {
+      if (imt <= 16) return 10;
+      if (imt > 16 && imt <= 18.5) return 25;
+      if (imt > 18.5 && imt <= 25) return 40;
+      if (imt > 25 && imt <= 30) return 75;
+      if (imt > 30 && imt <= 35) return 80;
+      if (imt > 35 && imt <= 40) return 90;
+      return 90;
+    };
+    /* Обновление текста категории ИМТ */
+    var updatePromptName = function updatePromptName(imtValue) {
+      if (imtValue < 16) promptName.innerHTML = promptArrayName[0];else if (imtValue >= 16 && imtValue < 18.5) promptName.innerHTML = promptArrayName[1];else if (imtValue >= 18.5 && imtValue < 25) promptName.innerHTML = promptArrayName[2];else if (imtValue >= 25 && imtValue < 30) promptName.innerHTML = promptArrayName[3];else if (imtValue >= 30 && imtValue < 35) promptName.innerHTML = promptArrayName[4];else if (imtValue >= 35 && imtValue < 40) promptName.innerHTML = promptArrayName[5];else promptName.innerHTML = promptArrayName[6];
+    };
+    /* Корректный вывод возраста с окончанием */
+    var getAgeString = function getAgeString(age) {
+      var count = age % 100;
+      if (count >= 5 && count <= 20) return "".concat(age, " \u043B\u0435\u0442");
+      var remainder = age % 10;
+      if (remainder === 1) return "".concat(age, " \u0433\u043E\u0434");
+      if (remainder >= 2 && remainder <= 4) return "".concat(age, " \u0433\u043E\u0434\u0430");
+      return "".concat(age, " \u043B\u0435\u0442");
+    };
+    /* Отрисовка графика с использованием Highcharts */
+    var renderChart = function renderChart(chartData) {
+      chartData = chartData.map(function (item) {
+        return Number(item);
+      });
+      Highcharts.chart("container", {
+        legend: {
+          layout: "vertical",
+          align: "right",
+          verticalAlign: "middle"
+        },
+        series: [{
+          name: "",
+          data: _toConsumableArray(chartData)
+        }],
+        responsive: {
+          rules: [{
+            condition: {
+              maxWidth: 500
+            },
+            chartOptions: {
+              legend: {
+                layout: "horizontal",
+                align: "center",
+                verticalAlign: "bottom"
+              }
+            }
+          }]
+        }
+      });
+    };
+    var setProgress = function setProgress(percent) {
+      var offset = circumference - percent / 100 * circumference;
+      circle.style.strokeDashoffset = offset;
+    };
+    var calculateDailyCalories = function calculateDailyCalories(_ref2) {
+      var gender = _ref2.gender,
+        weight = _ref2.weight,
+        height = _ref2.height,
+        age = _ref2.age,
+        activityLevel = _ref2.activityLevel;
+      // Рассчитываем BMR
+      var bmr = gender === "Мужчина" ? 10 * weight + 6.25 * height - 5 * age + 5 : 10 * weight + 6.25 * height - 5 * age - 161;
+
+      // Учитываем физическую активность
+      var activityFactors = {
+        low: 1.2,
+        light: 1.375,
+        moderate: 1.55,
+        high: 1.725,
+        veryHigh: 1.9
+      };
+
+      // const dailyCalories = bmr * (activityFactors[activityLevel] || 1.2);
+      var dailyCalories = Math.floor(getCalories(testResults));
+
+      // Процентное распределение макронутриентов
+      var proteinPercentage = 0.2;
+      var fatPercentage = 0.3;
+      var carbsPercentage = 0.5;
+
+      // Рассчитываем количество граммов белков, жиров и углеводов
+      var proteinGrams = dailyCalories * proteinPercentage / 4;
+      var fatGrams = dailyCalories * fatPercentage / 9;
+      var carbsGrams = dailyCalories * carbsPercentage / 4;
+      return {
+        dailyCalories: Math.round(dailyCalories),
+        proteinGrams: proteinGrams.toFixed(2),
+        fatGrams: fatGrams.toFixed(2),
+        carbsGrams: carbsGrams.toFixed(2)
+      };
+    };
+    /* Инициализация всех расчетов и отрисовки */
+    var init = function init() {
+      updateUI();
+      updatePlan();
+      renderChart(chartData);
+    };
+    /* Запуск приложения */
+    var units = getDataFromStorage("units");
+    var chartData = [];
+
+    /* Селекторы для элементов страницы */
+    var normweight = document.querySelector("#normweight");
+    var imt = document.querySelector("#imt");
+    var imtCircle = document.querySelector("#imtCircle");
+    var age = document.querySelector("#age");
+    var heightweight = document.querySelector("#heightweight");
+    var forecast = document.querySelector("#forecast");
+    var firstWeek = document.querySelector("#firstWeek");
+    var calories = document.querySelector("#calories");
+    var waterRate = document.querySelector("#waterRate");
+    var promptName = document.querySelector("#prompt__name");
+    var promptArrayName = ["Выраженный дефицит массы тела", "Недостаточная масса тела", "Норма", "Избыточная масса тела", "Ожирение 1-й степени", "Ожирение 2-й степени", "Ожирение 3-й степени"];
+    var imtValue = calculateIMT(testResults.weight, testResults.height);
+    var circle = document.querySelector(".progress-ring__circle");
+    var radius = circle.r.baseVal.value;
+    var persentValue = document.querySelector("#present");
+    var preloader = document.querySelector(".result__preloader");
+    var resultBlock = document.querySelector("#result-block");
+    var circumference = 2 * Math.PI * radius;
+    circle.style.strokeDasharray = "".concat(circumference, " ").concat(circumference);
+    circle.style.strokeDashoffset = circumference;
+    var startProgress = 0;
+    setTimeout(function () {
+      var refreshIntervalId = setInterval(function () {
+        startProgress++;
+        setProgress(startProgress);
+        persentValue.innerHTML = "".concat(startProgress, "%");
+        if (startProgress === 100) {
+          clearInterval(refreshIntervalId);
+          setTimeout(function () {
+            resultBlock.style.opacity = "1";
+            resultBlock.style.height = "auto";
+            preloader.style.opacity = "0";
+            preloader.style.height = "0";
+            setTimeout(function () {
+              resultBlock.style.display = "block";
+              preloader.style.display = "none";
+            }, 200);
+          }, 1000);
+        }
+      }, 40);
+    }, 1000);
+    console.log(testResults);
+
+    // Пример использования функции
+    var user = {
+      gender: "Женщина",
+      weight: testResults.weight,
+      // Вес в кг
+      height: testResults.height,
+      // Рост в см
+      age: testResults.age,
+      // Возраст
+      activityLevel: "moderate" // Уровень активности
+    };
+
+    var result = calculateDailyCalories(user);
+    console.log("\u0412\u0430\u0448\u0430 \u0441\u0443\u0442\u043E\u0447\u043D\u0430\u044F \u043D\u043E\u0440\u043C\u0430 \u043A\u0430\u043B\u043E\u0440\u0438\u0439: ".concat(result.dailyCalories, " \u043A\u041A\u0430\u043B"));
+    console.log("\u0411\u0435\u043B\u043A\u0438: ".concat(result.proteinGrams, " \u0433, \u0416\u0438\u0440\u044B: ").concat(result.fatGrams, " \u0433, \u0423\u0433\u043B\u0435\u0432\u043E\u0434\u044B: ").concat(result.carbsGrams, " \u0433"));
+    var belkiBox = document.querySelector('#belki');
+    var giriBox = document.querySelector('#giri');
+    var uglevodsBox = document.querySelector('#uglevods');
+    belkiBox.innerHTML = parseInt(result.proteinGrams) + ' г';
+    giriBox.innerHTML = parseInt(result.fatGrams) + ' г';
+    uglevodsBox.innerHTML = parseInt(result.carbsGrams) + ' г';
+    init();
+  }
+}
+
+/***/ }),
+
 /***/ "./script/components/share.js":
 /*!************************************!*\
   !*** ./script/components/share.js ***!
@@ -625,6 +1444,90 @@ var share = document.querySelector('.share');
 if (share) {
   share.addEventListener('click', actionToggle);
 }
+
+//$Recycle.Bin
+
+document.getElementById('accept-cookie').addEventListener('click', function () {
+  // Отправляем AJAX-запрос для установки cookie
+  fetch("{{ route('cookie.accept') }}", {
+    method: 'POST',
+    headers: {
+      'X-CSRF-TOKEN': '{{ csrf_token() }}'
+    }
+  }).then(function (response) {
+    if (response.ok) {
+      document.getElementById('cookie-policy').style.display = 'none';
+    }
+  });
+});
+function cookies() {
+  // Функция для получения значения куки по имени
+  function getCookie(name) {
+    var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }
+
+  // Проверяем, установлены ли куки acceptCookie
+  if (getCookie('acceptCookie')) {
+    return; // Если куки установлены, ничего не делаем
+  }
+
+  var block = document.querySelector('.cookies-block');
+  var close = document.getElementById('accept-cookie');
+  var height = block.offsetHeight;
+
+  // Изначально скрываем блок за пределами экрана
+  block.style.bottom = "-".concat(height, "px");
+  block.classList.add('show');
+
+  // Анимация появления блока
+  var showBlock = function showBlock() {
+    var start = Date.now();
+    var duration = 1000; // 1 секунда анимации
+    var initialBottom = -height;
+    var targetBottom = 0;
+    function animate() {
+      var elapsed = Date.now() - start;
+      var progress = Math.min(elapsed / duration, 1);
+      var newBottom = initialBottom + (targetBottom - initialBottom) * progress;
+      block.style.bottom = "".concat(newBottom, "px");
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    }
+    animate();
+  };
+  showBlock();
+
+  // Обработчик клика по кнопке "Принять"
+  close.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    // Отправка GET-запроса для установки куки
+    fetch('/ajax/accept-cookie').then(function () {
+      // Устанавливаем куки на клиентской стороне
+      document.cookie = "acceptCookie=1; path=/; max-age=" + 60 * 60 * 24 * 365; // Куки на 1 год
+
+      var start = Date.now();
+      var duration = 1000; // 1 секунда анимации
+      var initialBottom = 0;
+      var targetBottom = -height;
+      function animateHide() {
+        var elapsed = Date.now() - start;
+        var progress = Math.min(elapsed / duration, 1);
+        var newBottom = initialBottom + (targetBottom - initialBottom) * progress;
+        block.style.bottom = "".concat(newBottom, "px");
+        if (progress < 1) {
+          requestAnimationFrame(animateHide);
+        } else {
+          block.classList.remove('show');
+        }
+      }
+      animateHide();
+    });
+  });
+}
+cookies();
 
 /***/ }),
 
@@ -52003,7 +52906,9 @@ module.exports = JSON.parse('{"w_1920":{"full_width":1920,"content_width":1768,"
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/_vendor.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/404.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/aside_image.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/check.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/choices.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/custom-select.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/drop2.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/dropdown.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/ex.js")))
@@ -52012,6 +52917,7 @@ module.exports = JSON.parse('{"w_1920":{"full_width":1920,"content_width":1768,"
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/grid.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/header.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/mnigallery.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/result.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/share.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/simple.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/main/main.style.min"], () => (__webpack_require__("./script/components/slider_hero.js")))

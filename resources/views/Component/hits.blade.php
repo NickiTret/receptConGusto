@@ -240,7 +240,7 @@
         <ul class="new-first-screen__aside-tags">
             @foreach ($maps as $tag)
                 <li>
-                    <a href="{{ route('tags.single', ['id' => $tag->id]) }}">{{ $tag->title }}</a>
+                    <a href="{{ route('tags.single', ['slug' => $tag->slug]) }}">{{ $tag->title }}</a>
                 </li>
             @endforeach
         </ul>

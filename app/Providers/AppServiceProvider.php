@@ -7,7 +7,7 @@ use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
-
+use Illuminate\Support\Facades\Cookie;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -33,10 +33,15 @@ class AppServiceProvider extends ServiceProvider
 
         // Model::preventLazyLoading(app()->isProduction());
 
-        //seeding для вывода инфы на каждой страницы
-         view()->composer(['Main.footer','Main.header'], function($view) {
+        // View composer для передачи данных на каждой странице
+        view()->composer(['Main.footer', 'Main.header'], function($view) {
+            // Проверка наличия cookie acceptCookie
+            $hasAcceptedCookies = Cookie::get('acceptCookie', false);
+
+            // Передаем переменные в представления
             $view->with('headers', Header::all());
             $view->with('categories_menu', Category::orderBy('title')->get());
-         });
+            $view->with('hasAcceptedCookies', $hasAcceptedCookies); // Передаем переменную в представления
+        });
     }
 }

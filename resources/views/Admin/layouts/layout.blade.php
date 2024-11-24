@@ -34,11 +34,12 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/admin" class="nav-link">
                                 <i class="nav-icon far fa-circle text-info"></i>
                                 <p>Главная</p>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a href="{{ route('seo.index') }}" class="nav-link">
                                 <i class="nav-icon far fa-circle text-info"></i>
@@ -158,6 +159,42 @@
                                         <p>Новый Тег</p>
                                     </a>
                                 </li>
+                            </ul>
+                        </li>
+                        {{-- <li class="nav-item">
+                            <a href="{{ route('products.index') }}" class="nav-link">
+                                <i class="nav-icon far fa-circle text-info"></i>
+                                <p>Импорт калорийсности</p>
+                            </a>
+                        </li> --}}
+                        <li class="nav-item has-treeview">
+                            <a href="{{ route('products.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Продукты
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                {{-- <li class="nav-item">
+                                    <a href="{{ route('products.importshow') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Импорт продуктов</p>
+                                    </a>
+                                </li> --}}
+                                <li class="nav-item">
+                                    <a href="{{ route('products.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Список продуктов</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('products.create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Создание продукта</p>
+                                    </a>
+                                </li>
+
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">

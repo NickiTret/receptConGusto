@@ -14,5 +14,7 @@ import './components/steak.js';
 import './components/mnigallery.js';
 import './components/usermodel.js';
 import './components/viewsort.js';
+import './components/check.js';
+import './components/result.js';
 
 
