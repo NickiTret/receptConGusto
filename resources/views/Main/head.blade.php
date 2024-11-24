@@ -8,6 +8,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
 
+
     @if (!empty($seo))
         <title>{{ strip_tags($seo->title) }}</title>
         <meta name="description" content="{{ strip_tags($seo->description) }}">
