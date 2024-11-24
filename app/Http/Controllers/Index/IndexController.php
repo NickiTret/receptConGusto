@@ -396,13 +396,17 @@ class IndexController extends Controller
     // $message = config('site.cookie_agreement', 'Наш сайт использует файлы cookie и похожие технологии, чтобы гарантировать максимальное удобство пользователям...');
 
     // Проверяем, установлено ли cookie с согласием
+    $seo = Seo::where('name_page', 'Политика')->first();
     $hasAcceptedCookies = $request->cookie('acceptCookie', false);
 
-    return view('cookiePolicy', compact( 'hasAcceptedCookies'));
+    return view('cookiePolicy', compact( 'hasAcceptedCookies', 'seo'));
 }
 
 
     public function tableKal(Request $request) {
+
+        $seo = Seo::where('name_page', 'Таблица калорийности')->first();
+
         // Получаем параметры сортировки, с дефолтным значением по названию
         $sortField = $request->input('sort', 'product_name');
         $sortDirection = $request->input('direction', 'asc');
@@ -419,16 +423,22 @@ class IndexController extends Controller
             return News::where('show', '1')->orderBy('views', 'desc')->limit(8)->get();
         });
 
-        return view('tableKal', compact('products', 'posts', 'news', 'sortField', 'sortDirection'));
+        return view('tableKal', compact('products', 'posts', 'news', 'sortField', 'sortDirection', 'seo'));
     }
 
     public function check()
     {
-        return view('check');
+
+        $seo = Seo::where('name_page', 'Калькулятор калорий')->first();
+
+        return view('check', compact('seo'));
     }
 
     public function result()
     {
-        return view('result');
+
+        $seo = Seo::where('name_page', 'Результат')->first();
+
+        return view('result', compact('seo'));
     }
 }
