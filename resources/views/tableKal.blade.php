@@ -13,87 +13,95 @@
                     <div class="container">
                         <p>
 
-                            Таблица калорийности и содержания белков, жиров, углеводов в 100 граммах съедобной части ключевых продуктов питания. Калорийность пищевых продуктов играет важную роль в диетах и программах похудения, помогая составить оптимальный рацион.</p>
+                            Таблица калорийности и содержания белков, жиров, углеводов в 100 граммах съедобной части
+                            ключевых продуктов питания. Калорийность пищевых продуктов играет важную роль в диетах и
+                            программах похудения, помогая составить оптимальный рацион.</p>
+                        <p class="mob"><small>Листайте таблицу в право</small> </p>
                         <div class="table-custom-container">
-                        <table class="table-custom">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <a href="{{ route('tableKal', ['sort' => 'product_name', 'direction' => $sortField == 'product_name' && $sortDirection == 'asc' ? 'desc' : 'asc']) }}">
-                                            Название
-                                            @if($sortField == 'product_name')
-                                                @if($sortDirection == 'asc')
-                                                    &#9650; <!-- Стрелка вверх -->
-                                                @else
-                                                    &#9660; <!-- Стрелка вниз -->
-                                                @endif
-                                            @endif
-                                        </a>
-                                    </th>
-                                    <th>
-                                        <a href="{{ route('tableKal', ['sort' => 'calories', 'direction' => $sortField == 'calories' && $sortDirection == 'asc' ? 'desc' : 'asc']) }}">
-                                            Калории, г
-                                            @if($sortField == 'calories')
-                                                @if($sortDirection == 'asc')
-                                                    &#9650;
-                                                @else
-                                                    &#9660;
-                                                @endif
-                                            @endif
-                                        </a>
-                                    </th>
-                                    <th>
-                                        <a href="{{ route('tableKal', ['sort' => 'proteins', 'direction' => $sortField == 'proteins' && $sortDirection == 'asc' ? 'desc' : 'asc']) }}">
-                                            Белки, г
-                                            @if($sortField == 'proteins')
-                                                @if($sortDirection == 'asc')
-                                                    &#9650;
-                                                @else
-                                                    &#9660;
-                                                @endif
-                                            @endif
-                                        </a>
-                                    </th>
-                                    <th>
-                                        <a href="{{ route('tableKal', ['sort' => 'fats', 'direction' => $sortField == 'fats' && $sortDirection == 'asc' ? 'desc' : 'asc']) }}">
-                                            Жиры, г
-                                            @if($sortField == 'fats')
-                                                @if($sortDirection == 'asc')
-                                                    &#9650;
-                                                @else
-                                                    &#9660;
-                                                @endif
-                                            @endif
-                                        </a>
-                                    </th>
-                                    <th>
-                                        <a href="{{ route('tableKal', ['sort' => 'carbohydrates', 'direction' => $sortField == 'carbohydrates' && $sortDirection == 'asc' ? 'desc' : 'asc']) }}">
-                                            Углеводы, г
-                                            @if($sortField == 'carbohydrates')
-                                                @if($sortDirection == 'asc')
-                                                    &#9650;
-                                                @else
-                                                    &#9660;
-                                                @endif
-                                            @endif
-                                        </a>
-                                    </th>
-                                    {{-- <th>Группа</th> --}}
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($products as $product)
+                            <table class="table-custom">
+                                <thead>
                                     <tr>
-                                        <td>{{ $product->product_name }}</td>
-                                        <td>{{ $product->calories }}</td>
-                                        <td>{{ $product->proteins }}</td>
-                                        <td>{{ $product->fats }}</td>
-                                        <td>{{ $product->carbohydrates }}</td>
-                                        {{-- <td>{{ $product->group->name ?? 'Без группы' }}</td> --}}
+                                        <th>
+                                            <a
+                                                href="{{ route('tableKal', ['sort' => 'product_name', 'direction' => $sortField == 'product_name' && $sortDirection == 'asc' ? 'desc' : 'asc']) }}">
+                                                Название
+                                                @if ($sortField == 'product_name')
+                                                    @if ($sortDirection == 'asc')
+                                                        &#9650; <!-- Стрелка вверх -->
+                                                    @else
+                                                        &#9660; <!-- Стрелка вниз -->
+                                                    @endif
+                                                @endif
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a
+                                                href="{{ route('tableKal', ['sort' => 'calories', 'direction' => $sortField == 'calories' && $sortDirection == 'asc' ? 'desc' : 'asc']) }}">
+                                                Калории, г
+                                                @if ($sortField == 'calories')
+                                                    @if ($sortDirection == 'asc')
+                                                        &#9650;
+                                                    @else
+                                                        &#9660;
+                                                    @endif
+                                                @endif
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a
+                                                href="{{ route('tableKal', ['sort' => 'proteins', 'direction' => $sortField == 'proteins' && $sortDirection == 'asc' ? 'desc' : 'asc']) }}">
+                                                Белки, г
+                                                @if ($sortField == 'proteins')
+                                                    @if ($sortDirection == 'asc')
+                                                        &#9650;
+                                                    @else
+                                                        &#9660;
+                                                    @endif
+                                                @endif
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a
+                                                href="{{ route('tableKal', ['sort' => 'fats', 'direction' => $sortField == 'fats' && $sortDirection == 'asc' ? 'desc' : 'asc']) }}">
+                                                Жиры, г
+                                                @if ($sortField == 'fats')
+                                                    @if ($sortDirection == 'asc')
+                                                        &#9650;
+                                                    @else
+                                                        &#9660;
+                                                    @endif
+                                                @endif
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a
+                                                href="{{ route('tableKal', ['sort' => 'carbohydrates', 'direction' => $sortField == 'carbohydrates' && $sortDirection == 'asc' ? 'desc' : 'asc']) }}">
+                                                Углеводы, г
+                                                @if ($sortField == 'carbohydrates')
+                                                    @if ($sortDirection == 'asc')
+                                                        &#9650;
+                                                    @else
+                                                        &#9660;
+                                                    @endif
+                                                @endif
+                                            </a>
+                                        </th>
+                                        {{-- <th>Группа</th> --}}
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach ($products as $product)
+                                        <tr>
+                                            <td>{{ $product->product_name }}</td>
+                                            <td>{{ $product->calories }}</td>
+                                            <td>{{ $product->proteins }}</td>
+                                            <td>{{ $product->fats }}</td>
+                                            <td>{{ $product->carbohydrates }}</td>
+                                            {{-- <td>{{ $product->group->name ?? 'Без группы' }}</td> --}}
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
@@ -105,17 +113,27 @@
 
             <style>
                 .table-custom-container {
+                    /* width: 100%; */
+                    overflow: auto;
+                }
+
+                p.mob {
+                    display: none;
+                }
+
+                .about_content .content {
                     width: 100%;
-                    overflow-x: auto; /* Горизонтальная прокрутка только для таблицы */
                 }
 
                 .table-custom {
-                    width: 100%; /* Убираем фиксированную ширину */
+                    width: 100%;
+                    max-width: 100%;
                     border-collapse: collapse;
                     background-color: #f9f9f9;
                     margin: 20px 0;
                     font-size: 1em;
                     text-align: left;
+                    /* table-layout: fixed; */
                 }
 
                 .table-custom th,
@@ -158,7 +176,11 @@
                 /* Убираем фиксированную ширину в медиа-запросе */
                 @media (max-width: 768px) {
                     .table-custom {
-                        width: 100%; /* Ставим 100% ширину */
+                        width: 100%;
+                    }
+
+                    p.mob {
+                        display: block;
                     }
                 }
             </style>
