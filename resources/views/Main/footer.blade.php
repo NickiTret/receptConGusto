@@ -64,15 +64,11 @@
     </div>
     <div class="container">
         <div class="left-box">
-            <p>&copy; <span id="year"></span>&nbsp;Con&nbsp;Gusto</p>
+            <p>&copy; 2024&nbsp;Con&nbsp;Gusto</p>
             <p>Разработка&nbsp;сайта - <a href="https://infonickweb.ru/" target="_blank">NickWeb&nbsp;Create</a>
             </p>
         </div>
-        <script>
-            // Получение текущего года и вставка в элемент
-            const currentYear = new Date().getFullYear();
-            document.getElementById('year').textContent = currentYear;
-        </script>
+
         <ul class="social">
             <li>
                 <a href="https://t.me/econgusto" target="_blank">Telegram</a>
