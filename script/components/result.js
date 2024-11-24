@@ -1,5 +1,7 @@
 "use strict";
 
+import Highcharts from 'highcharts';
+
 const resultPage = document.querySelector(".resultPage");
 
 if (resultPage) {
