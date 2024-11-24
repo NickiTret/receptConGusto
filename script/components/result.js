@@ -181,6 +181,8 @@ if (resultPage) {
             return `${age} лет`;
         }
 
+        // const Highcharts = require('highcharts');
+
         /* Отрисовка графика с использованием Highcharts */
         function renderChart(chartData) {
             chartData = chartData.map((item) => Number(item));
