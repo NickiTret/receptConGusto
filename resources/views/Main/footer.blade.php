@@ -13,7 +13,7 @@
         </script>
     </div>
 </section>
-<!-- Top.Mail.Ru counter -->
+{{-- <!-- Top.Mail.Ru counter -->
 <script type="text/javascript">
     var _tmr = window._tmr || (window._tmr = []);
     _tmr.push({
@@ -43,7 +43,7 @@
     <div><img src="https://top-fwz1.mail.ru/counter?id=3384116;js=na" style="position:absolute;left:-9999px;"
             alt="Top.Mail.Ru" /></div>
 </noscript>
-<!-- /Top.Mail.Ru counter -->
+<!-- /Top.Mail.Ru counter --> --}}
 @endenv
 <footer class="footer">
     <div class="container">
@@ -124,7 +124,7 @@
 
 
 
-    <div class="container" style="margin-top: 14px">
+    {{-- <div class="container" style="margin-top: 14px">
         <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click" target="_blank"><img id="licnt5139"
                 width="88" height="15" style="border:0"
                 title="LiveInternet: показано число посетителей за сегодня"
@@ -143,7 +143,7 @@
         <!--/LiveInternet-->
 
 
-    </div>
+    </div> --}}
 </footer>
 
 

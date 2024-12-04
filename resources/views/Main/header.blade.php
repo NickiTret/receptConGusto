@@ -11,40 +11,40 @@
 
     <script>
         window.yaContextCb = window.yaContextCb || [];
-        (function(w, d, c) {
-            (w[c] = w[c] || []).push(function() {
-                var options = {
-                    project: 7715281,
-                };
-                try {
-                    w.top100Counter = new top100(options);
-                } catch (e) {}
-            });
-            var n = d.getElementsByTagName("script")[0],
-                s = d.createElement("script"),
-                f = function() {
-                    n.parentNode.insertBefore(s, n);
-                };
-            s.type = "text/javascript";
-            s.async = true;
-            s.src =
-                (d.location.protocol == "https:" ? "https:" : "http:") +
-                "//st.top100.ru/top100/top100.js";
+        // (function(w, d, c) {
+        //     (w[c] = w[c] || []).push(function() {
+        //         var options = {
+        //             project: 7715281,
+        //         };
+        //         try {
+        //             w.top100Counter = new top100(options);
+        //         } catch (e) {}
+        //     });
+        //     var n = d.getElementsByTagName("script")[0],
+        //         s = d.createElement("script"),
+        //         f = function() {
+        //             n.parentNode.insertBefore(s, n);
+        //         };
+        //     s.type = "text/javascript";
+        //     s.async = true;
+        //     s.src =
+        //         (d.location.protocol == "https:" ? "https:" : "http:") +
+        //         "//st.top100.ru/top100/top100.js";
 
-            if (w.opera == "[object Opera]") {
-                d.addEventListener("DOMContentLoaded", f, false);
-            } else {
-                f();
-            }
-        })(window, document, "_top100q");
+        //     if (w.opera == "[object Opera]") {
+        //         d.addEventListener("DOMContentLoaded", f, false);
+        //     } else {
+        //         f();
+        //     }
+        // })(window, document, "_top100q");
 
-        var mi = document.createElement('script');
-        mi.type = 'text/javascript';
-        mi.async = true;
-        mi.src = (document.location.protocol == 'https:' ? 'https' : 'http') + '://counter.megaindex.ru/core.js?t;' +
-            escape(document.referrer) + ((typeof(screen) == 'undefined') ? '' : ';' + screen.width + '*' + screen.height) +
-            ';' + escape(document.URL) + ';' + document.title.substring(0, 256) + ';1675943';
-        document.getElementsByTagName('head')[0].appendChild(mi);
+        // var mi = document.createElement('script');
+        // mi.type = 'text/javascript';
+        // mi.async = true;
+        // mi.src = (document.location.protocol == 'https:' ? 'https' : 'http') + '://counter.megaindex.ru/core.js?t;' +
+        //     escape(document.referrer) + ((typeof(screen) == 'undefined') ? '' : ';' + screen.width + '*' + screen.height) +
+        //     ';' + escape(document.URL) + ';' + document.title.substring(0, 256) + ';1675943';
+        // document.getElementsByTagName('head')[0].appendChild(mi);
 
         (function(m, e, t, r, i, k, a) {
             m[i] = m[i] || function() {

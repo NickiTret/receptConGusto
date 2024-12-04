@@ -39,7 +39,7 @@
         </style>
     </noscript>
     <!-- Top.Mail.Ru counter -->
-    <script>
+    {{-- <script>
         var _tmr = window._tmr || (window._tmr = []);
         _tmr.push({
             id: "3328776",
@@ -63,8 +63,8 @@
                 f();
             }
         })(document, window, "tmr-code");
-    </script>
-    <script>
+    </script> --}}
+    {{-- <script>
         (function(w, d, c) {
             (w[c] = w[c] || []).push(function() {
                 var options = {
@@ -91,8 +91,8 @@
                 f();
             }
         })(window, document, "_top100q");
-    </script>
-    <script>
+    </script> --}}
+    {{-- <script>
         var mi = document.createElement('script');
         mi.type = 'text/javascript';
         mi.async = true;
@@ -100,7 +100,7 @@
             escape(document.referrer) + ((typeof(screen) == 'undefined') ? '' : ';' + screen.width + '*' + screen.height) +
             ';' + escape(document.URL) + ';' + document.title.substring(0, 256) + ';1675943';
         document.getElementsByTagName('head')[0].appendChild(mi);
-    </script>
+    </script> --}}
     <!-- Stat.MegaIndex.ru End -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCDZCP104C"></script>
