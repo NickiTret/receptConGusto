@@ -55,7 +55,7 @@ class Handler extends ExceptionHandler
             $hasAcceptedCookies = Cookie::get('acceptCookie', false);
 
             // Возвращаем представление ошибки с переданными переменными
-            return response()->view('errors.404', [
+            return response()->view('errors.layout', [
                 'headers' => $headers,
                 'categories_menu' => $categories_menu,
                 'hasAcceptedCookies' => $hasAcceptedCookies,

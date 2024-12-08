@@ -1,6 +1,18 @@
+<?php
+
+use App\Models\Header;
+use App\Models\Category;
+use Illuminate\Support\Facades\Cookie;
+
+$headers = Header::all();
+$categories_menu = Category::orderBy('title')->get();
+$hasAcceptedCookies = Cookie::get('acceptCookie', false);
+
+?>
+
 <!DOCTYPE html>
 <html lang="ru" class="page">
-    @include('Main.head')
+@include('Main.head')
 
 <body class="page__body">
     @include('Main.header', ['headers' => $headers])
