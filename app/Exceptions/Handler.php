@@ -4,6 +4,12 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Cache;
+use App\Models\Header;
+use App\Models\Category;
 
 class Handler extends ExceptionHandler
 {
@@ -38,4 +44,26 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+
+    public function render($request, Throwable $exception) // Изменено на Throwable
+    {
+        if ($exception instanceof NotFoundHttpException) {
+            // Получаем данные, которые хотите передать
+            $headers = Header::all();
+            $categories_menu = Category::orderBy('title')->get();
+            $hasAcceptedCookies = Cookie::get('acceptCookie', false);
+
+            // Возвращаем представление ошибки с переданными переменными
+            return response()->view('errors.404', [
+                'headers' => $headers,
+                'categories_menu' => $categories_menu,
+                'hasAcceptedCookies' => $hasAcceptedCookies,
+            ], 404);
+        }
+
+        return parent::render($request, $exception);
+    }
+
+
 }

@@ -1,6 +1,7 @@
 .error-page {
-    background: $clr_main;
-    height: 100vh;
+    // background: $clr_main;
+    height: calc(100vh);
+    min-height: calc(100vh - 40%);
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -16,19 +17,19 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        
+
         padding: 1rem 3rem;
         position: relative;
 
         & > div {
           margin-top: 50px;
           & > a {
-            @include main_btn($font-family, $clr_text);
+            @include main_btn($font-family, $clr_white);
             z-index: 99;
           }
         }
       }
-      
+
       & .circle {
         height: 300px;
         width: 300px;
@@ -36,7 +37,7 @@
         background: white;
         position: absolute;
       }
-      
+
       & h1 {
         color: $clr_main;
         font-size: 100px;

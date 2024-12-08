@@ -10,7 +10,7 @@
     <link href="{{ asset('css/main/main.style.min.css') }}?19" rel="stylesheet">
 
     <script>
-        window.yaContextCb = window.yaContextCb || [];
+        // window.yaContextCb = window.yaContextCb || [];
         // (function(w, d, c) {
         //     (w[c] = w[c] || []).push(function() {
         //         var options = {
@@ -46,26 +46,26 @@
         //     ';' + escape(document.URL) + ';' + document.title.substring(0, 256) + ';1675943';
         // document.getElementsByTagName('head')[0].appendChild(mi);
 
-        (function(m, e, t, r, i, k, a) {
-            m[i] = m[i] || function() {
-                (m[i].a = m[i].a || []).push(arguments)
-            };
-            m[i].l = 1 * new Date();
-            for (var j = 0; j < document.scripts.length; j++) {
-                if (document.scripts[j].src === r) {
-                    return;
-                }
-            }
-            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(
-                k, a)
-        })
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        // (function(m, e, t, r, i, k, a) {
+        //     m[i] = m[i] || function() {
+        //         (m[i].a = m[i].a || []).push(arguments)
+        //     };
+        //     m[i].l = 1 * new Date();
+        //     for (var j = 0; j < document.scripts.length; j++) {
+        //         if (document.scripts[j].src === r) {
+        //             return;
+        //         }
+        //     }
+        //     k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(
+        //         k, a)
+        // })
+        // (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-        ym(92999372, "init", {
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true
-        });
+        // ym(92999372, "init", {
+        //     clickmap: true,
+        //     trackLinks: true,
+        //     accurateTrackBounce: true
+        // });
 
         window.dataLayer = window.dataLayer || [];
 
@@ -77,8 +77,29 @@
     </script>
 
     <noscript>
-        <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt=""></div>
+        {{-- <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt=""></div> --}}
         {{-- <img src="//counter.rambler.ru/top100.cnt?pid=7715281" alt="Топ-100" /> --}}
+    </noscript>
+
+
+    <script>
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(92999372, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/92999372" style="position:absolute; left:-9999px;" alt=""></div>
     </noscript>
 
     <header class="header">
